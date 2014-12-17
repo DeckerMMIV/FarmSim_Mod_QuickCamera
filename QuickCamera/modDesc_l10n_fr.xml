@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<l10n>
+    <texts>
+        <text name="QuickCamRight"          text="QuickCamera: Regardez 45&#176; à droite"    />
+        <text name="QuickCamLeft"           text="QuickCamera: Regardez 45&#176; à gauche"    />
+        <text name="QuickCamForward"        text="QuickCamera: Regardez vers l'avant"         />
+        <text name="QuickCamBackward"       text="QuickCamera: Regardez en arrière"           />
+        <text name="QuickCamForBack"        text="QuickCamera: Basculer look avant/arrière"   />
+        <text name="QuickCamZoomIn"         text="QuickCamera: Zoom in"                       /> <!-- needs translations -->
+        <text name="QuickCamZoomOut"        text="QuickCamera: Zoom arrière"                  /> <!-- needs translations -->
+        <text name="QuickCamToggleReset"    text="QuickCamera: Basculer auto-reset"           /> <!-- needs translations -->
+        <text name="QuickCamLockCustom"     text="QuickCamera: Keep new forward-cam"          /> <!-- needs translations -->
+    </texts>
+</l10n>
