@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="4">
+    <author>Decker</author>
+    <version>0.93(beta)</version>
+    <title>
+        <en>QuickCamera</en>
+        <de>QuickCamera</de>
+    </title>
+    <description>
+        <en>
+<![CDATA[Quickly tap your assigned QuickCam-keys to rotate 45-degrees or to look forwards/backwards.
+Also zooming in/out works with quick-tap'ing the zoom-keys.
+
+ls-uk.info, Decker_MMIV]]>
+        </en>
+        <de> <!-- http://translate.google.com - English to German - Please PM me a better translation. -->
+<![CDATA[Schnell tippen Sie auf das QuickCam-Tasten, um 45-Grad zu drehen oder nach vorne/hinten zu schauen.
+Auch Zoomen in/out arbeitet mit schnellen tippen Sie auf die Zoom-Tasten.
+
+ls-uk.info, Decker_MMIV]]>
+        </de>
+    </description>
+    <iconFilename>store.png</iconFilename>
+    <multiplayer supported="true"/>
+    
+    <extraSourceFiles>
+        <sourceFile filename="QuickCamera.lua" />
+    </extraSourceFiles>
+    
+    <l10n>                                                                                <!-- http://translate.google.com - English to German - Please PM me a better translation. -->
+      <text name="QuickCamLeft">            <en>QuickCam:Look 45&#176; left  </en>        <de>QuickCam:Schauen 45&#176; links              </de> </text>
+      <text name="QuickCamRight">           <en>QuickCam:Look 45&#176; right </en>        <de>QuickCam:Schauen 45&#176; rechts             </de> </text>    
+      <text name="QuickCamForward">         <en>QuickCam:Look forward        </en>        <de>QuickCam:Freuen                              </de> </text>
+      <text name="QuickCamBackward">        <en>QuickCam:Look backward       </en>        <de>QuickCam:Zurückblicken                       </de> </text>
+      <text name="QuickCamForBack">         <en>QuickCam:Toggle look for/back</en>        <de>QuickCam:Umschalten vorwärts/rückwärts suchen</de> </text>
+
+      <!-- Why will these not show in Options->Controls? -->
+      <text name="QuickCamAxisLeftRight_1"> <en>QuickCam:45&#176; left digital-axis </en> <de>QuickCam:45&#176; links digital-Achse       </de> </text>
+      <text name="QuickCamAxisLeftRight_2"> <en>QuickCam:45&#176; right digital-axis</en> <de>QuickCam:45&#176; rechts digital-Achse      </de> </text>
+      <text name="QuickCamAxisUpDown_1">    <en>QuickCam:Look forward digital-axis  </en> <de>QuickCam:Freuen Sie digital-Achse           </de> </text>
+      <text name="QuickCamAxisUpDown_2">    <en>QuickCam:Look backward digital-axis </en> <de>QuickCam:Schauen Sie rückwärts digital-Achse</de> </text>
+    </l10n>
+    
+    <inputBindings>
+      <input name="QuickCamLeft"     category="VEHICLE" key1="" key2="" button="" device="" mouse="" />
+      <input name="QuickCamRight"    category="VEHICLE" key1="" key2="" button="" device="" mouse="" />
+      <input name="QuickCamForward"  category="VEHICLE" key1="" key2="" button="" device="" mouse="" />
+      <input name="QuickCamBackward" category="VEHICLE" key1="" key2="" button="" device="" mouse="" />
+      <input name="QuickCamForBack"  category="VEHICLE" key1="" key2="" button="" device="" mouse="" />
+
+      <!-- These axis elements apparently have to be manually copied to the InputBinding.XML file,
+           else they will not be visible in the Options->Controls screen, in the game. -->
+      <axis name="QuickCamAxisLeftRight" category="VEHICLE" key1="" key2="" key3="" key4="" button="" axis="" device="0" invert="false" button1="" button2="" />
+      <axis name="QuickCamAxisUpDown"    category="VEHICLE" key1="" key2="" key3="" key4="" button="" axis="" device="0" invert="false" button1="" button2="" />
+    </inputBindings>
+</modDesc>
