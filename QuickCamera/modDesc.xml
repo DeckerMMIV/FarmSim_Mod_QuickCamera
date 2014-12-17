@@ -50,18 +50,7 @@ Decker_MMIV - fs-uk.com, forum.farming-simulator.com, modhoster.com]]>
         <sourceFile filename="QuickCamera.lua" />
     </extraSourceFiles>
     
-    <l10n>
-      <!-- http://translate.google.com - English to ... - Please PM me a better translation. -->
-      <text name="QuickCamRight"      > <en>QuickCamera: Look 45&#176; right </en>  <de>QuickCamera: Schauen 45&#176; rechts</de> <fr>QuickCamera: Regardez 45&#176; à droite   </fr> <pl>QuickCamera: Obejrzyj 45&#176; w prawo</pl> </text>    
-      <text name="QuickCamLeft"       > <en>QuickCamera: Look 45&#176; left  </en>  <de>QuickCamera: Schauen 45&#176; links </de> <fr>QuickCamera: Regardez 45&#176; à gauche   </fr> <pl>QuickCamera: Obejrzyj 45&#176; w lewo </pl> </text>
-      <text name="QuickCamForward"    > <en>QuickCamera: Look forward        </en>  <de>QuickCamera: Vorwärts               </de> <fr>QuickCamera: Regardez vers l'avant        </fr> <pl>QuickCamera: Czekam                   </pl> </text> 
-      <text name="QuickCamBackward"   > <en>QuickCamera: Look backward       </en>  <de>QuickCamera: Zurückblicken          </de> <fr>QuickCamera: Regardez en arrière          </fr> <pl>QuickCamera: Spójrz wstecz            </pl> </text>
-      <text name="QuickCamForBack"    > <en>QuickCamera: Toggle look for/back</en>  <de>QuickCamera: Umschalten vor./rück.  </de> <fr>QuickCamera: Basculer look avant/arrière  </fr> <pl>QuickCamera: Przelacz wyglad/back     </pl> </text>
-      <text name="QuickCamZoomIn"     > <en>QuickCamera: Zoom in             </en>  <de>QuickCamera: Zoom in                </de> <fr>QuickCamera: Zoom in                      </fr> <pl>QuickCamera: Powieksz                 </pl> </text>
-      <text name="QuickCamZoomOut"    > <en>QuickCamera: Zoom out            </en>  <de>QuickCamera: Zoom out               </de> <fr>QuickCamera: Zoom arrière                 </fr> <pl>QuickCamera: Oddalanie                </pl> </text>
-      <text name="QuickCamToggleReset"> <en>QuickCamera: Toggle auto-reset   </en>  <de>QuickCamera: Toggle auto-reset      </de> <fr>QuickCamera: Basculer auto-reset          </fr> <pl>QuickCamera: Przelacz auto-reset      </pl> </text>
-      <text name="QuickCamLockCustom" > <en>QuickCamera: Keep new forward-cam</en>  <de>QuickCamera: Keep new forward-cam   </de> <fr>QuickCamera: Keep new forward-cam         </fr> <pl>QuickCamera: Keep new forward-cam     </pl> </text> <!-- needs translations -->
-    </l10n>
+    <l10n filenamePrefix="modDesc_l10n" /> <!-- Load the corresponding modDesc_l10n_<language>.XML file, or revert to 'en'/'de'. -->
     
     <inputBindings>
       <input name="QuickCamRight"        category="VEHICLE"        key1="KEY_right"       key2="" button="" device="0" mouse="" />
