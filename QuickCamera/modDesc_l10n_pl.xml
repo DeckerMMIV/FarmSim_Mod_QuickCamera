@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <l10n>
+    <description>
+<![CDATA[Uzyj, aby szybko miec aparat pojazdu;
+obrócic 45-stopni w lewo/w prawo, spojrzec do przodu/do tylu lub zoom in/out.
+
+
+Decker_MMIV - fs-uk.com, forum.farming-simulator.com, modhoster.com]]>
+    </description>
+
     <texts>
         <text name="QuickCamRight"          text="QuickCamera: Obejrzyj 45&#176; w prawo" />
         <text name="QuickCamLeft"           text="QuickCamera: Obejrzyj 45&#176; w lewo"  />
