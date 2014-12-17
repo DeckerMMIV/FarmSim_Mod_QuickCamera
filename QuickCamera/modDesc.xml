@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="13">
-    <author>Decker_MMIV</author>
-    <version>1.0.98</version>
-
-    <title txlId="01">
+<modDesc descVersion="21">
+    <author>Freelance Modding Crew</author>
+    <version>2.1.1</version>
+    <contributors>DLH007, _dj_</contributors>
+    <title>
         <en>QuickCamera</en>
         <de>QuickCamera</de>
         <fr>QuickCamera</fr>
         <pl>QuickCamera</pl>
     </title>
     
-    <description txlId="02">
+    <description>
         <en>
 <![CDATA[Use to quickly have the vehicle camera;
 rotate 45-degrees left/right, look forwards/backwards or zoom in/out.
 
+
 Decker_MMIV - fs-uk.com, forum.farming-simulator.com, modhoster.com]]>
         </en>
-        <de> <!-- Credits to DLH007 for the translation -->
+        <de>
 <![CDATA[Schnelles wechseln der Fahrzeug-Kamera,
 45 Grad-Drehung links/rechts, sehe nach vorne/hinten oder Zoome rein/raus
+
 
 Decker_MMIV - fs-uk.com, forum.farming-simulator.com, modhoster.com]]>
         </de>
@@ -28,12 +30,14 @@ Decker_MMIV - fs-uk.com, forum.farming-simulator.com, modhoster.com]]>
 <![CDATA[Utilisez avoir rapidement la caméra du véhicule;
 tourner de 45 degrés vers la gauche/droite, regardez avant/arrière ou un zoom in/out.
 
+
 Decker_MMIV - fs-uk.com, forum.farming-simulator.com, modhoster.com]]>
         </fr>
     <!-- http://translate.google.com - English to ... - Please PM me a better translation. -->
         <pl>
 <![CDATA[Uzyj, aby szybko miec aparat pojazdu;
 obrócic 45-stopni w lewo/w prawo, spojrzec do przodu/do tylu lub zoom in/out.
+
 
 Decker_MMIV - fs-uk.com, forum.farming-simulator.com, modhoster.com]]>
         </pl>
@@ -48,29 +52,26 @@ Decker_MMIV - fs-uk.com, forum.farming-simulator.com, modhoster.com]]>
     
     <l10n>
       <!-- http://translate.google.com - English to ... - Please PM me a better translation. -->
-      <!--
-        txlId's:
-          DE-05: Credits to DLH007
-          FR-07: Credits to _dj_
-      -->
-      <text name="QuickCamRight"       txlId="03"> <en>QuickCam:Look 45&#176; right </en>  <de>QuickCam:Schauen 45&#176; rechts</de> <fr>QuickCam:Regardez 45&#176; à droite   </fr> <pl>QuickCam:Obejrzyj 45&#176; w prawo</pl> </text>    
-      <text name="QuickCamLeft"        txlId="04"> <en>QuickCam:Look 45&#176; left  </en>  <de>QuickCam:Schauen 45&#176; links </de> <fr>QuickCam:Regardez 45&#176; à gauche   </fr> <pl>QuickCam:Obejrzyj 45&#176; w lewo </pl> </text>
-      <text name="QuickCamForward"     txlId="05"> <en>QuickCam:Look forward        </en>  <de>QuickCam:Vorwärts               </de> <fr>QuickCam:Regardez vers l'avant        </fr> <pl>QuickCam:Czekam                   </pl> </text> 
-      <text name="QuickCamBackward"    txlId="06"> <en>QuickCam:Look backward       </en>  <de>QuickCam:Zurückblicken          </de> <fr>QuickCam:Regardez en arrière          </fr> <pl>QuickCam:Spójrz wstecz            </pl> </text>
-      <text name="QuickCamForBack"     txlId="07"> <en>QuickCam:Toggle look for/back</en>  <de>QuickCam:Umschalten vor./rück.  </de> <fr>QuickCam:Basculer look avant/arrière  </fr> <pl>QuickCam:Przelacz wyglad/back     </pl> </text>
-      <text name="QuickCamZoomIn"      txlId="08"> <en>QuickCam:Zoom in             </en>  <de>QuickCam:Zoom in                </de> <fr>QuickCam:Zoom in                      </fr> <pl>QuickCam:Powieksz                 </pl> </text>
-      <text name="QuickCamZoomOut"     txlId="09"> <en>QuickCam:Zoom out            </en>  <de>QuickCam:Zoom out               </de> <fr>QuickCam:Zoom arrière                 </fr> <pl>QuickCam:Oddalanie                </pl> </text>
-      <text name="QuickCamToggleReset" txlId="10"> <en>QuickCam:Toggle auto-reset   </en>  <de>QuickCam:Toggle auto-reset      </de> <fr>QuickCam:Basculer auto-reset          </fr> <pl>QuickCam:Przelacz auto-reset      </pl> </text>
+      <text name="QuickCamRight"      > <en>QuickCamera: Look 45&#176; right </en>  <de>QuickCamera: Schauen 45&#176; rechts</de> <fr>QuickCamera: Regardez 45&#176; à droite   </fr> <pl>QuickCamera: Obejrzyj 45&#176; w prawo</pl> </text>    
+      <text name="QuickCamLeft"       > <en>QuickCamera: Look 45&#176; left  </en>  <de>QuickCamera: Schauen 45&#176; links </de> <fr>QuickCamera: Regardez 45&#176; à gauche   </fr> <pl>QuickCamera: Obejrzyj 45&#176; w lewo </pl> </text>
+      <text name="QuickCamForward"    > <en>QuickCamera: Look forward        </en>  <de>QuickCamera: Vorwärts               </de> <fr>QuickCamera: Regardez vers l'avant        </fr> <pl>QuickCamera: Czekam                   </pl> </text> 
+      <text name="QuickCamBackward"   > <en>QuickCamera: Look backward       </en>  <de>QuickCamera: Zurückblicken          </de> <fr>QuickCamera: Regardez en arrière          </fr> <pl>QuickCamera: Spójrz wstecz            </pl> </text>
+      <text name="QuickCamForBack"    > <en>QuickCamera: Toggle look for/back</en>  <de>QuickCamera: Umschalten vor./rück.  </de> <fr>QuickCamera: Basculer look avant/arrière  </fr> <pl>QuickCamera: Przelacz wyglad/back     </pl> </text>
+      <text name="QuickCamZoomIn"     > <en>QuickCamera: Zoom in             </en>  <de>QuickCamera: Zoom in                </de> <fr>QuickCamera: Zoom in                      </fr> <pl>QuickCamera: Powieksz                 </pl> </text>
+      <text name="QuickCamZoomOut"    > <en>QuickCamera: Zoom out            </en>  <de>QuickCamera: Zoom out               </de> <fr>QuickCamera: Zoom arrière                 </fr> <pl>QuickCamera: Oddalanie                </pl> </text>
+      <text name="QuickCamToggleReset"> <en>QuickCamera: Toggle auto-reset   </en>  <de>QuickCamera: Toggle auto-reset      </de> <fr>QuickCamera: Basculer auto-reset          </fr> <pl>QuickCamera: Przelacz auto-reset      </pl> </text>
+      <text name="QuickCamLockCustom" > <en>QuickCamera: Keep new forward-cam</en>  <de>QuickCamera: Keep new forward-cam   </de> <fr>QuickCamera: Keep new forward-cam         </fr> <pl>QuickCamera: Keep new forward-cam     </pl> </text> <!-- needs translations -->
     </l10n>
     
     <inputBindings>
-      <input name="QuickCamRight"        category="VEHICLE" key1="" key2="" button="" device="0" mouse="" />
-      <input name="QuickCamLeft"         category="VEHICLE" key1="" key2="" button="" device="0" mouse="" />
-      <input name="QuickCamForward"      category="VEHICLE" key1="" key2="" button="" device="0" mouse="" />
-      <input name="QuickCamBackward"     category="VEHICLE" key1="" key2="" button="" device="0" mouse="" />
-      <input name="QuickCamForBack"      category="VEHICLE" key1="" key2="" button="" device="0" mouse="" />
-      <input name="QuickCamZoomIn"       category="VEHICLE" key1="" key2="" button="" device="0" mouse="" />
-      <input name="QuickCamZoomOut"      category="VEHICLE" key1="" key2="" button="" device="0" mouse="" />
-      <input name="QuickCamToggleReset"  category="ONFOOT VEHICLE" key1="KEY_lalt KEY_k" key2="" button="" device="0" mouse="" />
+      <input name="QuickCamRight"        category="VEHICLE"        key1="KEY_right"       key2="" button="" device="0" mouse="" />
+      <input name="QuickCamLeft"         category="VEHICLE"        key1="KEY_left"        key2="" button="" device="0" mouse="" />
+      <input name="QuickCamForward"      category="VEHICLE"        key1="KEY_up"          key2="" button="" device="0" mouse="" />
+      <input name="QuickCamBackward"     category="VEHICLE"        key1="KEY_down"        key2="" button="" device="0" mouse="" />
+      <input name="QuickCamForBack"      category="VEHICLE"        key1="KEY_end"         key2="" button="" device="0" mouse="" />
+      <input name="QuickCamZoomIn"       category="VEHICLE"        key1="KEY_pageup"      key2="" button="" device="0" mouse="" />
+      <input name="QuickCamZoomOut"      category="VEHICLE"        key1="KEY_pagedown"    key2="" button="" device="0" mouse="" />
+      <input name="QuickCamToggleReset"  category="ONFOOT VEHICLE" key1="KEY_lalt KEY_k"  key2="" button="" device="0" mouse="" />
+      <input name="QuickCamLockCustom"   category="VEHICLE"        key1="KEY_lalt KEY_j"  key2="" button="" device="0" mouse="" />
     </inputBindings>
 </modDesc>
