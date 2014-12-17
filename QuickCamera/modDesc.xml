@@ -1,56 +1,76 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="4">
-    <author>Decker</author>
-    <version>0.93(beta)</version>
-    <title>
+<modDesc descVersion="13">
+    <author>Decker_MMIV</author>
+    <version>1.0.98</version>
+
+    <title txlId="01">
         <en>QuickCamera</en>
         <de>QuickCamera</de>
+        <fr>QuickCamera</fr>
+        <pl>QuickCamera</pl>
     </title>
-    <description>
+    
+    <description txlId="02">
         <en>
-<![CDATA[Quickly tap your assigned QuickCam-keys to rotate 45-degrees or to look forwards/backwards.
-Also zooming in/out works with quick-tap'ing the zoom-keys.
+<![CDATA[Use to quickly have the vehicle camera;
+rotate 45-degrees left/right, look forwards/backwards or zoom in/out.
 
-ls-uk.info, Decker_MMIV]]>
+Decker_MMIV - fs-uk.com, forum.farming-simulator.com, modhoster.com]]>
         </en>
-        <de> <!-- http://translate.google.com - English to German - Please PM me a better translation. -->
-<![CDATA[Schnell tippen Sie auf das QuickCam-Tasten, um 45-Grad zu drehen oder nach vorne/hinten zu schauen.
-Auch Zoomen in/out arbeitet mit schnellen tippen Sie auf die Zoom-Tasten.
+        <de> <!-- Credits to DLH007 for the translation -->
+<![CDATA[Schnelles wechseln der Fahrzeug-Kamera,
+45 Grad-Drehung links/rechts, sehe nach vorne/hinten oder Zoome rein/raus
 
-ls-uk.info, Decker_MMIV]]>
+Decker_MMIV - fs-uk.com, forum.farming-simulator.com, modhoster.com]]>
         </de>
+    <!-- http://translate.google.com - English to ... - Please PM me a better translation. -->
+        <fr>
+<![CDATA[Utilisez avoir rapidement la caméra du véhicule;
+tourner de 45 degrés vers la gauche/droite, regardez avant/arrière ou un zoom in/out.
+
+Decker_MMIV - fs-uk.com, forum.farming-simulator.com, modhoster.com]]>
+        </fr>
+    <!-- http://translate.google.com - English to ... - Please PM me a better translation. -->
+        <pl>
+<![CDATA[Uzyj, aby szybko miec aparat pojazdu;
+obrócic 45-stopni w lewo/w prawo, spojrzec do przodu/do tylu lub zoom in/out.
+
+Decker_MMIV - fs-uk.com, forum.farming-simulator.com, modhoster.com]]>
+        </pl>
     </description>
-    <iconFilename>store.png</iconFilename>
+    
+    <iconFilename>store_QuickCamera.dds</iconFilename>
     <multiplayer supported="true"/>
     
     <extraSourceFiles>
         <sourceFile filename="QuickCamera.lua" />
     </extraSourceFiles>
     
-    <l10n>                                                                                <!-- http://translate.google.com - English to German - Please PM me a better translation. -->
-      <text name="QuickCamLeft">            <en>QuickCam:Look 45&#176; left  </en>        <de>QuickCam:Schauen 45&#176; links              </de> </text>
-      <text name="QuickCamRight">           <en>QuickCam:Look 45&#176; right </en>        <de>QuickCam:Schauen 45&#176; rechts             </de> </text>    
-      <text name="QuickCamForward">         <en>QuickCam:Look forward        </en>        <de>QuickCam:Freuen                              </de> </text>
-      <text name="QuickCamBackward">        <en>QuickCam:Look backward       </en>        <de>QuickCam:Zurückblicken                       </de> </text>
-      <text name="QuickCamForBack">         <en>QuickCam:Toggle look for/back</en>        <de>QuickCam:Umschalten vorwärts/rückwärts suchen</de> </text>
-
-      <!-- Why will these not show in Options->Controls? -->
-      <text name="QuickCamAxisLeftRight_1"> <en>QuickCam:45&#176; left digital-axis </en> <de>QuickCam:45&#176; links digital-Achse       </de> </text>
-      <text name="QuickCamAxisLeftRight_2"> <en>QuickCam:45&#176; right digital-axis</en> <de>QuickCam:45&#176; rechts digital-Achse      </de> </text>
-      <text name="QuickCamAxisUpDown_1">    <en>QuickCam:Look forward digital-axis  </en> <de>QuickCam:Freuen Sie digital-Achse           </de> </text>
-      <text name="QuickCamAxisUpDown_2">    <en>QuickCam:Look backward digital-axis </en> <de>QuickCam:Schauen Sie rückwärts digital-Achse</de> </text>
+    <l10n>
+      <!-- http://translate.google.com - English to ... - Please PM me a better translation. -->
+      <!--
+        txlId's:
+          DE-05: Credits to DLH007
+          FR-07: Credits to _dj_
+      -->
+      <text name="QuickCamRight"       txlId="03"> <en>QuickCam:Look 45&#176; right </en>  <de>QuickCam:Schauen 45&#176; rechts</de> <fr>QuickCam:Regardez 45&#176; à droite   </fr> <pl>QuickCam:Obejrzyj 45&#176; w prawo</pl> </text>    
+      <text name="QuickCamLeft"        txlId="04"> <en>QuickCam:Look 45&#176; left  </en>  <de>QuickCam:Schauen 45&#176; links </de> <fr>QuickCam:Regardez 45&#176; à gauche   </fr> <pl>QuickCam:Obejrzyj 45&#176; w lewo </pl> </text>
+      <text name="QuickCamForward"     txlId="05"> <en>QuickCam:Look forward        </en>  <de>QuickCam:Vorwärts               </de> <fr>QuickCam:Regardez vers l'avant        </fr> <pl>QuickCam:Czekam                   </pl> </text> 
+      <text name="QuickCamBackward"    txlId="06"> <en>QuickCam:Look backward       </en>  <de>QuickCam:Zurückblicken          </de> <fr>QuickCam:Regardez en arrière          </fr> <pl>QuickCam:Spójrz wstecz            </pl> </text>
+      <text name="QuickCamForBack"     txlId="07"> <en>QuickCam:Toggle look for/back</en>  <de>QuickCam:Umschalten vor./rück.  </de> <fr>QuickCam:Basculer look avant/arrière  </fr> <pl>QuickCam:Przelacz wyglad/back     </pl> </text>
+      <text name="QuickCamZoomIn"      txlId="08"> <en>QuickCam:Zoom in             </en>  <de>QuickCam:Zoom in                </de> <fr>QuickCam:Zoom in                      </fr> <pl>QuickCam:Powieksz                 </pl> </text>
+      <text name="QuickCamZoomOut"     txlId="09"> <en>QuickCam:Zoom out            </en>  <de>QuickCam:Zoom out               </de> <fr>QuickCam:Zoom arrière                 </fr> <pl>QuickCam:Oddalanie                </pl> </text>
+      <text name="QuickCamToggleReset" txlId="10"> <en>QuickCam:Toggle auto-reset   </en>  <de>QuickCam:Toggle auto-reset      </de> <fr>QuickCam:Basculer auto-reset          </fr> <pl>QuickCam:Przelacz auto-reset      </pl> </text>
     </l10n>
     
     <inputBindings>
-      <input name="QuickCamLeft"     category="VEHICLE" key1="" key2="" button="" device="" mouse="" />
-      <input name="QuickCamRight"    category="VEHICLE" key1="" key2="" button="" device="" mouse="" />
-      <input name="QuickCamForward"  category="VEHICLE" key1="" key2="" button="" device="" mouse="" />
-      <input name="QuickCamBackward" category="VEHICLE" key1="" key2="" button="" device="" mouse="" />
-      <input name="QuickCamForBack"  category="VEHICLE" key1="" key2="" button="" device="" mouse="" />
-
-      <!-- These axis elements apparently have to be manually copied to the InputBinding.XML file,
-           else they will not be visible in the Options->Controls screen, in the game. -->
-      <axis name="QuickCamAxisLeftRight" category="VEHICLE" key1="" key2="" key3="" key4="" button="" axis="" device="0" invert="false" button1="" button2="" />
-      <axis name="QuickCamAxisUpDown"    category="VEHICLE" key1="" key2="" key3="" key4="" button="" axis="" device="0" invert="false" button1="" button2="" />
+      <input name="QuickCamRight"        category="VEHICLE" key1="" key2="" button="" device="0" mouse="" />
+      <input name="QuickCamLeft"         category="VEHICLE" key1="" key2="" button="" device="0" mouse="" />
+      <input name="QuickCamForward"      category="VEHICLE" key1="" key2="" button="" device="0" mouse="" />
+      <input name="QuickCamBackward"     category="VEHICLE" key1="" key2="" button="" device="0" mouse="" />
+      <input name="QuickCamForBack"      category="VEHICLE" key1="" key2="" button="" device="0" mouse="" />
+      <input name="QuickCamZoomIn"       category="VEHICLE" key1="" key2="" button="" device="0" mouse="" />
+      <input name="QuickCamZoomOut"      category="VEHICLE" key1="" key2="" button="" device="0" mouse="" />
+      <input name="QuickCamToggleReset"  category="ONFOOT VEHICLE" key1="KEY_lalt KEY_k" key2="" button="" device="0" mouse="" />
     </inputBindings>
 </modDesc>
