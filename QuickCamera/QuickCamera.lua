@@ -43,7 +43,12 @@ Suggestions
 Wrongway
     An option to glance left or right returning to forward view would be very useful, but might not be easy to implement. 
     http://www.ls-uk.info/forum/index.php?topic=118579.msg789306#msg789306
- 
+
+Kyuss33
+    I was wondering if anyone has a mod that allows you to adjust the height of your head or view in the cabin.
+    I feel like I'm a 7 foot person in harvester's cabin view.I have seen quick camera mod that allows for saving previous cameras 
+    but I don't think it adjust the up down or height in cabin
+    http://forum.giants-software.com/viewtopic.php?f=831&t=77401
 ]]
 
 QuickCamera = {};

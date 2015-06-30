@@ -47,6 +47,8 @@ Decker_MMIV - fs-uk.com, forum.farming-simulator.com, modhoster.com]]>
     
     <extraSourceFiles>
         <sourceFile filename="QuickCamera.lua" />
+        <sourceFile filename="ArticulatedVehiclesOutsideCameraRotationFix.lua" />
+        <sourceFile filename="SteeringRotateCamera.lua" />
     </extraSourceFiles>
     
     <l10n filenamePrefix="modDesc_l10n" /> <!-- Load the corresponding modDesc_l10n_<language>.XML file, or revert to 'en'/'de'. -->
