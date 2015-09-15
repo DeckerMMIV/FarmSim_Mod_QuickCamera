@@ -1,4 +1,25 @@
 
+Drivable.updateVehiclePhysics = Utils.prependedFunction(Drivable.updateVehiclePhysics, function(self)
+    self.mod_previous_rotatedTime = self.rotatedTime
+end);
+
+Steerable.updateTick = Utils.prependedFunction(Steerable.updateTick, function(self, dt)
+    if self.isEntered and self.isClient then
+        self.cameras[self.camIndex].mod_updateTick_dt = (dt > 0) and dt or 1
+        self.cameras[self.camIndex].mod_update_dtSum = 0
+    end
+end);
+
+VehicleCamera.onActivate = Utils.prependedFunction(VehicleCamera.onActivate, function(self)
+    self.mod_update_dtSum = 0;
+end);
+
+VehicleCamera.update = Utils.prependedFunction(VehicleCamera.update, function(self, dt)
+    self.mod_update_dtSum = self.mod_update_dtSum + dt
+end);
+
+VehicleCamera.mod_MaxPanFactor = 0.6
+
 VehicleCamera.updateRotateNodeRotation = function(self)
     local rotY = self.rotY;
 
@@ -8,18 +29,39 @@ VehicleCamera.updateRotateNodeRotation = function(self)
     --end
     
     if self.isInside then
-        if self.vehicle.rotatedTime ~= nil then
-            local modifierBackwards = 1
+        if self.vehicle.rotatedTime ~= nil and self.vehicle.rotatedTime ~= 0 then
+            local modifierBackwards = VehicleCamera.mod_MaxPanFactor
+            -- If looking backwards, then switch the panning left/right.
             if (self.origRotY - math.pi/2) >= rotY or rotY >= (self.origRotY + math.pi/2) then
                 modifierBackwards = -modifierBackwards
             end
+
+--[[
+            -- If "going backwards" to the camera direction, then do not pan left/right.
+            if self.vehicle.movingDirection > 0 and modifierBackwards < 0 then
+                -- Attempt to avoid a "sudden reset to center", but instead "ease it to center" at 5% per tick.
+                VehicleCamera.mod_TickModifier = math.max(0, Utils.getNoNil(VehicleCamera.mod_TickModifier,0)) + 0.05
+                modifierBackwards = modifierBackwards * Utils.clamp((1 - VehicleCamera.mod_TickModifier), 0, 1)
+            elseif self.vehicle.movingDirection < 0 and modifierBackwards > 0 then
+                -- Attempt to avoid a "sudden reset to center", but instead "ease it to center" at 5% per tick.
+                VehicleCamera.mod_TickModifier = math.min(0, Utils.getNoNil(VehicleCamera.mod_TickModifier,0)) - 0.05
+                modifierBackwards = modifierBackwards * Utils.clamp((1 + VehicleCamera.mod_TickModifier), 0, 1)
+            end
+--]]
             
-            if self.vehicle.rotatedTime >= 0 then
-                rotY = rotY + (1 - math.cos(self.vehicle.rotatedTime / self.vehicle.maxRotTime)) * modifierBackwards
-                --rotY = rotY + (self.vehicle.rotatedTime / self.vehicle.maxRotTime) * modifierBackwards
+            -- Note: `rotatedTime` is only updated every updateTick() on server, or at every readUpdateStream() on clients.
+            -- However this updateRotateNodeRotation() method is called at every update() - i.e. at every frame.
+            -- Somehow I need to "predict" what `rotatedTime` should actually be, to avoid the camera rotation choppiness.
+            
+            if modifierBackwards == 0 then
+                -- do nothing
             else
-                rotY = rotY - (1 - math.cos(self.vehicle.rotatedTime / self.vehicle.minRotTime)) * modifierBackwards
-                --rotY = rotY - (self.vehicle.rotatedTime / self.vehicle.minRotTime) * modifierBackwards
+                local diffPrevRotatedTime = self.vehicle.rotatedTime - self.vehicle.mod_previous_rotatedTime
+                
+                local rotateTimePredict = diffPrevRotatedTime * (self.mod_update_dtSum / self.mod_updateTick_dt)
+                
+                local rotRad = math.sin((self.vehicle.rotatedTime + rotateTimePredict) / self.vehicle.maxRotTime)
+                rotY = rotY + rotRad * modifierBackwards
             end
         end
     elseif self.rotYSteeringRotSpeed ~= 0 and self.vehicle.rotatedTime ~= nil then
@@ -35,9 +77,19 @@ VehicleCamera.updateRotateNodeRotation = function(self)
         dx = dx*invLen;
         dz = dz*invLen;
 
-        local newDx = math.cos(self.rotX) * (math.cos(rotY)*dx + math.sin(rotY)*dz);
+-- Decker_MMIV >>
+        --local newDx = math.cos(self.rotX) * (math.cos(rotY)*dx + math.sin(rotY)*dz);
+        --local newDy = -math.sin(self.rotX);
+        --local newDz = math.cos(self.rotX) * (-math.sin(rotY)*dx + math.cos(rotY)*dz);
+        
+        local cosX = math.cos(self.rotX)
+        local cosY = math.cos(rotY)
+        local sinY = math.sin(rotY)
+
+        local newDx = cosX * (cosY*dx + sinY*dz);
         local newDy = -math.sin(self.rotX);
-        local newDz = math.cos(self.rotX) * (-math.sin(rotY)*dx + math.cos(rotY)*dz);
+        local newDz = cosX * (-sinY*dx + cosY*dz);
+-- << Decker_MMIV
 
         newDx,newDy,newDz = worldDirectionToLocal(getParent(self.rotateNode), newDx,newDy,newDz);
         upx,upy,upz = worldDirectionToLocal(getParent(self.rotateNode), upx,upy,upz);
