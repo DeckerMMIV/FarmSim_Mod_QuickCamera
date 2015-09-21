@@ -10,15 +10,22 @@ Steerable.updateTick = Utils.prependedFunction(Steerable.updateTick, function(se
     end
 end);
 
+VehicleCamera.update = Utils.prependedFunction(VehicleCamera.update, function(self, dt)
+    self.mod_update_dtSum = self.mod_update_dtSum + dt
+    if self.vehicle.rotatedTime ~= nil and self.vehicle.rotatedTime ~= 0 then
+        self.mod_rotateSumTime = self.mod_rotateSumTime + dt*0.001
+    else
+        self.mod_rotateSumTime = 0
+    end
+end);
+
 VehicleCamera.onActivate = Utils.prependedFunction(VehicleCamera.onActivate, function(self)
+    self.mod_updateTick_dt = 1;
     self.mod_update_dtSum = 0;
 end);
 
-VehicleCamera.update = Utils.prependedFunction(VehicleCamera.update, function(self, dt)
-    self.mod_update_dtSum = self.mod_update_dtSum + dt
-end);
-
 VehicleCamera.mod_MaxPanFactor = 0.6
+local mod_half_pi = math.pi/2
 
 VehicleCamera.updateRotateNodeRotation = function(self)
     local rotY = self.rotY;
@@ -29,13 +36,19 @@ VehicleCamera.updateRotateNodeRotation = function(self)
     --end
     
     if self.isInside then
-        if self.vehicle.rotatedTime ~= nil and self.vehicle.rotatedTime ~= 0 then
+        if self.vehicle.rotatedTime ~= nil then
             local modifierBackwards = VehicleCamera.mod_MaxPanFactor
+--[[
             -- If looking backwards, then switch the panning left/right.
-            if (self.origRotY - math.pi/2) >= rotY or rotY >= (self.origRotY + math.pi/2) then
+            if (self.origRotY - mod_half_pi) >= rotY or rotY >= (self.origRotY + mod_half_pi) then
                 modifierBackwards = -modifierBackwards
             end
-
+--]]
+            -- If looking backwards, then do not pan camera
+            if (self.origRotY - mod_half_pi) >= rotY or rotY >= (self.origRotY + mod_half_pi) then
+                modifierBackwards = 0
+            end
+--
 --[[
             -- If "going backwards" to the camera direction, then do not pan left/right.
             if self.vehicle.movingDirection > 0 and modifierBackwards < 0 then
@@ -60,7 +73,19 @@ VehicleCamera.updateRotateNodeRotation = function(self)
                 
                 local rotateTimePredict = diffPrevRotatedTime * (self.mod_update_dtSum / self.mod_updateTick_dt)
                 
-                local rotRad = math.sin((self.vehicle.rotatedTime + rotateTimePredict) / self.vehicle.maxRotTime)
+                local rotateTime = (self.vehicle.rotatedTime + rotateTimePredict)
+                
+                -- Attempt to avoid that "snapping" that occurs when centering due to rotating-back
+                if (self.vehicle.rotatedTime < 0 and rotateTimePredict > 0 and rotateTime > 0) then
+                    rotateTime = 0
+                elseif (self.vehicle.rotatedTime > 0 and rotateTimePredict < 0 and rotateTime < 0) then
+                    rotateTime = 0
+                end
+                
+                -- Attempt to smooth the initial camera-panning, so it won't be as harsh for small quick adjustments.
+                rotateTime = rotateTime * (1 - math.cos(math.min(self.mod_rotateSumTime, mod_half_pi)))
+                
+                local rotRad = math.sin(rotateTime / self.vehicle.maxRotTime)
                 rotY = rotY + rotRad * modifierBackwards
             end
         end
