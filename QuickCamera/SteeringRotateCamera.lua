@@ -13,7 +13,7 @@ end);
 VehicleCamera.update = Utils.prependedFunction(VehicleCamera.update, function(self, dt)
     self.mod_update_dtSum = self.mod_update_dtSum + dt
     if self.vehicle.rotatedTime ~= nil and self.vehicle.rotatedTime ~= 0 then
-        self.mod_rotateSumTime = self.mod_rotateSumTime + dt*0.001
+        self.mod_rotateSumTime = Utils.getNoNil(self.mod_rotateSumTime,0) + dt*0.001
     else
         self.mod_rotateSumTime = 0
     end
@@ -22,8 +22,10 @@ end);
 VehicleCamera.onActivate = Utils.prependedFunction(VehicleCamera.onActivate, function(self)
     self.mod_updateTick_dt = 1;
     self.mod_update_dtSum = 0;
+    self.mod_rotateSumTime = 0
 end);
 
+VehicleCamera.mod_PanCamera_enabled = true;
 VehicleCamera.mod_MaxPanFactor = 0.6
 local mod_half_pi = math.pi/2
 
@@ -35,7 +37,7 @@ VehicleCamera.updateRotateNodeRotation = function(self)
     --    rotY = rotY + self.vehicle.rotatedTime*self.rotYSteeringRotSpeed;
     --end
     
-    if self.isInside then
+    if self.isInside and VehicleCamera.mod_PanCamera_enabled then
         if self.vehicle.rotatedTime ~= nil then
             local modifierBackwards = VehicleCamera.mod_MaxPanFactor
 --[[
@@ -73,7 +75,8 @@ VehicleCamera.updateRotateNodeRotation = function(self)
                 
                 local rotateTimePredict = diffPrevRotatedTime * (self.mod_update_dtSum / self.mod_updateTick_dt)
                 
-                local rotateTime = (self.vehicle.rotatedTime + rotateTimePredict)
+                --local rotateTime = (self.vehicle.rotatedTime + rotateTimePredict)
+                local rotateTime = (self.vehicle.mod_previous_rotatedTime + rotateTimePredict)
                 
                 -- Attempt to avoid that "snapping" that occurs when centering due to rotating-back
                 if (self.vehicle.rotatedTime < 0 and rotateTimePredict > 0 and rotateTime > 0) then
