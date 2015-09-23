@@ -20,6 +20,7 @@ VehicleCamera.update = Utils.prependedFunction(VehicleCamera.update, function(se
 end);
 
 VehicleCamera.onActivate = Utils.prependedFunction(VehicleCamera.onActivate, function(self)
+    self.vehicle.mod_previous_rotatedTime = self.vehicle.rotatedTime -- Fix for when 1st camera is the 'isInside'.
     self.mod_updateTick_dt = 1;
     self.mod_update_dtSum = 0;
     self.mod_rotateSumTime = 0
