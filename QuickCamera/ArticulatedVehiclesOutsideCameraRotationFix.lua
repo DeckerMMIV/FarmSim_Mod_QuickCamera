@@ -1,3 +1,9 @@
+--
+-- QuickCamera sub-component: 'Outside camera' rotation-fix for articulated wheelloaders.
+--
+-- @author  Decker_MMIV - fs-uk.com, forum.farming-simulator.com, modhoster.com
+-- @date    2015-September
+--
 
 Steerable.postLoad = Utils.appendedFunction(Steerable.postLoad, function(self, xmlFile)
     local applyFix = false;
