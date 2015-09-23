@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<l10n>
+    <description>
+<![CDATA[Используется для быстрого управления камерой;
+вращение на 45-градусов влево/вправо, посмотреть вперед/назад или приблизит/отдалить.
+Decker_MMIV - fs-uk.com, forum.farming-simulator.com, modhoster.com]]>
+    </description>
+
+    <texts>
+        <text name="QuickCamRight"          text="QuickCamera: Посмотреть на 45&#176; вправо"     />
+        <text name="QuickCamLeft"           text="QuickCamera: Посмотреть на 45&#176; влево"      />
+        <text name="QuickCamForward"        text="QuickCamera: Посмотреть вперед"            />
+        <text name="QuickCamBackward"       text="QuickCamera: Посмотреть назад"           />
+        <text name="QuickCamForBack"        text="QuickCamera: Смена взгляда перед/зад"    />
+        <text name="QuickCamZoomIn"         text="QuickCamera: Приблизить"                 />
+        <text name="QuickCamZoomOut"        text="QuickCamera: Отдалить"                />
+        <text name="QuickCamToggleReset"    text="QuickCamera: Автосброс камеры"       />
+        <text name="QuickCamLockCustom"     text="QuickCamera: Установить новую основную камеру"    />
+    </texts>
+</l10n>
