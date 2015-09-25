@@ -50,7 +50,7 @@ VehicleCamera.updateRotateNodeRotation = function(self)
     --    rotY = rotY + self.vehicle.rotatedTime*self.rotYSteeringRotSpeed;
     --end
     
-    if self.isInside and VehicleCamera.modQC_PanCamera_enabled then
+    if self.isInside and self.vehicle.steeringEnabled and VehicleCamera.modQC_PanCamera_enabled then
         if self.vehicle.rotatedTime ~= nil then
             if (self.origRotY - mod_half_pi) >= rotY or rotY >= (self.origRotY + mod_half_pi) then
                 -- When looking backwards, then do not pan camera

@@ -64,6 +64,30 @@ QuickCamera.forceResetCamera = false;
 QuickCamera.enableAutoResetCamera = false;
 QuickCamera.useWorldXZRotation = false;
 
+local math_pi_double  = math.pi*2
+local math_pi_half    = math.pi/2
+local math_pi_quarter = math.pi/4
+
+
+function QuickCamera.postLoad(self, xmlFile)
+    if not QuickCamera.constantsLoaded then
+        QuickCamera.constantsLoaded = true
+        if ModsSettings == nil then
+            print("Optional 'ModsSettings'-mod not found. Using builtin values for QuickCamera.")
+        else
+            local modName = "QuickCamera";
+            --
+            local keyName = "cabinCameraPanning";
+            VehicleCamera.modQC_PanCamera_enabled = ModsSettings.getBoolLocal( modName ,keyName ,"enabled" ,VehicleCamera.modQC_PanCamera_enabled)
+            VehicleCamera.modQC_PanCamera_factor  = ModsSettings.getFloatLocal(modName ,keyName ,"factor"  ,VehicleCamera.modQC_PanCamera_factor )
+            --
+            keyName = "quickTapKeys";
+            QuickCamera.quickRotateKeyTapMaxTimeMs = ModsSettings.getIntLocal(modName ,keyName ,"maxTimeMs"    ,QuickCamera.quickRotateKeyTapMaxTimeMs)
+            QuickCamera.quickZoomDistance          = ModsSettings.getIntLocal(modName ,keyName ,"zoomDistance" ,QuickCamera.quickZoomDistance         )
+        end
+    end
+end
+
 function QuickCamera.update(self, superFunc, dt)
     -- TRICK: Do not allow Steerable:update() to switch camera. 
     -- This could break other mods that tests against InputBinding.CAMERA_SWITCH, but I know of none yet.
@@ -173,11 +197,11 @@ function QuickCamera.update(self, superFunc, dt)
             if quickCamEvent ~= nil then
 --print("QuickCamEvent="..tostring(quickCamEvent));
               --
-              local forwardArch = { self.cameras[self.camIndex].origRotY - math.pi/2, self.cameras[self.camIndex].origRotY + math.pi/2 }
+              local forwardArch = { self.cameras[self.camIndex].origRotY - math_pi_half, self.cameras[self.camIndex].origRotY + math_pi_half }
               --
               local rotY = self.cameras[self.camIndex].rotY;
-              while (rotY < -math.pi*2) do rotY = rotY + math.pi*2; end
-              while (rotY >  math.pi*2) do rotY = rotY - math.pi*2; end
+              while (rotY < -math_pi_double) do rotY = rotY + math_pi_double; end
+              while (rotY >  math_pi_double) do rotY = rotY - math_pi_double; end
               --
               if (quickCamEvent == InputBinding.QuickCamBackward or (quickCamEvent == InputBinding.QuickCamForBack and (forwardArch[1] < rotY and rotY < forwardArch[2]))) then
                 -- Look back
@@ -192,15 +216,15 @@ function QuickCamera.update(self, superFunc, dt)
                 self.qc.CamIndex = self.camIndex;
                 self.qc.CamTime = 250; -- milliseconds
                 
-                while ((rotY + math.pi*2) < forwardArch[1]) do rotY = rotY + math.pi*2; end
-                while ((rotY - math.pi*2) > forwardArch[2]) do rotY = rotY - math.pi*2; end
+                while ((rotY + math_pi_double) < forwardArch[1]) do rotY = rotY + math_pi_double; end
+                while ((rotY - math_pi_double) > forwardArch[2]) do rotY = rotY - math_pi_double; end
                 
                 self.qc.CamSourceRot = {self.cameras[self.camIndex].rotX, rotY};
                 self.qc.CamTargetRot = {self.cameras[self.camIndex].origRotX, self.cameras[self.camIndex].origRotY};
               elseif (quickCamEvent == InputBinding.QuickCamLeft or quickCamEvent == InputBinding.QuickCamRight) then
-                local dirY = math.pi/4; -- rotate left
+                local dirY = math_pi_quarter; -- rotate left
                 if (quickCamEvent == InputBinding.QuickCamRight) then
-                    dirY = -math.pi/4; -- rotate right
+                    dirY = -math_pi_quarter; -- rotate right
                 end;
                 
                 self.qc = {};
@@ -257,12 +281,9 @@ function QuickCamera.changeToCamera(self, newCameraIndex)
         self.cameras[self.camIndex]:onActivate();
         
         -- FS15, enable/disable mirrors depending on camera's settings.
-        if self.mirrors ~= nil then
-            local mirrorEnabled = self.mirrorAvailable and self.cameras[self.camIndex].useMirror;
-            for _,mirrorNode in pairs(self.mirrors) do
-                setVisibility(mirrorNode, mirrorEnabled)
-            end
-        end
+        if self.setMirrorVisible ~= nil and self.mirrorAvailable == true then
+            self:setMirrorVisible(self.cameras[self.camIndex].useMirror == true)
+        end;
     end
 end
 
@@ -286,6 +307,7 @@ function QuickCamera.resetCamera(self, superFunc)
 end;
 
 
+Steerable.postLoad        = Utils.appendedFunction(Steerable.postLoad, QuickCamera.postLoad);
 Steerable.update          = Utils.overwrittenFunction(Steerable.update, QuickCamera.update);
 Steerable.onEnter         = Utils.overwrittenFunction(Steerable.onEnter, QuickCamera.onEnter);
 VehicleCamera.resetCamera = Utils.overwrittenFunction(VehicleCamera.resetCamera, QuickCamera.resetCamera);
