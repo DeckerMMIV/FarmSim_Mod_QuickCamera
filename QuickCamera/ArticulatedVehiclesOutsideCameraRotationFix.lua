@@ -14,6 +14,11 @@ Steerable.postLoad = Utils.appendedFunction(Steerable.postLoad, function(self, x
         then
             applyFix = true
         end
+    elseif self.customEnvironment == "FS15_newHollandLoaderPack" then
+        if Utils.endsWith(self.configFileName, "/FS15_newHollandLoaderPack/newHolland/newHollandW170C.xml")      -- Wheelloader
+        then
+            applyFix = true
+        end
     else
         if Utils.endsWith(self.configFileName, "/steerable/liebherr/liebherrL538.xml")      -- Wheelloader
         then

@@ -11,8 +11,15 @@ VehicleCamera.modQC_PanCamera_factor  = 0.6
 
 --
 
+function adjustForDeadZone(value)
+    if math.abs(value) < 0.02 then
+        return 0
+    end
+    return value
+end
+
 Drivable.updateVehiclePhysics = Utils.prependedFunction(Drivable.updateVehiclePhysics, function(self)
-    self.modQC_previous_rotatedTime = self.rotatedTime
+    self.modQC_previous_rotatedTime = adjustForDeadZone(self.rotatedTime)
 end);
 
 Steerable.updateTick = Utils.prependedFunction(Steerable.updateTick, function(self, dt)
@@ -32,7 +39,7 @@ VehicleCamera.update = Utils.prependedFunction(VehicleCamera.update, function(se
 end);
 
 VehicleCamera.onActivate = Utils.prependedFunction(VehicleCamera.onActivate, function(self)
-    self.vehicle.modQC_previous_rotatedTime = self.vehicle.rotatedTime -- Fix for when 1st camera is the 'isInside'.
+    self.vehicle.modQC_previous_rotatedTime = adjustForDeadZone(self.vehicle.rotatedTime) -- Fix for when 1st camera is the 'isInside'.
     self.vehicle.modQC_updateTick_dt = 1;
     self.vehicle.modQC_update_dtSum = 0;
     self.vehicle.modQC_rotateSumTime = 0
@@ -60,7 +67,7 @@ VehicleCamera.updateRotateNodeRotation = function(self)
                 -- Observed that "predicting" the future value of `rotatedTime` caused "snapping" when using analog steering-wheel, 
                 -- so the algorithm it now changed to instead calculate it as; "from previous value bringing it up to the present value".
                 
-                local diffPrevRotatedTime = self.vehicle.rotatedTime - self.vehicle.modQC_previous_rotatedTime
+                local diffPrevRotatedTime = adjustForDeadZone(self.vehicle.rotatedTime) - self.vehicle.modQC_previous_rotatedTime
                 local rotateTimePredict = diffPrevRotatedTime * (self.vehicle.modQC_update_dtSum / self.vehicle.modQC_updateTick_dt)
                 local rotateTime = (self.vehicle.modQC_previous_rotatedTime + rotateTimePredict)
                 
