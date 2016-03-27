@@ -8,33 +8,6 @@
 -- @notes
 --          A special "thank you" to Templaer and his 'Camera' mod, from which I got inspiration to make this QuickCamera mod.
 --
--- @history
---      v0.9(beta)  - Public version.
---      v0.91(beta) - Added custom input-bindings; QuickCam...
---      v0.92(beta) - Removed testing for analog input-axis, as it apparently causes problems
---                    using gamepads where look left/right is assigned to analog-stick. (Thank you Napalm)
---                  - Not using axis-bindings; AXIS_LOOK_UPDOWN_VEHICLE and AXIS_LOOK_LEFTRIGHT_VEHICLE.
---                    Instead provided new custom ones only for QuickCam, that must be assigned in Options->Control
---      v0.93(beta) - Added "smooth/progressive" quick-rotation, though there's still a bug where it will revolve 181+ degrees,
---                    instead of just negative 179+ degrees. Its some math that I havent quite figured out how to solve.
---  2012-November
---      v0.94       - Converted to FS2013
---                  - Removed digital-axis tests, as they were not used anyway (well I was not using them).
---  2013-June
---      v0.95       - Disabled the normal reset of camera position, when switching camera.
---                  - To reset camera, press-and-hold the CAMERA_SWITCH action-key.
---  2013-July
---      v0.96       - Remember last selected camera for vehicle.
---                  - Added option to enable/disable the "Reset of camera position". (default key LEFT ALT K)
---  2013-October
---      v0.97       - Fix for not being able to 'look back', in some mod-vehicles due to they had a "rotated camera".
---  2013-November
---      v0.98       - Ability to toggle useWorldXZRotation for selected camera.
---  2014-November
---      v2.0.0      - Upgraded to FS15
---      v2.1.0      - Fix for mirrors, enable/disable depending on camera properties.
---      v2.1.1      - Added functionality to "keep new forward-camera's rotation" (default key: LEFT ALT + J)
---
 
 --[[
 Suggestions
@@ -103,7 +76,18 @@ function QuickCamera.update(self, superFunc, dt)
     --      press-and-release(less than 500ms) -> switch camera
     --      press-and-hold(more than 500ms)    -> reset current camera
     if InputBinding.isPressed(InputBinding.CAMERA_SWITCH) then
-        if self.isEntered and self.isClient and self:getIsActiveForInput(false) then
+        -- Credits to jules.stmp537 for finding a solution to the "can not switch camera when hired worker is active"-bug
+        -- http://steamcommunity.com/app/313160/discussions/0/385429125019719706/?tscn=1459083354#c385429254942580814
+        local activeForInput = true;
+        if g_gui.currentGui ~= nil or g_currentMission.isPlayerFrozen then
+            activeForInput = false;
+        end;
+        
+        if  activeForInput
+        and self.isEntered 
+        and self.isClient 
+        --and self:getIsActiveForInput(false)   -- Can not use this, as it returns false when 'self.isHired==true'.
+        then
             if self.qcPressKeyTime == nil then
                 -- Press-key begun
                 self.qcPressKeyTime = g_currentMission.time;
@@ -130,7 +114,7 @@ function QuickCamera.update(self, superFunc, dt)
     end
 
     -- QuickCamera actions...
-    if self.isEntered and self:getIsActive() then
+    if self:getIsActive() then
         --    
         if InputBinding.hasEvent(InputBinding.QuickCamToggleReset, true) then
             QuickCamera.enableAutoResetCamera = not QuickCamera.enableAutoResetCamera;

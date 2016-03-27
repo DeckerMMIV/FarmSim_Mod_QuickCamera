@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="23">
+<modDesc descVersion="25">
     <author>Decker_MMIV</author>
-    <version>2.2.2</version>
-    <contributors>DLH007, _dj_, Gonimy-Vetrom</contributors>
+    <version>2.3.0</version>
+    <contributors>DLH007, _dj_, Gonimy-Vetrom, jules.stmp537</contributors>
     
     <title>
         <en>QuickCamera</en>
