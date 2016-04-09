@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <l10n>
+    <!-- Add your own name or nickname here, when you contribute to this file's translation, so I know who to put into the credits. -->
+    <translationContributors>
+        xno
+    </translationContributors>
+
+    <!-- Note that 'description' is only here for easier translations. It needs to be manually copied to ModDesc.XML later. -->
     <description>
-<![CDATA[Usa per puntare velocemente la telecamera sul veicolo;
-ruota 45-gradi destra/sinistra, guarda avanti/indiestro oppure zoom in/out.
-
-
-Decker_MMIV - fs-uk.com, forum.farming-simulator.com, modhoster.com]]>
+        Usa per puntare velocemente la telecamera sul veicolo;
+        ruota 45-gradi destra/sinistra, guarda avanti/indiestro oppure zoom in/out.
     </description>
 
     <texts>

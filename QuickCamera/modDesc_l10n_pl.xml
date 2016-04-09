@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <l10n>
+    <!-- Add your own name or nickname here, when you contribute to this file's translation, so I know who to put into the credits. -->
+    <translationContributors>
+        Ziuta
+    </translationContributors>
+
+    <!-- Note that 'description' is only here for easier translations. It needs to be manually copied to ModDesc.XML later. -->
     <description>
-<![CDATA[Służy do szybkiego operowania kamera pojazdu.
-Obrót 45° w lewo/prawo, spoglądanie w przód/tył lub przybliżanie/oddalanie.
-
-
-Decker_MMIV - fs-uk.com, forum.farming-simulator.com, modhoster.com]]>
+        Służy do szybkiego operowania kamera pojazdu.
+        Obrót 45° w lewo/prawo, spoglądanie w przód/tył lub przybliżanie/oddalanie.
     </description>
 
     <texts>

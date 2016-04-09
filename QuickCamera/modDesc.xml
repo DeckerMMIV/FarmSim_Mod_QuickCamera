@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <modDesc descVersion="25">
     <author>Decker_MMIV</author>
-    <version>2.3.0</version>
-    <contributors>DLH007, _dj_, Gonimy-Vetrom, jules.stmp537</contributors>
+    <version>2.3.1</version>
+    <contributors>DLH007, _dj_, Gonimy-Vetrom, jules.stmp537, Ziuta, xno</contributors>
     
     <title>
         <en>QuickCamera</en>
@@ -36,12 +36,11 @@ Decker_MMIV - fs-uk.com, forum.farming-simulator.com, modhoster.com]]>
 <![CDATA[Usa per puntare velocemente la telecamera sul veicolo;
 ruota 45-gradi destra/sinistra, guarda avanti/indiestro oppure zoom in/out.
 
-
 Decker_MMIV - fs-uk.com, forum.farming-simulator.com, modhoster.com]]>
         </it>
         <pl>
-<![CDATA[Uzyj, aby szybko miec aparat pojazdu;
-obrócic 45-stopni w lewo/w prawo, spojrzec do przodu/do tylu lub zoom in/out.
+<![CDATA[Służy do szybkiego operowania kamera pojazdu.
+Obrót 45° w lewo/prawo, spoglądanie w przód/tył lub przybliżanie/oddalanie.
 
 Decker_MMIV - fs-uk.com, forum.farming-simulator.com, modhoster.com]]>
         </pl>
