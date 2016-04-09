@@ -14,6 +14,8 @@
     <texts>
         <text name="QuickCamRight"          text="QuickCamera: Spójrz 45&#176; w prawo" />
         <text name="QuickCamLeft"           text="QuickCamera: Spójrz 45&#176; w lewo" />
+        <text name="QuickCamRight2"         text="QuickCamera: Spójrz 90&#176; w prawo" />
+        <text name="QuickCamLeft2"          text="QuickCamera: Spójrz 90&#176; w lewo" />
         <text name="QuickCamForward"        text="QuickCamera: Spójrz w przód" />
         <text name="QuickCamBackward"       text="QuickCamera: Spójrz wstecz" />
         <text name="QuickCamForBack"        text="QuickCamera: Zmiana widoku przód/tył" />

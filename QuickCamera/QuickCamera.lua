@@ -175,6 +175,8 @@ function QuickCamera.update(self, superFunc, dt)
                 elseif InputBinding.hasEvent(InputBinding.QuickCamBackward) then self.qcQuickTapType = InputBinding.QuickCamBackward;   self.qcPressedTime = g_currentMission.time;
                 elseif InputBinding.hasEvent(InputBinding.QuickCamLeft)     then self.qcQuickTapType = InputBinding.QuickCamLeft;       self.qcPressedTime = g_currentMission.time;
                 elseif InputBinding.hasEvent(InputBinding.QuickCamRight)    then self.qcQuickTapType = InputBinding.QuickCamRight;      self.qcPressedTime = g_currentMission.time;
+                elseif InputBinding.hasEvent(InputBinding.QuickCamLeft2)    then self.qcQuickTapType = InputBinding.QuickCamLeft2;      self.qcPressedTime = g_currentMission.time;
+                elseif InputBinding.hasEvent(InputBinding.QuickCamRight2)   then self.qcQuickTapType = InputBinding.QuickCamRight2;     self.qcPressedTime = g_currentMission.time;
                 end; 
             end;
             --
@@ -205,10 +207,21 @@ function QuickCamera.update(self, superFunc, dt)
                 
                 self.qc.CamSourceRot = {self.cameras[self.camIndex].rotX, rotY};
                 self.qc.CamTargetRot = {self.cameras[self.camIndex].origRotX, self.cameras[self.camIndex].origRotY};
-              elseif (quickCamEvent == InputBinding.QuickCamLeft or quickCamEvent == InputBinding.QuickCamRight) then
+              elseif quickCamEvent == InputBinding.QuickCamLeft 
+                  or quickCamEvent == InputBinding.QuickCamRight
+                  or quickCamEvent == InputBinding.QuickCamLeft2
+                  or quickCamEvent == InputBinding.QuickCamRight2
+              then
                 local dirY = math_pi_quarter; -- rotate left
+                local angleSnap = 45
                 if (quickCamEvent == InputBinding.QuickCamRight) then
                     dirY = -math_pi_quarter; -- rotate right
+                elseif (quickCamEvent == InputBinding.QuickCamLeft2) then
+                    dirY = math_pi_half; -- rotate left
+                    angleSnap = 90
+                elseif (quickCamEvent == InputBinding.QuickCamRight2) then
+                    dirY = -math_pi_half; -- rotate right
+                    angleSnap = 90
                 end;
                 
                 self.qc = {};
@@ -218,7 +231,8 @@ function QuickCamera.update(self, superFunc, dt)
                 
                 ---- Quick-rotate and snap to nearest 45-degree angle.
                 rotY = rotY + dirY; -- rotate
-                rotY = Utils.degToRad(45 * math.floor((math.deg(rotY) + 22.5)/45)); -- snap
+                --rotY = Utils.degToRad(45 * math.floor((math.deg(rotY) + 22.5)/45)); -- snap
+                rotY = Utils.degToRad(angleSnap * math.floor((math.deg(rotY) + (angleSnap/2))/angleSnap)); -- snap
                 
                 self.qc.CamTargetRot = {self.cameras[self.camIndex].rotX, rotY};
               end;

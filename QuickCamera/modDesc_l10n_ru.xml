@@ -13,6 +13,8 @@
     <texts>
         <text name="QuickCamRight"          text="QuickCamera: Посмотреть на 45&#176; вправо"     />
         <text name="QuickCamLeft"           text="QuickCamera: Посмотреть на 45&#176; влево"      />
+        <text name="QuickCamRight2"         text="QuickCamera: Посмотреть на 90&#176; вправо"     />
+        <text name="QuickCamLeft2"          text="QuickCamera: Посмотреть на 90&#176; влево"      />
         <text name="QuickCamForward"        text="QuickCamera: Посмотреть вперед"            />
         <text name="QuickCamBackward"       text="QuickCamera: Посмотреть назад"           />
         <text name="QuickCamForBack"        text="QuickCamera: Смена взгляда перед/зад"    />
