@@ -8,8 +8,8 @@ To read more about this mod, find it on http://fs-uk.com - http://fs-uk.com/mods
 
 2.4.0
 - Added controls for allowing 90-degree left/right camera rotation.
--- These are NOT binded to any default-keys, so remember to check your game Options->Controls.
--- Suggested by dertien due to using TrackIR. And it seemed to be an easy addition to the code.
+ - These are NOT binded to any default-keys, so remember to check your game Options->Controls.
+ - Suggested by dertien due to using TrackIR. And it seemed to be an easy addition to the code.
 
 2.3.1
 - Polish translation updated/fixed by Ziuta
