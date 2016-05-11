@@ -45,9 +45,8 @@ local math_pi_quarter = math.pi/4
 function QuickCamera.postLoad(self, xmlFile)
     if not QuickCamera.constantsLoaded then
         QuickCamera.constantsLoaded = true
-        if ModsSettings == nil then
-            print("Optional 'ModsSettings'-mod not found. Using builtin values for QuickCamera.")
-        else
+
+        if self.isClient and ModsSettings ~= nil and ModsSettings.isVersion("0.2.0", "QuickCamera") then
             local modName = "QuickCamera";
             --
             local keyName = "cabinCameraPanning";
