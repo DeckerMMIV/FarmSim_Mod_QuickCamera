@@ -1,7 +1,9 @@
-[b]QuickCamera (v2.5.0)[/b]
+[b]QuickCamera (v2.5.1)[/b]
 
 
 [b][u]Changelog[/u][/b]
+2.5.1
+- Bug-fix.
 2.5.0
 - Using 'ModsSettings'-mod for possible additional player-custom fixes for outside camera rotation of articulated vehicles.
 2.4.1
@@ -37,7 +39,7 @@ When switching back and forth between vehicles, the last selected camera and its
 
 This option can be toggled off/on using the 'QuickCam:Toggle auto-reset' action (default LEFT-ALT K), if you want to revert back to normal.
 
-Remember though that these positions/directions are not saved between game-sessions.
+Note: These positions/directions are unfortunately NOT saved between game-sessions.
 
 [u]Default action/key assignments[/u]:
 
@@ -57,12 +59,12 @@ Remember though that these positions/directions are not saved between game-sessi
 Whoever at GIANTS Software that decided the outside camera on articulated vehicles should rotate to the opposite direction of the steering, have probably never spend much time in-game with it.
 
 So this mod also adds some fixes for the following articulated vehicles:
-- Liebherr L538 (wheel loader)
-- New Holland W170C (wheel loader, New Holland DLC pack)
-- JCB 435S (wheel loader, JCB DLC pack)
-- JCB TM320S (telehandler, JCB DLC pack)
+- Liebherr L538
+- New Holland W170C (New Holland DLC pack)
+- JCB 435S (JCB DLC pack)
+- JCB TM320S (JCB DLC pack)
 
-Additional vehicles can be added, if using the 'ModsSettings'-mod.
+Additional/other vehicles' outside camera rotation can also be "fixed", if using the 'ModsSettings'-mod.
 
 
 [b][u]Restrictions[/u][/b]

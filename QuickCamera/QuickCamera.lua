@@ -46,7 +46,11 @@ function QuickCamera.postLoad(self, xmlFile)
     if not QuickCamera.constantsLoaded then
         QuickCamera.constantsLoaded = true
 
-        if self.isClient and ModsSettings ~= nil and ModsSettings.isVersion("0.2.0", "QuickCamera") then
+        if  self.isClient 
+        and ModsSettings ~= nil 
+        and ModsSettings.isVersion ~= nil 
+        and ModsSettings.isVersion("0.2.0", "QuickCamera")
+        then
             local modName = "QuickCamera";
             --
             local keyName = "cabinCameraPanning";

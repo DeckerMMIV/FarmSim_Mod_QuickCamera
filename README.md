@@ -6,6 +6,9 @@ To read more about this mod, find it on;
 
 ## Change-log
 
+2.5.1
+- Bug-fix.
+
 2.5.0
 - Using 'ModsSettings'-mod for possible additional player-custom fixes for outside camera rotation of articulated vehicles.
 

@@ -30,7 +30,10 @@ Steerable.postLoad = Utils.appendedFunction(Steerable.postLoad, function(self, x
         end
     end
 
-    if ModsSettings ~= nil and ModsSettings.isVersion("0.2.0", "QuickCamera") then
+    if  ModsSettings ~= nil 
+    and ModsSettings.isVersion ~= nil 
+    and ModsSettings.isVersion("0.2.0", "QuickCamera")
+    then
         local modName = "QuickCamera"
         local keyName = "outsideCameraFix"
         
