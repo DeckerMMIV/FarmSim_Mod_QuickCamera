@@ -33,6 +33,9 @@ QuickCamera.version = (modItem and modItem.version) and modItem.version or "?.?.
 QuickCamera.quickRotateKeyTapMaxTimeMs  = 150;
 QuickCamera.quickZoomDistance           = 15;
 --
+QuickCamera.panCamera_enabled = false
+QuickCamera.panCamera_factor  = 0.6
+--
 QuickCamera.forceResetCamera = false;
 QuickCamera.enableAutoResetCamera = false;
 QuickCamera.useWorldXZRotation = false;
@@ -54,8 +57,8 @@ function QuickCamera.postLoad(self, xmlFile)
             local modName = "QuickCamera";
             --
             local keyName = "cabinCameraPanning";
-            VehicleCamera.modQC_PanCamera_enabled = ModsSettings.getBoolLocal( modName ,keyName ,"enabled" ,VehicleCamera.modQC_PanCamera_enabled)
-            VehicleCamera.modQC_PanCamera_factor  = ModsSettings.getFloatLocal(modName ,keyName ,"factor"  ,VehicleCamera.modQC_PanCamera_factor )
+            QuickCamera.panCamera_enabled = ModsSettings.getBoolLocal( modName ,keyName ,"enabled" ,QuickCamera.panCamera_enabled)
+            QuickCamera.panCamera_factor  = ModsSettings.getFloatLocal(modName ,keyName ,"factor"  ,QuickCamera.panCamera_factor )
             --
             keyName = "quickTapKeys";
             QuickCamera.quickRotateKeyTapMaxTimeMs = ModsSettings.getIntLocal(modName ,keyName ,"maxTimeMs"    ,QuickCamera.quickRotateKeyTapMaxTimeMs)
@@ -69,16 +72,13 @@ function QuickCamera.update(self, superFunc, dt)
     -- This could break other mods that tests against InputBinding.CAMERA_SWITCH, but I know of none yet.
     local hasEvent = InputBinding.actions[InputBinding.CAMERA_SWITCH].hasEvent;
     InputBinding.actions[InputBinding.CAMERA_SWITCH].hasEvent = false;
-    
     -- Execute the normal Steerable:update()
     superFunc(self, dt);
-
     --
     InputBinding.actions[InputBinding.CAMERA_SWITCH].hasEvent = hasEvent;
-    
-    local activeForInput = self.isEntered and self.isClient and g_gui.currentGui == nil and (not g_currentMission.isPlayerFrozen)
-    
-    if not activeForInput then
+
+    --
+    if not (self.isEntered and self.isClient and (not g_currentMission.isPlayerFrozen) and g_gui.currentGui == nil) then
         -- Player not in vehicle, or not active for input.
         self.qcPressKeyTime = nil;
     else
@@ -86,34 +86,18 @@ function QuickCamera.update(self, superFunc, dt)
         --      press-and-release(less than 500ms) -> switch camera
         --      press-and-hold(more than 500ms)    -> reset current camera
         if InputBinding.isPressed(InputBinding.CAMERA_SWITCH) then
-            ---- Credits to jules.stmp537 for finding a solution to the "can not switch camera when hired worker is active"-bug
-            ---- http://steamcommunity.com/app/313160/discussions/0/385429125019719706/?tscn=1459083354#c385429254942580814
-            --local activeForInput = true;
-            --if g_gui.currentGui ~= nil or g_currentMission.isPlayerFrozen then
-            --    activeForInput = false;
-            --end;
-            --
-            --if  activeForInput
-            --and self.isEntered 
-            --and self.isClient 
-            ----and self:getIsActiveForInput(false)   -- Can not use this, as it returns false when 'self.isHired==true'.
-            --then
-                if self.qcPressKeyTime == nil then
-                    -- Press-key begun
-                    self.qcPressKeyTime = g_currentMission.time;
-                elseif (g_currentMission.time - self.qcPressKeyTime) > 500 then
-                    -- Press-and-hold -> Reset current camera
-                    self.qcPressKeyTime = g_currentMission.time + 1000*60*60*24; -- 24 hours.
-                    QuickCamera.forceResetCamera = true;
-                    self.cameras[self.camIndex]:resetCamera();
-                    --
-                    self.cameras[self.camIndex].useWorldXZRotation = not self.cameras[self.camIndex].useWorldXZRotation;
-                    print(("QuickCamera: For camera-index #%d toggled 'useWorldXZRotation' to: %s"):format(self.camIndex, self.cameras[self.camIndex].useWorldXZRotation))
-                end
-            --else
-            --    -- Player not in vehicle, or not active for input.
-            --    self.qcPressKeyTime = nil;
-            --end
+            if self.qcPressKeyTime == nil then
+                -- Press-key begun
+                self.qcPressKeyTime = g_currentMission.time;
+            elseif (g_currentMission.time - self.qcPressKeyTime) > 500 then
+                -- Press-and-hold -> Reset current camera
+                self.qcPressKeyTime = g_currentMission.time + 1000*60*60*24; -- 24 hours.
+                QuickCamera.forceResetCamera = true;
+                self.cameras[self.camIndex]:resetCamera();
+                --
+                self.cameras[self.camIndex].useWorldXZRotation = not self.cameras[self.camIndex].useWorldXZRotation;
+                print(("QuickCamera: For camera-index #%d toggled 'useWorldXZRotation' to: %s"):format(self.camIndex, self.cameras[self.camIndex].useWorldXZRotation))
+            end
         elseif self.qcPressKeyTime ~= nil then
             local keyDelay = g_currentMission.time - self.qcPressKeyTime;
             self.qcPressKeyTime = nil;
@@ -123,9 +107,7 @@ function QuickCamera.update(self, superFunc, dt)
             end
         end
 
-    -- QuickCamera actions...
-    --if self:getIsActive() then
-        --    
+        --
         if InputBinding.hasEvent(InputBinding.QuickCamToggleReset, true) then
             QuickCamera.enableAutoResetCamera = not QuickCamera.enableAutoResetCamera;
             QuickCamera.forceResetCamera = QuickCamera.enableAutoResetCamera;

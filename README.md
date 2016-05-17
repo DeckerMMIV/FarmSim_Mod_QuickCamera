@@ -2,15 +2,19 @@
 
 To read more about this mod, find it on;
 - http://fs-uk.com - http://fs-uk.com/mods/list/team/45
-- http://modcentral.co.uk - http://modcentral.co.uk/forum/index.php?resources/authors/decker_mmiv.18/
+- http://modcentral.co.uk - http://modcentral.co.uk/resources/authors/decker_mmiv.18/
 
 ## Change-log
+
+2.6.0
+- Minor code cleanup
 
 2.5.1
 - Bug-fix.
 
 2.5.0
-- Using 'ModsSettings'-mod for possible additional player-custom fixes for outside camera rotation of articulated vehicles.
+- Optionally using 'ModsSettings'-mod for possible additional player-custom fixes for outside camera rotation of articulated vehicles.
+  - Must be at least version 0.2.0 of 'ModsSettings'-mod.
 
 2.4.2
 - Misc. minor description changes

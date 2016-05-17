@@ -19,7 +19,7 @@ Steerable.postLoad = Utils.appendedFunction(Steerable.postLoad, function(self, x
             newYRotSpeed = 0.8
         end
     elseif self.customEnvironment == "FS15_newHollandLoaderPack" then
-        if Utils.endsWith(self.configFileName, "/FS15_newHollandLoaderPack/newHolland/newHollandW170C.xml")      -- Wheelloader
+        if Utils.endsWith(self.configFileName, "/newHolland/newHollandW170C.xml")      -- Wheelloader
         then
             newYRotSpeed = 0.8
         end
@@ -42,9 +42,25 @@ Steerable.postLoad = Utils.appendedFunction(Steerable.postLoad, function(self, x
             i=i+1
             local tag = ("%s(%d)"):format(keyName, i)
             if not ModsSettings.hasKeyLocal(modName, tag) then
-                if i == 1 then
-                    ModsSettings.setStringLocal(modName, tag, "customEnvironment", "examplePack")
-                    ModsSettings.setStringLocal(modName, tag, "fileNameEndsWith", "/exampleFolder/exampleVehicle.xml")
+                if i == 0 then
+                    tag = ("%s(%d)"):format(keyName, 0)
+                    --ModsSettings.setStringLocal(modName, tag, "customEnvironment", nil)
+                    ModsSettings.setStringLocal(modName, tag, "fileNameEndsWith", "/steerable/liebherr/liebherrL538.xml")
+                    ModsSettings.setFloatLocal( modName, tag, "rotYSteeringRotSpeed", 0.8)
+                    --
+                    tag = ("%s(%d)"):format(keyName, 1)
+                    ModsSettings.setStringLocal(modName, tag, "customEnvironment", "FS15_newHollandLoaderPack")
+                    ModsSettings.setStringLocal(modName, tag, "fileNameEndsWith", "/newHolland/newHollandW170C.xml")
+                    ModsSettings.setFloatLocal( modName, tag, "rotYSteeringRotSpeed", 0.8)
+                    --
+                    tag = ("%s(%d)"):format(keyName, 2)
+                    ModsSettings.setStringLocal(modName, tag, "customEnvironment", "pdlc_jcbPack")
+                    ModsSettings.setStringLocal(modName, tag, "fileNameEndsWith", "/jcbPack/jcb/jcb435s.xml")
+                    ModsSettings.setFloatLocal( modName, tag, "rotYSteeringRotSpeed", 0.8)
+                    --
+                    tag = ("%s(%d)"):format(keyName, 3)
+                    ModsSettings.setStringLocal(modName, tag, "customEnvironment", "pdlc_jcbPack")
+                    ModsSettings.setStringLocal(modName, tag, "fileNameEndsWith", "/jcbPack/jcb/jcbTM320s.xml")
                     ModsSettings.setFloatLocal( modName, tag, "rotYSteeringRotSpeed", 0.8)
                 end
                 break

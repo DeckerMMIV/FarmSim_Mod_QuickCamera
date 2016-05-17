@@ -6,8 +6,8 @@
 --
 
 
-VehicleCamera.modQC_PanCamera_enabled = true
-VehicleCamera.modQC_PanCamera_factor  = 0.6
+--VehicleCamera.modQC_PanCamera_enabled = false
+--VehicleCamera.modQC_PanCamera_factor  = 0.6
 
 --
 
@@ -57,7 +57,7 @@ VehicleCamera.updateRotateNodeRotation = function(self)
     --    rotY = rotY + self.vehicle.rotatedTime*self.rotYSteeringRotSpeed;
     --end
     
-    if self.isInside and self.vehicle.steeringEnabled and VehicleCamera.modQC_PanCamera_enabled then
+    if self.isInside and self.vehicle.steeringEnabled and QuickCamera.panCamera_enabled then
         if self.vehicle.rotatedTime ~= nil then
             if (self.origRotY - mod_half_pi) >= rotY or rotY >= (self.origRotY + mod_half_pi) then
                 -- When looking backwards, then do not pan camera
@@ -84,9 +84,9 @@ VehicleCamera.updateRotateNodeRotation = function(self)
                 local rotRad = math.sin(rotateTime / self.vehicle.maxRotTime)
                 
                 if self.vehicle.isReverseDriving == true then
-                    rotY = rotY + rotRad * -VehicleCamera.modQC_PanCamera_factor
+                    rotY = rotY + rotRad * -QuickCamera.panCamera_factor
                 else
-                    rotY = rotY + rotRad * VehicleCamera.modQC_PanCamera_factor
+                    rotY = rotY + rotRad * QuickCamera.panCamera_factor
                 end
             end
         end
