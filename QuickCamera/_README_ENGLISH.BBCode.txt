@@ -2,6 +2,8 @@
 
 
 [b][u]Changelog[/u][/b]
+2.6.1
+- Polish translation updated by Ziuta
 2.6.0
 - Optionally using 'ModsSettings'-mod for possible additional player-custom fixes for outside camera rotation of articulated vehicles.
   - Must be at least version 0.2.0 of 'ModsSettings'-mod.

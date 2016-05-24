@@ -6,6 +6,9 @@ To read more about this mod, find it on;
 
 ## Change-log
 
+2.6.1
+- Polish translation updated by Ziuta
+
 2.6.0
 - Minor code cleanup
 
