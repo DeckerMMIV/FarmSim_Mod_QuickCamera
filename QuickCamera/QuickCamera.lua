@@ -1,9 +1,9 @@
 --
 -- QuickCamera
---      By quick-tap'ing the camera-movement keys, rotation will snap to next nearest 45-degree, and zoom will be faster.
 --
--- @author  Decker_MMIV - fs-uk.com, forum.farming-simulator.com, modhoster.com
--- @date    2012-January
+-- @author  Decker_MMIV (DCK)
+-- @contact fs-uk.com, modcentral.co.uk, forum.farming-simulator.com
+-- @date    2016-11-xx
 --
 -- @notes
 --          A special "thank you" to Templaer and his 'Camera' mod, from which I got inspiration to make this QuickCamera mod.
@@ -12,10 +12,6 @@
 --[[
 Suggestions
 -----------
-
-Wrongway
-    An option to glance left or right returning to forward view would be very useful, but might not be easy to implement. 
-    http://www.ls-uk.info/forum/index.php?topic=118579.msg789306#msg789306
 
 Kyuss33
     I was wondering if anyone has a mod that allows you to adjust the height of your head or view in the cabin.
@@ -32,19 +28,21 @@ QuickCamera.version = (modItem and modItem.version) and modItem.version or "?.?.
 -- Default values
 QuickCamera.quickRotateKeyTapMaxTimeMs  = 150;
 QuickCamera.quickZoomDistance           = 15;
---
+--[[
 QuickCamera.panCamera_enabled = false
 QuickCamera.panCamera_factor  = 0.6
 --
 QuickCamera.forceResetCamera = false;
 QuickCamera.enableAutoResetCamera = false;
 QuickCamera.useWorldXZRotation = false;
-
+--]]
 local math_pi_double  = math.pi*2
 local math_pi_half    = math.pi/2
 local math_pi_quarter = math.pi/4
+local math_pi_six     = math_pi_quarter + math_pi_quarter/2
 
 
+--[[
 function QuickCamera.postLoad(self, xmlFile)
     if not QuickCamera.constantsLoaded then
         QuickCamera.constantsLoaded = true
@@ -66,54 +64,13 @@ function QuickCamera.postLoad(self, xmlFile)
         end
     end
 end
+--]]
 
-function QuickCamera.update(self, superFunc, dt)
-    -- TRICK: Do not allow Steerable:update() to switch camera. 
-    -- This could break other mods that tests against InputBinding.CAMERA_SWITCH, but I know of none yet.
-    local hasEvent = InputBinding.actions[InputBinding.CAMERA_SWITCH].hasEvent;
-    InputBinding.actions[InputBinding.CAMERA_SWITCH].hasEvent = false;
-    -- Execute the normal Steerable:update()
-    superFunc(self, dt);
-    --
-    InputBinding.actions[InputBinding.CAMERA_SWITCH].hasEvent = hasEvent;
-
-    --
+function QuickCamera.update(self, dt)
     if not (self.isEntered and self.isClient and (not g_currentMission.isPlayerFrozen) and g_gui.currentGui == nil) then
         -- Player not in vehicle, or not active for input.
         self.qcPressKeyTime = nil;
     else
-        -- The CAMERA_SWITCH now has two actions; 
-        --      press-and-release(less than 500ms) -> switch camera
-        --      press-and-hold(more than 500ms)    -> reset current camera
-        if InputBinding.isPressed(InputBinding.CAMERA_SWITCH) then
-            if self.qcPressKeyTime == nil then
-                -- Press-key begun
-                self.qcPressKeyTime = g_currentMission.time;
-            elseif (g_currentMission.time - self.qcPressKeyTime) > 500 then
-                -- Press-and-hold -> Reset current camera
-                self.qcPressKeyTime = g_currentMission.time + 1000*60*60*24; -- 24 hours.
-                QuickCamera.forceResetCamera = true;
-                self.cameras[self.camIndex]:resetCamera();
-                --
-                self.cameras[self.camIndex].useWorldXZRotation = not self.cameras[self.camIndex].useWorldXZRotation;
-                print(("QuickCamera: For camera-index #%d toggled 'useWorldXZRotation' to: %s"):format(self.camIndex, self.cameras[self.camIndex].useWorldXZRotation))
-            end
-        elseif self.qcPressKeyTime ~= nil then
-            local keyDelay = g_currentMission.time - self.qcPressKeyTime;
-            self.qcPressKeyTime = nil;
-            if keyDelay > 0 and keyDelay < 500 then
-                -- Press-and-release -> Switch to next camera
-                QuickCamera.changeToCamera(self, (self.camIndex % self.numCameras) + 1);
-            end
-        end
-
-        --
-        if InputBinding.hasEvent(InputBinding.QuickCamToggleReset, true) then
-            QuickCamera.enableAutoResetCamera = not QuickCamera.enableAutoResetCamera;
-            QuickCamera.forceResetCamera = QuickCamera.enableAutoResetCamera;
-            print("QuickCam: 'Auto-reset camera' is now set to: "..tostring(QuickCamera.enableAutoResetCamera));
-        end
-        
         -- Smooth'ish rotation
         if self.qc ~= nil then
             if self.qc.CamIndex == self.camIndex then
@@ -128,7 +85,7 @@ function QuickCamera.update(self, superFunc, dt)
                 self.cameras[self.camIndex].rotX = newCamRot[1];
                 self.cameras[self.camIndex].rotY = newCamRot[2];
                 --
-                if self.qc.accTime >= self.qc.CamTime then
+                if self.qc.peekFrom == nil and self.qc.accTime >= self.qc.CamTime then
                     self.qc = nil;
                 end;
             else
@@ -137,6 +94,7 @@ function QuickCamera.update(self, superFunc, dt)
         end;
         -- Detect action-keys for rotatable camera
         if self.cameras[self.camIndex].isRotatable then
+--[[        
             if InputBinding.hasEvent(InputBinding.QuickCamLockCustom, true) then
                 local camera = self.cameras[self.camIndex];
                 if camera.modQuickCamera == nil then
@@ -151,6 +109,7 @@ function QuickCamera.update(self, superFunc, dt)
                     print("QuickCam: Reverted to original rotation")
                 end
             end
+--]]            
             --
             local quickCamEvent = nil;
             if self.qcQuickTapType ~= nil then
@@ -173,8 +132,6 @@ function QuickCamera.update(self, superFunc, dt)
             end;
             --
             if quickCamEvent ~= nil then
---print("QuickCamEvent="..tostring(quickCamEvent));
-              --
               local forwardArch = { self.cameras[self.camIndex].origRotY - math_pi_half, self.cameras[self.camIndex].origRotY + math_pi_half }
               --
               local rotY = self.cameras[self.camIndex].rotY;
@@ -223,13 +180,46 @@ function QuickCamera.update(self, superFunc, dt)
                 
                 ---- Quick-rotate and snap to nearest 45-degree angle.
                 rotY = rotY + dirY; -- rotate
-                --rotY = Utils.degToRad(45 * math.floor((math.deg(rotY) + 22.5)/45)); -- snap
                 rotY = Utils.degToRad(angleSnap * math.floor((math.deg(rotY) + (angleSnap/2))/angleSnap)); -- snap
                 
                 self.qc.CamTargetRot = {self.cameras[self.camIndex].rotX, rotY};
               end;
+            else
+                if self.qc == nil then
+                    local dirY = nil
+                    if     InputBinding.isPressed(InputBinding.QuickCamPeekRight) then 
+                        dirY = -math_pi_six
+                    elseif InputBinding.isPressed(InputBinding.QuickCamPeekLeft)  then 
+                        dirY = math_pi_six
+                    end
+                    if dirY ~= nil then
+                        local rotY = self.cameras[self.camIndex].rotY;
+                        while (rotY < -math_pi_double) do rotY = rotY + math_pi_double; end
+                        while (rotY >  math_pi_double) do rotY = rotY - math_pi_double; end
+                        
+                        self.qc = {};
+                        self.qc.peekFrom = {self.cameras[self.camIndex].rotX, rotY}
+                        self.qc.CamIndex = self.camIndex;
+                        self.qc.CamTime = 100; -- milliseconds
+                        self.qc.CamSourceRot = {self.cameras[self.camIndex].rotX, rotY};
+                        
+                        rotY = rotY + dirY; -- rotate
+                        self.qc.CamTargetRot = {self.cameras[self.camIndex].rotX, rotY};
+                    end
+                elseif self.qc.peekFrom ~= nil then
+                    if  not InputBinding.isPressed(InputBinding.QuickCamPeekRight) 
+                    and not InputBinding.isPressed(InputBinding.QuickCamPeekLeft)
+                    then 
+                        self.qc.accTime = 0
+                        local camera = self.cameras[self.camIndex];
+                        self.qc.CamSourceRot = { camera.rotX, camera.rotY }
+                        self.qc.CamTargetRot = { self.qc.peekFrom[1], self.qc.peekFrom[2] }
+                        self.qc.peekFrom = nil
+                    end
+                end
             end;
         end;
+
         -- Detect action-keys for translatable camera
         if self.cameras[self.camIndex].allowTranslation then
             if self.qcTimeZoomOut == nil then
@@ -264,80 +254,6 @@ function QuickCamera.update(self, superFunc, dt)
     end;
 end;
 
-function QuickCamera.changeToCamera(self, newCameraIndex)
-    if self.camIndex ~= newCameraIndex then
-        self.cameras[self.camIndex]:onDeactivate();
-        self.camIndex = newCameraIndex;
-        self.cameras[self.camIndex]:onActivate();
-        
-        -- FS15, enable/disable mirrors depending on camera's settings.
-        if self.setMirrorVisible ~= nil and self.mirrorAvailable == true then
-            self:setMirrorVisible(self.cameras[self.camIndex].useMirror == true)
-        end;
-    end
-end
-
-function QuickCamera.onEnter(self, superFunc, isControlling)
-    -- Remember camera index before calling original function.
-    local camIndex = Utils.clamp(self.camIndex, 1, self.numCameras);
-    
-    superFunc(self, isControlling)
-    
-    if isControlling then
-      QuickCamera.changeToCamera(self, camIndex); -- Restore camera index
-    end
-end;
-
-
-function QuickCamera.resetCamera(self, superFunc)
-    if QuickCamera.forceResetCamera then
-        superFunc(self);
-        QuickCamera.forceResetCamera = QuickCamera.enableAutoResetCamera;
-    end;
-end;
-
-
-Steerable.postLoad        = Utils.appendedFunction(Steerable.postLoad, QuickCamera.postLoad);
-Steerable.update          = Utils.overwrittenFunction(Steerable.update, QuickCamera.update);
-Steerable.onEnter         = Utils.overwrittenFunction(Steerable.onEnter, QuickCamera.onEnter);
-VehicleCamera.resetCamera = Utils.overwrittenFunction(VehicleCamera.resetCamera, QuickCamera.resetCamera);
-
-function QuickCamera.loadFromAttributesAndNodes(self, superFunc, xmlFile, key, resetVehicles)
-    --
-    if not resetVehicles and g_server ~= nil then
-    end;
-    --
-    return superFunc(self, xmlFile, key, resetVehicles);
-end;
-
-function QuickCamera.getSaveAttributesAndNodes(self, superFunc, nodeIdent)
-    local attributes;
-    local nodes;
-    attributes, nodes = superFunc(self, nodeIdent);
-    --
-    if false then
-        local customCamerasRotation = nil
-        for idx,camera in pairs(self.cameras) do
-            if camera.modQuickCamera ~= nil and camera.modQuickCamera.customRot ~= nil then
-                customCamerasRotation = Utils.getNoNil(customCamerasRotation, "") .. (' camera%dRot="%f %f %f"'):format(
-                    idx,
-                    camera.modQuickCamera.customRot.x,
-                    camera.modQuickCamera.customRot.y,
-                    camera.modQuickCamera.customRot.z
-                )
-            end
-        end
-        if customCamerasRotation ~= nil then
-            nodes = nodes .. ('<modQuickCamera %s />\n'):format(customCamerasRotation)
-        end
-    end
-    --
-    return attributes, nodes;
-end;
-
---Vehicle.loadFromAttributesAndNodes = Utils.overwrittenFunction(Vehicle.loadFromAttributesAndNodes, QuickCamera.loadFromAttributesAndNodes);
---Vehicle.getSaveAttributesAndNodes  = Utils.overwrittenFunction(Vehicle.getSaveAttributesAndNodes,  QuickCamera.getSaveAttributesAndNodes);
-
-
+Steerable.update = Utils.appendedFunction(Steerable.update, QuickCamera.update);
 
 print(string.format("Script loaded: QuickCamera.lua (v%s)", QuickCamera.version));

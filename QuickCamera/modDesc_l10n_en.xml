@@ -17,16 +17,18 @@
     </description>
 
     <texts>
-        <text name="QuickCamRight"          text="QuickCamera: Look 45&#176; right"     />
-        <text name="QuickCamLeft"           text="QuickCamera: Look 45&#176; left"      />
-        <text name="QuickCamRight2"         text="QuickCamera: Look 90&#176; right"     />
-        <text name="QuickCamLeft2"          text="QuickCamera: Look 90&#176; left"      />
-        <text name="QuickCamForward"        text="QuickCamera: Look forward"            />
-        <text name="QuickCamBackward"       text="QuickCamera: Look backward"           />
-        <text name="QuickCamForBack"        text="QuickCamera: Toggle look for/back"    />
-        <text name="QuickCamZoomIn"         text="QuickCamera: Zoom in"                 />
-        <text name="QuickCamZoomOut"        text="QuickCamera: Zoom out"                />
-        <text name="QuickCamToggleReset"    text="QuickCamera: Toggle auto-reset"       />
-        <text name="QuickCamLockCustom"     text="QuickCamera: Keep new forward-cam"    />
+        <text name="input_QuickCamPeekRight"      text="QuickCamera: Peek right"              />
+        <text name="input_QuickCamPeekLeft"       text="QuickCamera: Peek left"               />
+
+        <text name="input_QuickCamRight"          text="QuickCamera: Look 45&#176; right"     />
+        <text name="input_QuickCamLeft"           text="QuickCamera: Look 45&#176; left"      />
+        <text name="input_QuickCamRight2"         text="QuickCamera: Look 90&#176; right"     />
+        <text name="input_QuickCamLeft2"          text="QuickCamera: Look 90&#176; left"      />
+        <text name="input_QuickCamForward"        text="QuickCamera: Look forward"            />
+        <text name="input_QuickCamBackward"       text="QuickCamera: Look backward"           />
+        <text name="input_QuickCamForBack"        text="QuickCamera: Toggle look for/back"    />
+        <text name="input_QuickCamZoomIn"         text="QuickCamera: Zoom in"                 />
+        <text name="input_QuickCamZoomOut"        text="QuickCamera: Zoom out"                />
+        <text name="input_QuickCamLockCustom"     text="QuickCamera: Keep new forward-cam"    />
     </texts>
 </l10n>
