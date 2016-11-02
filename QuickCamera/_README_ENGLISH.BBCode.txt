@@ -20,13 +20,6 @@ To look backwards, quick-tap the key that you assigned to the 'QuickCam:Look bac
 
 If the selected camera is capable of zooming, a quick-tap on your 'QuickCam:Zoom out' key, will cause it to zoom out 15 units at a time. And likewise for your 'QuickCam:Zoom in' key.
 
-[u]Remembers camera position and direction[/u]
-
-When switching back and forth between vehicles, the last selected camera and its position/direction is now remembered.
-
-This option can be toggled off/on using the 'QuickCam:Toggle auto-reset' action (default LEFT-ALT K), if you want to revert back to normal.
-
-Note: These positions/directions are unfortunately NOT saved between game-sessions.
 
 [u]Default action/key assignments[/u]:
 
@@ -37,21 +30,6 @@ Note: These positions/directions are unfortunately NOT saved between game-sessio
 [b]END[/b] - Toggle look forwards/backwards
 [b]PAGE-UP[/b] - Zoom in
 [b]PAGE-DOWN[/b] - Zoom out
-[b]LEFT-ALT K[/b] - Toggle auto-reset
-[i]press-and-hold[/i] [b]C[/b] - Toggle current camera world-alignment on/off 
-
-
-[b][u]Fixes for articulated vehicles' outside camera rotation[/u][/b]
-
-Whoever at GIANTS Software that decided the outside camera on articulated vehicles should rotate to the opposite direction of the steering, have probably never spend much time in-game with it.
-
-So this mod also adds some fixes for the following articulated vehicles:
-- Liebherr L538
-- New Holland W170C (New Holland DLC pack)
-- JCB 435S (JCB DLC pack)
-- JCB TM320S (JCB DLC pack)
-
-Additional/other vehicles' outside camera rotation can also be "fixed", if using the 'ModsSettings'-mod.
 
 
 [b][u]Restrictions[/u][/b]
@@ -70,11 +48,10 @@ If you encounter problems or bugs using this mod, please use the support-thread.
 Known bugs/problems/ToDo:
 - Because this QuickCamera mod does not override the normal camera movement script, there might be a little movement first, before the camera snaps into position - IF you have assigned the same keys as for the normal look left/right/up/down.
 - Sometimes when snapping to look forward/backward, the camera-rotation may rotate several times quickly. There's some math that I still haven't quite figured out how to solve.
-- Nothing is saved between game-sessions, with regards to 'last selected camera' or the positions/directions.
 
 
 Credits:
-Script: Decker_MMIV
-Polish translation: Ziuta
-Some German translation corrections: DLH007
-Some French translation corrections: _dj_
+Script:
+- Decker_MMIV
+Contributors:
+- DLH007, _dj_, Gonimy-Vetrom, jules.stmp537, Ziuta, xno
