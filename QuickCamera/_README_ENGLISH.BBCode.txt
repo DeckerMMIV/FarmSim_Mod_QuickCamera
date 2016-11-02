@@ -34,7 +34,7 @@ If the selected camera is capable of zooming, a quick-tap on your 'QuickCam:Zoom
 
 [b][u]Restrictions[/u][/b]
 
-This mod's script files MAY NOT, SHALL NOT and MUST NOT be embedded in any other mod nor any map-mod! - However it is accepted if this mod is packed into a mod-pack archive, when this mod's original ZIP-file and hash-value is kept intact.
+This mod's script files MAY NOT, SHALL NOT and MUST NOT be embedded in any other mod nor any map-mod!
 
 Please do NOT upload this mod to any other hosting site - I can do that myself, when needed!
 
