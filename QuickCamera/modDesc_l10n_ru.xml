@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<l10n>
+    <!-- 
+        Please contribute any other translations at 
+        https://github.com/DeckerMMIV/FarmSim_Mod_QuickCamera
+    -->
+
+    <!-- Add your own name or nickname here, when you contribute to this file's translation, so I know who to put into the credits. -->
+    <translationContributors>
+    </translationContributors>
+
+    <!-- Note that 'description' is only here for easier translations. It needs to be manually copied to ModDesc.XML later. -->
+    <description>
+        Используется для быстрого управления камерой;
+        вращение на 45-градусов влево/вправо, посмотреть вперед/назад или приблизит/отдалить.
+    </description>
+
+    <texts>
+        <text name="QuickCamRight"          text="QuickCamera: Посмотреть на 45&#176; вправо"     />
+        <text name="QuickCamLeft"           text="QuickCamera: Посмотреть на 45&#176; влево"      />
+        <text name="QuickCamRight2"         text="QuickCamera: Посмотреть на 90&#176; вправо"     />
+        <text name="QuickCamLeft2"          text="QuickCamera: Посмотреть на 90&#176; влево"      />
+        <text name="QuickCamForward"        text="QuickCamera: Посмотреть вперед"            />
+        <text name="QuickCamBackward"       text="QuickCamera: Посмотреть назад"           />
+        <text name="QuickCamForBack"        text="QuickCamera: Смена взгляда перед/зад"    />
+        <text name="QuickCamZoomIn"         text="QuickCamera: Приблизить"                 />
+        <text name="QuickCamZoomOut"        text="QuickCamera: Отдалить"                />
+        <text name="QuickCamToggleReset"    text="QuickCamera: Автосброс камеры"       />
+        <text name="QuickCamLockCustom"     text="QuickCamera: Установить новую основную камеру"    />
+    </texts>
+</l10n>
