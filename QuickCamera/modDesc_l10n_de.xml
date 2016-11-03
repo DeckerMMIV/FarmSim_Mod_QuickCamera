@@ -7,18 +7,21 @@
 
     <!-- Add your own name or nickname here, when you contribute to this file's translation, so I know who to put into the credits. -->
     <translationContributors>
-
+        ModHub (GIANTS Software)
     </translationContributors>
 
     <!-- Note that 'description' is only here for easier translations. It needs to be manually copied to ModDesc.XML later. -->
     <description>
-        Schnelles wechseln der Fahrzeug-Kamera,
-        45 Grad-Drehung links/rechts, sehe nach vorne/hinten oder Zoome rein/raus
+Benutze folgende Tasten um schnell die Kamera zu bewegen:
+- Kurzer Blick nach links / rechts
+- Rotieren um 45°/ 90°
+- Sicht nach vorne / hinten
+- Zoom hinein / hinaus
     </description>
         
     <texts>
-        <text name="input_QuickCamPeekRight"      text="QuickCamera: Peek right"              /> <!-- needs translations -->
-        <text name="input_QuickCamPeekLeft"       text="QuickCamera: Peek left"               /> <!-- needs translations -->
+        <text name="input_QuickCamPeekRight"      text="QuickCamera: Kurzer Blick nach rechts"  />
+        <text name="input_QuickCamPeekLeft"       text="QuickCamera: Kurzer Blick nach links"   />
         
         <text name="input_QuickCamRight"          text="QuickCamera: Schauen 45&#176; rechts" />
         <text name="input_QuickCamLeft"           text="QuickCamera: Schauen 45&#176; links"  />

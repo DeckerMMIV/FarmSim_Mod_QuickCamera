@@ -2,6 +2,12 @@
 
 
 [b][u]Changelog[/u][/b]
+1.0.0.18
+- Updated translations
+-- Italian by Xno
+-- Russian by Gonimy-Vetrom
+-- German from ModHub (GIANTS Software)
+
 1.0.0.17
 - Upgraded to FS17 and changed version-numbering-scheme due to ModHub
 

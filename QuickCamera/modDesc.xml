@@ -3,9 +3,13 @@
     <author>Decker_MMIV (DCK)</author>
     <authorContact>fs-uk.com, modcentral.co.uk, forum.farming-simulator.com</authorContact>
     
-    <contributors>DLH007, _dj_, Gonimy-Vetrom, jules.stmp537, Ziuta, xno</contributors>
+<!--
+    NOTE: For contributing translations, DO NOT edit this ModDesc.XML.
+          Only modify the corresponding ModDesc_l10n_*.XML file.
+-->    
+    <contributors>DLH007, _dj_, Gonimy-Vetrom, jules.stmp537, Ziuta, Xno</contributors>
 
-    <version>1.0.0.17</version>
+    <version>1.0.0.18</version>
     
     <title>
         <en>QuickCamera</en>
@@ -26,17 +30,19 @@
 ]]>
         </en>
         <de>
-<![CDATA[Schnelles wechseln der Fahrzeug-Kamera;
-- 45/90 Grad-Drehung links/rechts
-- sehe nach vorne/hinten 
-- Zoome rein/raus
+<![CDATA[Benutze folgende Tasten um schnell die Kamera zu bewegen:
+- Kurzer Blick nach links / rechts
+- Rotieren um 45°/ 90°
+- Sicht nach vorne / hinten
+- Zoom hinein / hinaus
 ]]>
         </de>
         <fr>
-<![CDATA[Utilisez avoir rapidement la caméra du véhicule;
-- tourner de 45/90 degrés vers la gauche/droite, 
-- regardez avant/arrière ou
-- zoom in/out
+<![CDATA[Utiliser les touches pour avoir rapidement l'appareil photo du véhicule;
+- Coup d'oeil gauche / droite
+- Rotation de 45 ° / 90 °
+- avant look / vers l'arrière
+- Zoom in / out
 ]]>
         </fr>
         <it>
@@ -48,7 +54,7 @@
         </it>
         <pl>
 <![CDATA[Służy do szybkiego operowania kamerą pojazdu.
-- Obrót 45°/45° w lewo/prawo, 
+- Obrót 45°/90° w lewo/prawo, 
 - spoglądanie w przód/tył 
 - lub przybliżanie/oddalanie
 ]]>

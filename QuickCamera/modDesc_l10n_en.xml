@@ -12,8 +12,11 @@
 
     <!-- Note that 'description' is only here for easier translations. It needs to be manually copied to ModDesc.XML later. -->
     <description>
-        Use to quickly have the vehicle camera;
-        rotate 45-degrees left/right, look forwards/backwards or zoom in/out.
+Use keys to quickly have the vehicle camera;
+- peek left/right
+- rotate 45°/90°
+- look forwards/backwards
+- zoom in/out
     </description>
 
     <texts>

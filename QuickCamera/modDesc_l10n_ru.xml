@@ -12,8 +12,11 @@
 
     <!-- Note that 'description' is only here for easier translations. It needs to be manually copied to ModDesc.XML later. -->
     <description>
-        Используется для быстрого управления камерой;
-        вращение на 45-градусов влево/вправо, посмотреть вперед/назад или приблизить/отдалить.
+Используется для быстрого управления камерой;
+- peek left/right
+- вращение на 45/90-градусов влево/вправо, 
+- посмотреть вперед/назад 
+- или приблизить/отдалить
     </description>
 
     <texts>

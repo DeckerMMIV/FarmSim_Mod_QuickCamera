@@ -7,18 +7,21 @@
 
     <!-- Add your own name or nickname here, when you contribute to this file's translation, so I know who to put into the credits. -->
     <translationContributors>
-
+        ModHub (GIANTS Software)
     </translationContributors>
 
     <!-- Note that 'description' is only here for easier translations. It needs to be manually copied to ModDesc.XML later. -->
     <description>
-        Utilisez avoir rapidement la caméra du véhicule;
-        tourner de 45 degrés vers la gauche/droite, regardez avant/arrière ou un zoom in/out.
+Utiliser les touches pour avoir rapidement l'appareil photo du véhicule;
+- Coup d'oeil gauche / droite
+- Rotation de 45 ° / 90 °
+- avant look / vers l'arrière
+- Zoom in / out
     </description>
         
     <texts>
-        <text name="input_QuickCamPeekRight"      text="QuickCamera: Peek right"              /> <!-- needs translations -->
-        <text name="input_QuickCamPeekLeft"       text="QuickCamera: Peek left"               /> <!-- needs translations -->
+        <text name="input_QuickCamPeekRight"      text="QuickCamera: Coup d'oeil droite"            />
+        <text name="input_QuickCamPeekLeft"       text="QuickCamera: Coup d'oeil gauche"            />
 
         <text name="input_QuickCamRight"          text="QuickCamera: Regardez 45&#176; à droite"    />
         <text name="input_QuickCamLeft"           text="QuickCamera: Regardez 45&#176; à gauche"    />

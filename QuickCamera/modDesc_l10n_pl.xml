@@ -12,8 +12,11 @@
 
     <!-- Note that 'description' is only here for easier translations. It needs to be manually copied to ModDesc.XML later. -->
     <description>
-        Służy do szybkiego operowania kamerą pojazdu.
-        Obrót 45° w lewo/prawo, spoglądanie w przód/tył lub przybliżanie/oddalanie.
+Służy do szybkiego operowania kamerą pojazdu.
+- peek left/right
+- Obrót 45°/90° w lewo/prawo, 
+- spoglądanie w przód/tył 
+- lub przybliżanie/oddalanie
     </description>
 
     <texts>
