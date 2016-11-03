@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="25">
-    <author>Decker_MMIV</author>
+<modDesc descVersion="32">
+    <author>Decker_MMIV (DCK)</author>
+    <authorContact>fs-uk.com, modcentral.co.uk, forum.farming-simulator.com</authorContact>
     
     <contributors>DLH007, _dj_, Gonimy-Vetrom, jules.stmp537, Ziuta, xno</contributors>
 
-    <version>2.6.1</version>
+    <version>1.0.0.17</version>
     
     <title>
         <en>QuickCamera</en>
@@ -17,40 +18,47 @@
     
     <description>
         <en>
-<![CDATA[Use to quickly have the vehicle camera;
-rotate 45-degrees left/right, look forwards/backwards or zoom in/out.
-
-Decker_MMIV - fs-uk.com, modcentral.co.uk, forum.farming-simulator.com, modhoster.com]]>
+<![CDATA[Use keys to quickly have the vehicle camera;
+- peek left/right
+- rotate 45°/90°
+- look forwards/backwards
+- zoom in/out
+]]>
         </en>
         <de>
-<![CDATA[Schnelles wechseln der Fahrzeug-Kamera,
-45 Grad-Drehung links/rechts, sehe nach vorne/hinten oder Zoome rein/raus
-
-Decker_MMIV - fs-uk.com, modcentral.co.uk, forum.farming-simulator.com, modhoster.com]]>
+<![CDATA[Schnelles wechseln der Fahrzeug-Kamera;
+- 45/90 Grad-Drehung links/rechts
+- sehe nach vorne/hinten 
+- Zoome rein/raus
+]]>
         </de>
         <fr>
 <![CDATA[Utilisez avoir rapidement la caméra du véhicule;
-tourner de 45 degrés vers la gauche/droite, regardez avant/arrière ou un zoom in/out.
-
-Decker_MMIV - fs-uk.com, modcentral.co.uk, forum.farming-simulator.com, modhoster.com]]>
+- tourner de 45/90 degrés vers la gauche/droite, 
+- regardez avant/arrière ou
+- zoom in/out
+]]>
         </fr>
         <it>
 <![CDATA[Usa per puntare velocemente la telecamera sul veicolo;
-ruota 45-gradi destra/sinistra, guarda avanti/indiestro oppure zoom in/out.
-
-Decker_MMIV - fs-uk.com, modcentral.co.uk, forum.farming-simulator.com, modhoster.com]]>
+- ruota 45/90-gradi destra/sinistra,
+- guarda avanti/indiestro
+- zoom in/out
+]]>
         </it>
         <pl>
 <![CDATA[Służy do szybkiego operowania kamerą pojazdu.
-Obrót 45° w lewo/prawo, spoglądanie w przód/tył lub przybliżanie/oddalanie.
-
-Decker_MMIV - fs-uk.com, modcentral.co.uk, forum.farming-simulator.com, modhoster.com]]>
+- Obrót 45°/45° w lewo/prawo, 
+- spoglądanie w przód/tył 
+- lub przybliżanie/oddalanie
+]]>
         </pl>
         <ru>
 <![CDATA[Используется для быстрого управления камерой;
-вращение на 45-градусов влево/вправо, посмотреть вперед/назад или приблизит/отдалить.
-        
-Decker_MMIV - fs-uk.com, modcentral.co.uk, forum.farming-simulator.com, modhoster.com]]>
+- вращение на 45/90-градусов влево/вправо, 
+- посмотреть вперед/назад 
+- или приблизит/отдалить
+]]>
         </ru>
     </description>
     
@@ -59,23 +67,24 @@ Decker_MMIV - fs-uk.com, modcentral.co.uk, forum.farming-simulator.com, modhoste
     
     <extraSourceFiles>
         <sourceFile filename="QuickCamera.lua" />
-        <sourceFile filename="ArticulatedVehiclesOutsideCameraRotationFix.lua" />
-        <sourceFile filename="SteeringRotateCamera.lua" />
     </extraSourceFiles>
     
     <l10n filenamePrefix="modDesc_l10n" /> <!-- Load the corresponding modDesc_l10n_<language>.XML file, or revert to 'en'/'de'. -->
     
     <inputBindings>
-      <input name="QuickCamRight"        category="VEHICLE"        key1="KEY_right"       key2="" button="" device="0" mouse="" />
-      <input name="QuickCamLeft"         category="VEHICLE"        key1="KEY_left"        key2="" button="" device="0" mouse="" />
-      <input name="QuickCamRight2"       category="VEHICLE"        key1=""                key2="" button="" device="0" mouse="" />
-      <input name="QuickCamLeft2"        category="VEHICLE"        key1=""                key2="" button="" device="0" mouse="" />
-      <input name="QuickCamForward"      category="VEHICLE"        key1="KEY_up"          key2="" button="" device="0" mouse="" />
-      <input name="QuickCamBackward"     category="VEHICLE"        key1="KEY_down"        key2="" button="" device="0" mouse="" />
-      <input name="QuickCamForBack"      category="VEHICLE"        key1="KEY_end"         key2="" button="" device="0" mouse="" />
-      <input name="QuickCamZoomIn"       category="VEHICLE"        key1="KEY_pageup"      key2="" button="" device="0" mouse="" />
-      <input name="QuickCamZoomOut"      category="VEHICLE"        key1="KEY_pagedown"    key2="" button="" device="0" mouse="" />
-      <input name="QuickCamToggleReset"  category="ONFOOT VEHICLE" key1="KEY_lalt KEY_k"  key2="" button="" device="0" mouse="" />
+      <input visible="true" name="QuickCamRight"     category="VEHICLE" key1="KEY_right"    key2="" />
+      <input visible="true" name="QuickCamLeft"      category="VEHICLE" key1="KEY_left"     key2="" />
+      <input visible="true" name="QuickCamRight2"    category="VEHICLE" key1=""             key2="" />
+      <input visible="true" name="QuickCamLeft2"     category="VEHICLE" key1=""             key2="" />
+      <input visible="true" name="QuickCamPeekRight" category="VEHICLE" key1=""             key2="KEY_KP_9" />
+      <input visible="true" name="QuickCamPeekLeft"  category="VEHICLE" key1=""             key2="KEY_KP_7" />
+      <input visible="true" name="QuickCamForBack"   category="VEHICLE" key1="KEY_end"      key2="KEY_KP_8" />
+      <input visible="true" name="QuickCamForward"   category="VEHICLE" key1="KEY_up"       key2="" />
+      <input visible="true" name="QuickCamBackward"  category="VEHICLE" key1="KEY_down"     key2="" />
+      <input visible="true" name="QuickCamZoomIn"    category="VEHICLE" key1="KEY_pageup"   key2="" />
+      <input visible="true" name="QuickCamZoomOut"   category="VEHICLE" key1="KEY_pagedown" key2="" />
+<!--      
       <input name="QuickCamLockCustom"   category="VEHICLE"        key1="KEY_lalt KEY_j"  key2="" button="" device="0" mouse="" />
+-->      
     </inputBindings>
 </modDesc>

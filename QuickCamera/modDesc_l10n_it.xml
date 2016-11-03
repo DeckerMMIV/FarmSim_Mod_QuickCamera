@@ -17,16 +17,18 @@
     </description>
 
     <texts>
-        <text name="QuickCamRight"          text="QuickCamera: Guarda 45&#176; destra"     />
-        <text name="QuickCamLeft"           text="QuickCamera: Guarda 45&#176; sinistra"      />
-        <text name="QuickCamRight2"         text="QuickCamera: Guarda 90&#176; destra"     />
-        <text name="QuickCamLeft2"          text="QuickCamera: Guarda 90&#176; sinistra"      />
-        <text name="QuickCamForward"        text="QuickCamera: Guarda avanti"            />
-        <text name="QuickCamBackward"       text="QuickCamera: Guarda indietro"           />
-        <text name="QuickCamForBack"        text="QuickCamera: Alterna Guarda avanti/indietro"    />
-        <text name="QuickCamZoomIn"         text="QuickCamera: Zoom in"                 />
-        <text name="QuickCamZoomOut"        text="QuickCamera: Zoom out"                />
-        <text name="QuickCamToggleReset"    text="QuickCamera: Attiva/disattiva auto-reset"       />
-        <text name="QuickCamLockCustom"     text="QuickCamera: Mantieni impostazioni telecamera"    />
+        <text name="input_QuickCamPeekRight"      text="QuickCamera: Peek right"              /> <!-- needs translations -->
+        <text name="input_QuickCamPeekLeft"       text="QuickCamera: Peek left"               /> <!-- needs translations -->
+
+        <text name="input_QuickCamRight"          text="QuickCamera: Guarda 45&#176; destra"     />
+        <text name="input_QuickCamLeft"           text="QuickCamera: Guarda 45&#176; sinistra"      />
+        <text name="input_QuickCamRight2"         text="QuickCamera: Guarda 90&#176; destra"     />
+        <text name="input_QuickCamLeft2"          text="QuickCamera: Guarda 90&#176; sinistra"      />
+        <text name="input_QuickCamForward"        text="QuickCamera: Guarda avanti"            />
+        <text name="input_QuickCamBackward"       text="QuickCamera: Guarda indietro"           />
+        <text name="input_QuickCamForBack"        text="QuickCamera: Alterna Guarda avanti/indietro"    />
+        <text name="input_QuickCamZoomIn"         text="QuickCamera: Zoom in"                 />
+        <text name="input_QuickCamZoomOut"        text="QuickCamera: Zoom out"                />
+        <text name="input_QuickCamLockCustom"     text="QuickCamera: Mantieni impostazioni telecamera"    />
     </texts>
 </l10n>
