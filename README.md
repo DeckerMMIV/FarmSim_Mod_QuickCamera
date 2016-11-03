@@ -8,9 +8,9 @@ To read more about this mod, find it on;
 ## FS17 - Change-log
 1.0.0.18
 - Updated translations
--- Italian by Xno
--- Russian by Gonimy-Vetrom
--- German from ModHub (GIANTS Software)
+  - Italian by Xno
+  - Russian by Gonimy-Vetrom
+  - German from ModHub (GIANTS Software)
 
 1.0.0.17
 - Upgraded to FS17
