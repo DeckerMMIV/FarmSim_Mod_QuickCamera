@@ -12,9 +12,9 @@
 
     <!-- Note that 'description' is only here for easier translations. It needs to be manually copied to ModDesc.XML later. -->
     <description>
-Usa per puntare velocemente la telecamera sul veicolo;
-- peek left/right
-- ruota 45/90-gradi destra/sinistra,
+Usa i tasti per puntare velocemente la telecamera sul veicolo;
+- Occhiata sinistra/destra
+- ruota 45/90-gradi sinistra/destra
 - guarda avanti/indiestro
 - zoom in/out
     </description>
