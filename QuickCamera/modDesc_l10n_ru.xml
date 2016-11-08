@@ -12,11 +12,11 @@
 
     <!-- Note that 'description' is only here for easier translations. It needs to be manually copied to ModDesc.XML later. -->
     <description>
-Используется для быстрого управления камерой;
-- peek left/right
+Используется для быстрого управления камерой:
+- быстрый взгляд влево/вправо,
 - вращение на 45/90-градусов влево/вправо, 
-- посмотреть вперед/назад 
-- или приблизить/отдалить
+- посмотреть вперед/назад,
+- или приблизить/отдалить.
     </description>
 
     <texts>
@@ -29,7 +29,7 @@
         <text name="input_QuickCamLeft2"          text="QuickCamera: Посмотреть на 90&#176; влево"        />
         <text name="input_QuickCamForward"        text="QuickCamera: Посмотреть вперед"                   />
         <text name="input_QuickCamBackward"       text="QuickCamera: Посмотреть назад"                    />
-        <text name="input_QuickCamForBack"        text="QuickCamera: Смена взгляда перед/зад"             />
+        <text name="input_QuickCamForBack"        text="QuickCamera: Смена взгляда вперед/назад"          />
         <text name="input_QuickCamZoomIn"         text="QuickCamera: Приблизить"                          />
         <text name="input_QuickCamZoomOut"        text="QuickCamera: Отдалить"                            />
         <text name="input_QuickCamLockCustom"     text="QuickCamera: Установить новую основную камеру"    />
