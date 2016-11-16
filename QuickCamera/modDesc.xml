@@ -7,9 +7,9 @@
     NOTE: For contributing translations, DO NOT edit this ModDesc.XML.
           Only modify the corresponding ModDesc_l10n_*.XML file.
 -->    
-    <contributors>DLH007, _dj_, Gonimy-Vetrom, jules.stmp537, Ziuta, Xno</contributors>
+    <contributors>DLH007, _dj_, Gonimy-Vetrom, jules.stmp537, Ziuta, Xno, PromGames</contributors>
 
-    <version>1.0.0.18</version>
+    <version>1.0.0.20</version>
     
     <title>
         <en>QuickCamera</en>
@@ -18,6 +18,7 @@
         <it>QuickCamera</it>
         <pl>QuickCamera</pl>
         <ru>QuickCamera</ru>
+        <es>QuickCamera</es>
     </title>
     
     <description>
@@ -46,8 +47,9 @@
 ]]>
         </fr>
         <it>
-<![CDATA[Usa per puntare velocemente la telecamera sul veicolo;
-- ruota 45/90-gradi destra/sinistra,
+<![CDATA[Usa i tasti per puntare velocemente la telecamera sul veicolo;
+- Occhiata sinistra/destra
+- ruota 45/90-gradi sinistra/destra
 - guarda avanti/indiestro
 - zoom in/out
 ]]>
@@ -66,6 +68,14 @@
 - или приблизить/отдалить
 ]]>
         </ru>
+        <es>
+<![CDATA[Utilice las siguientes teclas para modificar la cámara del vehículo;
+- peek left/right
+- rotar 45°/90°
+- Mirar atrás /adelante
+- zoom aumentar / disminuir
+]]>
+        </es>
     </description>
     
     <iconFilename>store_QuickCamera.dds</iconFilename>

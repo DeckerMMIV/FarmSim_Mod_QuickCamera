@@ -2,6 +2,10 @@
 
 
 [b][u]Changelog[/u][/b]
+1.0.0.20
+- Added Spanish translation by PromGames
+- Updated Italian translation by Xno
+
 1.0.0.18
 - Updated translations
 -- Italian by Xno
