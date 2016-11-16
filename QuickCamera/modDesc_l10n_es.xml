@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<l10n>
+    <!-- 
+        Please contribute any other translations at 
+        https://github.com/DeckerMMIV/FarmSim_Mod_QuickCamera
+    -->
+
+    <!-- Add your own name or nickname here, when you contribute to this file's translation, so I know who to put into the credits. -->
+    <translationContributors>
+        PromGames
+    </translationContributors>
+
+    <!-- Note that 'description' is only here for easier translations. It needs to be manually copied to ModDesc.XML later. -->
+    <description>
+Utilice las siguientes teclas para modificar la cámara del vehículo;
+- peek left/right
+- rotar 45°/90°
+- Mirar atrás /adelante
+- zoom aumentar / disminuir
+    </description>
+
+    <texts>
+        <text name="input_QuickCamPeekRight"      text="QuickCamera: Mirar por la parte derecha"              />
+        <text name="input_QuickCamPeekLeft"       text="QuickCamera: Mirar por la parte izquierda"               />
+
+        <text name="input_QuickCamRight"          text="QuickCamera: Mirar 45&#176 a la derecha"     />
+        <text name="input_QuickCamLeft"           text="QuickCamera: Mirar 45&#176 a la izquierda"      />
+        <text name="input_QuickCamRight2"         text="QuickCamera: Mirar 90&#176 a la derecha"     />
+        <text name="input_QuickCamLeft2"          text="QuickCamera: Mirar 90&#176 a la izquierda"      />
+        <text name="input_QuickCamForward"        text="QuickCamera: Mirar adelante"            />
+        <text name="input_QuickCamBackward"       text="QuickCamera: Mirar atrás"           />
+        <text name="input_QuickCamForBack"        text="QuickCamera: Cambiar a vista trasera"    />
+        <text name="input_QuickCamZoomIn"         text="QuickCamera: Zoom in"                 />
+        <text name="input_QuickCamZoomOut"        text="QuickCamera: Zoom out"                />
+        <text name="input_QuickCamLockCustom"     text="QuickCamera: Bloquear cámara en esta posición"    />
+    </texts>
+</l10n>
