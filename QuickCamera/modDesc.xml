@@ -9,7 +9,7 @@
 -->    
     <contributors>DLH007, _dj_, Gonimy-Vetrom, jules.stmp537, Ziuta, Xno, PromGames</contributors>
 
-    <version>1.0.0.20</version>
+    <version>1.0.0.21</version>
     
     <title>
         <en>QuickCamera</en>
@@ -56,6 +56,7 @@
         </it>
         <pl>
 <![CDATA[Służy do szybkiego operowania kamerą pojazdu.
+- peek left/right
 - Obrót 45°/90° w lewo/prawo, 
 - spoglądanie w przód/tył 
 - lub przybliżanie/oddalanie
