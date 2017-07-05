@@ -27,7 +27,7 @@ QuickCamera.version = (modItem and modItem.version) and modItem.version or "?.?.
 --
 -- Default values
 QuickCamera.quickRotateKeyTapMaxTimeMs  = 150;
-QuickCamera.quickZoomDistance           = 15;
+QuickCamera.quickZoomDistance           = 12.5;
 --[[
 QuickCamera.panCamera_enabled = false
 QuickCamera.panCamera_factor  = 0.6
@@ -67,7 +67,7 @@ end
 --]]
 
 function QuickCamera.update(self, dt)
-    if not (self.isEntered and self.isClient and (not g_currentMission.isPlayerFrozen) and g_gui.currentGui == nil) then
+    if not (self.isEntered and self.isClient and (not g_currentMission.isPlayerFrozen) and not g_gui:getIsGuiVisible()) then
         -- Player not in vehicle, or not active for input.
         self.qcPressKeyTime = nil;
     else
@@ -132,12 +132,19 @@ function QuickCamera.update(self, dt)
             end;
             --
             if quickCamEvent ~= nil then
+              -- If reverse driving, then reverse looking forward/backward
+              if self.reverserDirection == -1 and not self.cameras[self.camIndex].isInside then
+                if     quickCamEvent == InputBinding.QuickCamForward  then quickCamEvent = InputBinding.QuickCamBackward
+                elseif quickCamEvent == InputBinding.QuickCamBackward then quickCamEvent = InputBinding.QuickCamForward
+                end
+              end
+            
               local forwardArch = { self.cameras[self.camIndex].origRotY - math_pi_half, self.cameras[self.camIndex].origRotY + math_pi_half }
-              --
+
               local rotY = self.cameras[self.camIndex].rotY;
               while (rotY < -math_pi_double) do rotY = rotY + math_pi_double; end
               while (rotY >  math_pi_double) do rotY = rotY - math_pi_double; end
-              --
+
               if (quickCamEvent == InputBinding.QuickCamBackward or (quickCamEvent == InputBinding.QuickCamForBack and (forwardArch[1] < rotY and rotY < forwardArch[2]))) then
                 -- Look back
                 self.qc = {};

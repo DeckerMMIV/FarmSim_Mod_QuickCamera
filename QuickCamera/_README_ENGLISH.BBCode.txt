@@ -2,6 +2,12 @@
 
 
 [b][u]Changelog[/u][/b]
+1.0.1.23
+- Fix so QuickCamera keys won't be active when a GUI is shown
+    
+1.0.1.22
+- Fix for reverse driving and looking forward/backwards
+
 1.0.0.21
 - Updated Polish translation by Ziuta
 
