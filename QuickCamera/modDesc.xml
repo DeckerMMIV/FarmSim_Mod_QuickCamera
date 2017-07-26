@@ -7,9 +7,9 @@
     NOTE: For contributing translations, DO NOT edit this ModDesc.XML.
           Only modify the corresponding ModDesc_l10n_*.XML file.
 -->    
-    <contributors>DLH007, _dj_, Gonimy-Vetrom, jules.stmp537, Ziuta, Xno, PromGames</contributors>
+    <contributors>DLH007, _dj_, Gonimy-Vetrom, jules.stmp537, Ziuta, Xno, PromGames, Anonymous</contributors>
 
-    <version>1.0.1.23</version>
+    <version>1.0.1.24</version>
     
     <title>
         <en>QuickCamera</en>
@@ -22,6 +22,9 @@
     </title>
     
     <changeLog><![CDATA[
+1.0.1.24
+- Translations updated by contributers
+
 1.0.1.23
 - Fix so QuickCamera keys won't be active when a GUI is shown
     
@@ -47,11 +50,11 @@
 ]]>
         </de>
         <fr>
-<![CDATA[Utiliser les touches pour avoir rapidement l'appareil photo du véhicule;
+<![CDATA[Utiliser les touches pour avoir rapidement les vues depuis les véhicules;
 - Coup d'oeil gauche / droite
 - Rotation de 45 ° / 90 °
-- avant look / vers l'arrière
-- Zoom in / out
+- vue avant / vers l'arrière
+- Zoom avant / arrière
 ]]>
         </fr>
         <it>

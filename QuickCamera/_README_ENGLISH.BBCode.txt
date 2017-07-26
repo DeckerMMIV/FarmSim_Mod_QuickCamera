@@ -2,6 +2,9 @@
 
 
 [b][u]Changelog[/u][/b]
+1.0.1.24
+- Translations updated by contributers
+
 1.0.1.23
 - Fix so QuickCamera keys won't be active when a GUI is shown
     
@@ -73,4 +76,4 @@ Credits:
 Script:
 - Decker_MMIV
 Contributors:
-- DLH007, _dj_, Gonimy-Vetrom, jules.stmp537, Ziuta, xno
+- DLH007, _dj_, Gonimy-Vetrom, jules.stmp537, Ziuta, Xno, PromGames, Anonymous

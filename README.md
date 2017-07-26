@@ -7,6 +7,9 @@ To read more about this mod, find it on;
 
 
 ## FS17 - Change-log
+1.0.1.24
+- Translations updated by contributers
+
 1.0.1.23
 - Fix so QuickCamera keys won't be active when a GUI is shown
     
