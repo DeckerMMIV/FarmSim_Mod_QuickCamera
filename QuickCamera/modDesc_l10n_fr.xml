@@ -8,30 +8,31 @@
     <!-- Add your own name or nickname here, when you contribute to this file's translation, so I know who to put into the credits. -->
     <translationContributors>
         ModHub (GIANTS Software)
+        Anonymous
     </translationContributors>
 
     <!-- Note that 'description' is only here for easier translations. It needs to be manually copied to ModDesc.XML later. -->
     <description>
-Utiliser les touches pour avoir rapidement l'appareil photo du véhicule;
-- Coup d'oeil gauche / droite
-- Rotation de 45 ° / 90 °
-- avant look / vers l'arrière
-- Zoom in / out
+        Utiliser les touches pour avoir rapidement les vues depuis les véhicules;
+        - Coup d'oeil gauche / droite
+        - Rotation de 45 ° / 90 °
+        - vue avant / vers l'arrière
+        - Zoom avant / arrière
     </description>
         
     <texts>
         <text name="input_QuickCamPeekRight"      text="QuickCamera: Coup d'oeil droite"            />
         <text name="input_QuickCamPeekLeft"       text="QuickCamera: Coup d'oeil gauche"            />
 
-        <text name="input_QuickCamRight"          text="QuickCamera: Regardez 45&#176; à droite"    />
-        <text name="input_QuickCamLeft"           text="QuickCamera: Regardez 45&#176; à gauche"    />
-        <text name="input_QuickCamRight2"         text="QuickCamera: Regardez 90&#176; à droite"    />
-        <text name="input_QuickCamLeft2"          text="QuickCamera: Regardez 90&#176; à gauche"    />
-        <text name="input_QuickCamForward"        text="QuickCamera: Regardez vers l'avant"         />
-        <text name="input_QuickCamBackward"       text="QuickCamera: Regardez en arrière"           />
-        <text name="input_QuickCamForBack"        text="QuickCamera: Basculer look avant/arrière"   />
-        <text name="input_QuickCamZoomIn"         text="QuickCamera: Zoom in"                       /> 
+        <text name="input_QuickCamRight"          text="QuickCamera: Regarder 45&#176; à droite"    />
+        <text name="input_QuickCamLeft"           text="QuickCamera: Regarder 45&#176; à gauche"    />
+        <text name="input_QuickCamRight2"         text="QuickCamera: Regarder 90&#176; à droite"    />
+        <text name="input_QuickCamLeft2"          text="QuickCamera: Regarder 90&#176; à gauche"    />
+        <text name="input_QuickCamForward"        text="QuickCamera: Regarder vers l'avant"         />
+        <text name="input_QuickCamBackward"       text="QuickCamera: Regarder en arrière"           />
+        <text name="input_QuickCamForBack"        text="QuickCamera: Basculer vue avant/arrière"   />
+        <text name="input_QuickCamZoomIn"         text="QuickCamera: Zoom avant"                       /> 
         <text name="input_QuickCamZoomOut"        text="QuickCamera: Zoom arrière"                  /> 
-        <text name="input_QuickCamLockCustom"     text="QuickCamera: Keep new forward-cam"          /> <!-- needs translations -->
+        <text name="input_QuickCamLockCustom"     text="QuickCamera: Garder une nouvelle vue avant"          />
     </texts>
 </l10n>
