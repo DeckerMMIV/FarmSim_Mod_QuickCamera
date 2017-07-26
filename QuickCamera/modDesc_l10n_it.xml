@@ -8,6 +8,7 @@
     <!-- Add your own name or nickname here, when you contribute to this file's translation, so I know who to put into the credits. -->
     <translationContributors>
         xno
+        translate.google.com
     </translationContributors>
 
     <!-- Note that 'description' is only here for easier translations. It needs to be manually copied to ModDesc.XML later. -->
@@ -17,6 +18,11 @@ Usa i tasti per puntare velocemente la telecamera sul veicolo;
 - ruota 45/90-gradi sinistra/destra
 - guarda avanti/indiestro
 - zoom in/out
+
+O quando il giocatore è "a piedi";
+- ruotare 45° / 180°
+
+ATTENZIONE: Ricordarsi di impostare le tue azioni chiavi, nella schermata Opzioni / Controlli, se necessario.
     </description>
 
     <texts>
@@ -33,5 +39,9 @@ Usa i tasti per puntare velocemente la telecamera sul veicolo;
         <text name="input_QuickCamZoomIn"         text="QuickCamera: Zoom in"                 />
         <text name="input_QuickCamZoomOut"        text="QuickCamera: Zoom out"                />
         <text name="input_QuickCamLockCustom"     text="QuickCamera: Mantieni impostazioni telecamera"    />
+
+        <text name="input_QuickCamOnFootRight"    text="QuickCamera: On foot turn 45&#176; right"     />
+        <text name="input_QuickCamOnFootLeft"     text="QuickCamera: On foot turn 45&#176; left"      />
+        <text name="input_QuickCamOnFootForBack"  text="QuickCamera: On foot turn 180&#176;"    />
     </texts>
 </l10n>

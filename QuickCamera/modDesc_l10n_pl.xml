@@ -8,6 +8,7 @@
     <!-- Add your own name or nickname here, when you contribute to this file's translation, so I know who to put into the credits. -->
     <translationContributors>
         Ziuta
+        translate.google.com
     </translationContributors>
 
     <!-- Note that 'description' is only here for easier translations. It needs to be manually copied to ModDesc.XML later. -->
@@ -17,6 +18,11 @@ Służy do szybkiego operowania kamerą pojazdu.
 - Obrót 45°/90° w lewo/prawo, 
 - spoglądanie w przód/tył 
 - lub przybliżanie/oddalanie
+
+Lub gdy gracz jest "na piechotę";
+- obrócić o 45° / 180°
+
+UWAGA: W razie potrzeby pamiętaj, aby ustawić własne klawisze akcji, na ekranie Opcje / Sterowanie.
     </description>
 
     <texts>
@@ -33,5 +39,9 @@ Służy do szybkiego operowania kamerą pojazdu.
         <text name="input_QuickCamZoomIn"         text="QuickCamera: Przybliż" />
         <text name="input_QuickCamZoomOut"        text="QuickCamera: Oddal" />
         <text name="input_QuickCamLockCustom"     text="QuickCamera: Zachowaj nową przednią kamerę" />
+
+        <text name="input_QuickCamOnFootRight"    text="QuickCamera: On foot turn 45&#176; right"     />
+        <text name="input_QuickCamOnFootLeft"     text="QuickCamera: On foot turn 45&#176; left"      />
+        <text name="input_QuickCamOnFootForBack"  text="QuickCamera: On foot turn 180&#176;"    />
     </texts>
 </l10n>

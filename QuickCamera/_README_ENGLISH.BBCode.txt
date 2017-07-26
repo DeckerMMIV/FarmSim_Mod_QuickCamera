@@ -2,6 +2,10 @@
 
 
 [b][u]Changelog[/u][/b]
+1.1.0.25
+- Added player on-foot quick-rotation actions; 45° left/right, 180° turn
+-- NOTE! Remember to set the action keys yourself, as they are default set to nothing.
+
 1.0.1.24
 - Translations updated by contributers
 
@@ -43,15 +47,32 @@ To look backwards, quick-tap the key that you assigned to the 'QuickCam:Look bac
 If the selected camera is capable of zooming, a quick-tap on your 'QuickCam:Zoom out' key, will cause it to zoom out 15 units at a time. And likewise for your 'QuickCam:Zoom in' key.
 
 
-[u]Default action/key assignments[/u]:
+[u]When player is 'on foot'[/u]
 
+Version 1.1.0 introduced "quick-keys keys" for when the player avatar is 'on foot'.
+
+In 'Options' - 'Controls' you can now specify which keys to use, to quickly turn the player 45 degrees left/right or do a u-turn.
+
+
+[u]Default action/key assignments[/u]
+
+When player is in a vehicle:
 [b]RIGHT[/b] - Look 45° right
 [b]LEFT[/b] - Look 45° left
+[i]none[/i] - Look 90° right
+[i]none[/i] - Look 90° left
+[i]none[/i] - Peek 45° right
+[i]none[/i] - Peek 45° left
 [b]UP[/b] - Look forwards
 [b]DOWN[/b] - Look backwards
 [b]END[/b] - Toggle look forwards/backwards
 [b]PAGE-UP[/b] - Zoom in
 [b]PAGE-DOWN[/b] - Zoom out
+
+When player is 'on foot':
+[i]none[/i] - On foot turn 45° right
+[i]none[/i] - On foot turn 45° left
+[b]END[/b] - On foot turn 180°
 
 
 [b][u]Restrictions[/u][/b]

@@ -9,15 +9,21 @@
     <translationContributors>
         ModHub (GIANTS Software)
         Anonymous
+        translate.google.com
     </translationContributors>
 
     <!-- Note that 'description' is only here for easier translations. It needs to be manually copied to ModDesc.XML later. -->
     <description>
-        Utiliser les touches pour avoir rapidement les vues depuis les véhicules;
-        - Coup d'oeil gauche / droite
-        - Rotation de 45 ° / 90 °
-        - vue avant / vers l'arrière
-        - Zoom avant / arrière
+Utiliser les touches pour avoir rapidement les vues depuis les véhicules;
+- Coup d'oeil gauche / droite
+- Rotation de 45 ° / 90 °
+- vue avant / vers l'arrière
+- Zoom avant / arrière
+
+Ou lorsque le joueur est «à pied»;
+- tourner 45° / 180°
+
+ATTENTION: n'oubliez pas de définir vos propres clés d'actions, dans l'écran Options / Contrôles, si nécessaire.
     </description>
         
     <texts>
@@ -34,5 +40,9 @@
         <text name="input_QuickCamZoomIn"         text="QuickCamera: Zoom avant"                       /> 
         <text name="input_QuickCamZoomOut"        text="QuickCamera: Zoom arrière"                  /> 
         <text name="input_QuickCamLockCustom"     text="QuickCamera: Garder une nouvelle vue avant"          />
+
+        <text name="input_QuickCamOnFootRight"    text="QuickCamera: On foot turn 45&#176; right"     />
+        <text name="input_QuickCamOnFootLeft"     text="QuickCamera: On foot turn 45&#176; left"      />
+        <text name="input_QuickCamOnFootForBack"  text="QuickCamera: On foot turn 180&#176;"    />
     </texts>
 </l10n>

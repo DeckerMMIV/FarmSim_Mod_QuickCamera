@@ -7,6 +7,10 @@ To read more about this mod, find it on;
 
 
 ## FS17 - Change-log
+1.1.0.25
+- Added player on-foot quick-rotation actions; 45° left/right, 180° turn
+  - NOTE! Remember to set the action keys yourself, as they are default set to nothing.
+
 1.0.1.24
 - Translations updated by contributers
 

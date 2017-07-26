@@ -8,6 +8,7 @@
     <!-- Add your own name or nickname here, when you contribute to this file's translation, so I know who to put into the credits. -->
     <translationContributors>
         ModHub (GIANTS Software)
+        translate.google.com
     </translationContributors>
 
     <!-- Note that 'description' is only here for easier translations. It needs to be manually copied to ModDesc.XML later. -->
@@ -17,6 +18,11 @@ Benutze folgende Tasten um schnell die Kamera zu bewegen:
 - Rotieren um 45°/ 90°
 - Sicht nach vorne / hinten
 - Zoom hinein / hinaus
+
+Oder wenn der Spieler zu Fuß ist;
+- 45° / 180° drehen
+
+ACHTUNG: Denken Sie daran, Ihre eigenen Handlungsschlüssel einzustellen, im Bildschirm Optionen / Bedienelemente, falls erforderlich.
     </description>
         
     <texts>
@@ -30,8 +36,12 @@ Benutze folgende Tasten um schnell die Kamera zu bewegen:
         <text name="input_QuickCamForward"        text="QuickCamera: Vorwärts"                />
         <text name="input_QuickCamBackward"       text="QuickCamera: Zurückblicken"           />
         <text name="input_QuickCamForBack"        text="QuickCamera: Umschalten vor./rück."   />
-        <text name="input_QuickCamZoomIn"         text="QuickCamera: Zoom in"                 /> <!-- needs translations -->
-        <text name="input_QuickCamZoomOut"        text="QuickCamera: Zoom out"                /> <!-- needs translations -->
-        <text name="input_QuickCamLockCustom"     text="QuickCamera: Keep new forward-cam"    /> <!-- needs translations -->
+        <text name="input_QuickCamZoomIn"         text="QuickCamera: Zoom in"                 />
+        <text name="input_QuickCamZoomOut"        text="QuickCamera: Zoom out"                />
+        <text name="input_QuickCamLockCustom"     text="QuickCamera: Keep new forward-cam"    />
+
+        <text name="input_QuickCamOnFootRight"    text="QuickCamera: On foot turn 45&#176; right"     />
+        <text name="input_QuickCamOnFootLeft"     text="QuickCamera: On foot turn 45&#176; left"      />
+        <text name="input_QuickCamOnFootForBack"  text="QuickCamera: On foot turn 180&#176;"    />
     </texts>
 </l10n>

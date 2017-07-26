@@ -8,6 +8,7 @@
     <!-- Add your own name or nickname here, when you contribute to this file's translation, so I know who to put into the credits. -->
     <translationContributors>
         PromGames
+        translate.google.com
     </translationContributors>
 
     <!-- Note that 'description' is only here for easier translations. It needs to be manually copied to ModDesc.XML later. -->
@@ -17,6 +18,11 @@ Utilice las siguientes teclas para modificar la cámara del vehículo;
 - rotar 45°/90°
 - Mirar atrás /adelante
 - zoom aumentar / disminuir
+
+O cuando el jugador está 'a pie';
+- girar 45° / 180°
+
+ATENCIÓN: Recuerde configurar sus propias teclas de acciones, en la pantalla Opciones / Controles, si es necesario.
     </description>
 
     <texts>
@@ -33,5 +39,9 @@ Utilice las siguientes teclas para modificar la cámara del vehículo;
         <text name="input_QuickCamZoomIn"         text="QuickCamera: Zoom in"                 />
         <text name="input_QuickCamZoomOut"        text="QuickCamera: Zoom out"                />
         <text name="input_QuickCamLockCustom"     text="QuickCamera: Bloquear cámara en esta posición"    />
+
+        <text name="input_QuickCamOnFootRight"    text="QuickCamera: On foot turn 45&#176; right"     />
+        <text name="input_QuickCamOnFootLeft"     text="QuickCamera: On foot turn 45&#176; left"      />
+        <text name="input_QuickCamOnFootForBack"  text="QuickCamera: On foot turn 180&#176;"    />
     </texts>
 </l10n>

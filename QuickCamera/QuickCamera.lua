@@ -260,7 +260,43 @@ function QuickCamera.update(self, dt)
 --            
     end;
 end;
-
 Steerable.update = Utils.appendedFunction(Steerable.update, QuickCamera.update);
+
+---------
+
+function QuickCamera.player_update(self, dt)
+    if self.isEntered and self.isClient 
+    and not self.walkingIsLocked and not self.walkingIsLocked
+    and not g_currentMission.isPlayerFrozen and not g_gui:getIsGuiVisible()
+    then
+        local quickCamEvent = nil;
+        if self.qcQuickTapType ~= nil then
+            if not InputBinding.isPressed(self.qcQuickTapType) then
+                if (g_currentMission.time - self.qcPressedTime) <= QuickCamera.quickRotateKeyTapMaxTimeMs then
+                    -- pressed-and-released within the time limit threshold.
+                    quickCamEvent = self.qcQuickTapType;
+                end;
+                self.qcQuickTapType = nil;
+            end;
+        elseif self.qcQuickTapType == nil then
+            if     InputBinding.hasEvent(InputBinding.QuickCamOnFootForBack)  then quickCamEvent       = InputBinding.QuickCamOnFootForBack;
+            elseif InputBinding.hasEvent(InputBinding.QuickCamOnFootLeft)     then self.qcQuickTapType = InputBinding.QuickCamOnFootLeft;       self.qcPressedTime = g_currentMission.time;
+            elseif InputBinding.hasEvent(InputBinding.QuickCamOnFootRight)    then self.qcQuickTapType = InputBinding.QuickCamOnFootRight;      self.qcPressedTime = g_currentMission.time;
+            end; 
+        end
+
+        if quickCamEvent ~= nil then
+            if quickCamEvent == InputBinding.QuickCamOnFootForBack then
+                self.rotY = self.rotY + math.pi
+            elseif quickCamEvent == InputBinding.QuickCamOnFootLeft then
+                self.rotY = self.rotY + math_pi_quarter
+            elseif quickCamEvent == InputBinding.QuickCamOnFootRight then
+                self.rotY = self.rotY - math_pi_quarter
+            end
+        end
+    end;
+end
+Player.update = Utils.appendedFunction(Player.update, QuickCamera.player_update);
+
 
 print(string.format("Script loaded: QuickCamera.lua (v%s)", QuickCamera.version));
