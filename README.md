@@ -1,5 +1,7 @@
 # Farming Simulator modification - QuickCamera
 
+Mod for Farming Simulator 17
+
 To read more about this mod, find it on;
 - http://www.farming-simulator.com/mods.php
 - http://fs-uk.com - http://fs-uk.com/mods/list/team/45
@@ -7,6 +9,9 @@ To read more about this mod, find it on;
 
 
 ## FS17 - Change-log
+1.1.1.26
+- Fix for 'look forward 359-degree rotation', so it now does a 'look forward -1 rotation' instead.
+
 1.1.0.25
 - Added player on-foot quick-rotation actions; 45° left/right, 180° turn
   - NOTE! Remember to set the action keys yourself, as they are default set to nothing.

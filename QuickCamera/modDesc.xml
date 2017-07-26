@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="34">
+<modDesc descVersion="37">
     <author>Decker_MMIV (DCK)</author>
     <authorContact>fs-uk.com, modcentral.co.uk, forum.farming-simulator.com</authorContact>
     
@@ -9,7 +9,7 @@
 -->    
     <contributors>DLH007, _dj_, Gonimy-Vetrom, jules.stmp537, Ziuta, Xno, PromGames, Anonymous</contributors>
 
-    <version>1.1.0.25</version>
+    <version>1.1.1.26</version>
     
     <title>
         <en>QuickCamera</en>
@@ -22,6 +22,9 @@
     </title>
     
     <changeLog><![CDATA[
+1.1.1.26
+- Fix for 'look forward 359-degree rotation', so it now does a 'look forward -1 rotation' instead.
+
 1.1.0.25
 - Added player on-foot quick-rotation actions; 45° left/right, 180° turn
 -- NOTE! Remember to set the action keys yourself, as they are default set to nothing.

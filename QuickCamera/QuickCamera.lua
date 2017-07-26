@@ -15,7 +15,7 @@ Suggestions
 
 Kyuss33
     I was wondering if anyone has a mod that allows you to adjust the height of your head or view in the cabin.
-    I feel like I'm a 7 foot person in harvester's cabin view.I have seen quick camera mod that allows for saving previous cameras 
+    I feel like I'm a 7 foot person in harvester's cabin view.I have seen quick camera mod that allows for saving previous cameras
     but I don't think it adjust the up down or height in cabin
     http://forum.giants-software.com/viewtopic.php?f=831&t=77401
 ]]
@@ -47,9 +47,9 @@ function QuickCamera.postLoad(self, xmlFile)
     if not QuickCamera.constantsLoaded then
         QuickCamera.constantsLoaded = true
 
-        if  self.isClient 
-        and ModsSettings ~= nil 
-        and ModsSettings.isVersion ~= nil 
+        if  self.isClient
+        and ModsSettings ~= nil
+        and ModsSettings.isVersion ~= nil
         and ModsSettings.isVersion("0.2.0", "QuickCamera")
         then
             local modName = "QuickCamera";
@@ -79,7 +79,6 @@ function QuickCamera.update(self, dt)
                 else
                     self.qc.accTime = 0;
                 end;
-                -- TODO: Fix the problem where it revolves 359 degrees, instead of just -1 degree.
                 local newCamRot = Utils.getMovedLimitedValues(self.qc.CamSourceRot, self.qc.CamSourceRot, self.qc.CamTargetRot, 2, self.qc.CamTime, self.qc.accTime, true);
 --print(string.format("%3d; sourceRot=%s; targetRot=%s; newCamRot=%s", self.qc.accTime, vec2str(self.qc.CamSourceRot), vec2str(self.qc.CamTargetRot), vec2str(newCamRot)));
                 self.cameras[self.camIndex].rotX = newCamRot[1];
@@ -94,7 +93,7 @@ function QuickCamera.update(self, dt)
         end;
         -- Detect action-keys for rotatable camera
         if self.cameras[self.camIndex].isRotatable then
---[[        
+--[[
             if InputBinding.hasEvent(InputBinding.QuickCamLockCustom, true) then
                 local camera = self.cameras[self.camIndex];
                 if camera.modQuickCamera == nil then
@@ -109,7 +108,7 @@ function QuickCamera.update(self, dt)
                     print("QuickCam: Reverted to original rotation")
                 end
             end
---]]            
+--]]
             --
             local quickCamEvent = nil;
             if self.qcQuickTapType ~= nil then
@@ -128,7 +127,7 @@ function QuickCamera.update(self, dt)
                 elseif InputBinding.hasEvent(InputBinding.QuickCamRight)    then self.qcQuickTapType = InputBinding.QuickCamRight;      self.qcPressedTime = g_currentMission.time;
                 elseif InputBinding.hasEvent(InputBinding.QuickCamLeft2)    then self.qcQuickTapType = InputBinding.QuickCamLeft2;      self.qcPressedTime = g_currentMission.time;
                 elseif InputBinding.hasEvent(InputBinding.QuickCamRight2)   then self.qcQuickTapType = InputBinding.QuickCamRight2;     self.qcPressedTime = g_currentMission.time;
-                end; 
+                end;
             end;
             --
             if quickCamEvent ~= nil then
@@ -138,7 +137,7 @@ function QuickCamera.update(self, dt)
                 elseif quickCamEvent == InputBinding.QuickCamBackward then quickCamEvent = InputBinding.QuickCamForward
                 end
               end
-            
+
               local forwardArch = { self.cameras[self.camIndex].origRotY - math_pi_half, self.cameras[self.camIndex].origRotY + math_pi_half }
 
               local rotY = self.cameras[self.camIndex].rotY;
@@ -157,13 +156,20 @@ function QuickCamera.update(self, dt)
                 self.qc = {};
                 self.qc.CamIndex = self.camIndex;
                 self.qc.CamTime = 250; -- milliseconds
-                
+
                 while ((rotY + math_pi_double) < forwardArch[1]) do rotY = rotY + math_pi_double; end
                 while ((rotY - math_pi_double) > forwardArch[2]) do rotY = rotY - math_pi_double; end
+
+                if (rotY > self.cameras[self.camIndex].origRotY + math.pi) then
+                    rotY = rotY - math_pi_double
+                end
+                if (rotY < self.cameras[self.camIndex].origRotY - math.pi) then
+                    rotY = rotY + math_pi_double
+                end
                 
                 self.qc.CamSourceRot = {self.cameras[self.camIndex].rotX, rotY};
                 self.qc.CamTargetRot = {self.cameras[self.camIndex].origRotX, self.cameras[self.camIndex].origRotY};
-              elseif quickCamEvent == InputBinding.QuickCamLeft 
+              elseif quickCamEvent == InputBinding.QuickCamLeft
                   or quickCamEvent == InputBinding.QuickCamRight
                   or quickCamEvent == InputBinding.QuickCamLeft2
                   or quickCamEvent == InputBinding.QuickCamRight2
@@ -179,44 +185,44 @@ function QuickCamera.update(self, dt)
                     dirY = -math_pi_half; -- rotate right
                     angleSnap = 90
                 end;
-                
+
                 self.qc = {};
                 self.qc.CamIndex = self.camIndex;
                 self.qc.CamTime = 100; -- milliseconds
                 self.qc.CamSourceRot = {self.cameras[self.camIndex].rotX, rotY};
-                
+
                 ---- Quick-rotate and snap to nearest 45-degree angle.
                 rotY = rotY + dirY; -- rotate
                 rotY = Utils.degToRad(angleSnap * math.floor((math.deg(rotY) + (angleSnap/2))/angleSnap)); -- snap
-                
+
                 self.qc.CamTargetRot = {self.cameras[self.camIndex].rotX, rotY};
               end;
             else
                 if self.qc == nil then
                     local dirY = nil
-                    if     InputBinding.isPressed(InputBinding.QuickCamPeekRight) then 
+                    if     InputBinding.isPressed(InputBinding.QuickCamPeekRight) then
                         dirY = -math_pi_six
-                    elseif InputBinding.isPressed(InputBinding.QuickCamPeekLeft)  then 
+                    elseif InputBinding.isPressed(InputBinding.QuickCamPeekLeft)  then
                         dirY = math_pi_six
                     end
                     if dirY ~= nil then
                         local rotY = self.cameras[self.camIndex].rotY;
                         while (rotY < -math_pi_double) do rotY = rotY + math_pi_double; end
                         while (rotY >  math_pi_double) do rotY = rotY - math_pi_double; end
-                        
+
                         self.qc = {};
                         self.qc.peekFrom = {self.cameras[self.camIndex].rotX, rotY}
                         self.qc.CamIndex = self.camIndex;
                         self.qc.CamTime = 100; -- milliseconds
                         self.qc.CamSourceRot = {self.cameras[self.camIndex].rotX, rotY};
-                        
+
                         rotY = rotY + dirY; -- rotate
                         self.qc.CamTargetRot = {self.cameras[self.camIndex].rotX, rotY};
                     end
                 elseif self.qc.peekFrom ~= nil then
-                    if  not InputBinding.isPressed(InputBinding.QuickCamPeekRight) 
+                    if  not InputBinding.isPressed(InputBinding.QuickCamPeekRight)
                     and not InputBinding.isPressed(InputBinding.QuickCamPeekLeft)
-                    then 
+                    then
                         self.qc.accTime = 0
                         local camera = self.cameras[self.camIndex];
                         self.qc.CamSourceRot = { camera.rotX, camera.rotY }
@@ -239,10 +245,10 @@ function QuickCamera.update(self, dt)
                 if (diffMs <= QuickCamera.quickRotateKeyTapMaxTimeMs) then
                     self.cameras[self.camIndex]:zoomSmoothly(QuickCamera.quickZoomDistance);
                 end;
-                
+
                 self.qcTimeZoomOut = nil;
             end;
-            --            
+            --
             if self.qcTimeZoomIn == nil then
                 if InputBinding.isPressed(InputBinding.QuickCamZoomIn) then
                     self.qcTimeZoomIn = g_currentMission.time; -- remember time of key-pressed-down
@@ -253,11 +259,11 @@ function QuickCamera.update(self, dt)
                 if (diffMs <= QuickCamera.quickRotateKeyTapMaxTimeMs) then
                     self.cameras[self.camIndex]:zoomSmoothly(-QuickCamera.quickZoomDistance);
                 end;
-                
+
                 self.qcTimeZoomIn = nil;
             end;
         end;
---            
+
     end;
 end;
 Steerable.update = Utils.appendedFunction(Steerable.update, QuickCamera.update);
@@ -265,7 +271,7 @@ Steerable.update = Utils.appendedFunction(Steerable.update, QuickCamera.update);
 ---------
 
 function QuickCamera.player_update(self, dt)
-    if self.isEntered and self.isClient 
+    if self.isEntered and self.isClient
     and not self.walkingIsLocked and not self.walkingIsLocked
     and not g_currentMission.isPlayerFrozen and not g_gui:getIsGuiVisible()
     then
@@ -282,7 +288,7 @@ function QuickCamera.player_update(self, dt)
             if     InputBinding.hasEvent(InputBinding.QuickCamOnFootForBack)  then quickCamEvent       = InputBinding.QuickCamOnFootForBack;
             elseif InputBinding.hasEvent(InputBinding.QuickCamOnFootLeft)     then self.qcQuickTapType = InputBinding.QuickCamOnFootLeft;       self.qcPressedTime = g_currentMission.time;
             elseif InputBinding.hasEvent(InputBinding.QuickCamOnFootRight)    then self.qcQuickTapType = InputBinding.QuickCamOnFootRight;      self.qcPressedTime = g_currentMission.time;
-            end; 
+            end;
         end
 
         if quickCamEvent ~= nil then
