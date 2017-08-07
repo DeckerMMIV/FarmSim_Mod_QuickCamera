@@ -22,7 +22,7 @@ Usa i tasti per puntare velocemente la telecamera sul veicolo;
 O quando il giocatore è "a piedi";
 - ruotare 45° / 180°
 
-ATTENZIONE: Ricordarsi di impostare le tue azioni chiavi, nella schermata Opzioni / Controlli, se necessario.
+ATTENZIONE: Ricordarti di impostare i tuoi tasti azione, nella schermata Opzioni / Controlli, se necessario.
     </description>
 
     <texts>
@@ -40,8 +40,8 @@ ATTENZIONE: Ricordarsi di impostare le tue azioni chiavi, nella schermata Opzion
         <text name="input_QuickCamZoomOut"        text="QuickCamera: Zoom out"                />
         <text name="input_QuickCamLockCustom"     text="QuickCamera: Mantieni impostazioni telecamera"    />
 
-        <text name="input_QuickCamOnFootRight"    text="QuickCamera: On foot turn 45&#176; right"     />
-        <text name="input_QuickCamOnFootLeft"     text="QuickCamera: On foot turn 45&#176; left"      />
-        <text name="input_QuickCamOnFootForBack"  text="QuickCamera: On foot turn 180&#176;"    />
+        <text name="input_QuickCamOnFootRight"    text="QuickCamera: A piedi gira 45&#176; destra"     />
+        <text name="input_QuickCamOnFootLeft"     text="QuickCamera: A piedi gira 45&#176; sinistra"      />
+        <text name="input_QuickCamOnFootForBack"  text="QuickCamera: A piedi gira 180&#176;"    />
     </texts>
 </l10n>
