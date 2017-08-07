@@ -23,7 +23,7 @@ Utiliser les touches pour avoir rapidement les vues depuis les véhicules;
 Ou lorsque le joueur est «à pied»;
 - tourner 45° / 180°
 
-ATTENTION: n'oubliez pas de définir vos propres clés d'actions, dans l'écran Options / Contrôles, si nécessaire.
+ATTENTION: n'oubliez pas de définir vos propres touches d'actions, dans l'écran Options / Contrôles, si nécessaire.
     </description>
         
     <texts>
@@ -41,8 +41,8 @@ ATTENTION: n'oubliez pas de définir vos propres clés d'actions, dans l'écran 
         <text name="input_QuickCamZoomOut"        text="QuickCamera: Zoom arrière"                  /> 
         <text name="input_QuickCamLockCustom"     text="QuickCamera: Garder une nouvelle vue avant"          />
 
-        <text name="input_QuickCamOnFootRight"    text="QuickCamera: On foot turn 45&#176; right"     />
-        <text name="input_QuickCamOnFootLeft"     text="QuickCamera: On foot turn 45&#176; left"      />
-        <text name="input_QuickCamOnFootForBack"  text="QuickCamera: On foot turn 180&#176;"    />
+        <text name="input_QuickCamOnFootRight"    text="QuickCamera: A pied tourner de 45&#176; à droite"     />
+        <text name="input_QuickCamOnFootLeft"     text="QuickCamera: A pied tourner de 45&#176; à gauche"      />
+        <text name="input_QuickCamOnFootForBack"  text="QuickCamera: A pied demi-tour à 180&#176;"    />
     </texts>
 </l10n>
