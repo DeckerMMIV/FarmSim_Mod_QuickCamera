@@ -4,6 +4,11 @@ Mod for Farming Simulator 17
 
 
 [b][u]Changelog[/u][/b]
+1.2.0.29
+- Translations updated by contributers;
+-- Italian by Xno
+-- French by Anonymous
+
 1.2.0.28
 - Articulated vehicles steering rotation fix
 -- Affected vehicles; Liebherr L 538, New Holland T9, JCB TM320S/435S, Ponsse ScorpionKing/Buffalo, Sampo Rosenlew HR46X

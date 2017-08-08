@@ -9,7 +9,7 @@
 -->    
     <contributors>DLH007, _dj_, Gonimy-Vetrom, jules.stmp537, Ziuta, Xno, PromGames, Anonymous</contributors>
 
-    <version>1.2.0.28</version>
+    <version>1.2.0.29</version>
     
     <title>
         <en>QuickCamera</en>
@@ -22,11 +22,16 @@
     </title>
     
     <changeLog><![CDATA[
+1.2.0.29
+- Translations updated by contributers;
+  - Italian by Xno
+  - French by Anonymous
+
 1.2.0.28
 - Articulated vehicles steering rotation fix
--- Affected vehicles; Liebherr L 538, New Holland T9, JCB TM320S/435S, Ponsse ScorpionKing/Buffalo, Sampo Rosenlew HR46X
--- Currently only modifiable via console-command; modQuickCameraSteeringRotSpeed <new_rotation_value>
--- User configuration-file saved to; /modsSettings/QuickCamera_Config.xml
+  - Affected vehicles; Liebherr L 538, New Holland T9, JCB TM320S/435S, Ponsse ScorpionKing/Buffalo, Sampo Rosenlew HR46X
+  - Currently only modifiable via console-command; modQuickCameraSteeringRotSpeed <new_rotation_value>
+  - User configuration-file saved to; /modsSettings/QuickCamera_Config.xml
 
 1.1.1.26
 - Fix for 'look forward 359-degree rotation', so it now does a 'look forward -1 rotation' instead.
@@ -82,7 +87,7 @@ ACHTUNG: Denken Sie daran, Ihre eigenen Handlungsschlüssel einzustellen, im Bil
 Ou lorsque le joueur est «à pied»;
 - tourner 45° / 180°
 
-ATTENTION: n'oubliez pas de définir vos propres clés d'actions, dans l'écran Options / Contrôles, si nécessaire.
+ATTENTION: n'oubliez pas de définir vos propres touches d'actions, dans l'écran Options / Contrôles, si nécessaire.
 ]]>
         </fr>
         <it>
@@ -95,7 +100,7 @@ ATTENTION: n'oubliez pas de définir vos propres clés d'actions, dans l'écran 
 O quando il giocatore è "a piedi";
 - ruotare 45° / 180°
 
-ATTENZIONE: Ricordarsi di impostare le tue azioni chiavi, nella schermata Opzioni / Controlli, se necessario.
+ATTENZIONE: Ricordarti di impostare i tuoi tasti azione, nella schermata Opzioni / Controlli, se necessario.
 ]]>
         </it>
         <pl>
