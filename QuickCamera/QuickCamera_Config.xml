@@ -1,0 +1,23 @@
+﻿<QuickCamera>
+    <steeringRotationFix vehCfg="data/vehicles/steerable/jcb/jcbtm320s.xml">
+        <camera camIdx="2" rotSpeed="0.20"/>
+    </steeringRotationFix>
+    <steeringRotationFix vehCfg="data/vehicles/steerable/ponsse/ponssescorpion.xml">
+        <camera camIdx="1" rotSpeed="0.30"/>
+    </steeringRotationFix>
+    <steeringRotationFix vehCfg="data/vehicles/steerable/newholland/newhollandt9.xml">
+        <camera camIdx="1" rotSpeed="0.00"/>
+    </steeringRotationFix>
+    <steeringRotationFix vehCfg="data/vehicles/steerable/ponsse/ponssebuffalo.xml">
+        <camera camIdx="1" rotSpeed="0.30"/>
+    </steeringRotationFix>
+    <steeringRotationFix vehCfg="data/vehicles/steerable/samporosenlew/samporosenlewhr46.xml">
+        <camera camIdx="1" rotSpeed="0.30"/>
+    </steeringRotationFix>
+    <steeringRotationFix vehCfg="data/vehicles/steerable/jcb/jcb435s.xml">
+        <camera camIdx="2" rotSpeed="0.30"/>
+    </steeringRotationFix>
+    <steeringRotationFix vehCfg="data/vehicles/steerable/liebherr/liebherrl538.xml">
+        <camera camIdx="2" rotSpeed="0.30"/>
+    </steeringRotationFix>
+</QuickCamera>
