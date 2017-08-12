@@ -105,7 +105,7 @@ ATTENTION: n'oubliez pas de définir vos propres touches d'actions, dans l'écra
 
 Mise à jour 1.2.0.30
 - Ajouté correction de rotation de direction pour les vehicules articulés (voir ModHub pour instructions)
-- Ajouté actions de rotations rapides pour le joueur «à pied»; 45° gauche/droite, 180° demi-tour
+- Ajouté actions de rotations rapides pour le joueur «à pied»; gauche/droite à 45°, demi-tour à 180°
 - Mise à jour des traductions par les contributeurs & quelques machines-traduite
 - Correction de conduite en marche arrière et regarder devant/derrière
 - Corrigées aussi, les touches QuickCamera ne seront pas actives quand un GUI est affiché
