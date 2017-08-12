@@ -15,10 +15,8 @@
     <!-- Note that 'description' is only here for easier translations. It needs to be manually copied to ModDesc.XML later. -->
     <description>
 Utiliser les touches pour avoir rapidement les vues depuis les véhicules;
-- Coup d'oeil gauche / droite
-- Rotation de 45 ° / 90 °
-- vue avant / vers l'arrière
-- Zoom avant / arrière
+- Coup d'oeil gauche / droite, Rotation de 45 ° / 90 °
+- vue avant / vers l'arrière, Zoom avant / arrière
 
 Ou lorsque le joueur est «à pied»;
 - tourner 45° / 180°

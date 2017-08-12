@@ -14,10 +14,8 @@
     <!-- Note that 'description' is only here for easier translations. It needs to be manually copied to ModDesc.XML later. -->
     <description>
 Utilice las siguientes teclas para modificar la cámara del vehículo;
-- peek left/right
-- rotar 45°/90°
-- Mirar atrás /adelante
-- zoom aumentar / disminuir
+- Mirar a la izquierda / derecha, rotar 45°/90°
+- Mirar atrás /adelante, zoom aumentar / disminuir
 
 O cuando el jugador está 'a pie';
 - girar 45° / 180°
@@ -40,8 +38,8 @@ ATENCIÓN: Recuerde configurar sus propias teclas de acciones, en la pantalla Op
         <text name="input_QuickCamZoomOut"        text="QuickCamera: Zoom out"                />
         <text name="input_QuickCamLockCustom"     text="QuickCamera: Bloquear cámara en esta posición"    />
 
-        <text name="input_QuickCamOnFootRight"    text="QuickCamera: On foot turn 45&#176; right"     />
-        <text name="input_QuickCamOnFootLeft"     text="QuickCamera: On foot turn 45&#176; left"      />
-        <text name="input_QuickCamOnFootForBack"  text="QuickCamera: On foot turn 180&#176;"    />
+        <text name="input_QuickCamOnFootRight"    text="QuickCamera: A pie 45&#176; a la derecha"     />
+        <text name="input_QuickCamOnFootLeft"     text="QuickCamera: A pie 45&#176; a la izquierda"      />
+        <text name="input_QuickCamOnFootForBack"  text="QuickCamera: A pie 180&#176;"    />
     </texts>
 </l10n>

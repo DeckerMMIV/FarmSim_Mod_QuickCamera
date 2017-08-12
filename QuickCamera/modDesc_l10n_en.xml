@@ -13,10 +13,8 @@
     <!-- Note that 'description' is only here for easier translations. It needs to be manually copied to ModDesc.XML later. -->
     <description>
 Use keys to quickly have the vehicle camera;
-- peek left/right
-- rotate 45°/90°
-- look forwards/backwards
-- zoom in/out
+- peek left/right, rotate 45°/90°
+- look forwards/backwards, zoom in/out
 
 Or when player is 'on foot';
 - rotate 45°/180°

@@ -9,6 +9,12 @@ To read more about this mod, find it on;
 
 
 ## FS17 - Change-log
+1.2.0.30
+- Updated readme file, explaning the 'articulated vehicles steering rotation fix' features
+- Machine translations done for; DE, ES, PL, RU
+- Included vehicle for articulated vehicle steering rotation fix; Challenger MT900E
+- Bug fixed in saving-code for articulated vehicle steering rotation fix
+
 1.2.0.29
 - Translations updated by contributers;
   - Italian by Xno

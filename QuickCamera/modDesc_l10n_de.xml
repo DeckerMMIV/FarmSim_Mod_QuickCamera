@@ -14,10 +14,8 @@
     <!-- Note that 'description' is only here for easier translations. It needs to be manually copied to ModDesc.XML later. -->
     <description>
 Benutze folgende Tasten um schnell die Kamera zu bewegen:
-- Kurzer Blick nach links / rechts
-- Rotieren um 45°/ 90°
-- Sicht nach vorne / hinten
-- Zoom hinein / hinaus
+- Kurzer Blick nach links / rechts, Rotieren um 45°/ 90°
+- Sicht nach vorne / hinten, Zoom hinein / hinaus
 
 Oder wenn der Spieler zu Fuß ist;
 - 45° / 180° drehen
@@ -40,8 +38,8 @@ ACHTUNG: Denken Sie daran, Ihre eigenen Handlungsschlüssel einzustellen, im Bil
         <text name="input_QuickCamZoomOut"        text="QuickCamera: Zoom out"                />
         <text name="input_QuickCamLockCustom"     text="QuickCamera: Keep new forward-cam"    />
 
-        <text name="input_QuickCamOnFootRight"    text="QuickCamera: On foot turn 45&#176; right"     />
-        <text name="input_QuickCamOnFootLeft"     text="QuickCamera: On foot turn 45&#176; left"      />
-        <text name="input_QuickCamOnFootForBack"  text="QuickCamera: On foot turn 180&#176;"    />
+        <text name="input_QuickCamOnFootRight"    text="QuickCamera: Zu Fuß drehen 45&#176; rechts"     />
+        <text name="input_QuickCamOnFootLeft"     text="QuickCamera: Zu Fuß drehen 45&#176; links"      />
+        <text name="input_QuickCamOnFootForBack"  text="QuickCamera: Zu Fuß drehen 180&#176;"    />
     </texts>
 </l10n>

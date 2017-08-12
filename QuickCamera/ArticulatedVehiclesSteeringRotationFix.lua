@@ -8,6 +8,10 @@
 addConsoleCommand("modQuickCameraSteeringRotSpeed", "(QuickCamera) Modify steering rotation speed", "consoleCommandQuickCameraSteeringRotSpeed", QuickCamera)
 
 QuickCamera.consoleCommandQuickCameraSteeringRotSpeed = function(self, arg1)
+    if false == QuickCamera.steerRotFix_enabled then
+        return "Articulated vehicles steering rotation camera fix is set to be disabled.\nTo enable, please change the setting in QuickCamera_Config.XML file and reload game-session."
+    end
+
     local curVeh = g_currentMission.controlledVehicle
     if nil == curVeh or nil == curVeh.cameras or true ~= curVeh.cameras[curVeh.camIndex].isRotatable then
         return "Not in a vehicle, or current vehicle-camera not rotatable"
@@ -15,9 +19,14 @@ QuickCamera.consoleCommandQuickCameraSteeringRotSpeed = function(self, arg1)
     
     local newValue = tonumber(arg1)
     if nil ~= newValue then
-        QuickCamera:steerRotFixApply(curVeh, curVeh.camIndex, newValue)
+        if true == QuickCamera:steerRotFixApply(curVeh, curVeh.camIndex, newValue) then
+            print(("Updated camera (#%d) rotYSteeringRotSpeed to: %.2f"):format(curVeh.camIndex, newValue))
+        else
+            print("Failed to update camera rotYSteeringRotSpeed")
+        end
+    else
+        print(("This camera (#%d) rotYSteeringRotSpeed is: %.2f"):format(curVeh.camIndex, curVeh.cameras[curVeh.camIndex].rotYSteeringRotSpeed))
     end
-    print("This camera (#"..curVeh.camIndex..") rotYSteeringRotSpeed is: "..tostring(curVeh.cameras[curVeh.camIndex].rotYSteeringRotSpeed))
 end
 
 ---
@@ -41,7 +50,15 @@ QuickCamera.steerRotFixInit = function(self)
     QuickCamera.cfgPath     = getUserProfileAppPath() .. "modsSettings/";
     
     QuickCamera:steerRotFix_LoadCfg(QuickCamera.modDir,  QuickCamera.cfgFilename)
-    QuickCamera:steerRotFix_LoadCfg(QuickCamera.cfgPath, QuickCamera.cfgFilename)
+    local foundUserCfg = QuickCamera:steerRotFix_LoadCfg(QuickCamera.cfgPath, QuickCamera.cfgFilename)
+    if false == foundUserCfg then
+        QuickCamera:steerRotFix_SaveCfg(QuickCamera.cfgPath, QuickCamera.cfgFilename)
+    end
+
+    print("QuickCamera: Articulated vehicles steering rotation camera fix is; " .. (false == QuickCamera.steerRotFix_enabled and "Disabled" or "Enabled"))
+    if false ~= QuickCamera.steerRotFix_enabled then
+        print("QuickCamera: To modify steering rotation camera value, use console-command 'modQuickCameraSteeringRotSpeed'")
+    end
 
     QuickCamera.prefixes = { g_modsDirectory:lower() }
     for _,attrs in pairs(g_dlcsDirectories) do
@@ -54,10 +71,10 @@ end
 QuickCamera.steerRotFixApply = function(self, vehicle, camIndex, newRotSpeed)
     if nil ~= g_dedicatedServerInfo then
         -- This fix is only for client-side
-        return
+        return nil
     end
     if nil == vehicle or nil == vehicle.cameras or nil == vehicle.cameras[camIndex] then
-        return
+        return false
     end
 
     QuickCamera:steerRotFixInit();
@@ -79,6 +96,8 @@ QuickCamera.steerRotFixApply = function(self, vehicle, camIndex, newRotSpeed)
     QuickCamera:steerRotFix_SaveCfg(QuickCamera.cfgPath, QuickCamera.cfgFilename)
     
     vehicle.cameras[camIndex].rotYSteeringRotSpeed = newRotSpeed
+    
+    return true
 end
 
 QuickCamera.getSuffixConfigFileName = function(self, vehicle)
@@ -97,13 +116,13 @@ end
 QuickCamera.steerRotFix_LoadCfg = function(self, path, filename)
     if nil ~= g_dedicatedServerInfo then
         -- This fix is only for client-side
-        return
+        return nil
     end
 
     local pathFilename = path .. filename
 --print("Attempt loading: "..pathFilename);
     if not fileExists(pathFilename) then
-        return
+        return false
     end
 
     local rootTag = "QuickCamera"
@@ -143,13 +162,9 @@ QuickCamera.steerRotFix_LoadCfg = function(self, path, filename)
         
         delete(xmlFile);
         xmlFile = nil;
-        
-        if false == QuickCamera.steerRotFix_enabled then
-            print("QuickCamera: Articulated vehicles steering rotation camera fix is; Disabled")
-        else
-            print("QuickCamera: Articulated vehicles steering rotation camera fix settings ("..i..") loaded from; "..pathFilename)
-        end
     end
+
+    return true
 end
 
 QuickCamera.steerRotFix_SaveCfg = function(self, path, filename)
@@ -177,6 +192,7 @@ QuickCamera.steerRotFix_SaveCfg = function(self, path, filename)
             local j=0
             for _,attrs in pairs(steerRotFix) do
                 local tag2 = ("%s.camera(%d)"):format(tag, j)
+                j=j+1
                 setXMLInt(   xmlFile, tag2 .. "#camIdx", attrs.camIndex)
                 setXMLString(xmlFile, tag2 .. "#rotSpeed", ("%.2f"):format(attrs.rotSpeed))
             end

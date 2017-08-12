@@ -14,10 +14,8 @@
     <!-- Note that 'description' is only here for easier translations. It needs to be manually copied to ModDesc.XML later. -->
     <description>
 Usa i tasti per puntare velocemente la telecamera sul veicolo;
-- Occhiata sinistra/destra
-- ruota 45/90-gradi sinistra/destra
-- guarda avanti/indiestro
-- zoom in/out
+- Occhiata sinistra/destra, ruota 45/90-gradi sinistra/destra
+- guarda avanti/indiestro, zoom in/out
 
 O quando il giocatore è "a piedi";
 - ruotare 45° / 180°

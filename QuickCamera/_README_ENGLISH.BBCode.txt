@@ -4,6 +4,12 @@ Mod for Farming Simulator 17
 
 
 [b][u]Changelog[/u][/b]
+1.2.0.30
+- Updated readme file, explaning the 'articulated vehicles steering rotation fix' features
+- Machine translations done for; DE, ES, PL, RU
+- Included vehicle for articulated vehicle steering rotation fix; Challenger MT900E
+- Bug fixed in saving-code for articulated vehicle steering rotation fix
+
 1.2.0.29
 - Translations updated by contributers;
 -- Italian by Xno
@@ -70,6 +76,37 @@ Version 1.1.0 introduced "quick-keys keys" for when the player avatar is 'on foo
 In 'Options' - 'Controls' you can now specify which keys to use, to quickly turn the player 45 degrees left/right or do a u-turn.
 
 
+[u]Articulated vehicles steering camera-rotation fix[/u]
+
+Personally I've been a bit annoyed that most of the articulated vehicles external/3rd-person camera is not turning towards the driving direction.
+
+So to remedy that, a feature have been added to QuickCamera, which can modify the game's default 'steering-Y-rotation-speed' value, so the camera will be more useful in articulated vehicles.
+
+The following default articulated vehicles are affected by this feature in QuickCamera:
+- New Holland T9
+- Challenger MT900E
+- Liebherr L 538
+- JCB TM320S/435S
+- Ponsse ScorpionKing/Buffalo
+- Sampo Rosenlew HR46X
+
+[i]How to disable the steering camera-rotation feature[/i]
+
+To disable this feature in QuickCamera, you need to modify the file; modsSettings/QuickCamera_Config.XML - which can be found in the same folder as where the MODS folder.
+
+Edit the XML file, and change the following XML-attribute; [color=blue]steeringRotationFixEnabled[/color] - so its value becomes 'false' (instead of 'true').
+
+Save the XML file and restart your game-session, so the changes will be reloaded.
+
+[i]How to modify steering camera-rotation[/i]
+
+To apply/use this feature on other articulated vehicles, you need to enable the in-game console and use this console-command; [color=blue]modQuickCameraSteeringRotSpeed[/color]
+
+Execute the console-command without arguments, to see the value of the entered vehicle's current selected camera.
+
+Execute the console-command with a numerical argument (usually in the range -0.9 .. 0.9), to set a new 'steering-Y-rotation-speed' value for the entered vehicle's current selected camera.
+
+
 [u]Default action/key assignments[/u]
 
 When player is in a vehicle:
@@ -106,7 +143,6 @@ If you encounter problems or bugs using this mod, please use the support-thread.
 
 Known bugs/problems/ToDo:
 - Because this QuickCamera mod does not override the normal camera movement script, there might be a little movement first, before the camera snaps into position - IF you have assigned the same keys as for the normal look left/right/up/down.
-- Sometimes when snapping to look forward/backward, the camera-rotation may rotate several times quickly. There's some math that I still haven't quite figured out how to solve.
 
 
 Credits:

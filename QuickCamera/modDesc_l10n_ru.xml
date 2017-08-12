@@ -14,10 +14,8 @@
     <!-- Note that 'description' is only here for easier translations. It needs to be manually copied to ModDesc.XML later. -->
     <description>
 Используется для быстрого управления камерой;
-- peek left/right
-- вращение на 45/90-градусов влево/вправо, 
-- посмотреть вперед/назад 
-- или приблизить/отдалить
+- Заглянуть влево/вправо, вращение на 45/90-градусов влево/вправо, 
+- посмотреть вперед/назад, или приблизить/отдалить
 
 Или когда игрок находится «пешком»;
 - вращать 45° / 180°
@@ -40,8 +38,8 @@
         <text name="input_QuickCamZoomOut"        text="QuickCamera: Отдалить"                            />
         <text name="input_QuickCamLockCustom"     text="QuickCamera: Установить новую основную камеру"    />
 
-        <text name="input_QuickCamOnFootRight"    text="QuickCamera: On foot turn 45&#176; right"     />
-        <text name="input_QuickCamOnFootLeft"     text="QuickCamera: On foot turn 45&#176; left"      />
-        <text name="input_QuickCamOnFootForBack"  text="QuickCamera: On foot turn 180&#176;"    />
+        <text name="input_QuickCamOnFootRight"    text="QuickCamera: Пеший поворот 45&#176; вправо"     />
+        <text name="input_QuickCamOnFootLeft"     text="QuickCamera: Пеший поворот 45&#176; влево"      />
+        <text name="input_QuickCamOnFootForBack"  text="QuickCamera: Пеший поворот 180&#176;"    />
     </texts>
 </l10n>

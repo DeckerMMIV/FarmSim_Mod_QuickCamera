@@ -9,7 +9,7 @@
 -->    
     <contributors>DLH007, _dj_, Gonimy-Vetrom, jules.stmp537, Ziuta, Xno, PromGames, Anonymous</contributors>
 
-    <version>1.2.0.29</version>
+    <version>1.2.0.30</version>
     
     <title>
         <en>QuickCamera</en>
@@ -22,6 +22,12 @@
     </title>
     
     <changeLog><![CDATA[
+1.2.0.30
+- Updated readme file, explaning the 'articulated vehicles steering rotation fix' features
+- Machine translations done for; DE, ES, PL, RU
+- Included vehicle for articulated vehicle steering rotation fix; Challenger MT900E
+- Bug fixed in saving-code for articulated vehicle steering rotation fix
+
 1.2.0.29
 - Translations updated by contributers;
   - Italian by Xno
@@ -53,93 +59,128 @@
     <description>
         <en>
 <![CDATA[Use keys to quickly have the vehicle camera;
-- peek left/right
-- rotate 45°/90°
-- look forwards/backwards
-- zoom in/out
+- peek left/right, rotate 45°/90°
+- look forwards/backwards, zoom in/out
 
 Or when player is 'on foot';
 - rotate 45°/180°
 
 ATTENTION: Remember to set your own actions keys, in the Options / Controls screen, if needed.
+
+Update 1.2.0.30
+- Added articulated vehicles steering rotation fix (see ModHub for instructions)
+- Added player on-foot quick-rotation actions; 45° left/right, 180° turn
+- Translations updated by contributers & some machine-translated
+- Fix for reverse driving and looking forward/backwards
+- Fix so QuickCamera keys won't be active when a GUI is shown
 ]]>
         </en>
         <de>
 <![CDATA[Benutze folgende Tasten um schnell die Kamera zu bewegen:
-- Kurzer Blick nach links / rechts
-- Rotieren um 45°/ 90°
-- Sicht nach vorne / hinten
-- Zoom hinein / hinaus
+- Kurzer Blick nach links / rechts, Rotieren um 45°/ 90°
+- Sicht nach vorne / hinten, Zoom hinein / hinaus
 
 Oder wenn der Spieler zu Fuß ist;
 - 45° / 180° drehen
 
 ACHTUNG: Denken Sie daran, Ihre eigenen Handlungsschlüssel einzustellen, im Bildschirm Optionen / Bedienelemente, falls erforderlich.
+
+Update 1.2.0.30
+- Added articulated vehicles steering rotation fix (see ModHub for instructions)
+- Added player on-foot quick-rotation actions; 45° left/right, 180° turn
+- Translations updated by contributers & some machine-translated
+- Fix for reverse driving and looking forward/backwards
+- Fix so QuickCamera keys won't be active when a GUI is shown
 ]]>
         </de>
         <fr>
 <![CDATA[Utiliser les touches pour avoir rapidement les vues depuis les véhicules;
-- Coup d'oeil gauche / droite
-- Rotation de 45 ° / 90 °
-- vue avant / vers l'arrière
-- Zoom avant / arrière
+- Coup d'oeil gauche / droite, Rotation de 45 ° / 90 °
+- vue avant / vers l'arrière, Zoom avant / arrière
 
 Ou lorsque le joueur est «à pied»;
 - tourner 45° / 180°
 
 ATTENTION: n'oubliez pas de définir vos propres touches d'actions, dans l'écran Options / Contrôles, si nécessaire.
+
+Update 1.2.0.30
+- Added articulated vehicles steering rotation fix (see ModHub for instructions)
+- Added player on-foot quick-rotation actions; 45° left/right, 180° turn
+- Translations updated by contributers & some machine-translated
+- Fix for reverse driving and looking forward/backwards
+- Fix so QuickCamera keys won't be active when a GUI is shown
 ]]>
         </fr>
         <it>
 <![CDATA[Usa i tasti per puntare velocemente la telecamera sul veicolo;
-- Occhiata sinistra/destra
-- ruota 45/90-gradi sinistra/destra
-- guarda avanti/indiestro
-- zoom in/out
+- Occhiata sinistra/destra, ruota 45/90-gradi sinistra/destra
+- guarda avanti/indiestro, zoom in/out
 
 O quando il giocatore è "a piedi";
 - ruotare 45° / 180°
 
 ATTENZIONE: Ricordarti di impostare i tuoi tasti azione, nella schermata Opzioni / Controlli, se necessario.
+
+Update 1.2.0.30
+- Added articulated vehicles steering rotation fix (see ModHub for instructions)
+- Added player on-foot quick-rotation actions; 45° left/right, 180° turn
+- Translations updated by contributers & some machine-translated
+- Fix for reverse driving and looking forward/backwards
+- Fix so QuickCamera keys won't be active when a GUI is shown
 ]]>
         </it>
         <pl>
 <![CDATA[Służy do szybkiego operowania kamerą pojazdu.
-- peek left/right
-- Obrót 45°/90° w lewo/prawo, 
-- spoglądanie w przód/tył 
-- lub przybliżanie/oddalanie
+- peek left/right, Obrót 45°/90° w lewo/prawo, 
+- spoglądanie w przód/tył, lub przybliżanie/oddalanie
 
 Lub gdy gracz jest "na piechotę";
 - obrócić o 45° / 180°
 
 UWAGA: W razie potrzeby pamiętaj, aby ustawić własne klawisze akcji, na ekranie Opcje / Sterowanie.
+
+Update 1.2.0.30
+- Added articulated vehicles steering rotation fix (see ModHub for instructions)
+- Added player on-foot quick-rotation actions; 45° left/right, 180° turn
+- Translations updated by contributers & some machine-translated
+- Fix for reverse driving and looking forward/backwards
+- Fix so QuickCamera keys won't be active when a GUI is shown
 ]]>
         </pl>
         <ru>
 <![CDATA[Используется для быстрого управления камерой;
-- peek left/right
-- вращение на 45/90-градусов влево/вправо, 
-- посмотреть вперед/назад 
-- или приблизить/отдалить
+- peek left/right, вращение на 45/90-градусов влево/вправо, 
+- посмотреть вперед/назад, или приблизить/отдалить
 
 Или когда игрок находится «пешком»;
 - вращать 45° / 180°
 
 ВНИМАНИЕ: Не забудьте установить свои собственные клавиши действий на экране «Параметры / Элементы управления», если это необходимо.
+
+Update 1.2.0.30
+- Added articulated vehicles steering rotation fix (see ModHub for instructions)
+- Added player on-foot quick-rotation actions; 45° left/right, 180° turn
+- Translations updated by contributers & some machine-translated
+- Fix for reverse driving and looking forward/backwards
+- Fix so QuickCamera keys won't be active when a GUI is shown
 ]]>
         </ru>
         <es>
 <![CDATA[Utilice las siguientes teclas para modificar la cámara del vehículo;
-- peek left/right
-- rotar 45°/90°
-- Mirar atrás /adelante
-- zoom aumentar / disminuir
+- peek left/right, rotar 45°/90°
+- Mirar atrás /adelante, zoom aumentar / disminuir
 
 O cuando el jugador está 'a pie';
 - girar 45° / 180°
 
 ATENCIÓN: Recuerde configurar sus propias teclas de acciones, en la pantalla Opciones / Controles, si es necesario.
+
+Update 1.2.0.30
+- Added articulated vehicles steering rotation fix (see ModHub for instructions)
+- Added player on-foot quick-rotation actions; 45° left/right, 180° turn
+- Translations updated by contributers & some machine-translated
+- Fix for reverse driving and looking forward/backwards
+- Fix so QuickCamera keys won't be active when a GUI is shown
 ]]>
         </es>
     </description>
