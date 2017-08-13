@@ -13,14 +13,14 @@
 
     <!-- Note that 'description' is only here for easier translations. It needs to be manually copied to ModDesc.XML later. -->
     <description>
-Służy do szybkiego operowania kamerą pojazdu.
-- W lewo / w prawo, Obrót 45°/90° w lewo/prawo
-- spoglądanie w przód/tył, lub przybliżanie/oddalanie
+Służy do szybkiego operowania kamerą pojazdu:
+- Spoglądanie w lewo / w prawo, Obrót o 45°/90°
+- Spoglądanie w przód/tył oraz przybliżanie/oddalanie
 
-Lub gdy gracz jest "na piechotę";
-- obrócić o 45° / 180°
+Gdy gracz jest "na piechotę":
+- Obrót o 45° / 180°
 
-UWAGA: W razie potrzeby pamiętaj, aby ustawić własne klawisze akcji, na ekranie Opcje / Sterowanie.
+UWAGA: W razie potrzeby możesz ustawić własne klawisze akcji w Opcje -> Sterowanie.
     </description>
 
     <texts>
@@ -38,8 +38,8 @@ UWAGA: W razie potrzeby pamiętaj, aby ustawić własne klawisze akcji, na ekran
         <text name="input_QuickCamZoomOut"        text="QuickCamera: Oddal" />
         <text name="input_QuickCamLockCustom"     text="QuickCamera: Zachowaj nową przednią kamerę" />
 
-        <text name="input_QuickCamOnFootRight"    text="QuickCamera: Na piechotę skrętu 45&#176; w prawo"     />
-        <text name="input_QuickCamOnFootLeft"     text="QuickCamera: Na piechotę skrętu 45&#176; w lewo"      />
-        <text name="input_QuickCamOnFootForBack"  text="QuickCamera: Na piechotę skrętu 180&#176;"    />
+        <text name="input_QuickCamOnFootRight"    text="QuickCamera: Na piechotę, obrót o 45&#176; w prawo"     />
+        <text name="input_QuickCamOnFootLeft"     text="QuickCamera: Na piechotę, obrót o 45&#176; w lewo"      />
+        <text name="input_QuickCamOnFootForBack"  text="QuickCamera: Na piechotę, obrót o 180&#176;"    />
     </texts>
 </l10n>
