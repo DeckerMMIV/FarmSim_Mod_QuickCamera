@@ -9,7 +9,7 @@
 -->    
     <contributors>DLH007, _dj_, Gonimy-Vetrom, jules.stmp537, Ziuta, Xno, PromGames, Anonymous</contributors>
 
-    <version>1.2.0.30</version>
+    <version>1.2.1.31</version>
     
     <title>
         <en>QuickCamera</en>
@@ -22,6 +22,12 @@
     </title>
     
     <changeLog><![CDATA[
+1.2.1.31
+- More functionality added to console-command, so it becomes easier to switch/try between "game default" and "QuickCamera fix":
+  - modQuickCameraSteeringRotSpeed ON / OFF - to turn on/off feature for current active camera
+  - modQuickCameraSteeringRotSpeed TOGGLE - to disable/enable feature for all affected vehicles
+- Tweaked the values for articulated vehicle steering rotation fix
+  
 1.2.0.30
 - Updated readme file, explaning the 'articulated vehicles steering rotation fix' features
 - Machine translations done for; DE, ES, PL, RU
@@ -67,7 +73,7 @@ Or when player is 'on foot';
 
 ATTENTION: Remember to set your own actions keys, in the Options / Controls screen, if needed.
 
-Update 1.2.0.30
+Update 1.2.1.31
 - Added articulated vehicles steering rotation fix (see ModHub for instructions)
 - Added player on-foot quick-rotation actions; 45° left/right, 180° turn
 - Translations updated by contributers & some machine-translated
@@ -85,7 +91,7 @@ Oder wenn der Spieler zu Fuß ist;
 
 ACHTUNG: Denken Sie daran, Ihre eigenen Handlungsschlüssel einzustellen, im Bildschirm Optionen / Bedienelemente, falls erforderlich.
 
-Update 1.2.0.30
+Update 1.2.1.31
 - Added articulated vehicles steering rotation fix (see ModHub for instructions)
 - Added player on-foot quick-rotation actions; 45° left/right, 180° turn
 - Translations updated by contributers & some machine-translated
@@ -103,7 +109,7 @@ Ou lorsque le joueur est «à pied»;
 
 ATTENTION: n'oubliez pas de définir vos propres touches d'actions, dans l'écran Options / Contrôles, si nécessaire.
 
-Update 1.2.0.30
+Update 1.2.1.31
 - Added articulated vehicles steering rotation fix (see ModHub for instructions)
 - Added player on-foot quick-rotation actions; 45° left/right, 180° turn
 - Translations updated by contributers & some machine-translated
@@ -121,7 +127,7 @@ O quando il giocatore è "a piedi";
 
 ATTENZIONE: Ricordarti di impostare i tuoi tasti azione, nella schermata Opzioni / Controlli, se necessario.
 
-Update 1.2.0.30
+Update 1.2.1.31
 - Added articulated vehicles steering rotation fix (see ModHub for instructions)
 - Added player on-foot quick-rotation actions; 45° left/right, 180° turn
 - Translations updated by contributers & some machine-translated
@@ -139,7 +145,7 @@ Lub gdy gracz jest "na piechotę";
 
 UWAGA: W razie potrzeby pamiętaj, aby ustawić własne klawisze akcji, na ekranie Opcje / Sterowanie.
 
-Update 1.2.0.30
+Update 1.2.1.31
 - Added articulated vehicles steering rotation fix (see ModHub for instructions)
 - Added player on-foot quick-rotation actions; 45° left/right, 180° turn
 - Translations updated by contributers & some machine-translated
@@ -157,7 +163,7 @@ Update 1.2.0.30
 
 ВНИМАНИЕ: Не забудьте установить свои собственные клавиши действий на экране «Параметры / Элементы управления», если это необходимо.
 
-Update 1.2.0.30
+Update 1.2.1.31
 - Added articulated vehicles steering rotation fix (see ModHub for instructions)
 - Added player on-foot quick-rotation actions; 45° left/right, 180° turn
 - Translations updated by contributers & some machine-translated
@@ -175,7 +181,7 @@ O cuando el jugador está 'a pie';
 
 ATENCIÓN: Recuerde configurar sus propias teclas de acciones, en la pantalla Opciones / Controles, si es necesario.
 
-Update 1.2.0.30
+Update 1.2.1.31
 - Added articulated vehicles steering rotation fix (see ModHub for instructions)
 - Added player on-foot quick-rotation actions; 45° left/right, 180° turn
 - Translations updated by contributers & some machine-translated

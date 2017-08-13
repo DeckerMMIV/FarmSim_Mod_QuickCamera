@@ -4,54 +4,12 @@ Mod for Farming Simulator 17
 
 
 [b][u]Changelog[/u][/b]
-1.2.0.30
-- Updated readme file, explaning the 'articulated vehicles steering rotation fix' features
-- Machine translations done for; DE, ES, PL, RU
-- Included vehicle for articulated vehicle steering rotation fix; Challenger MT900E
-- Bug fixed in saving-code for articulated vehicle steering rotation fix
-
-1.2.0.29
-- Translations updated by contributers;
--- Italian by Xno
--- French by Anonymous
-
-1.2.0.28
-- Articulated vehicles steering rotation fix
--- Affected vehicles; Liebherr L 538, New Holland T9, JCB TM320S/435S, Ponsse ScorpionKing/Buffalo, Sampo Rosenlew HR46X
--- Currently only modifiable via console-command; modQuickCameraSteeringRotSpeed <new_rotation_value>
--- User configuration-file saved to; /modsSettings/QuickCamera_Config.xml
-
-1.1.1.26
-- Fix for 'look forward 359-degree rotation', so it now does a 'look forward -1 rotation' instead.
-
-1.1.0.25
+1.2.1.31
+- Added articulated vehicles steering rotation fix (see ModHub or below for instructions)
 - Added player on-foot quick-rotation actions; 45° left/right, 180° turn
--- NOTE! Remember to set the action keys yourself, as they are default set to nothing.
-
-1.0.1.24
-- Translations updated by contributers
-
-1.0.1.23
-- Fix so QuickCamera keys won't be active when a GUI is shown
-    
-1.0.1.22
+- Translations updated by contributers & some machine-translated
 - Fix for reverse driving and looking forward/backwards
-
-1.0.0.21
-- Updated Polish translation by Ziuta
-
-1.0.0.20
-- Added Spanish translation by PromGames
-- Updated Italian translation by Xno
-
-1.0.0.18
-- Updated translations
--- Italian by Xno
--- Russian by Gonimy-Vetrom
--- German from ModHub (GIANTS Software)
-
-1.0.0.17
-- Upgraded to FS17 and changed version-numbering-scheme due to ModHub
+- Fix so QuickCamera keys won't be active when a GUI is shown
 
 
 [b][u]What can this mod be used for?[/u][/b]
@@ -76,37 +34,6 @@ Version 1.1.0 introduced "quick-keys keys" for when the player avatar is 'on foo
 In 'Options' - 'Controls' you can now specify which keys to use, to quickly turn the player 45 degrees left/right or do a u-turn.
 
 
-[u]Articulated vehicles steering camera-rotation fix[/u]
-
-Personally I've been a bit annoyed that most of the articulated vehicles external/3rd-person camera is not turning towards the driving direction.
-
-So to remedy that, a feature have been added to QuickCamera, which can modify the game's default 'steering-Y-rotation-speed' value, so the camera will be more useful in articulated vehicles.
-
-The following default articulated vehicles are affected by this feature in QuickCamera:
-- New Holland T9
-- Challenger MT900E
-- Liebherr L 538
-- JCB TM320S/435S
-- Ponsse ScorpionKing/Buffalo
-- Sampo Rosenlew HR46X
-
-[i]How to disable the steering camera-rotation feature[/i]
-
-To disable this feature in QuickCamera, you need to modify the file; modsSettings/QuickCamera_Config.XML - which can be found in the same folder as where the MODS folder.
-
-Edit the XML file, and change the following XML-attribute; [color=blue]steeringRotationFixEnabled[/color] - so its value becomes 'false' (instead of 'true').
-
-Save the XML file and restart your game-session, so the changes will be reloaded.
-
-[i]How to modify steering camera-rotation[/i]
-
-To apply/use this feature on other articulated vehicles, you need to enable the in-game console and use this console-command; [color=blue]modQuickCameraSteeringRotSpeed[/color]
-
-Execute the console-command without arguments, to see the value of the entered vehicle's current selected camera.
-
-Execute the console-command with a numerical argument (usually in the range -0.9 .. 0.9), to set a new 'steering-Y-rotation-speed' value for the entered vehicle's current selected camera.
-
-
 [u]Default action/key assignments[/u]
 
 When player is in a vehicle:
@@ -126,6 +53,35 @@ When player is 'on foot':
 [i]none[/i] - On foot turn 45° right
 [i]none[/i] - On foot turn 45° left
 [b]END[/b] - On foot turn 180°
+
+
+[u]Articulated vehicles steering camera-rotation fix[/u]
+
+Personally I've been a bit annoyed that some of the articulated vehicles internal/external cameras are not turning towards the driving direction.
+
+So to remedy that, a feature have been added to QuickCamera, which can modify the game's default 'steering-Y-rotation-speed' value for articulated vehicles.
+
+The following default articulated vehicles are affected by this feature in QuickCamera:
+- New Holland T9
+- Challenger MT900E
+- Liebherr L 538
+- JCB TM320S/435S
+- Ponsse ScorpionKing/Buffalo
+- Sampo Rosenlew HR46X
+
+[i]How to modify (or disable/enable) steering camera-rotation[/i]
+
+If you need to tweak the rotation value yourself on articulated vehicles, you need to enable the in-game console and use this console-command; [color=blue]modQuickCameraSteeringRotSpeed[/color]
+
+The command takes the following arguments, by which you should be able to modify and test the active camera's steering rotation:
+
+ modQuickCameraSteeringRotSpeed                  - to get current value for active camera
+ modQuickCameraSteeringRotSpeed <NUMERIC-VALUE>  - to set new value for active camera (usually in the range -0.9 .. 0.9)
+ modQuickCameraSteeringRotSpeed OFF              - turns off the feature for just this active camera
+ modQuickCameraSteeringRotSpeed ON               - turns on the feature for just this active camera
+ modQuickCameraSteeringRotSpeed TOGGLE           - to disable/enable the feature entirely for all affected vehicles
+
+The settings will automatically be saved to file; modsSettings/QuickCamera_Config.XML
 
 
 [b][u]Restrictions[/u][/b]
