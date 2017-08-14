@@ -1,45 +1,38 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <l10n>
-    <!-- 
-        Please contribute any other translations at 
-        https://github.com/DeckerMMIV/FarmSim_Mod_QuickCamera
-    -->
-
-    <!-- Add your own name or nickname here, when you contribute to this file's translation, so I know who to put into the credits. -->
     <translationContributors>
-        (undisclosed)
-        translate.google.com
+         Gonimy_Vetrom
     </translationContributors>
 
     <!-- Note that 'description' is only here for easier translations. It needs to be manually copied to ModDesc.XML later. -->
     <description>
-Используется для быстрого управления камерой;
-- Заглянуть влево/вправо, вращение на 45/90-градусов влево/вправо, 
-- посмотреть вперед/назад, или приблизить/отдалить
+Используется для быстрого управления камерой:
+- быстро посмотреть налево/направо, вращение на 45/90-градусов влево/вправо, 
+- быстро посмотреть вперед/назад или приблизить/отдалить
 
-Или когда игрок находится «пешком»;
-- вращать 45° / 180°
+Или когда игрок находится «на ногах»:
+- повернуться на 45°/180°
 
-ВНИМАНИЕ: Не забудьте установить свои собственные клавиши действий на экране «Параметры / Элементы управления», если это необходимо.
+ВНИМАНИЕ: Не забудьте установить свои собственные клавиши действий в разделе «Параметры / Элементы управления», если это необходимо.
     </description>
 
     <texts>
-        <text name="input_QuickCamPeekRight"      text="QuickCamera: Быстрый взгляд вправо"              />
-        <text name="input_QuickCamPeekLeft"       text="QuickCamera: Быстрый взгляд влево"               />
+        <text name="input_QuickCamPeekRight"      text="QuickCamera: Быстрый взгляд направо"              />
+        <text name="input_QuickCamPeekLeft"       text="QuickCamera: Быстрый взгляд налево"               />
 
         <text name="input_QuickCamRight"          text="QuickCamera: Посмотреть на 45&#176; вправо"       />
         <text name="input_QuickCamLeft"           text="QuickCamera: Посмотреть на 45&#176; влево"        />
         <text name="input_QuickCamRight2"         text="QuickCamera: Посмотреть на 90&#176; вправо"       />
         <text name="input_QuickCamLeft2"          text="QuickCamera: Посмотреть на 90&#176; влево"        />
         <text name="input_QuickCamForward"        text="QuickCamera: Посмотреть вперед"                   />
-        <text name="input_QuickCamBackward"       text="QuickCamera: Посмотреть назад"                    />
-        <text name="input_QuickCamForBack"        text="QuickCamera: Смена взгляда перед/зад"             />
+        <text name="input_QuickCamBackward"       text="QuickCamera: Оглянуться назад"                    />
+        <text name="input_QuickCamForBack"        text="QuickCamera: Смена взгляда вперёд/назад"             />
         <text name="input_QuickCamZoomIn"         text="QuickCamera: Приблизить"                          />
         <text name="input_QuickCamZoomOut"        text="QuickCamera: Отдалить"                            />
         <text name="input_QuickCamLockCustom"     text="QuickCamera: Установить новую основную камеру"    />
 
-        <text name="input_QuickCamOnFootRight"    text="QuickCamera: Пеший поворот 45&#176; вправо"     />
-        <text name="input_QuickCamOnFootLeft"     text="QuickCamera: Пеший поворот 45&#176; влево"      />
-        <text name="input_QuickCamOnFootForBack"  text="QuickCamera: Пеший поворот 180&#176;"    />
+        <text name="input_QuickCamOnFootRight"    text="QuickCamera: Повернуть пешого игрока на 45&#176; вправо"     />
+        <text name="input_QuickCamOnFootLeft"     text="QuickCamera: Повернуть пешого игрока на 45&#176; влево"      />
+        <text name="input_QuickCamOnFootForBack"  text="QuickCamera: Розвернуть пешого игрока на 180&#176;"    />
     </texts>
 </l10n>
