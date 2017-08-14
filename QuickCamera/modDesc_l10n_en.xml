@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <l10n>
     <!-- 
-        Please contribute any other translations at 
+        Please contribute any other translations at
         https://github.com/DeckerMMIV/FarmSim_Mod_QuickCamera
+        by creating a new ModDesc_l10n_<language-code>.XML file
     -->
 
     <!-- Add your own name or nickname here, when you contribute to this file's translation, so I know who to put into the credits. -->
@@ -10,7 +11,11 @@
         Decker_MMIV
     </translationContributors>
 
-    <!-- Note that 'description' is only here for easier translations. It needs to be manually copied to ModDesc.XML later. -->
+    <!--
+        Translate 'description' here. Possibly add other elements which should be translated for the ModDesc.XML file.
+        Do NOT modify ModDesc.XML directly, as mod author will do it himself from your 'pull request'.
+    -->
+    <title>QuickCamera</title>
     <description>
 Use keys to quickly have the vehicle camera;
 - peek left/right, rotate 45°/90°
