@@ -9,6 +9,18 @@ To read more about this mod, find it on;
 
 
 ## FS17 - Change-log
+1.2.1.33
+- Translations updated by contributers;
+  - Polish by Ziuta
+  - Russian by Gonimy_Vetrom
+- Explicitly mentioned in ModDesc.XML that it should NOT be modified by contributing translators (as it may cause merge-conflicts)
+
+1.2.1.31
+- More functionality added to console-command, so it becomes easier to switch/try between "game default" and "QuickCamera fix":
+  - modQuickCameraSteeringRotSpeed ON / OFF - to turn on/off feature for current active camera
+  - modQuickCameraSteeringRotSpeed TOGGLE - to disable/enable feature for all affected vehicles
+- Tweaked the values for articulated vehicle steering rotation fix
+
 1.2.0.30
 - Updated readme file, explaning the 'articulated vehicles steering rotation fix' features
 - Machine translations done for; DE, ES, PL, RU
