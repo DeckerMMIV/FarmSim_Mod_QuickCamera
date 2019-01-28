@@ -1,43 +1,38 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <l10n>
-    <!-- Add your own name or nickname here, when you contribute to this file's translation, so I know who to put into the credits. -->
-    <translationContributors>
-         Gonimy_Vetrom
-    </translationContributors>
+  <!-- Add your own name or nickname here, when you contribute to this file's translation, so I know who to put into the credits. -->
+  <translationContributors>
+    Gonimy_Vetrom
+    translate.google.com
+  </translationContributors>
 
-    <!--
-        Translate 'description' here. Possibly add other elements which should be translated for the ModDesc.XML file.
-        Do NOT modify ModDesc.XML directly, as mod author will do it himself from your 'pull request'.
-    -->
-    <title>QuickCamera</title>
-    <description>
+  <!--
+    Translate 'description' here. Possibly add other elements which should be translated for the ModDesc.XML file.
+    Do NOT modify ModDesc.XML directly, as mod author will do it himself from your 'pull request'.
+  -->
+  <title>QuickCamera</title>
+  <description>
 Используется для быстрого управления камерой:
-- быстро посмотреть налево/направо, вращение на 45/90-градусов влево/вправо, 
+- быстро посмотреть налево/направо, вращение на 45/90-градусов влево/вправо,
 - быстро посмотреть вперед/назад или приблизить/отдалить
 
 Или когда игрок находится «на ногах»:
 - повернуться на 45°/180°
+- работает еще быстрее (колесико мыши вверх / вниз в режиме бега)
+  </description>
 
-ВНИМАНИЕ: Не забудьте установить свои собственные клавиши действий в разделе «Параметры / Элементы управления», если это необходимо.
-    </description>
-
-    <texts>
-        <text name="input_QuickCamPeekRight"      text="QuickCamera: Быстрый взгляд направо"              />
-        <text name="input_QuickCamPeekLeft"       text="QuickCamera: Быстрый взгляд налево"               />
-
-        <text name="input_QuickCamRight"          text="QuickCamera: Посмотреть на 45&#176; вправо"       />
-        <text name="input_QuickCamLeft"           text="QuickCamera: Посмотреть на 45&#176; влево"        />
-        <text name="input_QuickCamRight2"         text="QuickCamera: Посмотреть на 90&#176; вправо"       />
-        <text name="input_QuickCamLeft2"          text="QuickCamera: Посмотреть на 90&#176; влево"        />
-        <text name="input_QuickCamForward"        text="QuickCamera: Посмотреть вперед"                   />
-        <text name="input_QuickCamBackward"       text="QuickCamera: Оглянуться назад"                    />
-        <text name="input_QuickCamForBack"        text="QuickCamera: Смена взгляда вперёд/назад"             />
-        <text name="input_QuickCamZoomIn"         text="QuickCamera: Приблизить"                          />
-        <text name="input_QuickCamZoomOut"        text="QuickCamera: Отдалить"                            />
-        <text name="input_QuickCamLockCustom"     text="QuickCamera: Установить новую основную камеру"    />
-
-        <text name="input_QuickCamOnFootRight"    text="QuickCamera: Повернуть пешого игрока на 45&#176; вправо"     />
-        <text name="input_QuickCamOnFootLeft"     text="QuickCamera: Повернуть пешого игрока на 45&#176; влево"      />
-        <text name="input_QuickCamOnFootForBack"  text="QuickCamera: Розвернуть пешого игрока на 180&#176;"    />
-    </texts>
+  <texts>
+    <text name="input_QuickCamOnFootForeBack"    text="QuickCamera: Розвернуть пешого игрока на 180&#176;" />
+    <text name="input_QuickCamOnFootLeftRight_1" text="QuickCamera: Повернуть пешого игрока на 45&#176; вправо" />
+    <text name="input_QuickCamOnFootLeftRight_2" text="QuickCamera: Повернуть пешого игрока на 45&#176; влево" />
+    <text name="input_QuickCamVehicleForeBack"   text="QuickCamera: Смена взгляда вперёд/назад" />
+    <text name="input_QuickCamVehicleSnapLR_1"   text="QuickCamera: Посмотреть на 45&#176; вправо" />
+    <text name="input_QuickCamVehicleSnapLR_2"   text="QuickCamera: Посмотреть на 45&#176; влево" />
+    <text name="input_QuickCamVehicleSnap2LR_1"  text="QuickCamera: Посмотреть на 90&#176; вправо" />
+    <text name="input_QuickCamVehicleSnap2LR_2"  text="QuickCamera: Посмотреть на 90&#176; влево" />
+    <text name="input_QuickCamVehiclePeekLR_1"   text="QuickCamera: Быстрый взгляд направо" />
+    <text name="input_QuickCamVehiclePeekLR_2"   text="QuickCamera: Быстрый взгляд налево" />
+    <text name="input_QuickCamVehicleZoomIn"     text="QuickCamera: Приблизить" />
+    <text name="input_QuickCamVehicleZoomOut"    text="QuickCamera: Отдалить" />
+  </texts>
 </l10n>

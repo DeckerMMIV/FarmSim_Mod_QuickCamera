@@ -69,10 +69,10 @@ end);
 
 Player.updatePlayerStates = Utils.appendedFunction(Player.updatePlayerStates, function(self)
   if self.inputInformation.modQcRunSpeedModifier ~= nil then
-    self.motionInformation.maxRunningSpeed = math.max(9, math.min(128, self.motionInformation.maxRunningSpeed * self.inputInformation.modQcRunSpeedModifier))
+    self.motionInformation.maxRunningSpeed = math.max(3, math.min(128, self.motionInformation.maxRunningSpeed * self.inputInformation.modQcRunSpeedModifier))
     self.inputInformation.modQcRunSpeedModifier = nil
   elseif self.inputInformation.runAxis <= 0 then
-    self.motionInformation.maxRunningSpeed = 9
+    self.motionInformation.maxRunningSpeed = 9 -- The constant '9' seems to be the default value.
   end
 end)
 

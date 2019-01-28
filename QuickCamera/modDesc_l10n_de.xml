@@ -1,44 +1,38 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <l10n>
-    <!-- Add your own name or nickname here, when you contribute to this file's translation, so I know who to put into the credits. -->
-    <translationContributors>
-        ModHub (GIANTS Software)
-        translate.google.com
-    </translationContributors>
+  <!-- Add your own name or nickname here, when you contribute to this file's translation, so I know who to put into the credits. -->
+  <translationContributors>
+    ModHub (GIANTS Software)
+    translate.google.com
+  </translationContributors>
 
-    <!--
-        Translate 'description' here. Possibly add other elements which should be translated for the ModDesc.XML file.
-        Do NOT modify ModDesc.XML directly, as mod author will do it himself from your 'pull request'.
-    -->
-    <title>QuickCamera</title>
-    <description>
+  <!--
+    Translate 'description' here. Possibly add other elements which should be translated for the ModDesc.XML file.
+    Do NOT modify ModDesc.XML directly, as mod author will do it himself from your 'pull request'.
+  -->
+  <title>QuickCamera</title>
+  <description>
 Benutze folgende Tasten um schnell die Kamera zu bewegen:
 - Kurzer Blick nach links / rechts, Rotieren um 45°/ 90°
 - Sicht nach vorne / hinten, Zoom hinein / hinaus
 
 Oder wenn der Spieler zu Fuß ist;
 - 45° / 180° drehen
+- Läuft noch schneller (Mausrad auf / ab, wenn im Run-Modus)
+  </description>
 
-ACHTUNG: Denken Sie daran, Ihre eigenen Handlungsschlüssel einzustellen, im Bildschirm Optionen / Bedienelemente, falls erforderlich.
-    </description>
-        
-    <texts>
-        <text name="input_QuickCamPeekRight"      text="QuickCamera: Kurzer Blick nach rechts"  />
-        <text name="input_QuickCamPeekLeft"       text="QuickCamera: Kurzer Blick nach links"   />
-        
-        <text name="input_QuickCamRight"          text="QuickCamera: Schauen 45&#176; rechts" />
-        <text name="input_QuickCamLeft"           text="QuickCamera: Schauen 45&#176; links"  />
-        <text name="input_QuickCamRight2"         text="QuickCamera: Schauen 90&#176; rechts" />
-        <text name="input_QuickCamLeft2"          text="QuickCamera: Schauen 90&#176; links"  />
-        <text name="input_QuickCamForward"        text="QuickCamera: Vorwärts"                />
-        <text name="input_QuickCamBackward"       text="QuickCamera: Zurückblicken"           />
-        <text name="input_QuickCamForBack"        text="QuickCamera: Umschalten vor./rück."   />
-        <text name="input_QuickCamZoomIn"         text="QuickCamera: Zoom in"                 />
-        <text name="input_QuickCamZoomOut"        text="QuickCamera: Zoom out"                />
-        <text name="input_QuickCamLockCustom"     text="QuickCamera: Keep new forward-cam"    />
-
-        <text name="input_QuickCamOnFootRight"    text="QuickCamera: Zu Fuß drehen 45&#176; rechts"     />
-        <text name="input_QuickCamOnFootLeft"     text="QuickCamera: Zu Fuß drehen 45&#176; links"      />
-        <text name="input_QuickCamOnFootForBack"  text="QuickCamera: Zu Fuß drehen 180&#176;"    />
-    </texts>
+  <texts>
+    <text name="input_QuickCamOnFootForeBack"    text="QuickCamera: Zu Fuß drehen 180&#176;" />
+    <text name="input_QuickCamOnFootLeftRight_1" text="QuickCamera: Zu Fuß drehen 45&#176; rechts" />
+    <text name="input_QuickCamOnFootLeftRight_2" text="QuickCamera: Zu Fuß drehen 45&#176; links" />
+    <text name="input_QuickCamVehicleForeBack"   text="QuickCamera: Umschalten vor./rück." />
+    <text name="input_QuickCamVehicleSnapLR_1"   text="QuickCamera: Schauen 45&#176; rechts" />
+    <text name="input_QuickCamVehicleSnapLR_2"   text="QuickCamera: Schauen 45&#176; links" />
+    <text name="input_QuickCamVehicleSnap2LR_1"  text="QuickCamera: Schauen 90&#176; rechts" />
+    <text name="input_QuickCamVehicleSnap2LR_2"  text="QuickCamera: Schauen 90&#176; links" />
+    <text name="input_QuickCamVehiclePeekLR_1"   text="QuickCamera: Kurzer Blick nach rechts" />
+    <text name="input_QuickCamVehiclePeekLR_2"   text="QuickCamera: Kurzer Blick nach links" />
+    <text name="input_QuickCamVehicleZoomIn"     text="QuickCamera: Zoom in" />
+    <text name="input_QuickCamVehicleZoomOut"    text="QuickCamera: Zoom out" />
+  </texts>
 </l10n>
