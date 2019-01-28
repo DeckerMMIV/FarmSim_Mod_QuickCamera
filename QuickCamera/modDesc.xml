@@ -1,257 +1,174 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="37">
-    <author>Decker_MMIV (DCK)</author>
-    <authorContact>fs-uk.com, modcentral.co.uk, forum.farming-simulator.com</authorContact>
+<modDesc descVersion="42">
+  <author>Decker_MMIV</author>
+  <authorContact>fs-uk.com, forum.farming-simulator.com</authorContact>
 
 <!--
     NOTE: DO NOT/NEVER edit this ModDesc.XML!
           For contributing translations, only modify the corresponding ModDesc_l10n_*.XML file.
 -->
-    <contributors>DLH007, _dj_, Gonimy-Vetrom, jules.stmp537, Ziuta, Xno, PromGames, Anonymous</contributors>
+  <contributors>DLH007, _dj_, Gonimy-Vetrom, jules.stmp537, Ziuta, Xno, PromGames, Anonymous</contributors>
 
-    <version>1.2.1.33</version>
+  <version>1.0.0.0</version>
 
-    <title>
-        <en>QuickCamera</en>
-        <de>QuickCamera</de>
-        <fr>QuickCamera</fr>
-        <it>QuickCamera</it>
-        <pl>QuickCamera</pl>
-        <ru>QuickCamera</ru>
-        <es>QuickCamera</es>
-    </title>
+  <title>
+    <en>QuickCamera</en>
+    <de>QuickCamera</de>
+    <fr>QuickCamera</fr>
+    <it>QuickCamera</it>
+    <pl>QuickCamera</pl>
+    <ru>QuickCamera</ru>
+    <es>QuickCamera</es>
+  </title>
 
-    <changeLog><![CDATA[
-1.2.1.33
-- Translations updated by contributers;
-  - Polish by Ziuta
-  - Russian by Gonimy_Vetrom
-- Explicitly mentioned in ModDesc.XML that it should NOT be modified by contributing translators (as it may cause merge-conflicts)
-
-1.2.1.31
-- More functionality added to console-command, so it becomes easier to switch/try between "game default" and "QuickCamera fix":
-  - modQuickCameraSteeringRotSpeed ON / OFF - to turn on/off feature for current active camera
-  - modQuickCameraSteeringRotSpeed TOGGLE - to disable/enable feature for all affected vehicles
-- Tweaked the values for articulated vehicle steering rotation fix
-
-1.2.0.30
-- Updated readme file, explaning the 'articulated vehicles steering rotation fix' features
-- Machine translations done for; DE, ES, PL, RU
-- Included vehicle for articulated vehicle steering rotation fix; Challenger MT900E
-- Bug fixed in saving-code for articulated vehicle steering rotation fix
-
-1.2.0.29
-- Translations updated by contributers;
-  - Italian by Xno
-  - French by Anonymous
-
-1.2.0.28
-- Articulated vehicles steering rotation fix
-  - Affected vehicles; Liebherr L 538, New Holland T9, JCB TM320S/435S, Ponsse ScorpionKing/Buffalo, Sampo Rosenlew HR46X
-  - Currently only modifiable via console-command; modQuickCameraSteeringRotSpeed <new_rotation_value>
-  - User configuration-file saved to; /modsSettings/QuickCamera_Config.xml
-
-1.1.1.26
-- Fix for 'look forward 359-degree rotation', so it now does a 'look forward -1 rotation' instead.
-
-1.1.0.25
-- Added player on-foot quick-rotation actions; 45° left/right, 180° turn
--- NOTE! Remember to set the action keys yourself, as they are default set to nothing.
-
-1.0.1.24
-- Translations updated by contributers
-
-1.0.1.23
-- Fix so QuickCamera keys won't be active when a GUI is shown
-
-1.0.1.22
-- Fix for reverse driving and looking forward/backwards
+  <changeLog><![CDATA[
+1.0.0.0
+- Upgraded to FS19
 ]]></changeLog>
 
-    <description>
-<!--
-    NOTE: DO NOT edit this ModDesc.XML!
-          For contributing translations, only modify the corresponding ModDesc_l10n_*.XML file.
--->
-        <en>
-<![CDATA[Use keys to quickly have the vehicle camera;
+  <description>
+    <en><![CDATA[Use keys to quickly have the vehicle camera;
 - peek left/right, rotate 45°/90°
 - look forwards/backwards, zoom in/out
 
 Or when player is 'on foot';
 - rotate 45°/180°
+- running even faster (mouse-wheel up/down when in 'run' mode)
 
-ATTENTION: Remember to set your own actions keys, in the Options / Controls screen, if needed.
 
-Update 1.2.1.33
-- Added articulated vehicles steering rotation fix (see ModHub for instructions)
-- Added player on-foot quick-rotation actions; 45° left/right, 180° turn
-- Translations updated by contributers & some machine-translated
-- Fix for reverse driving and looking forward/backwards
-- Fix so QuickCamera keys won't be active when a GUI is shown
-]]>
-        </en>
-<!--
-    NOTE: DO NOT edit this ModDesc.XML!
-          For contributing translations, only modify the corresponding ModDesc_l10n_*.XML file.
--->
-        <de>
-<![CDATA[Benutze folgende Tasten um schnell die Kamera zu bewegen:
+Changelog 1.0.0.0:
+- Upgraded to FS19
+]]></en>
+    <de><![CDATA[Benutze folgende Tasten um schnell die Kamera zu bewegen:
 - Kurzer Blick nach links / rechts, Rotieren um 45°/ 90°
 - Sicht nach vorne / hinten, Zoom hinein / hinaus
 
 Oder wenn der Spieler zu Fuß ist;
 - 45° / 180° drehen
 
-ACHTUNG: Denken Sie daran, Ihre eigenen Handlungsschlüssel einzustellen, im Bildschirm Optionen / Bedienelemente, falls erforderlich.
 
-Update 1.2.1.33
-- Added articulated vehicles steering rotation fix (see ModHub for instructions)
-- Added player on-foot quick-rotation actions; 45° left/right, 180° turn
-- Translations updated by contributers & some machine-translated
-- Fix for reverse driving and looking forward/backwards
-- Fix so QuickCamera keys won't be active when a GUI is shown
-]]>
-        </de>
-<!--
-    NOTE: DO NOT edit this ModDesc.XML!
-          For contributing translations, only modify the corresponding ModDesc_l10n_*.XML file.
--->
-        <fr>
-<![CDATA[Utiliser les touches pour avoir rapidement les vues depuis les véhicules;
+Changelog 1.0.0.0:
+- Upgraded to FS19
+]]></de>
+    <fr><![CDATA[Utiliser les touches pour avoir rapidement les vues depuis les véhicules;
 - Coup d'oeil gauche / droite, Rotation de 45 ° / 90 °
 - vue avant / vers l'arrière, Zoom avant / arrière
 
 Ou lorsque le joueur est «à pied»;
 - tourner 45° / 180°
 
-ATTENTION: n'oubliez pas de définir vos propres touches d'actions, dans l'écran Options / Contrôles, si nécessaire.
 
-Update 1.2.1.33
-- Added articulated vehicles steering rotation fix (see ModHub for instructions)
-- Added player on-foot quick-rotation actions; 45° left/right, 180° turn
-- Translations updated by contributers & some machine-translated
-- Fix for reverse driving and looking forward/backwards
-- Fix so QuickCamera keys won't be active when a GUI is shown
-]]>
-        </fr>
-<!--
-    NOTE: DO NOT edit this ModDesc.XML!
-          For contributing translations, only modify the corresponding ModDesc_l10n_*.XML file.
--->
-        <it>
-<![CDATA[Usa i tasti per puntare velocemente la telecamera sul veicolo;
+Changelog 1.0.0.0:
+- Upgraded to FS19
+]]></fr>
+    <it><![CDATA[Usa i tasti per puntare velocemente la telecamera sul veicolo;
 - Occhiata sinistra/destra, ruota 45/90-gradi sinistra/destra
 - guarda avanti/indiestro, zoom in/out
 
 O quando il giocatore è "a piedi";
 - ruotare 45° / 180°
 
-ATTENZIONE: Ricordarti di impostare i tuoi tasti azione, nella schermata Opzioni / Controlli, se necessario.
 
-Update 1.2.1.33
-- Added articulated vehicles steering rotation fix (see ModHub for instructions)
-- Added player on-foot quick-rotation actions; 45° left/right, 180° turn
-- Translations updated by contributers & some machine-translated
-- Fix for reverse driving and looking forward/backwards
-- Fix so QuickCamera keys won't be active when a GUI is shown
-]]>
-        </it>
-<!--
-    NOTE: DO NOT edit this ModDesc.XML!
-          For contributing translations, only modify the corresponding ModDesc_l10n_*.XML file.
--->
-        <pl>
-<![CDATA[Służy do szybkiego operowania kamerą pojazdu:
+Changelog 1.0.0.0:
+- Upgraded to FS19
+]]></it>
+    <pl><![CDATA[Służy do szybkiego operowania kamerą pojazdu:
 - Spoglądanie w lewo / w prawo, Obrót o 45°/90°
 - Spoglądanie w przód/tył oraz przybliżanie/oddalanie
 
 Gdy gracz jest "na piechotę":
 - Obrót o 45° / 180°
 
-UWAGA: W razie potrzeby możesz ustawić własne klawisze akcji w Opcje -> Sterowanie.
 
-Update 1.2.1.33
-- Added articulated vehicles steering rotation fix (see ModHub for instructions)
-- Added player on-foot quick-rotation actions; 45° left/right, 180° turn
-- Translations updated by contributers & some machine-translated
-- Fix for reverse driving and looking forward/backwards
-- Fix so QuickCamera keys won't be active when a GUI is shown
-]]>
-        </pl>
-<!--
-    NOTE: DO NOT edit this ModDesc.XML!
-          For contributing translations, only modify the corresponding ModDesc_l10n_*.XML file.
--->
-        <ru>
-<![CDATA[Используется для быстрого управления камерой:
+Changelog 1.0.0.0:
+- Upgraded to FS19
+]]></pl>
+    <ru><![CDATA[Используется для быстрого управления камерой:
 - быстро посмотреть налево/направо, вращение на 45/90-градусов влево/вправо,
 - быстро посмотреть вперед/назад или приблизить/отдалить
 
 Или когда игрок находится «на ногах»:
 - повернуться на 45°/180°
 
-ВНИМАНИЕ: Не забудьте установить свои собственные клавиши действий в разделе «Параметры / Элементы управления», если это необходимо.
 
-Update 1.2.1.33
-- Added articulated vehicles steering rotation fix (see ModHub for instructions)
-- Added player on-foot quick-rotation actions; 45° left/right, 180° turn
-- Translations updated by contributers & some machine-translated
-- Fix for reverse driving and looking forward/backwards
-- Fix so QuickCamera keys won't be active when a GUI is shown
-]]>
-        </ru>
-<!--
-    NOTE: DO NOT edit this ModDesc.XML!
-          For contributing translations, only modify the corresponding ModDesc_l10n_*.XML file.
--->
-        <es>
-<![CDATA[Utilice las siguientes teclas para modificar la cámara del vehículo;
+Changelog 1.0.0.0:
+- Upgraded to FS19
+]]></ru>
+    <es><![CDATA[Utilice las siguientes teclas para modificar la cámara del vehículo;
 - peek left/right, rotar 45°/90°
 - Mirar atrás /adelante, zoom aumentar / disminuir
 
 O cuando el jugador está 'a pie';
 - girar 45° / 180°
 
-ATENCIÓN: Recuerde configurar sus propias teclas de acciones, en la pantalla Opciones / Controles, si es necesario.
 
-Update 1.2.1.33
-- Added articulated vehicles steering rotation fix (see ModHub for instructions)
-- Added player on-foot quick-rotation actions; 45° left/right, 180° turn
-- Translations updated by contributers & some machine-translated
-- Fix for reverse driving and looking forward/backwards
-- Fix so QuickCamera keys won't be active when a GUI is shown
-]]>
-        </es>
-    </description>
+Changelog 1.0.0.0:
+- Upgraded to FS19
+]]></es>
+  </description>
 
-    <iconFilename>store_QuickCamera.dds</iconFilename>
-    <multiplayer supported="true"/>
+  <iconFilename>icon_QuickCamera.dds</iconFilename>
+  <multiplayer supported="true"/>
 
-    <extraSourceFiles>
-        <sourceFile filename="QuickCamera.lua" />
-        <sourceFile filename="ArticulatedVehiclesSteeringRotationFix.lua" />
-    </extraSourceFiles>
+  <extraSourceFiles>
+    <sourceFile filename="QuickCamera.lua" />
+    <sourceFile filename="QuickFeet.lua" />
+  </extraSourceFiles>
 
-    <l10n filenamePrefix="modDesc_l10n" /> <!-- Load the corresponding modDesc_l10n_<language>.XML file, or revert to 'en'/'de'. -->
+  <l10n filenamePrefix="modDesc_l10n" /> <!-- Load the corresponding modDesc_l10n_<language>.XML file, or revert to 'en'/'de'. -->
 
-    <inputBindings>
-      <input visible="true" name="QuickCamRight"     category="VEHICLE" key1="KEY_right"    key2="" />
-      <input visible="true" name="QuickCamLeft"      category="VEHICLE" key1="KEY_left"     key2="" />
-      <input visible="true" name="QuickCamRight2"    category="VEHICLE" key1=""             key2="" />
-      <input visible="true" name="QuickCamLeft2"     category="VEHICLE" key1=""             key2="" />
-      <input visible="true" name="QuickCamPeekRight" category="VEHICLE" key1=""             key2="KEY_KP_9" />
-      <input visible="true" name="QuickCamPeekLeft"  category="VEHICLE" key1=""             key2="KEY_KP_7" />
-      <input visible="true" name="QuickCamForBack"   category="VEHICLE" key1="KEY_end"      key2="KEY_KP_8" />
-      <input visible="true" name="QuickCamForward"   category="VEHICLE" key1="KEY_up"       key2="" />
-      <input visible="true" name="QuickCamBackward"  category="VEHICLE" key1="KEY_down"     key2="" />
-      <input visible="true" name="QuickCamZoomIn"    category="VEHICLE" key1="KEY_pageup"   key2="" />
-      <input visible="true" name="QuickCamZoomOut"   category="VEHICLE" key1="KEY_pagedown" key2="" />
-<!--
-      <input name="QuickCamLockCustom"   category="VEHICLE"        key1="KEY_lalt KEY_j"  key2="" button="" device="0" mouse="" />
--->
-      <input visible="true" name="QuickCamOnFootRight"     category="ONFOOT" key1=""    key2="" />
-      <input visible="true" name="QuickCamOnFootLeft"      category="ONFOOT" key1=""    key2="" />
-      <input visible="true" name="QuickCamOnFootForBack"   category="ONFOOT" key1="KEY_end"    key2="" />
-    </inputBindings>
+  <inputBinding>
+    <actionBinding action="QuickCamOnFootForeBack">
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_end"  index="1" />
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_KP_8" index="2" />
+    </actionBinding>
+    <actionBinding action="QuickCamOnFootLeftRight">
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_left"  axisComponent="-" neutralInput="0" index="1" />
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_right" axisComponent="+" neutralInput="0" index="1" />
+    </actionBinding>
+    <actionBinding action="QuickCamVehicleForeBack">
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_end"  index="1" />
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_KP_8" index="2" />
+    </actionBinding>
+    <actionBinding action="QuickCamVehicleSnapLR">
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_left"  axisComponent="-" neutralInput="0" index="1" />
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_right" axisComponent="+" neutralInput="0" index="1" />
+    </actionBinding>
+    <actionBinding action="QuickCamVehicleSnap2LR">
+      <binding device="KB_MOUSE_DEFAULT" input="" axisComponent="-" neutralInput="0" index="1" />
+      <binding device="KB_MOUSE_DEFAULT" input="" axisComponent="+" neutralInput="0" index="1" />
+    </actionBinding>
+    <actionBinding action="QuickCamVehiclePeekLR">
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_KP_7" axisComponent="-" neutralInput="0" index="1" />
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_KP_9" axisComponent="+" neutralInput="0" index="1" />
+    </actionBinding>
+    <actionBinding action="QuickCamVehicleZoomIn">
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_pageup" index="1" />
+    </actionBinding>
+    <actionBinding action="QuickCamVehicleZoomOut">
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_pagedown" index="1" />
+    </actionBinding>
+  </inputBinding>
+
+  <actions>
+    <!--
+      Note:
+      Using some non-existing categories; 'ONFOOT_QuickTap' and 'VEHICLE_QuickTap', in an attempt
+      at avoiding "conflicting keys in same category", which causes the actions to become
+      inactive/unavailable, when the exact same input-keys are used for multiple actions/actionBindings.
+      This QuickCamera mod is explicitly having script-code that check for "quick tap"-keypresses,
+      which means less than 150ms between `triggerDown` and `triggerUp` events, that then activates a function.
+    -->
+    <action name="QuickCamOnFootForeBack"  category="ONFOOT" />
+    <action name="QuickCamOnFootLeftRight" category="ONFOOT_QuickTap"  axisType="FULL" />
+    <action name="QuickCamVehicleForeBack" category="VEHICLE" />
+    <action name="QuickCamVehicleSnapLR"   category="VEHICLE_QuickTap" axisType="FULL" />
+    <action name="QuickCamVehicleSnap2LR"  category="VEHICLE_QuickTap" axisType="FULL" />
+    <action name="QuickCamVehiclePeekLR"   category="VEHICLE_QuickTap" axisType="FULL" />
+    <action name="QuickCamVehicleZoomIn"   category="VEHICLE_QuickTap" />
+    <action name="QuickCamVehicleZoomOut"  category="VEHICLE_QuickTap" />
+    <!-- Normal categories: SYSTEM, ONFOOT, VEHICLE -->
+    <!-- Normal axisTypes: HALF, FULL -->
+  </actions>
+
 </modDesc>
