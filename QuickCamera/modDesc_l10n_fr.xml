@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <l10n>
+  <!--
+    Please contribute any other translations at
+    https://github.com/DeckerMMIV/FarmSim_Mod_QuickCamera
+    by creating a new ModDesc_l10n_<language-code>.XML file
+  -->
+
   <!-- Add your own name or nickname here, when you contribute to this file's translation, so I know who to put into the credits. -->
   <translationContributors>
-    ModHub (GIANTS Software)
-    Anonymous
-    translate.google.com
+    (FS17) ModHub (GIANTS Software)
+    (FS17) Anonymous
+    (FS17) translate.google.com
   </translationContributors>
 
   <!--

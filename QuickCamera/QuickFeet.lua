@@ -53,8 +53,13 @@ end)
 ----
 
 Player.load = Utils.appendedFunction(Player.load, function(self, xmlFilename, playerStyle, creatorConnection, isOwner)
-  -- Do not allow switching to handtool when in running state
-  self.playerStateMachine.fsmTable["run"]["cycleHandtool"] = false
+  if  nil ~= self.playerStateMachine
+  and nil ~= self.playerStateMachine.fsmTable
+  and nil ~= self.playerStateMachine.fsmTable["run"]
+  then
+    -- Do not allow switching to handtool when in running state
+    self.playerStateMachine.fsmTable["run"]["cycleHandtool"] = false
+  end
 end)
 
 Player.mouseEvent = Utils.appendedFunction(Player.mouseEvent, function(self, posX, posY, isDown, isUp, button)
@@ -69,7 +74,7 @@ end);
 
 Player.updatePlayerStates = Utils.appendedFunction(Player.updatePlayerStates, function(self)
   if self.inputInformation.modQcRunSpeedModifier ~= nil then
-    self.motionInformation.maxRunningSpeed = math.max(3, math.min(128, self.motionInformation.maxRunningSpeed * self.inputInformation.modQcRunSpeedModifier))
+    self.motionInformation.maxRunningSpeed = math.max(1, math.min(128, self.motionInformation.maxRunningSpeed * self.inputInformation.modQcRunSpeedModifier))
     self.inputInformation.modQcRunSpeedModifier = nil
   elseif self.inputInformation.runAxis <= 0 then
     self.motionInformation.maxRunningSpeed = 9 -- The constant '9' seems to be the default value.

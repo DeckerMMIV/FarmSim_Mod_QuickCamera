@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <l10n>
+  <!--
+    Please contribute any other translations at
+    https://github.com/DeckerMMIV/FarmSim_Mod_QuickCamera
+    by creating a new ModDesc_l10n_<language-code>.XML file
+  -->
+
   <!-- Add your own name or nickname here, when you contribute to this file's translation, so I know who to put into the credits. -->
   <translationContributors>
-    PromGames
-    translate.google.com
+    (FS17) PromGames
+    (FS17) translate.google.com
   </translationContributors>
 
   <!--
@@ -26,10 +32,10 @@ O cuando el jugador está 'a pie';
     <text name="input_QuickCamOnFootLeftRight_1" text="QuickCamera: A pie 45&#176; a la derecha" />
     <text name="input_QuickCamOnFootLeftRight_2" text="QuickCamera: A pie 45&#176; a la izquierda" />
     <text name="input_QuickCamVehicleForeBack"   text="QuickCamera: Cambiar a vista trasera" />
-    <text name="input_QuickCamVehicleSnapLR_1"   text="QuickCamera: Mirar 45&#176 a la derecha" />
-    <text name="input_QuickCamVehicleSnapLR_2"   text="QuickCamera: Mirar 45&#176 a la izquierda" />
-    <text name="input_QuickCamVehicleSnap2LR_1"  text="QuickCamera: Mirar 90&#176 a la derecha" />
-    <text name="input_QuickCamVehicleSnap2LR_2"  text="QuickCamera: Mirar 90&#176 a la izquierda" />
+    <text name="input_QuickCamVehicleSnapLR_1"   text="QuickCamera: Mirar 45&#176; a la derecha" />
+    <text name="input_QuickCamVehicleSnapLR_2"   text="QuickCamera: Mirar 45&#176; a la izquierda" />
+    <text name="input_QuickCamVehicleSnap2LR_1"  text="QuickCamera: Mirar 90&#176; a la derecha" />
+    <text name="input_QuickCamVehicleSnap2LR_2"  text="QuickCamera: Mirar 90&#176; a la izquierda" />
     <text name="input_QuickCamVehiclePeekLR_1"   text="QuickCamera: Mirar por la parte derecha" />
     <text name="input_QuickCamVehiclePeekLR_2"   text="QuickCamera: Mirar por la parte izquierda" />
     <text name="input_QuickCamVehicleZoomIn"     text="QuickCamera: Zoom in (vehicle)" />

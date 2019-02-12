@@ -182,10 +182,14 @@ VehicleCamera.onActivate = Utils.appendedFunction(VehicleCamera.onActivate, func
   end
 
   -- WARNING! DANGER!
-  -- EXTREMELY UGLY HACK! - Somehow the InputBinding eventOrder is 'important' when it comes which InputAction that
+  -- EXTREMELY UGLY HACK! - Somehow the InputBinding eventOrder is 'important' when it comes to which InputAction that
   -- occurs first in the `g_inputBinding.eventOrder` table, and whether or not its event has `triggerAlways=true`.
-  -- I discovered that when two InputActions _mapped_to_the_same_key_, then the (InputAction-)event with `triggerAlways=false`
-  -- must occur _before_ the (InputAction-)event with `triggerAlways=true`, for both events to be triggered.
+  -- I discovered that when two InputActions _mapped_to_the_same_key_ are active, then the (InputAction-)event with
+  -- `triggerAlways=false` must occur _before_ the (InputAction-)event with `triggerAlways=true`, for both events
+  -- to be triggered.
+  --
+  -- So the below HACK is to bring QuickCamera's InputActions up earlier in the `g_inputBinding.eventOrder` table,
+  -- by simply switching their location with the base-game's InputActions for camera zoom.
 
   local actionNamesOrder = {
     -- 1.                                 2.

@@ -7,7 +7,12 @@
     NOTE: DO NOT/NEVER edit this ModDesc.XML!
           For contributing translations, only modify the corresponding ModDesc_l10n_*.XML file.
 -->
-  <contributors>DLH007, _dj_, Gonimy-Vetrom, jules.stmp537, Ziuta, Xno, PromGames, Anonymous</contributors>
+  <contributors>
+    (FS19)
+      ..pending..
+    (FS17)
+      DLH007, _dj_, Gonimy-Vetrom, jules.stmp537, Ziuta, Xno, PromGames, Anonymous
+  </contributors>
 
   <version>1.0.0.0</version>
 
