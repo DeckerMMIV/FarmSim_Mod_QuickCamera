@@ -47,6 +47,8 @@ VehicleCamera.update = Utils.prependedFunction(VehicleCamera.update, function(se
   end
 end)
 
+----
+
 local math_pi_double  = math.pi*2
 local function normalizeRotation(rot)
   while (rot < 0)              do rot = rot + math_pi_double; end
@@ -54,166 +56,155 @@ local function normalizeRotation(rot)
   return rot
 end
 
-VehicleCamera.QC_onInputLookForeBack = function(self, inputActionName, inputValue, callbackState, arg4, isMouse)
-  local destRotY = normalizeRotation(self.origRotY)
-  local rotY     = normalizeRotation(self.rotY)
+----
+
+Enterable.QC_onInputLookForeBack = function(self, inputActionName, inputValue, callbackState, arg4, isMouse)
+  local actCam = self.spec_enterable.activeCamera
+
+  local destRotY = normalizeRotation(actCam.origRotY)
+  local rotY     = normalizeRotation(actCam.rotY)
   if (destRotY - math.pi/2) < rotY and rotY < (destRotY + math.pi/2) then
     -- Currently looking 'forward', so wanted target is 'backwards'
     destRotY = destRotY - math.pi
   end
 
-  self.modQc = {
+  actCam.modQc = {
     camTime = 250,
-    camSource = { self.rotX, rotY },
-    camTarget = { self.origRotX, MathUtil.normalizeRotationForShortestPath(destRotY, rotY) },
+    camSource = { actCam.rotX, rotY },
+    camTarget = { actCam.origRotX, MathUtil.normalizeRotationForShortestPath(destRotY, rotY) },
   }
 end
 
-VehicleCamera.QC_onInputSnapLeftRight = function(self, inputActionName, inputValue, callbackState, arg4, isMouse)
+Enterable.QC_onInputSnapLeftRight = function(self, inputActionName, inputValue, callbackState, arg4, isMouse)
   --log("VehicleCamera.QC_onInputSnapLeftRight: ",inputActionName," ",inputValue," ",callbackState," ",arg4," ",isMouse)
+  local spec = self.spec_enterable
   if inputValue == 0 then
-    if self.modQcPressedTime ~= nil then
-      if (g_time - self.modQcPressedTime) <= 150 then -- TODO: Make 150ms configurable!
+    if spec.modQcPressedTime ~= nil then
+      if (g_time - spec.modQcPressedTime) <= 150 then -- TODO: Make 150ms configurable!
+        local actCam = spec.activeCamera
         local angleDegSnap = callbackState
-        local dirY = MathUtil.sign(self.modQcInputValue) * MathUtil.degToRad(angleDegSnap)
-        local rotY = self.rotY - dirY
+        local dirY = MathUtil.sign(spec.modQcInputValue) * MathUtil.degToRad(angleDegSnap)
+        local rotY = actCam.rotY - dirY
         rotY = MathUtil.degToRad(angleDegSnap * math.floor((math.deg(rotY) + (angleDegSnap/2))/angleDegSnap)); -- snap
-        self.modQc = {
+        actCam.modQc = {
           camTime = 100,
-          camSource = { self.rotX, self.rotY },
-          camTarget = { self.rotX, rotY },
+          camSource = { actCam.rotX, actCam.rotY },
+          camTarget = { actCam.rotX, rotY },
         }
       end
     end
-    self.modQcPressedTime = nil
-    self.modQcInputValue = nil
+    spec.modQcPressedTime = nil
+    spec.modQcInputValue = nil
   else
-    self.modQcPressedTime = g_time
-    self.modQcInputValue = inputValue
+    spec.modQcPressedTime = g_time
+    spec.modQcInputValue = inputValue
   end
 end
 
-VehicleCamera.QC_onInputPeekLeftRight = function(self, inputActionName, inputValue, callbackState, arg4, isMouse)
+Enterable.QC_onInputPeekLeftRight = function(self, inputActionName, inputValue, callbackState, arg4, isMouse)
   --log("VehicleCamera.QC_onInputPeekLeftRight: ",inputActionName," ",inputValue," ",callbackState," ",arg4," ",isMouse)
-  if self.modQc == nil then
+  local actCam = self.spec_enterable.activeCamera
+  if actCam.modQc == nil then
     local dirY = MathUtil.sign(inputValue) * MathUtil.degToRad(callbackState)
-    local rotY = self.rotY - dirY
-    self.modQc = {
+    local rotY = actCam.rotY - dirY
+    actCam.modQc = {
       camTime = 100,
-      peekFrom  = { self.rotX, self.rotY },
+      peekFrom  = { actCam.rotX, actCam.rotY },
       peekValue = inputValue,
-      camSource = { self.rotX, self.rotY },
-      camTarget = { self.rotX, rotY },
+      camSource = { actCam.rotX, actCam.rotY },
+      camTarget = { actCam.rotX, rotY },
     }
-  elseif self.modQc.peekFrom ~= nil then
+  elseif actCam.modQc.peekFrom ~= nil then
     if inputValue == 0 then
-      local origPeekFrom = self.modQc.peekFrom
-      self.modQc = {
+      local origPeekFrom = actCam.modQc.peekFrom
+      actCam.modQc = {
         camTime = 100,
-        camSource = { self.rotX, self.rotY },
+        camSource = { actCam.rotX, actCam.rotY },
         camTarget = origPeekFrom,
       }
-    elseif self.modQc.peekValue ~= inputValue then
-      local origPeekFrom = self.modQc.peekFrom
+    elseif actCam.modQc.peekValue ~= inputValue then
+      local origPeekFrom = actCam.modQc.peekFrom
       local dirY = MathUtil.sign(inputValue) * MathUtil.degToRad(callbackState)
       local rotY = origPeekFrom[2] - dirY
-      self.modQc = {
+      actCam.modQc = {
         camTime = 100,
         peekFrom  = origPeekFrom,
         peekValue = inputValue,
-        camSource = { self.rotX, self.rotY },
-        camTarget = { self.rotX, rotY },
+        camSource = { actCam.rotX, actCam.rotY },
+        camTarget = { actCam.rotX, rotY },
       }
       end
   end
 end
 
-VehicleCamera.QC_onInputQuickZoom = function(self, inputActionName, inputValue, callbackState, arg4, isMouse)
-  if self.modQcPressedTime == nil then
+Enterable.QC_onInputQuickZoom = function(self, inputActionName, inputValue, callbackState, arg4, isMouse)
+  local spec = self.spec_enterable
+  if spec.modQcPressedTime == nil then
     if inputValue ~= 0 then
       --log("VehicleCamera.QC_onInputQuickZoom(1): ",inputActionName," ",inputValue," ",callbackState," ",arg4," ",isMouse)
-      self.modQcPressedTime = g_time
-      self.modQcInputValue = callbackState
+      spec.modQcPressedTime = g_time
+      spec.modQcInputValue = callbackState
     end
   else
     if inputValue == 0 then
-      if callbackState == self.modQcInputValue then
+      if callbackState == spec.modQcInputValue then
         --log("VehicleCamera.QC_onInputQuickZoom(2): ",inputActionName," ",inputValue," ",callbackState," ",arg4," ",isMouse)
-        if (g_time - self.modQcPressedTime) <= 150 then -- TODO: Make 150ms configurable!
-          self:zoomSmoothly(13 * self.modQcInputValue)
+        if (g_time - spec.modQcPressedTime) <= 150 then -- TODO: Make 150ms configurable!
+          spec.activeCamera:zoomSmoothly(13 * spec.modQcInputValue)
         end
-        self.modQcPressedTime = nil
-        self.modQcInputValue = nil
+        spec.modQcPressedTime = nil
+        spec.modQcInputValue = nil
       end
-    elseif callbackState ~= self.modQcInputValue then
+    elseif callbackState ~= spec.modQcInputValue then
       --log("VehicleCamera.QC_onInputQuickZoom(3): ",inputActionName," ",inputValue," ",callbackState," ",arg4," ",isMouse)
-      self.modQcPressedTime = g_time
-      self.modQcInputValue = callbackState
+      spec.modQcPressedTime = g_time
+      spec.modQcInputValue = callbackState
     end
   end
 end
 
-VehicleCamera.onActivate = Utils.appendedFunction(VehicleCamera.onActivate, function(self)
-  if nil == g_client then
-    return
-  end
+Enterable.onRegisterActionEvents = Utils.overwrittenFunction(Enterable.onRegisterActionEvents, function(self, superFunc, ...)
+  if self:getIsEntered() and self:getIsActiveForInput(true,true) then
+    local spec = self.spec_enterable
+    self:clearActionEventsTable(spec.actionEvents) -- Part of "hack". See comment further below
 
-  local actionEvents = {
-    { 1, InputAction.QuickCamVehicleForeBack, VehicleCamera.QC_onInputLookForeBack,  false, true, false, true, nil },
-    { 1, InputAction.QuickCamVehicleSnapLR,   VehicleCamera.QC_onInputSnapLeftRight, true,  true, false, true,  45 },
-    { 1, InputAction.QuickCamVehicleSnap2LR,  VehicleCamera.QC_onInputSnapLeftRight, true,  true, false, true,  90 },
-    { 1, InputAction.QuickCamVehiclePeekLR,   VehicleCamera.QC_onInputPeekLeftRight, true,  true, false, true,  60 },
-    { 2, InputAction.QuickCamVehicleZoomIn,   VehicleCamera.QC_onInputQuickZoom,     true,  true, false, true, -1  },
-    { 2, InputAction.QuickCamVehicleZoomOut,  VehicleCamera.QC_onInputQuickZoom,     true,  true, false, true,  1  },
-  }
+    local actCam = spec.activeCamera
+    if nil ~= actCam then
+      local actionEvents = {
+        { 1, InputAction.QuickCamVehicleForeBack, Enterable.QC_onInputLookForeBack,  false, true, false, true, nil },
+        { 1, InputAction.QuickCamVehicleSnapLR,   Enterable.QC_onInputSnapLeftRight, true,  true, false, true,  45 },
+        { 1, InputAction.QuickCamVehicleSnap2LR,  Enterable.QC_onInputSnapLeftRight, true,  true, false, true,  90 },
+        { 1, InputAction.QuickCamVehiclePeekLR,   Enterable.QC_onInputPeekLeftRight, true,  true, false, true,  60 },
+        { 2, InputAction.QuickCamVehicleZoomIn,   Enterable.QC_onInputQuickZoom,     true,  true, false, true, -1  },
+        { 2, InputAction.QuickCamVehicleZoomOut,  Enterable.QC_onInputQuickZoom,     true,  true, false, true,  1  },
+      }
 
-  for idx,ae in ipairs(actionEvents) do
-    if ae[2] ~= nil then
-      if (ae[1] == 1 and self.isRotatable) or (ae[1] == 2 and self.allowTranslation) then
-        local success, actionEventId, collision = g_inputBinding:registerActionEvent(ae[2], self, ae[3], ae[4], ae[5], ae[6], ae[7], ae[8])
-        --log(success," ",actionEventId," ",collision)
-        if success then
-          g_inputBinding:setActionEventTextVisibility(actionEventId, false)
-        else
-          log("[ERROR, QuickCamera] registerActionEvent failure (#",idx,") ",collision)
+      local actionEventId
+      for idx,ae in ipairs(actionEvents) do
+        if ae[2] ~= nil then
+          if (ae[1] == 1 and actCam.isRotatable) or (ae[1] == 2 and actCam.allowTranslation) then
+            _, actionEventId = self:addActionEvent(spec.actionEvents, ae[2], self, ae[3], ae[4], ae[5], ae[6], ae[7], ae[8])
+            g_inputBinding:setActionEventTextVisibility(actionEventId, false)
+          end
         end
       end
     end
-  end
 
-  -- WARNING! DANGER!
-  -- EXTREMELY UGLY HACK! - Somehow the InputBinding eventOrder is 'important' when it comes to which InputAction that
-  -- occurs first in the `g_inputBinding.eventOrder` table, and whether or not its event has `triggerAlways=true`.
-  -- I discovered that when two InputActions _mapped_to_the_same_key_ are active, then the (InputAction-)event with
-  -- `triggerAlways=false` must occur _before_ the (InputAction-)event with `triggerAlways=true`, for both events
-  -- to be triggered.
-  --
-  -- So the below HACK is to bring QuickCamera's InputActions up earlier in the `g_inputBinding.eventOrder` table,
-  -- by simply switching their location with the base-game's InputActions for camera zoom.
-
-  local actionNamesOrder = {
-    -- 1.                                 2.
-    {InputAction.QuickCamVehicleZoomIn, InputAction.CAMERA_ZOOM_IN},
-    {InputAction.QuickCamVehicleZoomOut,InputAction.CAMERA_ZOOM_OUT},
-  }
-  for _,actNamesOrder in pairs(actionNamesOrder) do
-    local eventOrderIdxs = {nil,nil}
-    for idx,act in pairs(g_inputBinding.eventOrder) do
-      for j,actName in pairs(actNamesOrder) do
-        if act.actionName == actName then
-          eventOrderIdxs[j] = idx
-        end
-      end
+    -- UGLY HACK! - Somehow the InputBinding eventOrder is 'important' when it comes to which InputAction that
+    -- occurs first in the `g_inputBinding.eventOrder` table, and whether or not its event has `triggerAlways=true`.
+    -- I discovered that when two InputActions _mapped_to_the_same_key_ are active, then the (InputAction-)event with
+    -- `triggerAlways=false` must occur _before_ the (InputAction-)event with `triggerAlways=true`, for both events
+    -- to be triggered.
+    local totalActionEvents = spec.actionEvents
+    spec.actionEvents = {}
+    superFunc(self, ...)
+    for k,v in pairs(spec.actionEvents) do
+      totalActionEvents[k] = v
     end
-    if eventOrderIdxs[1] ~= nil and eventOrderIdxs[2] ~= nil then
-      if eventOrderIdxs[1] > eventOrderIdxs[2] then
-        local tmp = g_inputBinding.eventOrder[eventOrderIdxs[2]]
-        g_inputBinding.eventOrder[eventOrderIdxs[2]] = g_inputBinding.eventOrder[eventOrderIdxs[1]]
-        g_inputBinding.eventOrder[eventOrderIdxs[1]] = tmp
-      end
-    end
+    spec.actionEvents = totalActionEvents
+  else
+    superFunc(self, ...)
   end
-
 end)
 
 print(("Script loaded: QuickCamera.lua - from %s (v%s)"):format(g_currentModName, g_modManager:getModByName(g_currentModName).version));
