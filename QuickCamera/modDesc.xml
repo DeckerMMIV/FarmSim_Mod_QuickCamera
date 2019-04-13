@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="42">
+<modDesc descVersion="43">
   <author>Decker_MMIV</author>
   <authorContact>fs-uk.com, forum.farming-simulator.com</authorContact>
 
@@ -18,18 +18,11 @@
 
   <title>
     <en>QuickCamera</en>
-    <de>QuickCamera</de>
-    <fr>QuickCamera</fr>
-    <it>QuickCamera</it>
-    <pl>QuickCamera</pl>
-    <ru>QuickCamera</ru>
-    <es>QuickCamera</es>
   </title>
 
   <changeLog><![CDATA[
 1.0.0.0
 - Upgraded to FS19
-- Known issue: Sometimes the quick-zoom keys wont't work. The current work-around is to 'change camera', which usually brings the quick-zoom keys into action again.
 ]]></changeLog>
 
   <description>
@@ -44,7 +37,6 @@ Or when player is 'on foot';
 
 Changelog 1.0.0.0:
 - Upgraded to FS19
-- Known issue: Sometimes the quick-zoom keys wont't work. The current work-around is to 'change camera', which usually brings the quick-zoom keys into action again.
 ]]></en>
     <de><![CDATA[Benutze folgende Tasten um schnell die Kamera zu bewegen:
 - Kurzer Blick nach links / rechts, Rotieren um 45°/ 90°
@@ -56,7 +48,6 @@ Oder wenn der Spieler zu Fuß ist;
 
 Changelog 1.0.0.0:
 - Upgraded to FS19
-- Known issue: Sometimes the quick-zoom keys wont't work. The current work-around is to 'change camera', which usually brings the quick-zoom keys into action again.
 ]]></de>
     <fr><![CDATA[Utiliser les touches pour avoir rapidement les vues depuis les véhicules;
 - Coup d'oeil gauche / droite, Rotation de 45 ° / 90 °
@@ -68,7 +59,6 @@ Ou lorsque le joueur est «à pied»;
 
 Changelog 1.0.0.0:
 - Upgraded to FS19
-- Known issue: Sometimes the quick-zoom keys wont't work. The current work-around is to 'change camera', which usually brings the quick-zoom keys into action again.
 ]]></fr>
     <it><![CDATA[Usa i tasti per puntare velocemente la telecamera sul veicolo;
 - Occhiata sinistra/destra, ruota 45/90-gradi sinistra/destra
@@ -80,7 +70,6 @@ O quando il giocatore è "a piedi";
 
 Changelog 1.0.0.0:
 - Upgraded to FS19
-- Known issue: Sometimes the quick-zoom keys wont't work. The current work-around is to 'change camera', which usually brings the quick-zoom keys into action again.
 ]]></it>
     <pl><![CDATA[Służy do szybkiego operowania kamerą pojazdu:
 - Spoglądanie w lewo / w prawo, Obrót o 45°/90°
@@ -92,7 +81,6 @@ Gdy gracz jest "na piechotę":
 
 Changelog 1.0.0.0:
 - Upgraded to FS19
-- Known issue: Sometimes the quick-zoom keys wont't work. The current work-around is to 'change camera', which usually brings the quick-zoom keys into action again.
 ]]></pl>
     <ru><![CDATA[Используется для быстрого управления камерой:
 - быстро посмотреть налево/направо, вращение на 45/90-градусов влево/вправо,
@@ -104,7 +92,6 @@ Changelog 1.0.0.0:
 
 Changelog 1.0.0.0:
 - Upgraded to FS19
-- Known issue: Sometimes the quick-zoom keys wont't work. The current work-around is to 'change camera', which usually brings the quick-zoom keys into action again.
 ]]></ru>
     <es><![CDATA[Utilice las siguientes teclas para modificar la cámara del vehículo;
 - peek left/right, rotar 45°/90°
@@ -116,7 +103,6 @@ O cuando el jugador está 'a pie';
 
 Changelog 1.0.0.0:
 - Upgraded to FS19
-- Known issue: Sometimes the quick-zoom keys wont't work. The current work-around is to 'change camera', which usually brings the quick-zoom keys into action again.
 ]]></es>
   </description>
 
