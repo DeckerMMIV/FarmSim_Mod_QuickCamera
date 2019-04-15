@@ -24,6 +24,8 @@ Use keys to quickly have the vehicle camera;
 Or when player is 'on foot';
 - rotate 45°/180°
 - running even faster (mouse-wheel up/down when in 'run' mode)
+
+Additional free moving camera available, when vehicle is controlled by AI-helper
   </description>
 
   <texts>
@@ -39,5 +41,12 @@ Or when player is 'on foot';
     <text name="input_QuickCamVehiclePeekLR_2"   text="QuickCamera: Peek left (vehicle)" />
     <text name="input_QuickCamVehicleZoomIn"     text="QuickCamera: Zoom in (vehicle)" />
     <text name="input_QuickCamVehicleZoomOut"    text="QuickCamera: Zoom out (vehicle)" />
+
+    <text name="input_QuickCamMoveUpDown_1"      text="QuickCamera: AI-Camera up" />
+    <text name="input_QuickCamMoveUpDown_2"      text="QuickCamera: AI-Camera down" />
+    <text name="input_QuickCamMoveLeftRight_1"   text="QuickCamera: AI-Camera left" />
+    <text name="input_QuickCamMoveLeftRight_2"   text="QuickCamera: AI-Camera right" />
+    <text name="input_QuickCamMoveForwardBack_1" text="QuickCamera: AI-Camera forward" />
+    <text name="input_QuickCamMoveForwardBack_2" text="QuickCamera: AI-Camera backward" />
   </texts>
 </l10n>

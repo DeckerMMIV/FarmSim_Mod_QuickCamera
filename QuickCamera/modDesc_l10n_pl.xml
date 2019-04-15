@@ -40,5 +40,12 @@ Gdy gracz jest "na piechotę":
     <text name="input_QuickCamVehiclePeekLR_2"   text="QuickCamera: Zerknięcie w lewo" />
     <text name="input_QuickCamVehicleZoomIn"     text="QuickCamera: Przybliż" />
     <text name="input_QuickCamVehicleZoomOut"    text="QuickCamera: Oddal" />
+
+    <text name="input_QuickCamMoveUpDown_1"      text="QuickCamera: AI-Camera up" />
+    <text name="input_QuickCamMoveUpDown_2"      text="QuickCamera: AI-Camera down" />
+    <text name="input_QuickCamMoveLeftRight_1"   text="QuickCamera: AI-Camera left" />
+    <text name="input_QuickCamMoveLeftRight_2"   text="QuickCamera: AI-Camera right" />
+    <text name="input_QuickCamMoveForwardBack_1" text="QuickCamera: AI-Camera forward" />
+    <text name="input_QuickCamMoveForwardBack_2" text="QuickCamera: AI-Camera backward" />
   </texts>
 </l10n>

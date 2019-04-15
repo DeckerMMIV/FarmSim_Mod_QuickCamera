@@ -65,7 +65,7 @@ end
 
 Enterable.QC_onInputLookForeBack = function(self, inputActionName, inputValue, callbackState, arg4, isMouse)
   local spec = self.spec_enterable
-  local actCam = spec.activeCamera
+  local actCam = (nil~=spec and spec.activeCamera) or nil
   if nil ~= actCam and true == actCam.isRotatable then
     if 0 == inputValue then
       if (nil ~= spec.modQcPressedTime) and spec.modQcPressedTime < g_time then
@@ -98,7 +98,7 @@ end
 
 Enterable.QC_onInputSnapLeftRight = function(self, inputActionName, inputValue, callbackState, arg4, isMouse)
   local spec = self.spec_enterable
-  local actCam = spec.activeCamera
+  local actCam = (nil~=spec and spec.activeCamera) or nil
   if nil ~= actCam and true == actCam.isRotatable then
     if 0 == inputValue then
       if (nil ~= spec.modQcPressedTime) and g_time - spec.modQcPressedTime <= quickTapThresholdMS then
@@ -123,7 +123,8 @@ Enterable.QC_onInputSnapLeftRight = function(self, inputActionName, inputValue, 
 end
 
 Enterable.QC_onInputPeekLeftRight = function(self, inputActionName, inputValue, callbackState, arg4, isMouse)
-  local actCam = self.spec_enterable.activeCamera
+  local spec = self.spec_enterable
+  local actCam = (nil~=spec and spec.activeCamera) or nil
   if nil ~= actCam and true == actCam.isRotatable then
     if nil == actCam.modQc then
       local dirY = MathUtil.sign(inputValue) * MathUtil.degToRad(callbackState)
@@ -161,7 +162,7 @@ end
 
 Enterable.QC_onInputQuickZoom = function(self, inputActionName, inputValue, callbackState, arg4, isMouse)
   local spec = self.spec_enterable
-  local actCam = spec.activeCamera
+  local actCam = (nil~=spec and spec.activeCamera) or nil
   if nil ~= actCam and true == actCam.allowTranslation then
     if nil == spec.modQcPressedTime then
       if 0 ~= inputValue then
@@ -186,7 +187,7 @@ Enterable.QC_onInputQuickZoom = function(self, inputActionName, inputValue, call
 end
 
 Enterable.onRegisterActionEvents = Utils.overwrittenFunction(Enterable.onRegisterActionEvents, function(self, superFunc, ...)
-  if self:getIsEntered() and self:getIsActiveForInput(true,true) then
+  if self.isClient and self:getIsEntered() and self:getIsActiveForInput(true,true) then
     local spec = self.spec_enterable
     self:clearActionEventsTable(spec.actionEvents) -- Part of "hack". See comment further below
 

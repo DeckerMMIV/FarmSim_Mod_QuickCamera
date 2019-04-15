@@ -34,6 +34,8 @@ Or when player is 'on foot';
 - rotate 45°/180°
 - running even faster (mouse-wheel up/down when in 'run' mode)
 
+Additional free moving camera available, when vehicle is controlled by AI-helper
+
 
 Changelog 1.0.0.0:
 - Upgraded to FS19
@@ -44,6 +46,7 @@ Changelog 1.0.0.0:
 
 Oder wenn der Spieler zu Fuß ist;
 - 45° / 180° drehen
+- Läuft noch schneller (Mausrad auf / ab, wenn im "Run" -Modus)
 
 
 Changelog 1.0.0.0:
@@ -55,6 +58,7 @@ Changelog 1.0.0.0:
 
 Ou lorsque le joueur est «à pied»;
 - tourner 45° / 180°
+- courir encore plus vite (molette de la souris en haut / bas)
 
 
 Changelog 1.0.0.0:
@@ -66,6 +70,7 @@ Changelog 1.0.0.0:
 
 O quando il giocatore è "a piedi";
 - ruotare 45° / 180°
+- correre ancora più velocemente (rotella del mouse su / giù quando in modalità "Esegui")
 
 
 Changelog 1.0.0.0:
@@ -77,6 +82,7 @@ Changelog 1.0.0.0:
 
 Gdy gracz jest "na piechotę":
 - Obrót o 45° / 180°
+- działa jeszcze szybciej (kółko myszy w górę / w dół w trybie „run”)
 
 
 Changelog 1.0.0.0:
@@ -88,6 +94,7 @@ Changelog 1.0.0.0:
 
 Или когда игрок находится «на ногах»:
 - повернуться на 45°/180°
+- работает еще быстрее (колесико мыши вверх / вниз в режиме бега)
 
 
 Changelog 1.0.0.0:
@@ -99,6 +106,7 @@ Changelog 1.0.0.0:
 
 O cuando el jugador está 'a pie';
 - girar 45° / 180°
+- correr incluso más rápido (rueda del mouse arriba / abajo cuando está en modo 'correr')
 
 
 Changelog 1.0.0.0:
@@ -112,6 +120,7 @@ Changelog 1.0.0.0:
   <extraSourceFiles>
     <sourceFile filename="QuickCamera.lua" />
     <sourceFile filename="QuickFeet.lua" />
+    <sourceFile filename="MoveableVehicleCameraRegister.lua" />
   </extraSourceFiles>
 
   <l10n filenamePrefix="modDesc_l10n" /> <!-- Load the corresponding modDesc_l10n_<language>.XML file, or revert to 'en'/'de'. -->
@@ -147,6 +156,19 @@ Changelog 1.0.0.0:
     <actionBinding action="QuickCamVehicleZoomOut">
       <binding device="KB_MOUSE_DEFAULT" input="KEY_pagedown" index="1" />
     </actionBinding>
+
+    <actionBinding action="QuickCamMoveUpDown">
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_z" axisComponent="-" neutralInput="0" index="1" />
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_x" axisComponent="+" neutralInput="0" index="1" />
+    </actionBinding>
+    <actionBinding action="QuickCamMoveLeftRight">
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_a" axisComponent="-" neutralInput="0" index="1" />
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_d" axisComponent="+" neutralInput="0" index="1" />
+    </actionBinding>
+    <actionBinding action="QuickCamMoveForwardBack">
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_w" axisComponent="-" neutralInput="0" index="1" />
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_s" axisComponent="+" neutralInput="0" index="1" />
+    </actionBinding>
   </inputBinding>
 
   <actions>
@@ -166,6 +188,11 @@ Changelog 1.0.0.0:
     <action name="QuickCamVehiclePeekLR"   category="VEHICLE_QuickTap" axisType="FULL" />
     <action name="QuickCamVehicleZoomIn"   category="VEHICLE_QuickTap" />
     <action name="QuickCamVehicleZoomOut"  category="VEHICLE_QuickTap" />
+
+    <action name="QuickCamMoveUpDown"      category="VEHICLE" />
+    <action name="QuickCamMoveLeftRight"   category="VEHICLE" />
+    <action name="QuickCamMoveForwardBack" category="VEHICLE" />
+
     <!-- Normal categories: SYSTEM, ONFOOT, VEHICLE -->
     <!-- Normal axisTypes: HALF, FULL -->
   </actions>
