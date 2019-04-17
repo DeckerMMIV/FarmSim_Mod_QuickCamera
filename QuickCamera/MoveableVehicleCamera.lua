@@ -1,3 +1,10 @@
+--
+-- MoveableVehicleCamera for FS19
+--
+-- @author  Decker_MMIV (DCK)
+-- @contact fs-uk.com, forum.farming-simulator.com
+-- @date    2019-04-xx
+--
 
 -- For debugging
 local function log(...)

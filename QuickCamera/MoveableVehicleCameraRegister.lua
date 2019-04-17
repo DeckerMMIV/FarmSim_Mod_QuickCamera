@@ -1,3 +1,12 @@
+--
+-- MoveableVehicleCamera for FS19
+--
+-- @author  Decker_MMIV (DCK)
+-- @contact fs-uk.com, forum.farming-simulator.com
+-- @date    2019-04-xx
+--
+
+
 ---- Register this specialization
 local specTypeName = 'moveableVehicleCamera'
 

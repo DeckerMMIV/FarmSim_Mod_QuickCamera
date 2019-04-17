@@ -189,9 +189,9 @@ Changelog 1.0.0.0:
     <action name="QuickCamVehicleZoomIn"   category="VEHICLE_QuickTap" />
     <action name="QuickCamVehicleZoomOut"  category="VEHICLE_QuickTap" />
 
-    <action name="QuickCamMoveUpDown"      category="VEHICLE" />
-    <action name="QuickCamMoveLeftRight"   category="VEHICLE" />
-    <action name="QuickCamMoveForwardBack" category="VEHICLE" />
+    <action name="QuickCamMoveUpDown"      category="VEHICLE" axisType="FULL" />
+    <action name="QuickCamMoveLeftRight"   category="VEHICLE" axisType="FULL" />
+    <action name="QuickCamMoveForwardBack" category="VEHICLE" axisType="FULL" />
 
     <!-- Normal categories: SYSTEM, ONFOOT, VEHICLE -->
     <!-- Normal axisTypes: HALF, FULL -->

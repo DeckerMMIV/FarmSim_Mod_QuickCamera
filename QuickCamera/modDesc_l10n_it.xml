@@ -43,9 +43,9 @@ O quando il giocatore è "a piedi";
 
     <text name="input_QuickCamMoveUpDown_1"      text="QuickCamera: AI-Camera up" />
     <text name="input_QuickCamMoveUpDown_2"      text="QuickCamera: AI-Camera down" />
-    <text name="input_QuickCamMoveLeftRight_1"   text="QuickCamera: AI-Camera left" />
-    <text name="input_QuickCamMoveLeftRight_2"   text="QuickCamera: AI-Camera right" />
-    <text name="input_QuickCamMoveForwardBack_1" text="QuickCamera: AI-Camera forward" />
-    <text name="input_QuickCamMoveForwardBack_2" text="QuickCamera: AI-Camera backward" />
+    <text name="input_QuickCamMoveLeftRight_2"   text="QuickCamera: AI-Camera left" />
+    <text name="input_QuickCamMoveLeftRight_1"   text="QuickCamera: AI-Camera right" />
+    <text name="input_QuickCamMoveForwardBack_2" text="QuickCamera: AI-Camera forward" />
+    <text name="input_QuickCamMoveForwardBack_1" text="QuickCamera: AI-Camera backward" />
   </texts>
 </l10n>
