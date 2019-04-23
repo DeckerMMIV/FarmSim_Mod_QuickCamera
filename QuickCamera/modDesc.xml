@@ -9,7 +9,7 @@
 -->
   <contributors>
     (FS19)
-      ..pending..
+      .. pending ..
     (FS17)
       DLH007, _dj_, Gonimy-Vetrom, jules.stmp537, Ziuta, Xno, PromGames, Anonymous
   </contributors>
@@ -23,6 +23,7 @@
   <changeLog><![CDATA[
 1.0.0.0
 - Upgraded to FS19
+- Added additional camera, when vehicle is controlled by hired worker
 ]]></changeLog>
 
   <description>
@@ -34,11 +35,7 @@ Or when player is 'on foot';
 - rotate 45°/180°
 - running even faster (mouse-wheel up/down when in 'run' mode)
 
-Additional free moving camera available, when vehicle is controlled by AI-helper
-
-
-Changelog 1.0.0.0:
-- Upgraded to FS19
+Additional free moving camera available, 'AI-Camera', when vehicle is controlled by hired worker.
 ]]></en>
     <de><![CDATA[Benutze folgende Tasten um schnell die Kamera zu bewegen:
 - Kurzer Blick nach links / rechts, Rotieren um 45°/ 90°
@@ -48,9 +45,7 @@ Oder wenn der Spieler zu Fuß ist;
 - 45° / 180° drehen
 - Läuft noch schneller (Mausrad auf / ab, wenn im "Run" -Modus)
 
-
-Changelog 1.0.0.0:
-- Upgraded to FS19
+Zusätzliche frei bewegliche Kamera, 'AI-Kamera', verfügbar, wenn das Fahrzeug von einem Arbeiter eingestellt wird.
 ]]></de>
     <fr><![CDATA[Utiliser les touches pour avoir rapidement les vues depuis les véhicules;
 - Coup d'oeil gauche / droite, Rotation de 45 ° / 90 °
@@ -60,58 +55,8 @@ Ou lorsque le joueur est «à pied»;
 - tourner 45° / 180°
 - courir encore plus vite (molette de la souris en haut / bas)
 
-
-Changelog 1.0.0.0:
-- Upgraded to FS19
+Caméra mobile supplémentaire disponible, «Caméra AI», lorsque le véhicule est contrôlé par un employé embauché.
 ]]></fr>
-    <it><![CDATA[Usa i tasti per puntare velocemente la telecamera sul veicolo;
-- Occhiata sinistra/destra, ruota 45/90-gradi sinistra/destra
-- guarda avanti/indiestro, zoom in/out
-
-O quando il giocatore è "a piedi";
-- ruotare 45° / 180°
-- correre ancora più velocemente (rotella del mouse su / giù quando in modalità "Esegui")
-
-
-Changelog 1.0.0.0:
-- Upgraded to FS19
-]]></it>
-    <pl><![CDATA[Służy do szybkiego operowania kamerą pojazdu:
-- Spoglądanie w lewo / w prawo, Obrót o 45°/90°
-- Spoglądanie w przód/tył oraz przybliżanie/oddalanie
-
-Gdy gracz jest "na piechotę":
-- Obrót o 45° / 180°
-- działa jeszcze szybciej (kółko myszy w górę / w dół w trybie „run”)
-
-
-Changelog 1.0.0.0:
-- Upgraded to FS19
-]]></pl>
-    <ru><![CDATA[Используется для быстрого управления камерой:
-- быстро посмотреть налево/направо, вращение на 45/90-градусов влево/вправо,
-- быстро посмотреть вперед/назад или приблизить/отдалить
-
-Или когда игрок находится «на ногах»:
-- повернуться на 45°/180°
-- работает еще быстрее (колесико мыши вверх / вниз в режиме бега)
-
-
-Changelog 1.0.0.0:
-- Upgraded to FS19
-]]></ru>
-    <es><![CDATA[Utilice las siguientes teclas para modificar la cámara del vehículo;
-- peek left/right, rotar 45°/90°
-- Mirar atrás /adelante, zoom aumentar / disminuir
-
-O cuando el jugador está 'a pie';
-- girar 45° / 180°
-- correr incluso más rápido (rueda del mouse arriba / abajo cuando está en modo 'correr')
-
-
-Changelog 1.0.0.0:
-- Upgraded to FS19
-]]></es>
   </description>
 
   <iconFilename>icon_QuickCamera.dds</iconFilename>

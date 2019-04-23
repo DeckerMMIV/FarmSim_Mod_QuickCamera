@@ -25,7 +25,7 @@ Or when player is 'on foot';
 - rotate 45°/180°
 - running even faster (mouse-wheel up/down when in 'run' mode)
 
-Additional free moving camera available, when vehicle is controlled by AI-helper
+Additional free moving camera available, 'AI-Camera', when vehicle is controlled by hired worker.
   </description>
 
   <texts>

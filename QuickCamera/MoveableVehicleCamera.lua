@@ -34,7 +34,6 @@ function MoveableVehicleCameraEnabler.registerEventListeners(vehicleType)
 end
 
 function MoveableVehicleCameraEnabler:onAIStart()
-  --log("MoveableVehicleCameraEnabler:onAIStart()")
   local rootAttacherVehicle = self:getRootVehicle()
   if rootAttacherVehicle ~= nil then
     if rootAttacherVehicle.addToolCameras ~= nil then
@@ -42,26 +41,18 @@ function MoveableVehicleCameraEnabler:onAIStart()
         self.modMoveableCamera = MoveableVehicleCamera:new(self)
         self.modMoveableCamera:initialize()
       end
-      --log("calling rootAttacherVehicle:addToolCameras")
       rootAttacherVehicle:addToolCameras({self.modMoveableCamera})
     end
   end
 end
 
 function MoveableVehicleCameraEnabler:onAIEnd()
-  --log("MoveableVehicleCameraEnabler:onAIEnd()")
   local rootAttacherVehicle = self:getRootVehicle()
   if rootAttacherVehicle ~= nil then
     if rootAttacherVehicle.addToolCameras ~= nil then
-      --log("calling rootAttacherVehicle:removeToolCameras")
       rootAttacherVehicle:removeToolCameras({self.modMoveableCamera})
     end
   end
-  -- if nil ~= self.modMoveableCamera then
-  --   --log("calling delete(self.modMoveableCamera)")
-  --   self.modMoveableCamera:delete()
-  --   self.modMoveableCamera = nil
-  -- end
 end
 
 ----
@@ -71,7 +62,6 @@ MoveableVehicleCamera = {}
 local MoveableVehicleCamera_mt = Class(MoveableVehicleCamera, VehicleCamera);
 
 function MoveableVehicleCamera:new(vehicle, customMt)
-  --log("MoveableVehicleCamera:new()")
   local instance = {}
   if customMt ~= nil then
       setmetatable(instance, customMt)
@@ -99,30 +89,25 @@ function MoveableVehicleCamera:new(vehicle, customMt)
   instance.lastInputMoves.upDown = 0
   instance.lastInputMoves.leftRight = 0
   instance.lastInputMoves.forwardBack = 0
+  instance.lastInputMoves.mouseWheel = 0
 
   instance.isCollisionEnabled = not g_modIsLoaded["FS19_disableVehicleCameraCollision"]
   return instance
 end
 
 function MoveableVehicleCamera:delete()
-  --log("MoveableVehicleCamera:delete()")
   delete(self.cameraNode)
   self.cameraNode = nil
   setShadowFocusBox(0)
 end
 
 function MoveableVehicleCamera:initialize()
-  --log("MoveableVehicleCamera:initialize()")
-  --[[
-    vehicle node -> cameraNode -> (translated)cameraPositionNode == rotationNode
-  --]]
   self.zoom = 1
   self.zoomTarget = 1
   self.zoomLimitedTarget = -1
   self.transMin = nil
   self.transMax = nil
 
-  --self.cameraNode = createTransformGroup("cameraMoveableNode")
   self.cameraNode = createCamera("cameraFreeMoveable", math.rad(70), 0.1, 5000)
   link(self.vehicle.components[1].node, self.cameraNode)
 
@@ -171,56 +156,57 @@ function MoveableVehicleCamera:initialize()
 end
 
 function MoveableVehicleCamera:onActivate()
-  --log("MoveableVehicleCamera:onActivate()")
-
   VehicleCamera.onActivate(self)
 
   self.lastInputMoves.run = 0
   self.lastInputMoves.upDown = 0
   self.lastInputMoves.leftRight = 0
   self.lastInputMoves.forwardBack = 0
+  self.lastInputMoves.mouseWheel = 0
 
-  local _, actionEventId1 = g_inputBinding:registerActionEvent(InputAction.QuickCamMoveUpDown,      self, MoveableVehicleCamera.actionEventMoveUpDown,      false, false, true,  true, nil)
-  local _, actionEventId2 = g_inputBinding:registerActionEvent(InputAction.QuickCamMoveLeftRight,   self, MoveableVehicleCamera.actionEventMoveLeftRight,   false, false, true,  true, nil)
-  local _, actionEventId3 = g_inputBinding:registerActionEvent(InputAction.QuickCamMoveForwardBack, self, MoveableVehicleCamera.actionEventMoveForwardBack, false, false, true,  true, nil)
-  local _, actionEventId4 = g_inputBinding:registerActionEvent(InputAction.AXIS_RUN,                self, MoveableVehicleCamera.actionEventMoveRun,         true,  true,  false, true, nil)
-  g_inputBinding:setActionEventTextVisibility(actionEventId1, false)
-  g_inputBinding:setActionEventTextVisibility(actionEventId2, false)
-  g_inputBinding:setActionEventTextVisibility(actionEventId3, false)
-  g_inputBinding:setActionEventTextVisibility(actionEventId4, false)
+  local dummy, actionEventId
+  dummy, actionEventId = g_inputBinding:registerActionEvent(InputAction.QuickCamMoveUpDown,      self, MoveableVehicleCamera.actionEventMoveUpDown,      false, false, true,  true, nil); g_inputBinding:setActionEventTextVisibility(actionEventId, false)
+  dummy, actionEventId = g_inputBinding:registerActionEvent(InputAction.QuickCamMoveLeftRight,   self, MoveableVehicleCamera.actionEventMoveLeftRight,   false, false, true,  true, nil); g_inputBinding:setActionEventTextVisibility(actionEventId, false)
+  dummy, actionEventId = g_inputBinding:registerActionEvent(InputAction.QuickCamMoveForwardBack, self, MoveableVehicleCamera.actionEventMoveForwardBack, false, false, true,  true, nil); g_inputBinding:setActionEventTextVisibility(actionEventId, false)
+  dummy, actionEventId = g_inputBinding:registerActionEvent(InputAction.AXIS_RUN,                self, MoveableVehicleCamera.actionEventMoveRun,         true,  true,  false, true, nil); g_inputBinding:setActionEventTextVisibility(actionEventId, false)
+  -- dummy, actionEventId = g_inputBinding:registerActionEvent(InputAction.CAMERA_ZOOM_IN,          self, MoveableVehicleCamera.actionEventCameraFov,       true,  false, false, true,   1); g_inputBinding:setActionEventTextVisibility(actionEventId, false)
+  -- dummy, actionEventId = g_inputBinding:registerActionEvent(InputAction.CAMERA_ZOOM_OUT,         self, MoveableVehicleCamera.actionEventCameraFov,       true,  false, false, true,  -1); g_inputBinding:setActionEventTextVisibility(actionEventId, false)
 end
 
+-- function MoveableVehicleCamera:mouseEvent(posX, posY, isDown, isUp, button)
+--   log("MoveableVehicleCamera:mouseEvent(",posX,",",posY,",",isDown,",",isUp,",",button,")")
+--   if isDown then
+--     if button == Input.MOUSE_BUTTON_WHEEL_UP then
+--       self.lastInputMoves.mouseWheel = self.lastInputMoves.mouseWheel + 1
+--     elseif button == Input.MOUSE_BUTTON_WHEEL_DOWN then
+--       self.lastInputMoves.mouseWheel = self.lastInputMoves.mouseWheel + -1
+--     end
+--   end
+-- end
+
+function MoveableVehicleCamera:actionEventCameraFov(actionName, inputValue, callbackState, isAnalog, isMouse)
+  self.lastInputMoves.mouseWheel = self.lastInputMoves.mouseWheel + callbackState
+end
 
 function MoveableVehicleCamera:actionEventMoveRun(actionName, inputValue, callbackState, isAnalog, isMouse)
   self.lastInputMoves.run = inputValue
 end
 
 function MoveableVehicleCamera:actionEventMoveForwardBack(actionName, inputValue, callbackState, isAnalog, isMouse)
-  -- if inputValue ~= 0 then
-  --   log("MoveableVehicleCamera:actionEventMoveForwardBack(",actionName,",",inputValue,",",callbackState,",",isAnalog,",",isMouse,")")
-  -- end
   inputValue = inputValue * 0.001 * (isMouse and 16.666 or g_currentDt)
   self.lastInputMoves.forwardBack = self.lastInputMoves.forwardBack + inputValue
 end
 function MoveableVehicleCamera:actionEventMoveLeftRight(actionName, inputValue, callbackState, isAnalog, isMouse)
-  -- if inputValue ~= 0 then
-  --   log("MoveableVehicleCamera:actionEventMoveLeftRight(",actionName,",",inputValue,",",callbackState,",",isAnalog,",",isMouse,")")
-  -- end
   inputValue = inputValue * 0.001 * (isMouse and 16.666 or g_currentDt)
   self.lastInputMoves.leftRight = self.lastInputMoves.leftRight + inputValue
 end
 function MoveableVehicleCamera:actionEventMoveUpDown(actionName, inputValue, callbackState, isAnalog, isMouse)
-  -- if inputValue ~= 0 then
-  --   log("MoveableVehicleCamera:actionEventMoveUpDown(",actionName,",",inputValue,",",callbackState,",",isAnalog,",",isMouse,")")
-  -- end
   inputValue = inputValue * 0.001 * (isMouse and 16.666 or g_currentDt)
   self.lastInputMoves.upDown = self.lastInputMoves.upDown + inputValue
 end
 
 
 function MoveableVehicleCamera:update(dt)
-  local doLog = false
-
   local moves = self.lastInputMoves
 
   if 0 ~= moves.forwardBack
@@ -233,7 +219,7 @@ function MoveableVehicleCamera:update(dt)
 
     local moveFactor = 4.0
     if self.lastInputMoves.run ~= nil and self.lastInputMoves.run > 0 then
-      moveFactor = 1.0
+      moveFactor = 0.8
     end
 
     self.transDirZ = self.transDirZ + dirZ          * moveFactor
@@ -243,9 +229,17 @@ function MoveableVehicleCamera:update(dt)
     moves.upDown      = 0
     moves.leftRight   = 0
   end
-  -- if doLog then
-  --   log("MoveableVehicleCamera:update() transDir:",self.transDirX,"/",self.transDirY,"/",self.transDirZ)
-  -- end
+
+  if self.lastInputMoves.mouseWheel ~= 0 then
+    if self.lastInputMoves.run ~= nil and self.lastInputMoves.run > 0 then
+      self.fovY = self.fovY + math.rad(self.lastInputMoves.mouseWheel)
+      self.fovY = MathUtil.clamp(self.fovY, math.rad(10), math.rad(170))
+    else
+      self.fovY = math.rad(70)
+    end
+    setFovY(self.cameraNode, self.fovY)
+    self.lastInputMoves.mouseWheel = 0
+  end
 
   VehicleCamera.update(self,dt)
 end

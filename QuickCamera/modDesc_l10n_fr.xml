@@ -8,6 +8,8 @@
 
   <!-- Add your own name or nickname here, when you contribute to this file's translation, so I know who to put into the credits. -->
   <translationContributors>
+    (FS19) .. pending .. (currently translate.google.com)
+
     (FS17) ModHub (GIANTS Software)
     (FS17) Anonymous
     (FS17) translate.google.com
@@ -26,6 +28,8 @@ Utiliser les touches pour avoir rapidement les vues depuis les véhicules;
 Ou lorsque le joueur est «à pied»;
 - tourner 45° / 180°
 - courir encore plus vite (molette de la souris en haut / bas)
+
+Caméra mobile supplémentaire disponible, «Caméra AI», lorsque le véhicule est contrôlé par un employé embauché.
   </description>
 
   <texts>
@@ -42,11 +46,11 @@ Ou lorsque le joueur est «à pied»;
     <text name="input_QuickCamVehicleZoomIn"     text="QuickCamera: Zoom avant" />
     <text name="input_QuickCamVehicleZoomOut"    text="QuickCamera: Zoom arrière" />
 
-    <text name="input_QuickCamMoveUpDown_1"      text="QuickCamera: AI-Camera up" />
-    <text name="input_QuickCamMoveUpDown_2"      text="QuickCamera: AI-Camera down" />
-    <text name="input_QuickCamMoveLeftRight_2"   text="QuickCamera: AI-Camera left" />
-    <text name="input_QuickCamMoveLeftRight_1"   text="QuickCamera: AI-Camera right" />
-    <text name="input_QuickCamMoveForwardBack_2" text="QuickCamera: AI-Camera forward" />
-    <text name="input_QuickCamMoveForwardBack_1" text="QuickCamera: AI-Camera backward" />
+    <text name="input_QuickCamMoveUpDown_1"      text="QuickCamera: AI-Camera en haut" />
+    <text name="input_QuickCamMoveUpDown_2"      text="QuickCamera: AI-Camera vers le bas" />
+    <text name="input_QuickCamMoveLeftRight_2"   text="QuickCamera: AI-Camera la gauche" />
+    <text name="input_QuickCamMoveLeftRight_1"   text="QuickCamera: AI-Camera droite" />
+    <text name="input_QuickCamMoveForwardBack_2" text="QuickCamera: AI-Camera vers l'avant" />
+    <text name="input_QuickCamMoveForwardBack_1" text="QuickCamera: AI-Camera en arrière" />
   </texts>
 </l10n>

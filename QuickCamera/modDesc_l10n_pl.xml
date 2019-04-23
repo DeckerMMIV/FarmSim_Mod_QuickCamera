@@ -8,6 +8,8 @@
 
   <!-- Add your own name or nickname here, when you contribute to this file's translation, so I know who to put into the credits. -->
   <translationContributors>
+    (FS19) .. pending .. (currently translate.google.com)
+
     (FS17) Ziuta
     (FS17) translate.google.com
   </translationContributors>
@@ -41,11 +43,11 @@ Gdy gracz jest "na piechotę":
     <text name="input_QuickCamVehicleZoomIn"     text="QuickCamera: Przybliż" />
     <text name="input_QuickCamVehicleZoomOut"    text="QuickCamera: Oddal" />
 
-    <text name="input_QuickCamMoveUpDown_1"      text="QuickCamera: AI-Camera up" />
-    <text name="input_QuickCamMoveUpDown_2"      text="QuickCamera: AI-Camera down" />
-    <text name="input_QuickCamMoveLeftRight_2"   text="QuickCamera: AI-Camera left" />
-    <text name="input_QuickCamMoveLeftRight_1"   text="QuickCamera: AI-Camera right" />
-    <text name="input_QuickCamMoveForwardBack_2" text="QuickCamera: AI-Camera forward" />
-    <text name="input_QuickCamMoveForwardBack_1" text="QuickCamera: AI-Camera backward" />
+    <text name="input_QuickCamMoveUpDown_1"      text="QuickCamera: AI-Camera w górę" />
+    <text name="input_QuickCamMoveUpDown_2"      text="QuickCamera: AI-Camera na dół" />
+    <text name="input_QuickCamMoveLeftRight_2"   text="QuickCamera: AI-Camera lewo" />
+    <text name="input_QuickCamMoveLeftRight_1"   text="QuickCamera: AI-Camera dobrze" />
+    <text name="input_QuickCamMoveForwardBack_2" text="QuickCamera: AI-Camera naprzód" />
+    <text name="input_QuickCamMoveForwardBack_1" text="QuickCamera: AI-Camera do tyłu" />
   </texts>
 </l10n>
