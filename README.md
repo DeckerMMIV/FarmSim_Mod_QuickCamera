@@ -1,11 +1,17 @@
 # Farming Simulator modification - QuickCamera
 
-Mod for Farming Simulator 17
+Mod for Farming Simulator
 
 To read more about this mod, find it on;
 - http://www.farming-simulator.com/mods.php
 - http://fs-uk.com - http://fs-uk.com/mods/list/team/45
-- http://modcentral.co.uk - http://modcentral.co.uk/resources/authors/decker_mmiv.18/
+
+
+## FS19 - Change-Log
+
+1.0.0.0
+- Upgraded to FS19
+- Added additional camera, when vehicle is controlled by hired worker
 
 
 ## FS17 - Change-log
@@ -42,7 +48,7 @@ To read more about this mod, find it on;
 - Fix for 'look forward 359-degree rotation', so it now does a 'look forward -1 rotation' instead.
 
 1.1.0.25
-- Added player on-foot quick-rotation actions; 45° left/right, 180° turn
+- Added player on-foot quick-rotation actions; 45ï¿½ left/right, 180ï¿½ turn
   - NOTE! Remember to set the action keys yourself, as they are default set to nothing.
 
 1.0.1.24
@@ -50,7 +56,7 @@ To read more about this mod, find it on;
 
 1.0.1.23
 - Fix so QuickCamera keys won't be active when a GUI is shown
-    
+
 1.0.1.22
 - Fix for reverse driving and looking forward/backwards
 
