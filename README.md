@@ -4,10 +4,12 @@ Mod for Farming Simulator
 
 To read more about this mod, find it on;
 - http://www.farming-simulator.com/mods.php
-- http://fs-uk.com - http://fs-uk.com/mods/list/team/45
 
 
 ## FS19 - Change-Log
+
+2.0.0.1
+- Added "restore on game-load vehicle-cameras; last used, pitch and zoom settings" (available only in singleplayer)
 
 1.0.0.0
 - Upgraded to FS19

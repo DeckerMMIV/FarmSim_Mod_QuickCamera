@@ -2,7 +2,7 @@
 -- QuickFeet for FS19
 --
 -- @author  Decker_MMIV (DCK)
--- @contact fs-uk.com, forum.farming-simulator.com
+-- @contact forum.farming-simulator.com
 -- @date    2019-01-xx
 --
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="43">
+<modDesc descVersion="44">
   <author>Decker_MMIV</author>
-  <authorContact>fs-uk.com, forum.farming-simulator.com</authorContact>
+  <authorContact>forum.farming-simulator.com</authorContact>
 
 <!--
     NOTE: DO NOT/NEVER edit this ModDesc.XML!
@@ -14,17 +14,25 @@
       DLH007, _dj_, Gonimy-Vetrom, jules.stmp537, Ziuta, Xno, PromGames, Anonymous
   </contributors>
 
-  <version>1.0.0.0</version>
+  <version>2.0.0.1</version>
 
   <title>
     <en>QuickCamera</en>
   </title>
 
   <changeLog><![CDATA[
+2.0.0.1
+- Added "restore on game-load vehicle-cameras; last used, pitch and zoom settings" (available only in singleplayer)
+
 1.0.0.0
 - Upgraded to FS19
 - Added additional camera, when vehicle is controlled by hired worker
 ]]></changeLog>
+  <knownIssues><![CDATA[
+- [KNOWN ISSUE] QuickCamera keys will 'get stuck / not work' when using mouse scroll-wheel in menu-screens and returning to vehicle.
+To 'unstuck' the keys, just use mouse scroll-wheel to zoom a little, when in the vehicle.
+- [KNOWN ISSUE] Leaving a hired-worker-controlled vehicle with the 'AI-Camera' active, then when the hired worker stops, the camera might switch back to this vehicle.
+]]></knownIssues>
 
   <description>
     <en><![CDATA[Use keys to quickly have the vehicle camera;
@@ -66,6 +74,7 @@ Caméra mobile supplémentaire disponible, «Caméra AI», lorsque le véhicule 
     <sourceFile filename="QuickCamera.lua" />
     <sourceFile filename="QuickFeet.lua" />
     <sourceFile filename="MoveableVehicleCameraRegister.lua" />
+    <sourceFile filename="RestoreCameraSettingOnGameLoad.lua" />
   </extraSourceFiles>
 
   <l10n filenamePrefix="modDesc_l10n" /> <!-- Load the corresponding modDesc_l10n_<language>.XML file, or revert to 'en'/'de'. -->
