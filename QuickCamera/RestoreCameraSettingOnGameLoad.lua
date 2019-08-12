@@ -19,18 +19,43 @@ end;
 
 ----
 
+local qcTemplateVehicleCamerasSettings = {}
+
+----
+
 Enterable.registerEventListeners = Utils.appendedFunction(Enterable.registerEventListeners, function(vehicleType)
   SpecializationUtil.registerEventListener(vehicleType, "onPostLoad", Enterable)
 end)
 
 Enterable.onPostLoad = Utils.appendedFunction(Enterable.onPostLoad, function(self, savegame)
+  if not self.client then
+    return
+  end
+
   local spec = self.spec_enterable
   local qcCamPos = nil
   local qcActiveCam = nil
+
   if nil ~= savegame then
-    qcCamPos    = getXMLString(savegame.xmlFile, savegame.key..".enterable#qcCamPos")
-    qcActiveCam = getXMLInt(savegame.xmlFile, savegame.key..".enterable#qcActiveCam")
+    -- Try get settings for singleplayer/savegame individual vehicles
+    local key = savegame.key..".enterable"
+    qcCamPos    = getXMLString(savegame.xmlFile, key.."#qcCamPos")
+    qcActiveCam = getXMLInt(   savegame.xmlFile, key.."#qcActiveCam")
   end
+
+  if (nil == qcCamPos or nil == qcActiveCam) and (nil ~= self.configFileName) then
+    -- Try get settings from template-vehicle
+    local template = qcTemplateVehicleCamerasSettings[self.configFileName]
+    if nil ~= template then
+      if nil == qcCamPos then
+        qcCamPos    = template.qcCamPos
+      end
+      if nil == qcActiveCam then
+        qcActiveCam = template.qcActiveCam
+      end
+    end
+  end
+
   if nil ~= qcCamPos then
     local cams = StringUtil.splitString(";", qcCamPos)
     for _,camPos in pairs(cams) do
@@ -53,13 +78,13 @@ Enterable.onPostLoad = Utils.appendedFunction(Enterable.onPostLoad, function(sel
       end
     end
   end
+
   if nil ~= qcActiveCam and qcActiveCam >= 1 and qcActiveCam <= table.getn(spec.cameras) then
     spec.camIndex = qcActiveCam
   end
 end)
 
-Enterable.saveToXMLFile = Utils.appendedFunction(Enterable.saveToXMLFile, function(self, xmlFile, key, usedModNames)
-  local spec = self.spec_enterable
+local function getQcCamPos(spec)
   local camerasPositions = {}
   for i=1, table.getn(spec.cameras) do
     local camera = spec.cameras[i]
@@ -70,9 +95,31 @@ Enterable.saveToXMLFile = Utils.appendedFunction(Enterable.saveToXMLFile, functi
       table.insert(camerasPositions, camPos)
     end
   end
-  local qcCamPos = table.concat(camerasPositions, ";")
+  return table.concat(camerasPositions, ";")
+end
+
+Enterable.saveToXMLFile = Utils.appendedFunction(Enterable.saveToXMLFile, function(self, xmlFile, key, usedModNames)
+  if not self.client then
+    return
+  end
+
+  local spec = self.spec_enterable
+  local qcCamPos = getQcCamPos(spec)
   setXMLString(xmlFile, key.."#qcCamPos", qcCamPos)
-  setXMLInt(xmlFile, key.."#qcActiveCam", spec.camIndex)
+  setXMLInt(   xmlFile, key.."#qcActiveCam", spec.camIndex)
+end)
+
+----
+
+Enterable.leaveVehicle = Utils.prependedFunction(Enterable.leaveVehicle, function(self)
+  if self.client and nil ~= self.configFileName then
+    local spec = self.spec_enterable
+    local template = {
+      qcActiveCam = spec.camIndex,
+      qcCamPos    = getQcCamPos(spec)
+    }
+    qcTemplateVehicleCamerasSettings[self.configFileName] = template
+  end
 end)
 
 ----
