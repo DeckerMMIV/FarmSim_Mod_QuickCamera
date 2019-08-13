@@ -28,7 +28,7 @@ Enterable.registerEventListeners = Utils.appendedFunction(Enterable.registerEven
 end)
 
 Enterable.onPostLoad = Utils.appendedFunction(Enterable.onPostLoad, function(self, savegame)
-  if not self.client then
+  if not self.isClient then
     return
   end
 
@@ -99,7 +99,7 @@ local function getQcCamPos(spec)
 end
 
 Enterable.saveToXMLFile = Utils.appendedFunction(Enterable.saveToXMLFile, function(self, xmlFile, key, usedModNames)
-  if not self.client then
+  if not self.isClient then
     return
   end
 
@@ -112,7 +112,7 @@ end)
 ----
 
 Enterable.leaveVehicle = Utils.prependedFunction(Enterable.leaveVehicle, function(self)
-  if self.client and nil ~= self.configFileName then
+  if self.isClient and nil ~= self.configFileName then
     local spec = self.spec_enterable
     local template = {
       qcActiveCam = spec.camIndex,
