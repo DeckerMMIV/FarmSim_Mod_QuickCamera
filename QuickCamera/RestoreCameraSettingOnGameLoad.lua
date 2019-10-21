@@ -21,6 +21,76 @@ end;
 
 local qcTemplateVehicleCamerasSettings = {}
 
+local modsSettingsFolder = getUserProfileAppPath() .. "modsSettings/"
+local qcFileName = Utils.getFilename("QuickCamera_Settings.xml",  modsSettingsFolder)
+
+local function onGameStartup()
+  if fileExists(qcFileName) then
+    local xmlFile = loadXMLFile("QuickCamera", qcFileName, "quickCamera")
+    if nil ~= xmlFile then
+      print(("QuickCamera loading settings from: %s"):format(qcFileName))
+      local i = 0
+      while true do
+        local key = ("quickCamera.templates.vehicle(%d)"):format(i)
+        i=i+1
+        if not hasXMLProperty(xmlFile, key) then
+          break
+        end
+        local vehicleFileName = getXMLString(xmlFile, key .. "#name")
+        local qcCamPos        = getXMLString(xmlFile, key .. "#qcCamPos")
+        local qcActiveCam     = getXMLInt(   xmlFile, key .. "#qcActiveCam")
+        if nil ~= vehicleFileName then
+          qcTemplateVehicleCamerasSettings[vehicleFileName] = {
+            qcActiveCam = qcActiveCam,
+            qcCamPos    = qcCamPos
+          }
+        end
+      end
+      delete(xmlFile)
+    end
+  end
+end
+
+local function onGameTeardown()
+  print(("QuickCamera saving settings to: %s"):format(qcFileName))
+  createFolder(modsSettingsFolder)
+  local xmlFile = createXMLFile("QuickCamera", qcFileName, "quickCamera")
+  if nil ~= xmlFile then
+    local i = 0
+    for k,v in pairs(qcTemplateVehicleCamerasSettings) do
+      local key = ("quickCamera.templates.vehicle(%d)"):format(i)
+      i=i+1
+      setXMLString(xmlFile, key .. "#name", k)
+      setXMLString(xmlFile, key .. "#qcCamPos", v.qcCamPos)
+      setXMLInt(   xmlFile, key .. "#qcActiveCam", v.qcActiveCam)
+    end
+    saveXMLFile(xmlFile)
+    delete(xmlFile)
+  end
+end
+
+if nil ~= g_client then
+  --log("QuickCamera injecting")
+  Mission00.load       = Utils.appendedFunction(Mission00.load, onGameStartup)
+  FSBaseMission.delete = Utils.appendedFunction(FSBaseMission.delete, onGameTeardown)
+end
+
+----
+
+local function getQcCamPos(spec)
+  local camerasPositions = {}
+  for i=1, table.getn(spec.cameras) do
+    local camera = spec.cameras[i]
+    if camera.isRotatable or camera.allowTranslation then
+      local pitch = (camera.isRotatable      and (("%.3f"):format(camera.rotX))) or ""
+      local zoom  = (camera.allowTranslation and (("%.3f"):format(camera.zoom))) or ""
+      local camPos = ("%d,%s,%s"):format(i, pitch, zoom)
+      table.insert(camerasPositions, camPos)
+    end
+  end
+  return table.concat(camerasPositions, ";")
+end
+
 ----
 
 Enterable.registerEventListeners = Utils.appendedFunction(Enterable.registerEventListeners, function(vehicleType)
@@ -84,20 +154,6 @@ Enterable.onPostLoad = Utils.appendedFunction(Enterable.onPostLoad, function(sel
   end
 end)
 
-local function getQcCamPos(spec)
-  local camerasPositions = {}
-  for i=1, table.getn(spec.cameras) do
-    local camera = spec.cameras[i]
-    if camera.isRotatable or camera.allowTranslation then
-      local pitch = (camera.isRotatable      and (("%.3f"):format(camera.rotX))) or ""
-      local zoom  = (camera.allowTranslation and (("%.3f"):format(camera.zoom))) or ""
-      local camPos = ("%d,%s,%s"):format(i, pitch, zoom)
-      table.insert(camerasPositions, camPos)
-    end
-  end
-  return table.concat(camerasPositions, ";")
-end
-
 Enterable.saveToXMLFile = Utils.appendedFunction(Enterable.saveToXMLFile, function(self, xmlFile, key, usedModNames)
   if not self.isClient then
     return
@@ -108,8 +164,6 @@ Enterable.saveToXMLFile = Utils.appendedFunction(Enterable.saveToXMLFile, functi
   setXMLString(xmlFile, key.."#qcCamPos", qcCamPos)
   setXMLInt(   xmlFile, key.."#qcActiveCam", spec.camIndex)
 end)
-
-----
 
 Enterable.leaveVehicle = Utils.prependedFunction(Enterable.leaveVehicle, function(self)
   if self.isClient and nil ~= self.configFileName then

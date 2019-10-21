@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="44">
+<modDesc descVersion="46">
   <author>Decker_MMIV</author>
   <authorContact>forum.farming-simulator.com</authorContact>
 
@@ -14,15 +14,15 @@
       DLH007, _dj_, Gonimy-Vetrom, jules.stmp537, Ziuta, Xno, PromGames, Anonymous
   </contributors>
 
-  <version>2.0.0.2</version>
+  <version>2.0.0.4</version>
 
   <title>
     <en>QuickCamera</en>
   </title>
 
   <changeLog><![CDATA[
-2.0.0.2
-- Added "restore on game-load vehicle-cameras; last used, pitch and zoom settings" (available only in singleplayer)
+2.0.0.4
+- Added "restore on game-load vehicle-cameras; last used, pitch and zoom settings"
 
 1.0.0.0
 - Upgraded to FS19
