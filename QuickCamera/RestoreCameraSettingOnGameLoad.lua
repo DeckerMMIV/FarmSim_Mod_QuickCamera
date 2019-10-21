@@ -6,6 +6,8 @@
 -- @date    2019-08-xx
 --
 
+if g_client then
+
 -- For debugging
 local function log(...)
   if true then
@@ -179,3 +181,5 @@ end)
 ----
 
 print(("Script loaded: RestoreCameraSettingOnGameLoad.lua - from %s (v%s)"):format(g_currentModName, g_modManager:getModByName(g_currentModName).version));
+
+end -- g_client

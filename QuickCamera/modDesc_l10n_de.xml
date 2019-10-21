@@ -45,6 +45,8 @@ Zusätzliche frei bewegliche Kamera, 'AI-Kamera', verfügbar, wenn das Fahrzeug 
     <text name="input_QuickCamVehicleZoomIn"     text="QuickCamera: Zoom in" />
     <text name="input_QuickCamVehicleZoomOut"    text="QuickCamera: Zoom out" />
 
+    <text name="input_QuickCamInsideCamera"      text="QuickCamera: Move cabin camera" />
+
     <text name="input_QuickCamMoveUpDown_1"      text="QuickCamera: AI-Camera oben" />
     <text name="input_QuickCamMoveUpDown_2"      text="QuickCamera: AI-Camera nieder" />
     <text name="input_QuickCamMoveLeftRight_2"   text="QuickCamera: AI-Camera links" />

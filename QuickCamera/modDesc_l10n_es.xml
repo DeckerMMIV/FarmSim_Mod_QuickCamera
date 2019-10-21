@@ -43,6 +43,8 @@ O cuando el jugador está 'a pie';
     <text name="input_QuickCamVehicleZoomIn"     text="QuickCamera: Zoom in (vehicle)" />
     <text name="input_QuickCamVehicleZoomOut"    text="QuickCamera: Zoom out (vehicle)" />
 
+    <text name="input_QuickCamInsideCamera"      text="QuickCamera: Move cabin camera" />
+
     <text name="input_QuickCamMoveUpDown_1"      text="QuickCamera: AI-Camera arriba" />
     <text name="input_QuickCamMoveUpDown_2"      text="QuickCamera: AI-Camera abajo" />
     <text name="input_QuickCamMoveLeftRight_2"   text="QuickCamera: AI-Camera izquierda" />

@@ -46,6 +46,8 @@ Caméra mobile supplémentaire disponible, «Caméra AI», lorsque le véhicule 
     <text name="input_QuickCamVehicleZoomIn"     text="QuickCamera: Zoom avant" />
     <text name="input_QuickCamVehicleZoomOut"    text="QuickCamera: Zoom arrière" />
 
+    <text name="input_QuickCamInsideCamera"      text="QuickCamera: Move cabin camera" />
+
     <text name="input_QuickCamMoveUpDown_1"      text="QuickCamera: AI-Camera en haut" />
     <text name="input_QuickCamMoveUpDown_2"      text="QuickCamera: AI-Camera vers le bas" />
     <text name="input_QuickCamMoveLeftRight_2"   text="QuickCamera: AI-Camera la gauche" />

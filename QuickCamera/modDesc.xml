@@ -14,25 +14,29 @@
       DLH007, _dj_, Gonimy-Vetrom, jules.stmp537, Ziuta, Xno, PromGames, Anonymous
   </contributors>
 
-  <version>2.0.0.4</version>
+  <version>2.1.0.6</version>
 
   <title>
     <en>QuickCamera</en>
   </title>
 
   <changeLog><![CDATA[
-2.0.0.4
+Issues
+- [KNOWN ISSUE] QuickCamera keys will at times 'get stuck / not work' been in menu-screens and returning to vehicle. To 'unstuck' the keys, move mouse a little, when in the vehicle.
+- [KNOWN ISSUE] Leaving a hired-worker-controlled vehicle with the 'AI-Camera' active, then when the hired worker stops, the camera might switch back to this vehicle.
+- Some translations are probably wrong
+
+
+Changelog 2.1.0.6:
+- Moveable cabin camera (experimental)
+
+Changelog 2.0.0.4:
 - Added "restore on game-load vehicle-cameras; last used, pitch and zoom settings"
 
-1.0.0.0
+Changelog 1.0.0.0:
 - Upgraded to FS19
 - Added additional camera, when vehicle is controlled by hired worker
 ]]></changeLog>
-  <knownIssues><![CDATA[
-- [KNOWN ISSUE] QuickCamera keys will 'get stuck / not work' when using mouse scroll-wheel in menu-screens and returning to vehicle.
-To 'unstuck' the keys, just use mouse scroll-wheel to zoom a little, when in the vehicle.
-- [KNOWN ISSUE] Leaving a hired-worker-controlled vehicle with the 'AI-Camera' active, then when the hired worker stops, the camera might switch back to this vehicle.
-]]></knownIssues>
 
   <description>
     <en><![CDATA[Use keys to quickly have the vehicle camera;
@@ -44,6 +48,17 @@ Or when player is 'on foot';
 - running even faster (mouse-wheel up/down when in 'run' mode)
 
 Additional free moving camera available, 'AI-Camera', when vehicle is controlled by hired worker.
+
+
+Issues
+- [KNOWN ISSUE] QuickCamera keys will at times 'get stuck / not work' been in menu-screens and returning to vehicle. To 'unstuck' the keys, move mouse a little, when in the vehicle.
+- [KNOWN ISSUE] Leaving a hired-worker-controlled vehicle with the 'AI-Camera' active, then when the hired worker stops, the camera might switch back to this vehicle.
+- Some translations are probably wrong
+
+
+Changelog 2.1.0.6:
+- Moveable cabin camera (experimental)
+- Added "restore on game-load vehicle-cameras; last used, pitch and zoom settings"
 ]]></en>
     <de><![CDATA[Benutze folgende Tasten um schnell die Kamera zu bewegen:
 - Kurzer Blick nach links / rechts, Rotieren um 45°/ 90°
@@ -54,6 +69,17 @@ Oder wenn der Spieler zu Fuß ist;
 - Läuft noch schneller (Mausrad auf / ab, wenn im "Run" -Modus)
 
 Zusätzliche frei bewegliche Kamera, 'AI-Kamera', verfügbar, wenn das Fahrzeug von einem Arbeiter eingestellt wird.
+
+
+Issues
+- [KNOWN ISSUE] QuickCamera keys will at times 'get stuck / not work' been in menu-screens and returning to vehicle. To 'unstuck' the keys, move mouse a little, when in the vehicle.
+- [KNOWN ISSUE] Leaving a hired-worker-controlled vehicle with the 'AI-Camera' active, then when the hired worker stops, the camera might switch back to this vehicle.
+- Some translations are probably wrong
+
+
+Changelog 2.1.0.6:
+- Moveable cabin camera (experimental)
+- Added "restore on game-load vehicle-cameras; last used, pitch and zoom settings"
 ]]></de>
     <fr><![CDATA[Utiliser les touches pour avoir rapidement les vues depuis les véhicules;
 - Coup d'oeil gauche / droite, Rotation de 45 ° / 90 °
@@ -64,6 +90,17 @@ Ou lorsque le joueur est «à pied»;
 - courir encore plus vite (molette de la souris en haut / bas)
 
 Caméra mobile supplémentaire disponible, «Caméra AI», lorsque le véhicule est contrôlé par un employé embauché.
+
+
+Issues
+- [KNOWN ISSUE] QuickCamera keys will at times 'get stuck / not work' been in menu-screens and returning to vehicle. To 'unstuck' the keys, move mouse a little, when in the vehicle.
+- [KNOWN ISSUE] Leaving a hired-worker-controlled vehicle with the 'AI-Camera' active, then when the hired worker stops, the camera might switch back to this vehicle.
+- Some translations are probably wrong
+
+
+Changelog 2.1.0.6:
+- Moveable cabin camera (experimental)
+- Added "restore on game-load vehicle-cameras; last used, pitch and zoom settings"
 ]]></fr>
   </description>
 
@@ -111,6 +148,10 @@ Caméra mobile supplémentaire disponible, «Caméra AI», lorsque le véhicule 
       <binding device="KB_MOUSE_DEFAULT" input="KEY_pagedown" index="1" />
     </actionBinding>
 
+    <actionBinding action="QuickCamInsideCamera">
+      <binding device="KB_MOUSE_DEFAULT" input="" index="1" />
+    </actionBinding>
+
     <actionBinding action="QuickCamMoveUpDown">
       <binding device="KB_MOUSE_DEFAULT" input="KEY_z" axisComponent="-" neutralInput="0" index="1" />
       <binding device="KB_MOUSE_DEFAULT" input="KEY_x" axisComponent="+" neutralInput="0" index="1" />
@@ -142,6 +183,8 @@ Caméra mobile supplémentaire disponible, «Caméra AI», lorsque le véhicule 
     <action name="QuickCamVehiclePeekLR"   category="VEHICLE_QuickTap" axisType="FULL" />
     <action name="QuickCamVehicleZoomIn"   category="VEHICLE_QuickTap" />
     <action name="QuickCamVehicleZoomOut"  category="VEHICLE_QuickTap" />
+
+    <action name="QuickCamInsideCamera"    category="VEHICLE" />
 
     <action name="QuickCamMoveUpDown"      category="VEHICLE" axisType="FULL" />
     <action name="QuickCamMoveLeftRight"   category="VEHICLE" axisType="FULL" />

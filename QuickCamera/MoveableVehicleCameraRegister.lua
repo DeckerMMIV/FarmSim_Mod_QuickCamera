@@ -6,6 +6,7 @@
 -- @date    2019-04-xx
 --
 
+if g_client then
 
 ---- Register this specialization
 local specTypeName = 'moveableVehicleCamera'
@@ -22,6 +23,8 @@ for vehTypeName,vehTypeObj in pairs( g_vehicleTypeManager.vehicleTypes ) do
 --and false == SpecializationUtil.hasSpecialization(Locomotive    ,vehTypeObj.specializations)
   then
     g_vehicleTypeManager:addSpecialization(vehTypeName, modSpecTypeName)
-    log("  MoveableVehicleCamera added to: ",vehTypeName)
+    --log("  MoveableVehicleCamera added to: ",vehTypeName)
   end
 end
+
+end -- g_client

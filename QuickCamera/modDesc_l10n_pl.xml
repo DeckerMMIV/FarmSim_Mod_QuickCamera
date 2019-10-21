@@ -43,6 +43,8 @@ Gdy gracz jest "na piechotę":
     <text name="input_QuickCamVehicleZoomIn"     text="QuickCamera: Przybliż" />
     <text name="input_QuickCamVehicleZoomOut"    text="QuickCamera: Oddal" />
 
+    <text name="input_QuickCamInsideCamera"      text="QuickCamera: Move cabin camera" />
+
     <text name="input_QuickCamMoveUpDown_1"      text="QuickCamera: AI-Camera w górę" />
     <text name="input_QuickCamMoveUpDown_2"      text="QuickCamera: AI-Camera na dół" />
     <text name="input_QuickCamMoveLeftRight_2"   text="QuickCamera: AI-Camera lewo" />
