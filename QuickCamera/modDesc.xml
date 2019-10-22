@@ -27,11 +27,11 @@ Issues
 - Some translations are probably wrong
 
 
-Changelog 2.1.0.6:
-- Moveable cabin camera (experimental)
+Changelog 2.1.0.9:
+- Moveable cabin camera (experimental, default set to unassigned input-key)
 
 Changelog 2.0.0.4:
-- Added "restore on game-load vehicle-cameras; last used, pitch and zoom settings"
+- Added "restore on game-load, vehicle-cameras settings for; last used, pitch and zoom"
 
 Changelog 1.0.0.0:
 - Upgraded to FS19
@@ -56,9 +56,9 @@ Issues
 - Some translations are probably wrong
 
 
-Changelog 2.1.0.6:
-- Moveable cabin camera (experimental)
-- Added "restore on game-load vehicle-cameras; last used, pitch and zoom settings"
+Changelog 2.1.0.9:
+- Added "restore on game-load, vehicle-cameras settings for; last used, pitch and zoom"
+- Moveable cabin camera (experimental, default set to unassigned input-key)
 ]]></en>
     <de><![CDATA[Benutze folgende Tasten um schnell die Kamera zu bewegen:
 - Kurzer Blick nach links / rechts, Rotieren um 45°/ 90°
@@ -77,9 +77,9 @@ Issues
 - Some translations are probably wrong
 
 
-Changelog 2.1.0.6:
-- Moveable cabin camera (experimental)
-- Added "restore on game-load vehicle-cameras; last used, pitch and zoom settings"
+Changelog 2.1.0.9:
+- Added "restore on game-load, vehicle-cameras settings for; last used, pitch and zoom"
+- Moveable cabin camera (experimental, default set to unassigned input-key)
 ]]></de>
     <fr><![CDATA[Utiliser les touches pour avoir rapidement les vues depuis les véhicules;
 - Coup d'oeil gauche / droite, Rotation de 45 ° / 90 °
@@ -98,9 +98,9 @@ Issues
 - Some translations are probably wrong
 
 
-Changelog 2.1.0.6:
-- Moveable cabin camera (experimental)
-- Added "restore on game-load vehicle-cameras; last used, pitch and zoom settings"
+Changelog 2.1.0.9:
+- Added "restore on game-load, vehicle-cameras settings for; last used, pitch and zoom"
+- Moveable cabin camera (experimental, default set to unassigned input-key)
 ]]></fr>
   </description>
 
