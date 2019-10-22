@@ -6,7 +6,7 @@
 -- @date    2019-01-xx
 --
 
-if g_client then
+if not g_dedicatedServerInfo then
 
 -- For debugging
 local function log(...)
@@ -89,4 +89,4 @@ end)
 
 print(("Script loaded: QuickFeet.lua - from %s (v%s)"):format(g_currentModName, g_modManager:getModByName(g_currentModName).version));
 
-end -- g_client
+end -- not g_dedicatedServerInfo

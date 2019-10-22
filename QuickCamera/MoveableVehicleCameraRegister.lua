@@ -6,7 +6,7 @@
 -- @date    2019-04-xx
 --
 
-if g_client then
+if not g_dedicatedServerInfo then
 
 ---- Register this specialization
 local specTypeName = 'moveableVehicleCamera'
@@ -27,4 +27,4 @@ for vehTypeName,vehTypeObj in pairs( g_vehicleTypeManager.vehicleTypes ) do
   end
 end
 
-end -- g_client
+end -- not g_dedicatedServerInfo

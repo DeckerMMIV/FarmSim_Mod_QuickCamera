@@ -17,7 +17,7 @@ Kyuss33
     http://forum.giants-software.com/viewtopic.php?f=831&t=77401
 ]]
 
-if g_client then
+if not g_dedicatedServerInfo then
 
 -- For debugging
 local function log(...)
@@ -299,7 +299,7 @@ end
 
 Enterable.onRegisterActionEvents = Utils.overwrittenFunction(Enterable.onRegisterActionEvents, function(self, superFunc, ...)
   if self.isClient and self:getIsEntered() and self:getIsActiveForInput(true,true) then
-    log("Enterable.onRegisterActionEvents ", ...)
+    --log("Enterable.onRegisterActionEvents ", ...)
     local spec = self.spec_enterable
     self:clearActionEventsTable(spec.actionEvents) -- Part of "hack". See comment further below
 
@@ -328,7 +328,7 @@ Enterable.onRegisterActionEvents = Utils.overwrittenFunction(Enterable.onRegiste
     --
     spec.actionEvents = totalActionEvents
   else
-    log("Enterable.onRegisterActionEvents_ORIG ", ...)
+    --log("Enterable.onRegisterActionEvents_ORIG ", ...)
     superFunc(self, ...)
   end
 end)
@@ -337,4 +337,4 @@ end)
 
 print(("Script loaded: QuickCamera.lua - from %s (v%s)"):format(g_currentModName, g_modManager:getModByName(g_currentModName).version));
 
-end -- g_client
+end -- not g_dedicatedServerInfo
