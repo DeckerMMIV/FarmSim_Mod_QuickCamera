@@ -3,10 +3,14 @@
 Mod for Farming Simulator
 
 To read more about this mod, find it on;
-- http://www.farming-simulator.com/mods.php
+- https://www.farming-simulator.com/mods.php?title=fs2019&org_id=53574
+- https://www.farming-simulator.com/mods.php?title=fs2017&org_id=53574
 
 
 ## FS19 - Change-Log
+
+2.1.0.9:
+- Moveable cabin camera (experimental, default set to unassigned input-key)
 
 2.0.0.1
 - Added "restore on game-load vehicle-cameras; last used, pitch and zoom settings" (available only in singleplayer)
@@ -17,6 +21,7 @@ To read more about this mod, find it on;
 
 
 ## FS17 - Change-log
+
 1.2.1.33
 - Translations updated by contributers;
   - Polish by Ziuta
