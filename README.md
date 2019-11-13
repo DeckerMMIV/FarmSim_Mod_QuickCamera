@@ -9,6 +9,9 @@ To read more about this mod, find it on;
 
 ## FS19 - Change-Log
 
+2.1.1.10:
+- Russian language updated, by Gonimy_Vetrom
+
 2.1.0.9:
 - Moveable cabin camera (experimental, default set to unassigned input-key)
 

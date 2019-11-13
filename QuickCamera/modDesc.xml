@@ -9,12 +9,12 @@
 -->
   <contributors>
     (FS19)
-      .. pending ..
+      Gonimy_Vetrom
     (FS17)
       DLH007, _dj_, Gonimy-Vetrom, jules.stmp537, Ziuta, Xno, PromGames, Anonymous
   </contributors>
 
-  <version>2.1.0.9</version>
+  <version>2.1.1.10</version>
 
   <title>
     <en>QuickCamera</en>
@@ -26,6 +26,8 @@ Issues
 - [KNOWN ISSUE] Leaving a hired-worker-controlled vehicle with the 'AI-Camera' active, then when the hired worker stops, the camera might switch back to this vehicle.
 - Some translations are probably wrong
 
+Changelog 2.1.1.10:
+- Russian language updated, by Gonimy_Vetrom
 
 Changelog 2.1.0.9:
 - Moveable cabin camera (experimental, default set to unassigned input-key)
