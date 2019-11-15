@@ -26,7 +26,9 @@ Służy do szybkiego operowania kamerą pojazdu:
 
 Gdy gracz jest "na piechotę":
 - Obrót o 45° / 180°
-- działa jeszcze szybciej (kółko myszy w górę / w dół w trybie "run")
+- Działa jeszcze szybciej (kółko myszy w górę/dół w trybie "biegu")
+
+Dostępna jest dodatkowa kamera swobodna, 'Kamera-AI', gdy pojazd jest kontrolowany przez wynajętego pracownika.
   </description>
 
   <texts>
@@ -43,13 +45,13 @@ Gdy gracz jest "na piechotę":
     <text name="input_QuickCamVehicleZoomIn"     text="QuickCamera: Przybliż" />
     <text name="input_QuickCamVehicleZoomOut"    text="QuickCamera: Oddal" />
 
-    <text name="input_QuickCamInsideCamera"      text="QuickCamera: Move cabin camera" />
+    <text name="input_QuickCamInsideCamera"      text="QuickCamera: Ruchoma kamera wewnętrzna" />
 
-    <text name="input_QuickCamMoveUpDown_1"      text="QuickCamera: AI-Camera w górę" />
-    <text name="input_QuickCamMoveUpDown_2"      text="QuickCamera: AI-Camera na dół" />
-    <text name="input_QuickCamMoveLeftRight_2"   text="QuickCamera: AI-Camera lewo" />
-    <text name="input_QuickCamMoveLeftRight_1"   text="QuickCamera: AI-Camera dobrze" />
-    <text name="input_QuickCamMoveForwardBack_2" text="QuickCamera: AI-Camera naprzód" />
-    <text name="input_QuickCamMoveForwardBack_1" text="QuickCamera: AI-Camera do tyłu" />
+    <text name="input_QuickCamMoveUpDown_1"      text="QuickCamera: Kamera-AI w górę" />
+    <text name="input_QuickCamMoveUpDown_2"      text="QuickCamera: Kamera-AI na dół" />
+    <text name="input_QuickCamMoveLeftRight_2"   text="QuickCamera: Kamera-AI w lewo" />
+    <text name="input_QuickCamMoveLeftRight_1"   text="QuickCamera: Kamera-AI w prawo" />
+    <text name="input_QuickCamMoveForwardBack_2" text="QuickCamera: Kamera-AI do przodu" />
+    <text name="input_QuickCamMoveForwardBack_1" text="QuickCamera: Kamera-AI do tyłu" />
   </texts>
 </l10n>
