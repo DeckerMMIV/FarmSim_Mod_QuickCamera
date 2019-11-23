@@ -11,7 +11,7 @@
     (FS19) .. pending .. (currently translate.google.com)
 
     (FS17) ModHub (GIANTS Software)
-    (FS17) Anonymous
+    (FS19) Anonymous
     (FS17) translate.google.com
   </translationContributors>
 
@@ -22,37 +22,37 @@
   <title>QuickCamera</title>
   <description>
 Utiliser les touches pour avoir rapidement les vues depuis les véhicules;
-- Coup d'oeil gauche / droite, Rotation de 45 ° / 90 °
-- vue avant / vers l'arrière, Zoom avant / arrière
+- coup d'oeil gauche/droite, rotation de 45°/90°
+- vue avant/arrière, zoom avant/arrière
 
-Ou lorsque le joueur est «à pied»;
-- tourner 45° / 180°
-- courir encore plus vite (molette de la souris en haut / bas)
+Ou lorsque le joueur est 'à pied';
+- tourner 45°/180°
+- courir plus vite (molette-souris haut/bas quand vous 'marchez')
 
-Caméra mobile supplémentaire disponible, «Caméra AI», lorsque le véhicule est contrôlé par un employé embauché.
+Caméra libre supplémentaire disponible, 'Caméra-IA', lorsque le véhicule est contrôlé par un ouvrier.
   </description>
 
   <texts>
-    <text name="input_QuickCamOnFootForeBack"    text="QuickCamera: A pied demi-tour à 180&#176;" />
-    <text name="input_QuickCamOnFootLeftRight_1" text="QuickCamera: A pied tourner de 45&#176; à droite" />
-    <text name="input_QuickCamOnFootLeftRight_2" text="QuickCamera: A pied tourner de 45&#176; à gauche" />
-    <text name="input_QuickCamVehicleForeBack"   text="QuickCamera: Basculer vue avant/arrière" />
-    <text name="input_QuickCamVehicleSnapLR_1"   text="QuickCamera: Regarder 45&#176; à droite" />
-    <text name="input_QuickCamVehicleSnapLR_2"   text="QuickCamera: Regarder 45&#176; à gauche" />
-    <text name="input_QuickCamVehicleSnap2LR_1"  text="QuickCamera: Regarder 90&#176; à droite" />
-    <text name="input_QuickCamVehicleSnap2LR_2"  text="QuickCamera: Regarder 90&#176; à gauche" />
-    <text name="input_QuickCamVehiclePeekLR_1"   text="QuickCamera: Coup d'oeil droite" />
-    <text name="input_QuickCamVehiclePeekLR_2"   text="QuickCamera: Coup d'oeil gauche" />
-    <text name="input_QuickCamVehicleZoomIn"     text="QuickCamera: Zoom avant" />
-    <text name="input_QuickCamVehicleZoomOut"    text="QuickCamera: Zoom arrière" />
+    <text name="input_QuickCamOnFootForeBack"    text="QuickCamera: (A pied) demi-tour à 180&#176;" />
+    <text name="input_QuickCamOnFootLeftRight_1" text="QuickCamera: (A pied) tourner de 45&#176; à droite" />
+    <text name="input_QuickCamOnFootLeftRight_2" text="QuickCamera: (A pied) tourner de 45&#176; à gauche" />
+    <text name="input_QuickCamVehicleForeBack"   text="QuickCamera: Rotation 180&#176; (véhicule)" />
+    <text name="input_QuickCamVehicleSnapLR_1"   text="QuickCamera: Regarder 45&#176; à droite (véhicule)" />
+    <text name="input_QuickCamVehicleSnapLR_2"   text="QuickCamera: Regarder 45&#176; à gauche (véhicule)" />
+    <text name="input_QuickCamVehicleSnap2LR_1"  text="QuickCamera: Regarder 90&#176; à droite (véhicule)" />
+    <text name="input_QuickCamVehicleSnap2LR_2"  text="QuickCamera: Regarder 90&#176; à gauche (véhicule)" />
+    <text name="input_QuickCamVehiclePeekLR_1"   text="QuickCamera: Coup d'oeil droite (véhicule)" />
+    <text name="input_QuickCamVehiclePeekLR_2"   text="QuickCamera: Coup d'oeil gauche (véhicule)" />
+    <text name="input_QuickCamVehicleZoomIn"     text="QuickCamera: Zoom avant (véhicule)" />
+    <text name="input_QuickCamVehicleZoomOut"    text="QuickCamera: Zoom arrière (véhicule)" />
 
-    <text name="input_QuickCamInsideCamera"      text="QuickCamera: Move cabin camera" />
+    <text name="input_QuickCamInsideCamera"      text="QuickCamera: Mouvement de caméra en cabine" />
 
-    <text name="input_QuickCamMoveUpDown_1"      text="QuickCamera: AI-Camera en haut" />
-    <text name="input_QuickCamMoveUpDown_2"      text="QuickCamera: AI-Camera vers le bas" />
-    <text name="input_QuickCamMoveLeftRight_2"   text="QuickCamera: AI-Camera la gauche" />
-    <text name="input_QuickCamMoveLeftRight_1"   text="QuickCamera: AI-Camera droite" />
-    <text name="input_QuickCamMoveForwardBack_2" text="QuickCamera: AI-Camera vers l'avant" />
-    <text name="input_QuickCamMoveForwardBack_1" text="QuickCamera: AI-Camera en arrière" />
+    <text name="input_QuickCamMoveUpDown_1"      text="QuickCamera: IA-Camera en haut" />
+    <text name="input_QuickCamMoveUpDown_2"      text="QuickCamera: IA-Camera vers le bas" />
+    <text name="input_QuickCamMoveLeftRight_2"   text="QuickCamera: IA-Camera la gauche" />
+    <text name="input_QuickCamMoveLeftRight_1"   text="QuickCamera: IA-Camera droite" />
+    <text name="input_QuickCamMoveForwardBack_2" text="QuickCamera: IA-Camera vers l'avant" />
+    <text name="input_QuickCamMoveForwardBack_1" text="QuickCamera: IA-Camera en arrière" />
   </texts>
 </l10n>
