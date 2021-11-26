@@ -6,6 +6,10 @@ To read more about this mod, find it on;
 - https://www.farming-simulator.com/mods.php?title=fs2019&org_id=53574
 - https://www.farming-simulator.com/mods.php?title=fs2017&org_id=53574
 
+## FS22
+
+_(2021-11-26) The QuickCamera mod is currently under development/upgrade for FS22._
+
 
 ## FS19 - Change-Log
 
