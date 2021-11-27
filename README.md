@@ -8,6 +8,7 @@ To read more about this mod, find it on;
 
 ## FS22
 
+_(2021-11-27) Language files only, pushed to this Github repository in branch `FS2022`._  
 _(2021-11-26) The QuickCamera mod is currently under development/upgrade for FS22._
 
 
