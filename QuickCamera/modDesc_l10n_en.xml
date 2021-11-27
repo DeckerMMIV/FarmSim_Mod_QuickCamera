@@ -17,38 +17,46 @@
   -->
   <title>QuickCamera</title>
   <description>
-Use keys to quickly have the vehicle camera;
-- peek left/right, rotate 45°/90°
-- look forwards/backwards, zoom in/out
+NOTE: PLEASE REMEMBER TO ADJUST YOUR INPUT KEYS.
 
-Or when player is 'on foot';
-- rotate 45°/180°
-- running even faster (mouse-wheel up/down when in 'run' mode)
+With this QuickCamera mod for FS22, you can use keys to make the vehicle camera:
+- Peek left/right
+- Flip 180° to quickly look behind/forward
+- Snap 45°/90° left/right
+- Zoom in/out quickly
 
-Additional free moving camera available, 'AI-Camera', when vehicle is controlled by hired worker.
+Also when player is 'on foot', it is possible to:
+- Flip 180° (almost like having eyes in the back)
+- Snap 45° left/right
+- Run even faster (player speed) using mouse-wheel up/down when in run-mode. In multiplayer this is only available for players with the 'Farm Manager' role.
+
+IMPORTANT INSTRUCTIONS:
+
+For best usage of this QuickCamera mod, you must delete, remove or unbind any existing keys of the following basegame's control actions, to avoid overlapping keys for similar actions:
+- Look left (player and vehicle)
+- Look right (player and vehicle)
+- Camera zoom in
+- Camera zoom out
+Then also rebind the control action keys for QuickCamera, in case they seem wrong for your style of play.
+
+If you observe problems with this QuickCamera mod's actions, then please verify that you have followed the instruction above.
   </description>
 
   <texts>
-    <text name="input_QuickCamOnFootForeBack"    text="QuickCamera: Turn 180&#176; (player)" />
-    <text name="input_QuickCamOnFootLeftRight_1" text="QuickCamera: Turn 45&#176; right (player)" />
-    <text name="input_QuickCamOnFootLeftRight_2" text="QuickCamera: Turn 45&#176; left (player)" />
-    <text name="input_QuickCamVehicleForeBack"   text="QuickCamera: Turn 180&#176; (vehicle)" />
-    <text name="input_QuickCamVehicleSnapLR_1"   text="QuickCamera: Snap 45&#176; right (vehicle)" />
-    <text name="input_QuickCamVehicleSnapLR_2"   text="QuickCamera: Snap 45&#176; left (vehicle)" />
-    <text name="input_QuickCamVehicleSnap2LR_1"  text="QuickCamera: Snap 90&#176; right (vehicle)" />
-    <text name="input_QuickCamVehicleSnap2LR_2"  text="QuickCamera: Snap 90&#176; left (vehicle)" />
-    <text name="input_QuickCamVehiclePeekLR_1"   text="QuickCamera: Peek right (vehicle)" />
-    <text name="input_QuickCamVehiclePeekLR_2"   text="QuickCamera: Peek left (vehicle)" />
-    <text name="input_QuickCamVehicleZoomIn"     text="QuickCamera: Zoom in (vehicle)" />
-    <text name="input_QuickCamVehicleZoomOut"    text="QuickCamera: Zoom out (vehicle)" />
+    <text name="input_QuickCamVehiclePeekLR_1"   text="Peek right" />
+    <text name="input_QuickCamVehiclePeekLR_2"   text="Peek left" />
+    <text name="input_QuickCamVehicleForeBack"   text="Flip 180&#176; (hold to reset pitch)" />
+    <text name="input_QuickCamVehicleSnapLR_1"   text="Snap 45&#176; right (hold to turn)" />
+    <text name="input_QuickCamVehicleSnapLR_2"   text="Snap 45&#176; left (hold to turn)" />
+    <text name="input_QuickCamVehicleSnap2LR_1"  text="Snap 90&#176; right (hold to turn)" />
+    <text name="input_QuickCamVehicleSnap2LR_2"  text="Snap 90&#176; left (hold to turn)" />
+    <text name="input_QuickCamVehicleZoomIn"     text="Quick zoom in (hold for normal zoom)" />
+    <text name="input_QuickCamVehicleZoomOut"    text="Quick zoom out (hold for normal zoom)" />
 
-    <text name="input_QuickCamInsideCamera"      text="QuickCamera: Move cabin camera" />
+    <text name="input_QuickCamOnFootForeBack"    text="Flip 180&#176; (on foot)" />
+    <text name="input_QuickCamOnFootLeftRight_1" text="Snap 45&#176; right (on foot)" />
+    <text name="input_QuickCamOnFootLeftRight_2" text="Snap 45&#176; left (on foot)" />
 
-    <text name="input_QuickCamMoveUpDown_1"      text="QuickCamera: AI-Camera up" />
-    <text name="input_QuickCamMoveUpDown_2"      text="QuickCamera: AI-Camera down" />
-    <text name="input_QuickCamMoveLeftRight_2"   text="QuickCamera: AI-Camera left" />
-    <text name="input_QuickCamMoveLeftRight_1"   text="QuickCamera: AI-Camera right" />
-    <text name="input_QuickCamMoveForwardBack_2" text="QuickCamera: AI-Camera forward" />
-    <text name="input_QuickCamMoveForwardBack_1" text="QuickCamera: AI-Camera backward" />
+    <text name="QUICKCAMERA_ONFOOT_SPEEDRUN"     text="Mouse-wheel for player run-speed (factor x%.1f)" />
   </texts>
 </l10n>
