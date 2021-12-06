@@ -16,20 +16,11 @@
       DLH007, _dj_, Gonimy-Vetrom, jules.stmp537, Ziuta, Xno, PromGames, Anonymous
   </contributors>
 
-  <version>1.0.0.0</version>
-
   <title>
-    <en>QuickCamera</en>
+    <en>Quick Camera</en>
   </title>
 
-  <changeLog><![CDATA[
-Issues
-- Some translations are (probably still) wrong
-
-Changelog 1.0.0.0:
-- Upgraded to FS22
-- Italian translation updated by xno
-]]></changeLog>
+  <version>1.0.0.1</version>
 
   <description>
     <en><![CDATA[NOTE: PLEASE REMEMBER TO ADJUST YOUR INPUT KEYS.
@@ -56,66 +47,48 @@ Then also rebind the control action keys for QuickCamera, in case they seem wron
 
 If you observe problems with this QuickCamera mod's actions, then please verify that you have followed the instruction above.
 
-
-Issues
-- Some translations are (probably still) wrong
-
-Changelog 1.0.0.0:
-- Upgraded to FS22
-- Italian translation updated by xno
-
 ]]></en>
-    <de><![CDATA[(Via translate.google.com)
-HINWEIS: BITTE DENKEN SIE DARAN, IHRE EINGABETASTEN EINZUSTELLEN.
+    <de><![CDATA[HINWEIS: BITTE DENKEN SIE DARAN, IHRE EINGABETASTEN ANZUPASSEN.
 
-Mit diesem QuickCamera-Mod für FS22 können Sie die Fahrzeugkamera mit Schlüsseln erstellen:
+Mit diesem QuickCamera-Mod für FS22 kannst Du die Fahrzeugkamera mit der Tastatur steuern:
 - Blick nach links/rechts
-- Um 180° drehen, um schnell nach hinten/vorne zu schauen
+- Um 180° drehen - um schnell nach hinten/vorne zu schauen
 - 45°/90° links/rechts einrasten
-- Vergrößern/verkleinern Sie schnell
+- Schnell vergrößern/verkleinern
 
-Auch wenn der Spieler „zu Fuß“ ist, ist es möglich:
+Auch wenn der Spieler „zu Fuß“ unterwegs ist, ist es möglich:
 - 180° umdrehen (fast wie mit Augen im Rücken)
 - 45° links/rechts einrasten
-- Laufen Sie noch schneller (Spielergeschwindigkeit) mit dem Mausrad nach oben/unten im Laufmodus. Im Mehrspielermodus ist dies nur für Spieler mit der Rolle „Farmmanager“ verfügbar.
+- Noch schneller laufen (Spielergeschwindigkeit) mit dem Mausrad nach oben/unten im Laufmodus. Im Multiplayermodus ist dies nur für Spieler mit der Rolle „Farmmanager“ verfügbar.
 
 WICHTIGE HINWEISE:
 
-Um diesen QuickCamera-Mod optimal nutzen zu können, müssen Sie alle vorhandenen Tasten der folgenden Steueraktionen des Basisspiels löschen, entfernen oder aufheben, um überlappende Tasten für ähnliche Aktionen zu vermeiden:
+Um die QuickCamera-Mod optimal nutzen zu können, musst du alle vorhandenen Tasten der folgenden Steuerungsaktionen des Basisspiels löschen, entfernen oder ihre Bindung aufheben, um Überschneidungen von Tasten für ähnliche Aktionen zu vermeiden:
 - Nach links schauen (Spieler und Fahrzeug)
 - Nach rechts schauen (Spieler und Fahrzeug)
 - Kamera zoomen
 - Kamera verkleinern
-Binden Sie dann auch die Steuerungsaktionstasten für QuickCamera neu, falls sie für Ihren Spielstil falsch erscheinen.
+Stell dann auch die Aktionstasten für QuickCamera neu ein, falls sie Dir für deinen Spielstil falsch erscheinen.
 
-Wenn Sie Probleme mit den Aktionen dieses QuickCamera-Mods bemerken, überprüfen Sie bitte, ob Sie die obigen Anweisungen befolgt haben.
-
-
-Issues
-- Some translations are (probably still) wrong
-
-Changelog 1.0.0.0:
-- Upgraded to FS22
-- Italian translation updated by xno
+Wenn Du Probleme mit den Aktionen dieses QuickCamera-Mods bemerken solltest, überprüfe ob du die obigen Anweisungen befolgt hast.
 
 ]]></de>
-    <fr><![CDATA[(Via translate.google.com)
-REMARQUE : N'OUBLIEZ PAS D'AJUSTER VOS TOUCHES D'ENTRÉE.
+    <fr><![CDATA[REMARQUE: N'OUBLIEZ PAS D'AJUSTER VOS TOUCHES D'ENTRÉE.
 
-Avec ce mod QuickCamera pour FS22, vous pouvez utiliser des clés pour faire de la caméra du véhicule :
+Avec ce mod QuickCamera pour FS22, vous pouvez utiliser des clés pour faire de la caméra du véhicule:
 - Coup d'œil gauche/droite
 - Retournez à 180° pour regarder rapidement en arrière/en avant
 - Snap 45°/90° gauche/droite
 - Zoom avant/arrière rapidement
 
-De plus, lorsque le joueur est « à pied », il est possible de :
+De plus, lorsque le joueur est « à pied », il est possible de:
 - Flip 180° (presque comme avoir les yeux dans le dos)
 - Snap 45° gauche/droite
 - Courez encore plus vite (vitesse du joueur) en utilisant la molette de la souris vers le haut/bas en mode exécution. En multijoueur, cela n'est disponible que pour les joueurs avec le rôle « Gestionnaire de ferme ».
 
-INSTRUCTIONS IMPORTANTES :
+INSTRUCTIONS IMPORTANTES:
 
-Pour une utilisation optimale de ce mod QuickCamera, vous devez supprimer, supprimer ou dissocier toutes les clés existantes des actions de contrôle du jeu de base suivant, afin d'éviter le chevauchement des clés pour des actions similaires :
+Pour une utilisation optimale de ce mod QuickCamera, vous devez supprimer, supprimer ou dissocier toutes les clés existantes des actions de contrôle du jeu de base suivant, afin d'éviter le chevauchement des clés pour des actions similaires:
 - Regardez à gauche (joueur et véhicule)
 - Regardez à droite (joueur et véhicule)
 - Zoom de la caméra
@@ -123,14 +96,6 @@ Pour une utilisation optimale de ce mod QuickCamera, vous devez supprimer, suppr
 Ensuite, relisez également les touches d'action de contrôle pour QuickCamera, au cas où elles sembleraient mal adaptées à votre style de jeu.
 
 Si vous observez des problèmes avec les actions de ce mod QuickCamera, veuillez vérifier que vous avez suivi les instructions ci-dessus.
-
-
-Issues
-- Some translations are (probably still) wrong
-
-Changelog 1.0.0.0:
-- Upgraded to FS22
-- Italian translation updated by xno
 
 ]]></fr>
   </description>

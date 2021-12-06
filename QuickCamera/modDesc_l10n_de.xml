@@ -8,7 +8,7 @@
 
   <!-- Add your own name or nickname here, when you contribute to this file's translation, so I know who to put into the credits. -->
   <translationContributors>
-    (FS22) .. pending .. (currently translate.google.com)
+    (FS22) ModHub (GIANTS Software)
 
     (FS19) .. pending .. (currently translate.google.com)
 
@@ -20,32 +20,31 @@
     Translate 'description' here. Possibly add other elements which should be translated for the ModDesc.XML file.
     Do NOT modify ModDesc.XML directly, as mod author will do it himself from your 'pull request'.
   -->
-  <title>QuickCamera</title>
+  <title>Quick Camera</title>
   <description>
-(Via translate.google.com)
-HINWEIS: BITTE DENKEN SIE DARAN, IHRE EINGABETASTEN EINZUSTELLEN.
+HINWEIS: BITTE DENKEN SIE DARAN, IHRE EINGABETASTEN ANZUPASSEN.
 
-Mit diesem QuickCamera-Mod für FS22 können Sie die Fahrzeugkamera mit Schlüsseln erstellen:
+Mit diesem QuickCamera-Mod für FS22 kannst Du die Fahrzeugkamera mit der Tastatur steuern:
 - Blick nach links/rechts
-- Um 180° drehen, um schnell nach hinten/vorne zu schauen
+- Um 180° drehen - um schnell nach hinten/vorne zu schauen
 - 45°/90° links/rechts einrasten
-- Vergrößern/verkleinern Sie schnell
+- Schnell vergrößern/verkleinern
 
-Auch wenn der Spieler „zu Fuß“ ist, ist es möglich:
+Auch wenn der Spieler „zu Fuß“ unterwegs ist, ist es möglich:
 - 180° umdrehen (fast wie mit Augen im Rücken)
 - 45° links/rechts einrasten
-- Laufen Sie noch schneller (Spielergeschwindigkeit) mit dem Mausrad nach oben/unten im Laufmodus. Im Mehrspielermodus ist dies nur für Spieler mit der Rolle „Farmmanager“ verfügbar.
+- Noch schneller laufen (Spielergeschwindigkeit) mit dem Mausrad nach oben/unten im Laufmodus. Im Multiplayermodus ist dies nur für Spieler mit der Rolle „Farmmanager“ verfügbar.
 
 WICHTIGE HINWEISE:
 
-Um diesen QuickCamera-Mod optimal nutzen zu können, müssen Sie alle vorhandenen Tasten der folgenden Steueraktionen des Basisspiels löschen, entfernen oder aufheben, um überlappende Tasten für ähnliche Aktionen zu vermeiden:
+Um die QuickCamera-Mod optimal nutzen zu können, musst du alle vorhandenen Tasten der folgenden Steuerungsaktionen des Basisspiels löschen, entfernen oder ihre Bindung aufheben, um Überschneidungen von Tasten für ähnliche Aktionen zu vermeiden:
 - Nach links schauen (Spieler und Fahrzeug)
 - Nach rechts schauen (Spieler und Fahrzeug)
 - Kamera zoomen
 - Kamera verkleinern
-Binden Sie dann auch die Steuerungsaktionstasten für QuickCamera neu, falls sie für Ihren Spielstil falsch erscheinen.
+Stell dann auch die Aktionstasten für QuickCamera neu ein, falls sie Dir für deinen Spielstil falsch erscheinen.
 
-Wenn Sie Probleme mit den Aktionen dieses QuickCamera-Mods bemerken, überprüfen Sie bitte, ob Sie die obigen Anweisungen befolgt haben.
+Wenn Du Probleme mit den Aktionen dieses QuickCamera-Mods bemerken solltest, überprüfe ob du die obigen Anweisungen befolgt hast.
   </description>
 
   <texts>
