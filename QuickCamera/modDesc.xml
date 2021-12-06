@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="61">
+  <author>Decker_MMIV</author>
+  <authorContact>forum.farming-simulator.com</authorContact>
+
+<!--
+    NOTE: DO NOT/NEVER edit this ModDesc.XML!
+          For contributing translations, only modify the corresponding ModDesc_l10n_*.XML file.
+-->
+  <contributors>
+    (FS22)
+      xno
+    (FS19)
+      Gonimy_Vetrom, Ziuta, Anonymous
+    (FS17)
+      DLH007, _dj_, Gonimy-Vetrom, jules.stmp537, Ziuta, Xno, PromGames, Anonymous
+  </contributors>
+
+  <version>1.0.0.0</version>
+
+  <title>
+    <en>QuickCamera</en>
+  </title>
+
+  <changeLog><![CDATA[
+Issues
+- Some translations are (probably still) wrong
+
+Changelog 1.0.0.0:
+- Upgraded to FS22
+- Italian translation updated by xno
+]]></changeLog>
+
+  <description>
+    <en><![CDATA[NOTE: PLEASE REMEMBER TO ADJUST YOUR INPUT KEYS.
+
+With this QuickCamera mod for FS22, you can use keys to make the vehicle camera:
+- Peek left/right
+- Flip 180° to quickly look behind/forward
+- Snap 45°/90° left/right
+- Zoom in/out quickly
+
+Also when player is 'on foot', it is possible to:
+- Flip 180° (almost like having eyes in the back)
+- Snap 45° left/right
+- Run even faster (player speed) using mouse-wheel up/down when in run-mode. In multiplayer this is only available for players with the 'Farm Manager' role.
+
+IMPORTANT INSTRUCTIONS:
+
+For best usage of this QuickCamera mod, you must delete, remove or unbind any existing keys of the following basegame's control actions, to avoid overlapping keys for similar actions:
+- Look left (player and vehicle)
+- Look right (player and vehicle)
+- Camera zoom in
+- Camera zoom out
+Then also rebind the control action keys for QuickCamera, in case they seem wrong for your style of play.
+
+If you observe problems with this QuickCamera mod's actions, then please verify that you have followed the instruction above.
+
+
+Issues
+- Some translations are (probably still) wrong
+
+Changelog 1.0.0.0:
+- Upgraded to FS22
+- Italian translation updated by xno
+
+]]></en>
+    <de><![CDATA[(Via translate.google.com)
+HINWEIS: BITTE DENKEN SIE DARAN, IHRE EINGABETASTEN EINZUSTELLEN.
+
+Mit diesem QuickCamera-Mod für FS22 können Sie die Fahrzeugkamera mit Schlüsseln erstellen:
+- Blick nach links/rechts
+- Um 180° drehen, um schnell nach hinten/vorne zu schauen
+- 45°/90° links/rechts einrasten
+- Vergrößern/verkleinern Sie schnell
+
+Auch wenn der Spieler „zu Fuß“ ist, ist es möglich:
+- 180° umdrehen (fast wie mit Augen im Rücken)
+- 45° links/rechts einrasten
+- Laufen Sie noch schneller (Spielergeschwindigkeit) mit dem Mausrad nach oben/unten im Laufmodus. Im Mehrspielermodus ist dies nur für Spieler mit der Rolle „Farmmanager“ verfügbar.
+
+WICHTIGE HINWEISE:
+
+Um diesen QuickCamera-Mod optimal nutzen zu können, müssen Sie alle vorhandenen Tasten der folgenden Steueraktionen des Basisspiels löschen, entfernen oder aufheben, um überlappende Tasten für ähnliche Aktionen zu vermeiden:
+- Nach links schauen (Spieler und Fahrzeug)
+- Nach rechts schauen (Spieler und Fahrzeug)
+- Kamera zoomen
+- Kamera verkleinern
+Binden Sie dann auch die Steuerungsaktionstasten für QuickCamera neu, falls sie für Ihren Spielstil falsch erscheinen.
+
+Wenn Sie Probleme mit den Aktionen dieses QuickCamera-Mods bemerken, überprüfen Sie bitte, ob Sie die obigen Anweisungen befolgt haben.
+
+
+Issues
+- Some translations are (probably still) wrong
+
+Changelog 1.0.0.0:
+- Upgraded to FS22
+- Italian translation updated by xno
+
+]]></de>
+    <fr><![CDATA[(Via translate.google.com)
+REMARQUE : N'OUBLIEZ PAS D'AJUSTER VOS TOUCHES D'ENTRÉE.
+
+Avec ce mod QuickCamera pour FS22, vous pouvez utiliser des clés pour faire de la caméra du véhicule :
+- Coup d'œil gauche/droite
+- Retournez à 180° pour regarder rapidement en arrière/en avant
+- Snap 45°/90° gauche/droite
+- Zoom avant/arrière rapidement
+
+De plus, lorsque le joueur est « à pied », il est possible de :
+- Flip 180° (presque comme avoir les yeux dans le dos)
+- Snap 45° gauche/droite
+- Courez encore plus vite (vitesse du joueur) en utilisant la molette de la souris vers le haut/bas en mode exécution. En multijoueur, cela n'est disponible que pour les joueurs avec le rôle « Gestionnaire de ferme ».
+
+INSTRUCTIONS IMPORTANTES :
+
+Pour une utilisation optimale de ce mod QuickCamera, vous devez supprimer, supprimer ou dissocier toutes les clés existantes des actions de contrôle du jeu de base suivant, afin d'éviter le chevauchement des clés pour des actions similaires :
+- Regardez à gauche (joueur et véhicule)
+- Regardez à droite (joueur et véhicule)
+- Zoom de la caméra
+- Zoom arrière de la caméra
+Ensuite, relisez également les touches d'action de contrôle pour QuickCamera, au cas où elles sembleraient mal adaptées à votre style de jeu.
+
+Si vous observez des problèmes avec les actions de ce mod QuickCamera, veuillez vérifier que vous avez suivi les instructions ci-dessus.
+
+
+Issues
+- Some translations are (probably still) wrong
+
+Changelog 1.0.0.0:
+- Upgraded to FS22
+- Italian translation updated by xno
+
+]]></fr>
+  </description>
+
+  <iconFilename>icon_QuickCamera.dds</iconFilename>
+  <multiplayer supported="true"/>
+
+  <extraSourceFiles>
+    <sourceFile filename="src/QuickCamera.lua" />
+  </extraSourceFiles>
+
+  <l10n filenamePrefix="modDesc_l10n" /> <!-- Load the corresponding modDesc_l10n_<language>.XML file, or revert to 'en'/'de'. -->
+
+  <inputBinding>
+    <actionBinding action="QuickCamVehiclePeekLR">
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_left KEY_up"  axisComponent="-" neutralInput="0" index="1" />
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_right KEY_up" axisComponent="+" neutralInput="0" index="1" />
+    </actionBinding>
+    <actionBinding action="QuickCamVehicleForeBack">
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_end" index="1" />
+    </actionBinding>
+    <actionBinding action="QuickCamVehicleSnapLR">
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_left"  axisComponent="-" neutralInput="0" index="1" />
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_right" axisComponent="+" neutralInput="0" index="1" />
+    </actionBinding>
+    <actionBinding action="QuickCamVehicleSnap2LR">
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_lctrl KEY_left"  axisComponent="-" neutralInput="0" index="1" />
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_lctrl KEY_right" axisComponent="+" neutralInput="0" index="1" />
+    </actionBinding>
+    <actionBinding action="QuickCamVehicleZoomIn">
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_pageup" index="1" />
+    </actionBinding>
+    <actionBinding action="QuickCamVehicleZoomOut">
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_pagedown" index="1" />
+    </actionBinding>
+
+    <actionBinding action="QuickCamOnFootForeBack">
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_end" index="1" />
+    </actionBinding>
+    <actionBinding action="QuickCamOnFootLeftRight">
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_left"  axisComponent="-" neutralInput="0" index="1" />
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_right" axisComponent="+" neutralInput="0" index="1" />
+    </actionBinding>
+  </inputBinding>
+
+  <actions>
+    <action name="QuickCamVehiclePeekLR"   category="VEHICLE" axisType="FULL" />
+    <action name="QuickCamVehicleForeBack" category="VEHICLE" />
+    <action name="QuickCamVehicleSnapLR"   category="VEHICLE" axisType="FULL" />
+    <action name="QuickCamVehicleSnap2LR"  category="VEHICLE" axisType="FULL" />
+    <action name="QuickCamVehicleZoomIn"   category="VEHICLE" />
+    <action name="QuickCamVehicleZoomOut"  category="VEHICLE" />
+
+    <action name="QuickCamOnFootForeBack"  category="ONFOOT" />
+    <action name="QuickCamOnFootLeftRight" category="ONFOOT"  axisType="FULL" />
+  </actions>
+
+</modDesc>
