@@ -20,7 +20,7 @@
     <en>Quick Camera</en>
   </title>
 
-  <version>1.0.0.0</version>
+  <version>1.0.1.0</version>
 
   <description>
     <en><![CDATA[NOTE: PLEASE REMEMBER TO ADJUST YOUR INPUT KEYS.
@@ -105,6 +105,7 @@ Si vous observez des problèmes avec les actions de ce mod QuickCamera, veuillez
 
   <extraSourceFiles>
     <sourceFile filename="src/QuickCamera.lua" />
+    <sourceFile filename="src/OneButtonDirectionChangeAndFlipCamera.lua" />
   </extraSourceFiles>
 
   <l10n filenamePrefix="modDesc_l10n" /> <!-- Load the corresponding modDesc_l10n_<language>.XML file, or revert to 'en'/'de'. -->
@@ -139,6 +140,10 @@ Si vous observez des problèmes avec les actions de ce mod QuickCamera, veuillez
       <binding device="KB_MOUSE_DEFAULT" input="KEY_left"  axisComponent="-" neutralInput="0" index="1" />
       <binding device="KB_MOUSE_DEFAULT" input="KEY_right" axisComponent="+" neutralInput="0" index="1" />
     </actionBinding>
+
+    <actionBinding action="QuickCamDirectionChangeFlipCamera">
+      <binding device="KB_MOUSE_DEFAULT" input="" index="1" />
+    </actionBinding>
   </inputBinding>
 
   <actions>
@@ -151,6 +156,8 @@ Si vous observez des problèmes avec les actions de ce mod QuickCamera, veuillez
 
     <action name="QuickCamOnFootForeBack"  category="ONFOOT" />
     <action name="QuickCamOnFootLeftRight" category="ONFOOT"  axisType="FULL" />
-  </actions>
+
+    <action name="QuickCamDirectionChangeFlipCamera"  category="VEHICLE" />
+</actions>
 
 </modDesc>

@@ -49,20 +49,26 @@ Enterable.QC_onInputLookForeBack = function(self, inputActionName, inputValue, c
     if 0 == inputValue then
       if nil ~= spec.modQc and STATE_FOREBACK == spec.modQc.State then
         if g_time <= spec.modQc.PressedTime + QuickCamera.quickTapThresholdMS then
-          local destRotY = normalizeRotation(actCam.origRotY)
-          local rotY     = normalizeRotation(actCam.rotY)
-          -- If currently looking 'forward', then wanted target is 'backwards'
-          if (destRotY - math.pi/2) < rotY and rotY < (destRotY + math.pi/2) then
-            destRotY = destRotY - math.pi
-          end
-          actCam.modQc = {
-            camTime = 250,
-            camSource = { actCam.rotX, rotY },
-            camTarget = { actCam.rotX, MathUtil.normalizeRotationForShortestPath(destRotY, rotY) },
-          }
+          callbackState = 0
         end
         spec.modQc = nil
       end
+      if nil ~= callbackState then
+        local destRotY = normalizeRotation(actCam.origRotY)
+        local rotY     = normalizeRotation(actCam.rotY)
+        -- If currently looking 'forward', then wanted target is 'backwards'
+        -- or being forced to 'look back'
+        if (0 == callbackState and (destRotY - math.pi/2) < rotY and rotY < (destRotY + math.pi/2))
+        or (-1 == callbackState)
+        then
+          destRotY = destRotY - math.pi
+        end
+        actCam.modQc = {
+          camTime = 250,
+          camSource = { actCam.rotX, rotY },
+          camTarget = { actCam.rotX, MathUtil.normalizeRotationForShortestPath(destRotY, rotY) },
+        }
+    end
     elseif nil == spec.modQc or STATE_FOREBACK ~= spec.modQc.State then
       spec.modQc = {
         State = STATE_FOREBACK,
