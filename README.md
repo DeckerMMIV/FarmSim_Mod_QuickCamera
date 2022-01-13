@@ -1,14 +1,18 @@
-# Farming Simulator modification - QuickCamera
+# Farming Simulator modification - Quick Camera
 
 Mod for Farming Simulator
 
 To read more about this mod, find it on;
+- https://www.farming-simulator.com/mods.php?title=fs2022&org_id=53574
 - https://www.farming-simulator.com/mods.php?title=fs2019&org_id=53574
 - https://www.farming-simulator.com/mods.php?title=fs2017&org_id=53574
 
-## FS22
+## FS22 - Change-log
 
-_(2021-11-26) The QuickCamera mod is currently under development/upgrade for FS22._
+1.0.0.0
+- Quick Camera for FS22 is now available on GIANTS Software's ModHub and via the in-game's 'downloadable content'.
+- Italian language updated, by Xno
+- German language updated, by GIANTS Software ModHub team
 
 
 ## FS19 - Change-Log

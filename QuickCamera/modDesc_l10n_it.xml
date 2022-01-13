@@ -8,6 +8,8 @@
 
   <!-- Add your own name or nickname here, when you contribute to this file's translation, so I know who to put into the credits. -->
   <translationContributors>
+    (FS22) xno 
+
     (FS19) .. pending .. (currently translate.google.com)
 
     (FS17) xno
@@ -18,38 +20,48 @@
     Translate 'description' here. Possibly add other elements which should be translated for the ModDesc.XML file.
     Do NOT modify ModDesc.XML directly, as mod author will do it himself from your 'pull request'.
   -->
-  <title>QuickCamera</title>
+  <title>Quick Camera</title>
   <description>
-Usa i tasti per puntare velocemente la telecamera sul veicolo;
-- Occhiata sinistra/destra, ruota 45/90-gradi sinistra/destra
-- guarda avanti/indiestro, zoom in/out
+NOTA: RICORDARTI DI CONFIGURARE I TASTI ASSOCIATI.
 
-O quando il giocatore è "a piedi";
-- ruotare 45° / 180°
-- correre ancora più velocemente (rotella del mouse su / giù quando in modalità "Esegui")
+Con questa mod QuickCamera per FS22, puoi usare i tasti per controllare la telecamera del veicolo:
+- Sbircia a sinistra/destra
+- Ruota di 180° per guardare rapidamente dietro/in avanti
+- Scatto 45°/90° sinistra/destra
+- Zoom Ingrandisci/riduci rapidamente
+
+Inoltre, quando il giocatore è "a piedi", è possibile:
+- Ruota giocatore di 180° (quasi come avere gli occhi dietro)
+- Scatto 45° sinistra/destra
+- Corri più veloce (velocità del giocatore) usando la rotellina del mouse su/giù in modalità di corsa. In multiplayer questo è disponibile solo per i giocatori con il ruolo di 'Farm Manager'.
+
+ISTRUZIONI IMPORTANTI:
+
+Per un miglior utilizzo della mod QuickCamera, devi eliminare, rimuovere o annullare l'associazione di eventuali tasti esistenti delle seguenti azioni di controllo del gioco base, per evitare che i tasti si sovrappongano per azioni simili:
+- Guarda a sinistra (giocatore e veicolo)
+- Guarda a destra (giocatore e veicolo)
+- Zoom della fotocamera in avanti
+- Zoom indietro della fotocamera
+Quindi ricollega anche i tasti di azione di controllo per QuickCamera, nel caso in cui sembrino sbagliati per il tuo stile di gioco.
+
+Se riscontri problemi con le azioni della mod QuickCamera, verifica di aver seguito le istruzioni sopra.
   </description>
 
   <texts>
-    <text name="input_QuickCamOnFootForeBack"    text="QuickCamera: A piedi gira 180&#176;" />
-    <text name="input_QuickCamOnFootLeftRight_1" text="QuickCamera: A piedi gira 45&#176; destra" />
-    <text name="input_QuickCamOnFootLeftRight_2" text="QuickCamera: A piedi gira 45&#176; sinistra" />
-    <text name="input_QuickCamVehicleForeBack"   text="QuickCamera: Alterna Guarda avanti/indietro" />
-    <text name="input_QuickCamVehicleSnapLR_1"   text="QuickCamera: Guarda 45&#176; destra" />
-    <text name="input_QuickCamVehicleSnapLR_2"   text="QuickCamera: Guarda 45&#176; sinistra" />
-    <text name="input_QuickCamVehicleSnap2LR_1"  text="QuickCamera: Guarda 90&#176; destra" />
-    <text name="input_QuickCamVehicleSnap2LR_2"  text="QuickCamera: Guarda 90&#176; sinistra" />
-    <text name="input_QuickCamVehiclePeekLR_1"   text="QuickCamera: Occhiata a destra" />
-    <text name="input_QuickCamVehiclePeekLR_2"   text="QuickCamera: Occhiata a sinistra" />
-    <text name="input_QuickCamVehicleZoomIn"     text="QuickCamera: Zoom in" />
-    <text name="input_QuickCamVehicleZoomOut"    text="QuickCamera: Zoom out" />
+    <text name="input_QuickCamVehiclePeekLR_1"   text="Occhiata a destra" />
+    <text name="input_QuickCamVehiclePeekLR_2"   text="Occhiata a sinistra" />
+    <text name="input_QuickCamVehicleForeBack"   text="Girati di 180&#176; (tieni premuto per reset zoom)" />
+    <text name="input_QuickCamVehicleSnapLR_1"   text="Guarda 45&#176; destra (tieni premuto per girare)" />
+    <text name="input_QuickCamVehicleSnapLR_2"   text="Guarda 45&#176; sinistra (tieni premuto per girare)" />
+    <text name="input_QuickCamVehicleSnap2LR_1"  text="Guarda 90&#176; destra (tieni premuto per girare)" />
+    <text name="input_QuickCamVehicleSnap2LR_2"  text="Guarda 90&#176; sinistra (tieni premuto per girare)" />
+    <text name="input_QuickCamVehicleZoomIn"     text="Quick zoom in (tieni premuto per zoom normale)" />
+    <text name="input_QuickCamVehicleZoomOut"    text="Quick zoom out (tieni premuto per zoom normale)" />
 
-    <text name="input_QuickCamInsideCamera"      text="QuickCamera: Move cabin camera" />
+    <text name="input_QuickCamOnFootForeBack"    text="Girati di 180&#176; (a piedi)" />
+    <text name="input_QuickCamOnFootLeftRight_1" text="Guarda 45&#176; destra (a piedi)" />
+    <text name="input_QuickCamOnFootLeftRight_2" text="Guarda 45&#176; sinistra (a piedi)" />
 
-    <text name="input_QuickCamMoveUpDown_1"      text="QuickCamera: AI-Camera su" />
-    <text name="input_QuickCamMoveUpDown_2"      text="QuickCamera: AI-Camera giù" />
-    <text name="input_QuickCamMoveLeftRight_2"   text="QuickCamera: AI-Camera sinistra" />
-    <text name="input_QuickCamMoveLeftRight_1"   text="QuickCamera: AI-Camera destra" />
-    <text name="input_QuickCamMoveForwardBack_2" text="QuickCamera: AI-Camera inoltrare" />
-    <text name="input_QuickCamMoveForwardBack_1" text="QuickCamera: AI-Camera arretrato" />
+    <text name="QUICKCAMERA_ONFOOT_SPEEDRUN"     text="Rotella del mouse per la velocità di corsa del giocatore (factor x%.1f)" />
   </texts>
 </l10n>
