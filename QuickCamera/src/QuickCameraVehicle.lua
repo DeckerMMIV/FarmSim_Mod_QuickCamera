@@ -13,22 +13,24 @@ local STATE_ZOOMINOUT = 5
 
 ----
 
-VehicleCamera.update = Utils.prependedFunction(VehicleCamera.update, function(self, dt)
-  local modQc = self.modQc
-  if nil ~= modQc then
-    if nil ~= modQc.accTime then
-      modQc.accTime = modQc.accTime + dt
-    else
-      modQc.accTime = 0
+function delayedInjection_VehicleCamera_Update()
+  VehicleCamera.update = Utils.prependedFunction(VehicleCamera.update, function(self, dt)
+    local modQc = self.modQc
+    if nil ~= modQc then
+      if nil ~= modQc.accTime then
+        modQc.accTime = modQc.accTime + dt
+      else
+        modQc.accTime = 0
+      end
+      local newCamRot = Utils.getMovedLimitedValues(modQc.camSource, modQc.camSource, modQc.camTarget, 2, modQc.camTime, modQc.accTime, true);
+      self.rotX = newCamRot[1];
+      self.rotY = newCamRot[2];
+      if nil == modQc.peekFrom and modQc.accTime > modQc.camTime then
+        self.modQc = nil
+      end
     end
-    local newCamRot = Utils.getMovedLimitedValues(modQc.camSource, modQc.camSource, modQc.camTarget, 2, modQc.camTime, modQc.accTime, true);
-    self.rotX = newCamRot[1];
-    self.rotY = newCamRot[2];
-    if nil == modQc.peekFrom and modQc.accTime > modQc.camTime then
-      self.modQc = nil
-    end
-  end
-end)
+  end)
+end
 
 ----
 

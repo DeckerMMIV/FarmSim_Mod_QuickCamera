@@ -20,7 +20,21 @@
     <en>Quick Camera</en>
   </title>
 
-  <version>1.0.1.0</version>
+  <version>1.0.2.0</version>
+<!--
+ChangeLog
+
+1.0.2.0
+- Fix/Work-around for FS22_CabView completely overwriting the VehicleCamera.update() method, causing FS22_QuickCamera's prepended code to not be called.
+
+1.0.1.0
+- (BETA) Added functionality for a one-button 'Change Direction' & 'Flip Camera'.
+
+1.0.0.0
+- Updated to FS22
+- Italian language updated, by Xno
+- German language updated, by GIANTS Software ModHub team
+-->  
 
   <description>
     <en><![CDATA[NOTE: PLEASE REMEMBER TO ADJUST YOUR INPUT KEYS.
