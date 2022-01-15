@@ -8,7 +8,7 @@
 
   <!-- Add your own name or nickname here, when you contribute to this file's translation, so I know who to put into the credits. -->
   <translationContributors>
-    (FS22) .. pending .. (currently translate.google.com)
+    (FS22) Gonimy_Vetrom
 
     (FS19) Gonimy_Vetrom
 
@@ -22,26 +22,26 @@
   -->
   <title>Quick Camera</title>
   <description>
-ПРИМЕЧАНИЕ: ПОЖАЛУЙСТА, НАСТРОЙТЕ КЛЮЧИ ВВОДА.
+ПРИМЕЧАНИЕ: ПОЖАЛУЙСТА, НАСТРОЙТЕ СОЧЕТАНИЯ КЛАВИШ.
 
-С этим модом QuickCamera для FS22 вы можете использовать ключи для создания камеры автомобиля:
-- Заглянуть влево / вправо
-- Поверните на 180°, чтобы быстро смотреть назад / вперед
-- Привязка 45°/90° влево / вправо
-- Увеличение / уменьшение масштаба быстро
+С модом QuickCamera для FS22 вы можете использовать сочетания клавиш для выполнения камерой автомобиля таких действий:
+- Быстро взглянуть влево / вправо
+- Обернуться на 180°, чтобы быстро посмотреть назад / вперед
+- Повернуться на 45°/90° влево / вправо
+- Быстрое приближение / отдаление
 
-Также, когда игрок находится «пешком», можно:
-- Переворот на 180° (почти как глаза сзади)
-- Щелчок 45° влево / вправо
-- Бегите еще быстрее (скорость игрока) с помощью колесика мыши вверх / вниз в режиме бега. В многопользовательском режиме это доступно только для игроков с ролью «Управляющий фермой».
+Также, когда игрок находится «на ногах», можно:
+- Оглянуться на 180° (почти как глаза на затылке)
+- Посмотреть 45° влево / вправо
+- Изменяйте скорость бега персонажа с помощью колёсика мыши вверх / вниз в режиме бега. В многопользовательском режиме это доступно только для игроков с ролью «Управляющий фермой».
 
 ВАЖНЫЕ ИНСТРУКЦИИ:
 
-Для наилучшего использования этого мода QuickCamera вы должны удалить, удалить или отменить привязку любых существующих клавиш следующих управляющих действий базовой игры, чтобы избежать перекрытия клавиш для аналогичных действий:
-- Посмотрите налево (игрок и машина)
-- Посмотрите направо (игрок и машина)
-- Увеличение камеры
-- Уменьшение масштаба камеры
+Для наилучшего использования мода QuickCamera вы должны удалить или отменить привязку любых существующих клавиш следующих управляющих действий базовой игры, чтобы избежать перекрытия клавиш для аналогичных действий:
+- Посмотреть налево (игрок и машина)
+- Посмотреть направо (игрок и машина)
+- Приближение камеры
+- Отдаление камеры
 Затем также повторно привяжите клавиши управляющих действий для QuickCamera, если они кажутся неподходящими для вашего стиля игры.
 
 Если вы наблюдаете проблемы с действиями этого мода QuickCamera, убедитесь, что вы выполнили приведенную выше инструкцию.
@@ -50,18 +50,18 @@
   <texts>
     <text name="input_QuickCamVehiclePeekLR_1"   text="Быстрый взгляд направо" />
     <text name="input_QuickCamVehiclePeekLR_2"   text="Быстрый взгляд налево" />
-    <text name="input_QuickCamVehicleForeBack"   text="Flip 180&#176; (hold to reset pitch)" />
-    <text name="input_QuickCamVehicleSnapLR_1"   text="Посмотреть на 45&#176; вправо (hold to turn)" />
-    <text name="input_QuickCamVehicleSnapLR_2"   text="Посмотреть на 45&#176; влево (hold to turn)" />
-    <text name="input_QuickCamVehicleSnap2LR_1"  text="Посмотреть на 90&#176; вправо (hold to turn)" />
-    <text name="input_QuickCamVehicleSnap2LR_2"  text="Посмотреть на 90&#176; влево (hold to turn)" />
-    <text name="input_QuickCamVehicleZoomIn"     text="Quick zoom in (hold for normal zoom)" />
-    <text name="input_QuickCamVehicleZoomOut"    text="Quick zoom out (hold for normal zoom)" />
+    <text name="input_QuickCamVehicleForeBack"   text="Оглянуться на 180&#176; (удерживайте для reset pitch)" />
+    <text name="input_QuickCamVehicleSnapLR_1"   text="Посмотреть на 45&#176; вправо (удержите, чтобы повернуться)" />
+    <text name="input_QuickCamVehicleSnapLR_2"   text="Посмотреть на 45&#176; влево (удержите, чтобы повернуться)" />
+    <text name="input_QuickCamVehicleSnap2LR_1"  text="Посмотреть на 90&#176; вправо (удержите, чтобы повернуться)" />
+    <text name="input_QuickCamVehicleSnap2LR_2"  text="Посмотреть на 90&#176; влево (удержите, чтобы повернуться)" />
+    <text name="input_QuickCamVehicleZoomIn"     text="Быстрое приближение (удерживайте для обычного зума)" />
+    <text name="input_QuickCamVehicleZoomOut"    text="Быстрое отдаление (удерживайте для обычного зума)" />
 
-    <text name="input_QuickCamOnFootForeBack"    text="Flip 180&#176; (on foot)" />
-    <text name="input_QuickCamOnFootLeftRight_1" text="Посмотреть на 45&#176; вправо (on foot)" />
-    <text name="input_QuickCamOnFootLeftRight_2" text="Посмотреть на 45&#176; влево (on foot)" />
+    <text name="input_QuickCamOnFootForeBack"    text="Оглянуться на 180&#176; (на ногах)" />
+    <text name="input_QuickCamOnFootLeftRight_1" text="Посмотреть на 45&#176; вправо (на ногах)" />
+    <text name="input_QuickCamOnFootLeftRight_2" text="Посмотреть на 45&#176; влево (на ногах)" />
 
-    <text name="QUICKCAMERA_ONFOOT_SPEEDRUN"     text="Колесо мыши для скорости бега игрока (factor x%.1f)" />
+    <text name="QUICKCAMERA_ONFOOT_SPEEDRUN"     text="Колесико мыши для скорости бега игрока (множитель x%.1f)" />
   </texts>
 </l10n>
