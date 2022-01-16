@@ -50,18 +50,18 @@
   <texts>
     <text name="input_QuickCamVehiclePeekLR_1"   text="Быстрый взгляд направо" />
     <text name="input_QuickCamVehiclePeekLR_2"   text="Быстрый взгляд налево" />
-    <text name="input_QuickCamVehicleForeBack"   text="Оглянуться на 180&#176; (удерживайте для reset pitch)" />
-    <text name="input_QuickCamVehicleSnapLR_1"   text="Посмотреть на 45&#176; вправо (удержите, чтобы повернуться)" />
-    <text name="input_QuickCamVehicleSnapLR_2"   text="Посмотреть на 45&#176; влево (удержите, чтобы повернуться)" />
-    <text name="input_QuickCamVehicleSnap2LR_1"  text="Посмотреть на 90&#176; вправо (удержите, чтобы повернуться)" />
-    <text name="input_QuickCamVehicleSnap2LR_2"  text="Посмотреть на 90&#176; влево (удержите, чтобы повернуться)" />
-    <text name="input_QuickCamVehicleZoomIn"     text="Быстрое приближение (удерживайте для обычного зума)" />
-    <text name="input_QuickCamVehicleZoomOut"    text="Быстрое отдаление (удерживайте для обычного зума)" />
+    <text name="input_QuickCamVehicleForeBack"   text="Оглянуться на 180&#176; (удерж. для сброса наклона)" />
+    <text name="input_QuickCamVehicleSnapLR_1"   text="Повернуть на 45&#176; вправо (удерж. для плавности)" />
+    <text name="input_QuickCamVehicleSnapLR_2"   text="Повернуть на 45&#176; влево (удерж. для плавности)" />
+    <text name="input_QuickCamVehicleSnap2LR_1"  text="Повернуть на 90&#176; вправо (удерж. для плавности)" />
+    <text name="input_QuickCamVehicleSnap2LR_2"  text="Повернуть на 90&#176; влево (удерж. для плавности)" />
+    <text name="input_QuickCamVehicleZoomIn"     text="Быстрое приближение (удерж. для обычного зума)" />
+    <text name="input_QuickCamVehicleZoomOut"    text="Быстрое отдаление (удерж. для обычного зума)" />
 
-    <text name="input_QuickCamOnFootForeBack"    text="Оглянуться на 180&#176; (на ногах)" />
-    <text name="input_QuickCamOnFootLeftRight_1" text="Посмотреть на 45&#176; вправо (на ногах)" />
-    <text name="input_QuickCamOnFootLeftRight_2" text="Посмотреть на 45&#176; влево (на ногах)" />
+    <text name="input_QuickCamOnFootForeBack"    text="Развернуться на 180&#176; (на ногах)" />
+    <text name="input_QuickCamOnFootLeftRight_1" text="Повернуться на 45&#176; вправо (на ногах)" />
+    <text name="input_QuickCamOnFootLeftRight_2" text="Повернуться на 45&#176; влево (на ногах)" />
 
-    <text name="QUICKCAMERA_ONFOOT_SPEEDRUN"     text="Колесико мыши для скорости бега игрока (множитель x%.1f)" />
+    <text name="QUICKCAMERA_ONFOOT_SPEEDRUN"     text="Колесо мыши для скорости бега игрока (множитель x%.1f)" />
   </texts>
 </l10n>
