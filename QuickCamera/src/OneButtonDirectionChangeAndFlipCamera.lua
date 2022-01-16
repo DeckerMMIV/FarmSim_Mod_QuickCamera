@@ -28,7 +28,16 @@ Motorized.onGearDirectionChanged = Utils.appendedFunction(Motorized.onGearDirect
 --print("OneButtonDirectionChangeAndFlipCamera - onGearDirectionChanged: " .. tostring(direction))
         local spec = self.spec_motorized
         if spec.modQC_FlipCameraToDirection then
-            Enterable.QC_onInputLookForeBack(self, nil, 0, direction, nil, nil)
+            local reverserDirection = 1
+
+            local activeCamera = self:getActiveCamera()
+            if activeCamera and activeCamera.isInside then
+                if nil ~= self.getReverserDirection then
+                    reverserDirection = self:getReverserDirection()
+                end
+            end
+
+            Enterable.QC_onInputLookForeBack(self, nil, 0, direction * reverserDirection, nil, nil)
         end
         spec.modQC_FlipCameraToDirection = false
     end

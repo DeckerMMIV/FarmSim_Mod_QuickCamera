@@ -20,9 +20,12 @@
     <en>Quick Camera</en>
   </title>
 
-  <version>1.0.2.0</version>
+  <version>1.0.3.0</version>
 <!--
 ChangeLog
+
+1.0.3.0
+- (BETA-2) 'Change Direction & Flip Camera', fix for reverse-drive vehicles.
 
 1.0.2.0
 - Fix/Work-around for FS22_CabView completely overwriting the VehicleCamera.update() method, causing FS22_QuickCamera's prepended code to not be called.
@@ -57,14 +60,15 @@ For best usage of this Quick Camera mod, you must delete, remove or unbind any e
 - Look right (player and vehicle)
 - Camera zoom in
 - Camera zoom out
-Then also rebind the control action keys for QuickCamera, in case they seem wrong for your style of play.
+- Change Direction (only if using 'Change Direction &amp; Flip Camera')
+Then also rebind the control action keys for Quick Camera, in case they seem wrong for your style of play.
 
 If you observe problems with this Quick Camera mod's actions, then please verify that you have followed the instruction above.
 
 ]]></en>
     <de><![CDATA[HINWEIS: BITTE DENKEN SIE DARAN, IHRE EINGABETASTEN ANZUPASSEN.
 
-Mit diesem QuickCamera-Mod für FS22 kannst Du die Fahrzeugkamera mit der Tastatur steuern:
+Mit diesem Quick Camera-Mod für FS22 kannst Du die Fahrzeugkamera mit der Tastatur steuern:
 - Blick nach links/rechts
 - Um 180° drehen - um schnell nach hinten/vorne zu schauen
 - 45°/90° links/rechts einrasten
@@ -77,14 +81,15 @@ Auch wenn der Spieler „zu Fuß“ unterwegs ist, ist es möglich:
 
 WICHTIGE HINWEISE:
 
-Um die QuickCamera-Mod optimal nutzen zu können, musst du alle vorhandenen Tasten der folgenden Steuerungsaktionen des Basisspiels löschen, entfernen oder ihre Bindung aufheben, um Überschneidungen von Tasten für ähnliche Aktionen zu vermeiden:
+Um die Quick Camera-Mod optimal nutzen zu können, musst du alle vorhandenen Tasten der folgenden Steuerungsaktionen des Basisspiels löschen, entfernen oder ihre Bindung aufheben, um Überschneidungen von Tasten für ähnliche Aktionen zu vermeiden:
 - Nach links schauen (Spieler und Fahrzeug)
 - Nach rechts schauen (Spieler und Fahrzeug)
 - Kamera zoomen
 - Kamera verkleinern
+- (Change Direction)
 Stell dann auch die Aktionstasten für Quick Camera neu ein, falls sie Dir für deinen Spielstil falsch erscheinen.
 
-Wenn Du Probleme mit den Aktionen dieses QuickCamera-Mods bemerken solltest, überprüfe ob du die obigen Anweisungen befolgt hast.
+Wenn Du Probleme mit den Aktionen dieses Quick Camera-Mods bemerken solltest, überprüfe ob du die obigen Anweisungen befolgt hast.
 
 ]]></de>
     <fr><![CDATA[REMARQUE: N'OUBLIEZ PAS D'AJUSTER VOS TOUCHES D'ENTRÉE.
@@ -102,14 +107,15 @@ De plus, lorsque le joueur est « à pied », il est possible de:
 
 INSTRUCTIONS IMPORTANTES:
 
-Pour une utilisation optimale de ce mod QuickCamera, vous devez supprimer, supprimer ou dissocier toutes les clés existantes des actions de contrôle du jeu de base suivant, afin d'éviter le chevauchement des clés pour des actions similaires:
+Pour une utilisation optimale de ce mod Quick Camera, vous devez supprimer, supprimer ou dissocier toutes les clés existantes des actions de contrôle du jeu de base suivant, afin d'éviter le chevauchement des clés pour des actions similaires:
 - Regardez à gauche (joueur et véhicule)
 - Regardez à droite (joueur et véhicule)
 - Zoom de la caméra
 - Zoom arrière de la caméra
-Ensuite, relisez également les touches d'action de contrôle pour QuickCamera, au cas où elles sembleraient mal adaptées à votre style de jeu.
+- (Change Direction)
+Ensuite, relisez également les touches d'action de contrôle pour Quick Camera, au cas où elles sembleraient mal adaptées à votre style de jeu.
 
-Si vous observez des problèmes avec les actions de ce mod QuickCamera, veuillez vérifier que vous avez suivi les instructions ci-dessus.
+Si vous observez des problèmes avec les actions de ce mod Quick Camera, veuillez vérifier que vous avez suivi les instructions ci-dessus.
 
 ]]></fr>
   </description>
