@@ -6,8 +6,7 @@
 -- @date    2022-01-xx
 --
 
-function func1(self, actionName, inputValue, callbackState, isAnalog)
---print("OneButtonDirectionChangeAndFlipCamera - func1")
+function QuickCamOneButtonChangeDirectionAndFlipCamera(self, actionName, inputValue, callbackState, isAnalog)
     local spec = self.spec_motorized
     spec.modQC_FlipCameraToDirection = true
     Motorized.actionEventDirectionChange(self, InputAction.DIRECTION_CHANGE, inputValue, callbackState, isAnalog)
@@ -17,7 +16,7 @@ Motorized.onRegisterActionEvents = Utils.appendedFunction(Motorized.onRegisterAc
 	if self.isClient and isActiveForInputIgnoreSelection then
 		local spec = self.spec_motorized
         if self:getDirectionChangeMode() == VehicleMotor.DIRECTION_CHANGE_MODE_MANUAL then
-            local _, actionEventId = self:addActionEvent(spec.actionEvents, InputAction.QuickCamDirectionChangeFlipCamera, self, func1, false, true, false, true, nil, nil, true)
+            local _, actionEventId = self:addActionEvent(spec.actionEvents, InputAction.QuickCamDirectionChangeFlipCamera, self, QuickCamOneButtonChangeDirectionAndFlipCamera, false, true, false, true, nil, nil, true)
             g_inputBinding:setActionEventTextVisibility(actionEventId, false)
         end
     end
@@ -25,13 +24,12 @@ end)
 
 Motorized.onGearDirectionChanged = Utils.appendedFunction(Motorized.onGearDirectionChanged, function(self, direction)
     if self.isClient then
---print("OneButtonDirectionChangeAndFlipCamera - onGearDirectionChanged: " .. tostring(direction))
         local spec = self.spec_motorized
         if spec.modQC_FlipCameraToDirection then
             local reverserDirection = 1
 
             local activeCamera = self:getActiveCamera()
-            if activeCamera and activeCamera.isInside then
+            if nil ~= activeCamera and activeCamera.isInside then
                 if nil ~= self.getReverserDirection then
                     reverserDirection = self:getReverserDirection()
                 end

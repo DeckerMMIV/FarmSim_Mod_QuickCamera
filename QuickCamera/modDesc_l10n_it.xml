@@ -24,7 +24,7 @@
   <description>
 NOTA: RICORDARTI DI CONFIGURARE I TASTI ASSOCIATI.
 
-Con questa mod QuickCamera per FS22, puoi usare i tasti per controllare la telecamera del veicolo:
+Con questa mod Quick Camera per FS22, puoi usare i tasti per controllare la telecamera del veicolo:
 - Sbircia a sinistra/destra
 - Ruota di 180° per guardare rapidamente dietro/in avanti
 - Scatto 45°/90° sinistra/destra
@@ -37,14 +37,15 @@ Inoltre, quando il giocatore è "a piedi", è possibile:
 
 ISTRUZIONI IMPORTANTI:
 
-Per un miglior utilizzo della mod QuickCamera, devi eliminare, rimuovere o annullare l'associazione di eventuali tasti esistenti delle seguenti azioni di controllo del gioco base, per evitare che i tasti si sovrappongano per azioni simili:
+Per un miglior utilizzo della mod Quick Camera, devi eliminare, rimuovere o annullare l'associazione di eventuali tasti esistenti delle seguenti azioni di controllo del gioco base, per evitare che i tasti si sovrappongano per azioni simili:
 - Guarda a sinistra (giocatore e veicolo)
 - Guarda a destra (giocatore e veicolo)
 - Zoom della fotocamera in avanti
 - Zoom indietro della fotocamera
-Quindi ricollega anche i tasti di azione di controllo per QuickCamera, nel caso in cui sembrino sbagliati per il tuo stile di gioco.
+- (Change Direction)
+Quindi ricollega anche i tasti di azione di controllo per Quick Camera, nel caso in cui sembrino sbagliati per il tuo stile di gioco.
 
-Se riscontri problemi con le azioni della mod QuickCamera, verifica di aver seguito le istruzioni sopra.
+Se riscontri problemi con le azioni della mod Quick Camera, verifica di aver seguito le istruzioni sopra.
   </description>
 
   <texts>
@@ -62,6 +63,8 @@ Se riscontri problemi con le azioni della mod QuickCamera, verifica di aver segu
     <text name="input_QuickCamOnFootLeftRight_1" text="Guarda 45&#176; destra (a piedi)" />
     <text name="input_QuickCamOnFootLeftRight_2" text="Guarda 45&#176; sinistra (a piedi)" />
 
-    <text name="QUICKCAMERA_ONFOOT_SPEEDRUN"     text="Rotella del mouse per la velocità di corsa del giocatore (factor x%.1f)" />
+    <text name="QUICKCAM_ONFOOT_SPEEDRUN"        text="Rotella del mouse per la velocità di corsa del giocatore (factor x%.1f)" />
+
+    <text name="input_QuickCamDirectionChangeFlipCamera" text="Change direction &amp; Flip camera" />
   </texts>
 </l10n>

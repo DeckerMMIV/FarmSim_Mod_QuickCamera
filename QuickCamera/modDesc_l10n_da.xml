@@ -19,7 +19,7 @@
   <description>
 BEMÆRK: HUSK VENLIGST AT JUSTERE DINE AKTIONS TASTER.
 
-Med denne QuickCamera-mod til FS22 kan du bruge aktions taster til at få køretøjers kamera til at:
+Med denne Quick Camera-mod til FS22 kan du bruge aktions taster til at få køretøjers kamera til at:
 - Kigge hurtigt venstre/højre
 - Vende 180° for hurtigt at se bagud/fremad
 - Snap 45°/90° til venstre/højre
@@ -32,14 +32,15 @@ Ligeså når spilleren er 'til fods', er det muligt at:
 
 VIGTIGE INSTRUKTIONER:
 
-For at få den bedste brug af QuickCamera-mod, skal du slette, fjerne eller ophæve alle eksisterende taster til følgende af spillets standard aktions taster, for at undgå overlappende taster:
+For at få den bedste brug af Quick Camera-mod, skal du slette, fjerne eller ophæve alle eksisterende taster til følgende af spillets standard aktions taster, for at undgå overlappende taster:
 - Se til venstre (spiller og køretøj)
 - Se til højre (spiller og køretøj)
 - Kamera zoom ind
 - Kamera zoom ud
-Husk at også justere tasterne til QuickCamera, hvis de ikke passer til din spillestil.
+- Skift retning (dog kun hvis der bruges samme tast for Quick Cameras 'Skift retning &amp; Flip kamera')
+Husk at også justere tasterne til Quick Camera, hvis de ikke passer til din spillestil.
 
-Hvis du observerer problemer med denne QuickCamera-mod, skal du kontrollere at du har fulgt instruktionerne ovenfor.
+Hvis du observerer problemer med denne Quick Camera-mod, skal du kontrollere at du har fulgt instruktionerne ovenfor.
   </description>
 
   <texts>
@@ -57,6 +58,8 @@ Hvis du observerer problemer med denne QuickCamera-mod, skal du kontrollere at d
     <text name="input_QuickCamOnFootLeftRight_1" text="Snap 45&#176; højre (til fods)" />
     <text name="input_QuickCamOnFootLeftRight_2" text="Snap 45&#176; venstre (til fods)" />
 
-    <text name="QUICKCAMERA_ONFOOT_SPEEDRUN"     text="Musehjulet for spiller løbehastighed (faktor x%.1f)" />
+    <text name="QUICKCAM_ONFOOT_SPEEDRUN"        text="Musehjulet for spiller løbehastighed (faktor x%.1f)" />
+
+    <text name="input_QuickCamDirectionChangeFlipCamera" text="Skift retning &amp; Flip kamera" />
   </texts>
 </l10n>

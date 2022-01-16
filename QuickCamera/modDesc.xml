@@ -9,7 +9,7 @@
 -->
   <contributors>
     (FS22)
-      xno
+      xno, Gonimy_Vetrom
     (FS19)
       Gonimy_Vetrom, Ziuta, Anonymous
     (FS17)
@@ -20,9 +20,13 @@
     <en>Quick Camera</en>
   </title>
 
-  <version>1.0.3.0</version>
+  <version>1.0.4.0</version>
 <!--
 ChangeLog
+
+1.0.4.0
+- Russian translation updated, by Gonimy_Vetrom.
+- New input-binding 'QuickCamDirectionChangeFlipCamera', added translation (only EN, DA).
 
 1.0.3.0
 - (BETA-2) 'Change Direction & Flip Camera', fix for reverse-drive vehicles.
@@ -35,8 +39,8 @@ ChangeLog
 
 1.0.0.0
 - Updated to FS22
-- Italian language updated, by Xno
-- German language updated, by GIANTS Software ModHub team
+- Italian translation updated, by Xno
+- German translation updated, by GIANTS Software ModHub team
 -->  
 
   <description>
@@ -60,7 +64,7 @@ For best usage of this Quick Camera mod, you must delete, remove or unbind any e
 - Look right (player and vehicle)
 - Camera zoom in
 - Camera zoom out
-- Change Direction (only if using 'Change Direction &amp; Flip Camera')
+- Change Direction (only if using same key for Quick Camera's "Change direction &amp; Flip camera")
 Then also rebind the control action keys for Quick Camera, in case they seem wrong for your style of play.
 
 If you observe problems with this Quick Camera mod's actions, then please verify that you have followed the instruction above.

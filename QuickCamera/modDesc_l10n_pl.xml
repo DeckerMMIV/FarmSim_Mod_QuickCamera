@@ -24,7 +24,7 @@
   <description>
 UWAGA: PAMIĘTAJ, ABY DOSTOSOWAĆ SWOJE KLAWISZE WEJŚCIOWE.
 
-Dzięki temu modemowi QuickCamera dla FS22 możesz użyć klawiszy, aby kamera pojazdu:
+Dzięki temu modemowi Quick Camera dla FS22 możesz użyć klawiszy, aby kamera pojazdu:
 - Zerknij w lewo/w prawo
 - Obróć o 180°, aby szybko spojrzeć do tyłu/do przodu
 - Zatrzask 45°/90° w lewo / w prawo
@@ -37,14 +37,15 @@ Również gdy gracz jest „pieszo”, możliwe jest:
 
 WAŻNE INSTRUKCJE:
 
-Aby jak najlepiej wykorzystać ten mod QuickCamera, musisz usunąć, usunąć lub rozłączyć wszystkie istniejące klawisze następujących akcji kontrolnych gry podstawowej, aby uniknąć nakładania się klawiszy dla podobnych akcji:
+Aby jak najlepiej wykorzystać ten mod Quick Camera, musisz usunąć, usunąć lub rozłączyć wszystkie istniejące klawisze następujących akcji kontrolnych gry podstawowej, aby uniknąć nakładania się klawiszy dla podobnych akcji:
 - Spójrz w lewo (gracz i pojazd)
 - Spójrz w prawo (gracz i pojazd)
 - Powiększenie aparatu
 - Pomniejszanie kamery
-Następnie ponownie przypisz klawisze funkcyjne do obsługi funkcji QuickCamera, na wypadek, gdyby wydawały się niewłaściwe dla Twojego stylu gry.
+- (Change Direction)
+Następnie ponownie przypisz klawisze funkcyjne do obsługi funkcji Quick Camera, na wypadek, gdyby wydawały się niewłaściwe dla Twojego stylu gry.
 
-Jeśli zauważysz problemy z działaniem tego modemu QuickCamera, sprawdź, czy postępowałeś zgodnie z powyższą instrukcją.
+Jeśli zauważysz problemy z działaniem tego modemu Quick Camera, sprawdź, czy postępowałeś zgodnie z powyższą instrukcją.
   </description>
 
   <texts>
@@ -62,6 +63,8 @@ Jeśli zauważysz problemy z działaniem tego modemu QuickCamera, sprawdź, czy 
     <text name="input_QuickCamOnFootLeftRight_1" text="Spójrz 45&#176; w prawo (on foot)" />
     <text name="input_QuickCamOnFootLeftRight_2" text="Spójrz 45&#176; w lewo (on foot)" />
 
-    <text name="QUICKCAMERA_ONFOOT_SPEEDRUN"     text="Kółko myszy do szybkości działania gracza (factor x%.1f)" />
+    <text name="QUICKCAM_ONFOOT_SPEEDRUN"        text="Kółko myszy do szybkości działania gracza (factor x%.1f)" />
+
+    <text name="input_QuickCamDirectionChangeFlipCamera" text="Change direction &amp; Flip camera" />
   </texts>
 </l10n>

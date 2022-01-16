@@ -85,7 +85,7 @@ Player.updatePlayerStates = Utils.appendedFunction(Player.updatePlayerStates, fu
   end
 end)
 
-local infoText_SpeedRun = g_i18n:getText("QUICKCAMERA_ONFOOT_SPEEDRUN")
+local infoText_SpeedRun = g_i18n:getText("QUICKCAM_ONFOOT_SPEEDRUN")
 
 Player.update = Utils.appendedFunction(Player.update, function(self, dt)
   if self.isClient and self.isControlled then

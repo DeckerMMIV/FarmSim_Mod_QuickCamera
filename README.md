@@ -9,6 +9,13 @@ To read more about this mod, find it on;
 
 ## FS22 - Change-log
 
+1.0.4.0
+- Russian translation updated, by Gonimy_Vetrom.
+- (#34) New input-binding 'QuickCamDirectionChangeFlipCamera', added translation (only EN, DA).
+
+1.0.3.0
+- (#34, BETA-2) 'Change Direction & Flip Camera', fix for reverse-drive vehicles.
+
 1.0.2.0
 - (#37) Fix/Work-around for FS22_CabView completely overwriting the VehicleCamera.update() method, causing FS22_QuickCamera's prepended code to not be called.
 
@@ -17,8 +24,8 @@ To read more about this mod, find it on;
 
 1.0.0.0
 - Quick Camera for FS22 is now available on GIANTS Software's ModHub and via the in-game's 'downloadable content'.
-- Italian language updated, by Xno
-- German language updated, by GIANTS Software ModHub team
+- Italian translation updated, by Xno
+- German translation updated, by GIANTS Software ModHub team
 
 
 ## FS19 - Change-Log

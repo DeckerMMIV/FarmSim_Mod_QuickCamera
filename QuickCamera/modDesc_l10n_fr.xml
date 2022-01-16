@@ -25,7 +25,7 @@
   <description>
 REMARQUE: N'OUBLIEZ PAS D'AJUSTER VOS TOUCHES D'ENTRÉE.
 
-Avec ce mod QuickCamera pour FS22, vous pouvez utiliser des clés pour faire de la caméra du véhicule:
+Avec ce mod Quick Camera pour FS22, vous pouvez utiliser des clés pour faire de la caméra du véhicule:
 - Coup d'œil gauche/droite
 - Retournez à 180° pour regarder rapidement en arrière/en avant
 - Snap 45°/90° gauche/droite
@@ -38,14 +38,15 @@ De plus, lorsque le joueur est « à pied », il est possible de:
 
 INSTRUCTIONS IMPORTANTES:
 
-Pour une utilisation optimale de ce mod QuickCamera, vous devez supprimer, supprimer ou dissocier toutes les clés existantes des actions de contrôle du jeu de base suivant, afin d'éviter le chevauchement des clés pour des actions similaires:
+Pour une utilisation optimale de ce mod Quick Camera, vous devez supprimer, supprimer ou dissocier toutes les clés existantes des actions de contrôle du jeu de base suivant, afin d'éviter le chevauchement des clés pour des actions similaires:
 - Regardez à gauche (joueur et véhicule)
 - Regardez à droite (joueur et véhicule)
 - Zoom de la caméra
 - Zoom arrière de la caméra
-Ensuite, relisez également les touches d'action de contrôle pour QuickCamera, au cas où elles sembleraient mal adaptées à votre style de jeu.
+- (Change Direction)
+Ensuite, relisez également les touches d'action de contrôle pour Quick Camera, au cas où elles sembleraient mal adaptées à votre style de jeu.
 
-Si vous observez des problèmes avec les actions de ce mod QuickCamera, veuillez vérifier que vous avez suivi les instructions ci-dessus.
+Si vous observez des problèmes avec les actions de ce mod Quick Camera, veuillez vérifier que vous avez suivi les instructions ci-dessus.
   </description>
 
   <texts>
@@ -63,6 +64,8 @@ Si vous observez des problèmes avec les actions de ce mod QuickCamera, veuillez
     <text name="input_QuickCamOnFootLeftRight_1" text="Regarder 45&#176; à droite (on foot)" />
     <text name="input_QuickCamOnFootLeftRight_2" text="Regarder 45&#176; à gauche (on foot)" />
 
-    <text name="QUICKCAMERA_ONFOOT_SPEEDRUN"     text="Molette de la souris pour la vitesse de course du joueur (factor x%.1f)" />
+    <text name="QUICKCAM_ONFOOT_SPEEDRUN"        text="Molette de la souris pour la vitesse de course du joueur (factor x%.1f)" />
+
+    <text name="input_QuickCamDirectionChangeFlipCamera" text="Change direction &amp; Flip camera" />
   </texts>
 </l10n>
