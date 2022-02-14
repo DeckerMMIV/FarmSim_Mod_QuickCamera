@@ -34,7 +34,9 @@ end
 
 ----
 
-local math_pi_double  = math.pi*2
+local math_pi_half    = math.pi * 0.5
+local math_pi_double  = math.pi * 2
+
 local function normalizeRotation(rot)
   while (rot < 0)              do rot = rot + math_pi_double; end
   while (rot > math_pi_double) do rot = rot - math_pi_double; end
@@ -55,22 +57,39 @@ Enterable.QC_onInputLookForeBack = function(self, inputActionName, inputValue, c
         end
         spec.modQc = nil
       end
+
       if nil ~= callbackState then
         local destRotY = normalizeRotation(actCam.origRotY)
         local rotY     = normalizeRotation(actCam.rotY)
+
         -- If currently looking 'forward', then wanted target is 'backwards'
-        -- or being forced to 'look back'
-        if (0 == callbackState and (destRotY - math.pi/2) < rotY and rotY < (destRotY + math.pi/2))
-        or (-1 == callbackState)
-        then
-          destRotY = destRotY - math.pi
+        if (0 == callbackState and (destRotY - math_pi_half) < rotY and rotY < (destRotY + math_pi_half)) then
+          callbackState = -1
         end
+
+        -- Forced to 'look back'
+        if -1 == callbackState then
+          if actCam.isInside then
+            -- For the in-cabin camera, try to make it act like "turning your head", so when it is instructed to look forward again,
+            -- the rotation would occur in opposite direction.
+            local notQuitePi = math.pi - math.pi/500
+            if rotY <= destRotY then
+              destRotY = destRotY - notQuitePi
+            else
+              destRotY = destRotY + notQuitePi
+            end
+          else
+            -- For outside cameras, just rotate the same direction continuously
+            destRotY = destRotY - math.pi
+          end
+        end
+
         actCam.modQc = {
           camTime = 250,
           camSource = { actCam.rotX, rotY },
           camTarget = { actCam.rotX, MathUtil.normalizeRotationForShortestPath(destRotY, rotY) },
         }
-    end
+      end
     elseif nil == spec.modQc or STATE_FOREBACK ~= spec.modQc.State then
       spec.modQc = {
         State = STATE_FOREBACK,

@@ -20,9 +20,12 @@
     <en>Quick Camera</en>
   </title>
 
-  <version>1.0.4.0</version>
+  <version>1.0.5.0</version>
 <!--
 ChangeLog
+
+1.0.5.0
+- Made in-cabin look-back/forward act as "turning your head", so return rotation is reversed
 
 1.0.4.0
 - Russian translation updated, by Gonimy_Vetrom.
@@ -48,7 +51,7 @@ ChangeLog
 
 With this Quick Camera mod for FS22, you can use keys to make the vehicle camera:
 - Peek left/right
-- Flip 180° to quickly look behind/forward
+- Flip 180° to quickly look behind/forward (incl. separate option to use with 'Change Direction')
 - Snap 45°/90° left/right
 - Zoom in/out quickly
 
@@ -74,7 +77,7 @@ If you observe problems with this Quick Camera mod's actions, then please verify
 
 Mit diesem Quick Camera-Mod für FS22 kannst Du die Fahrzeugkamera mit der Tastatur steuern:
 - Blick nach links/rechts
-- Um 180° drehen - um schnell nach hinten/vorne zu schauen
+- Um 180° drehen - um schnell nach hinten/vorne zu schauen (inkl. separater Option zur Verwendung mit 'Richtung ändern')
 - 45°/90° links/rechts einrasten
 - Schnell vergrößern/verkleinern
 
@@ -90,7 +93,7 @@ Um die Quick Camera-Mod optimal nutzen zu können, musst du alle vorhandenen Tas
 - Nach rechts schauen (Spieler und Fahrzeug)
 - Kamera zoomen
 - Kamera verkleinern
-- (Change Direction)
+- Richtung ändern (nur bei Verwendung derselben Taste für „Richtung ändern &amp; Kamera drehen“ von Quick Camera) 
 Stell dann auch die Aktionstasten für Quick Camera neu ein, falls sie Dir für deinen Spielstil falsch erscheinen.
 
 Wenn Du Probleme mit den Aktionen dieses Quick Camera-Mods bemerken solltest, überprüfe ob du die obigen Anweisungen befolgt hast.
@@ -100,7 +103,7 @@ Wenn Du Probleme mit den Aktionen dieses Quick Camera-Mods bemerken solltest, ü
 
 Avec ce mod Quick Camera pour FS22, vous pouvez utiliser des clés pour faire de la caméra du véhicule:
 - Coup d'œil gauche/droite
-- Retournez à 180° pour regarder rapidement en arrière/en avant
+- Retournez à 180° pour regarder rapidement en arrière/en avant (y compris l'option séparée à utiliser avec 'Changer de direction') 
 - Snap 45°/90° gauche/droite
 - Zoom avant/arrière rapidement
 
@@ -116,7 +119,7 @@ Pour une utilisation optimale de ce mod Quick Camera, vous devez supprimer, supp
 - Regardez à droite (joueur et véhicule)
 - Zoom de la caméra
 - Zoom arrière de la caméra
-- (Change Direction)
+- Changer de direction (uniquement si vous utilisez la même touche pour "Changer de direction et retourner la caméra" de Quick Camera) 
 Ensuite, relisez également les touches d'action de contrôle pour Quick Camera, au cas où elles sembleraient mal adaptées à votre style de jeu.
 
 Si vous observez des problèmes avec les actions de ce mod Quick Camera, veuillez vérifier que vous avez suivi les instructions ci-dessus.
@@ -142,6 +145,9 @@ Si vous observez des problèmes avec les actions de ce mod Quick Camera, veuille
     <actionBinding action="QuickCamVehicleForeBack">
       <binding device="KB_MOUSE_DEFAULT" input="KEY_end" index="1" />
     </actionBinding>
+    <actionBinding action="QuickCamDirectionChangeFlipCamera">
+      <binding device="KB_MOUSE_DEFAULT" input="" index="1" />
+    </actionBinding>
     <actionBinding action="QuickCamVehicleSnapLR">
       <binding device="KB_MOUSE_DEFAULT" input="KEY_left"  axisComponent="-" neutralInput="0" index="1" />
       <binding device="KB_MOUSE_DEFAULT" input="KEY_right" axisComponent="+" neutralInput="0" index="1" />
@@ -164,15 +170,12 @@ Si vous observez des problèmes avec les actions de ce mod Quick Camera, veuille
       <binding device="KB_MOUSE_DEFAULT" input="KEY_left"  axisComponent="-" neutralInput="0" index="1" />
       <binding device="KB_MOUSE_DEFAULT" input="KEY_right" axisComponent="+" neutralInput="0" index="1" />
     </actionBinding>
-
-    <actionBinding action="QuickCamDirectionChangeFlipCamera">
-      <binding device="KB_MOUSE_DEFAULT" input="" index="1" />
-    </actionBinding>
   </inputBinding>
 
   <actions>
     <action name="QuickCamVehiclePeekLR"   category="VEHICLE" axisType="FULL" />
     <action name="QuickCamVehicleForeBack" category="VEHICLE" />
+    <action name="QuickCamDirectionChangeFlipCamera"  category="VEHICLE" />
     <action name="QuickCamVehicleSnapLR"   category="VEHICLE" axisType="FULL" />
     <action name="QuickCamVehicleSnap2LR"  category="VEHICLE" axisType="FULL" />
     <action name="QuickCamVehicleZoomIn"   category="VEHICLE" />
@@ -180,8 +183,6 @@ Si vous observez des problèmes avec les actions de ce mod Quick Camera, veuille
 
     <action name="QuickCamOnFootForeBack"  category="ONFOOT" />
     <action name="QuickCamOnFootLeftRight" category="ONFOOT"  axisType="FULL" />
-
-    <action name="QuickCamDirectionChangeFlipCamera"  category="VEHICLE" />
-</actions>
+  </actions>
 
 </modDesc>

@@ -9,6 +9,9 @@ To read more about this mod, find it on;
 
 ## FS22 - Change-log
 
+1.0.5.0
+- Made in-cabin look-back/forward act as "turning your head", so return rotation is reversed.
+
 1.0.4.0
 - Russian translation updated, by Gonimy_Vetrom.
 - (#34) New input-binding 'QuickCamDirectionChangeFlipCamera', added translation (only EN, DA).
