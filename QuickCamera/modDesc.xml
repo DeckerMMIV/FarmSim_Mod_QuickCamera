@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="63">
+<modDesc descVersion="64">
   <author>Decker_MMIV</author>
   <authorContact>forum.farming-simulator.com</authorContact>
 
@@ -20,31 +20,7 @@
     <en>Quick Camera</en>
   </title>
 
-  <version>1.0.5.0</version>
-<!--
-ChangeLog
-
-1.0.5.0
-- Made in-cabin look-back/forward act as "turning your head", so return rotation is reversed
-
-1.0.4.0
-- Russian translation updated, by Gonimy_Vetrom.
-- New input-binding 'QuickCamDirectionChangeFlipCamera', added translation (only EN, DA).
-
-1.0.3.0
-- (BETA-2) 'Change Direction & Flip Camera', fix for reverse-drive vehicles.
-
-1.0.2.0
-- Fix/Work-around for FS22_CabView completely overwriting the VehicleCamera.update() method, causing FS22_QuickCamera's prepended code to not be called.
-
-1.0.1.0
-- (BETA) Added functionality for a one-button 'Change Direction' & 'Flip Camera'.
-
-1.0.0.0
-- Updated to FS22
-- Italian translation updated, by Xno
-- German translation updated, by GIANTS Software ModHub team
--->  
+  <version>1.1.0.0</version>
 
   <description>
     <en><![CDATA[NOTE: PLEASE REMEMBER TO ADJUST YOUR INPUT KEYS.
@@ -72,6 +48,13 @@ Then also rebind the control action keys for Quick Camera, in case they seem wro
 
 If you observe problems with this Quick Camera mod's actions, then please verify that you have followed the instruction above.
 
+
+Changelog 1.1.0.0:
+- Fixed mod-conflict with 'Realistic Cab View'
+- Added control action for doing both Change Direction and Flip Camera
+- Modified back/forth rotation of inside/in-cabin camera to work more like head-turning
+- Some translations updated
+
 ]]></en>
     <de><![CDATA[HINWEIS: BITTE DENKEN SIE DARAN, IHRE EINGABETASTEN ANZUPASSEN.
 
@@ -97,6 +80,13 @@ Um die Quick Camera-Mod optimal nutzen zu können, musst du alle vorhandenen Tas
 Stell dann auch die Aktionstasten für Quick Camera neu ein, falls sie Dir für deinen Spielstil falsch erscheinen.
 
 Wenn Du Probleme mit den Aktionen dieses Quick Camera-Mods bemerken solltest, überprüfe ob du die obigen Anweisungen befolgt hast.
+
+
+Changelog 1.1.0.0:
+- Fixed mod-conflict with 'Realistic Cab View'
+- Added control action for doing both Change Direction and Flip Camera
+- Modified back/forth rotation of inside/in-cabin camera to work more like head-turning
+- Some translations updated
 
 ]]></de>
     <fr><![CDATA[REMARQUE: N'OUBLIEZ PAS D'AJUSTER VOS TOUCHES D'ENTRÉE.
@@ -124,10 +114,17 @@ Ensuite, relisez également les touches d'action de contrôle pour Quick Camera,
 
 Si vous observez des problèmes avec les actions de ce mod Quick Camera, veuillez vérifier que vous avez suivi les instructions ci-dessus.
 
+
+Changelog 1.1.0.0:
+- Fixed mod-conflict with 'Realistic Cab View'
+- Added control action for doing both Change Direction and Flip Camera
+- Modified back/forth rotation of inside/in-cabin camera to work more like head-turning
+- Some translations updated
+
 ]]></fr>
   </description>
 
-  <iconFilename>icon_QuickCamera.dds</iconFilename>
+  <iconFilename>modIcon.dds</iconFilename>
   <multiplayer supported="true"/>
 
   <extraSourceFiles>
@@ -135,7 +132,7 @@ Si vous observez des problèmes avec les actions de ce mod Quick Camera, veuille
     <sourceFile filename="src/OneButtonDirectionChangeAndFlipCamera.lua" />
   </extraSourceFiles>
 
-  <l10n filenamePrefix="modDesc_l10n" /> <!-- Load the corresponding modDesc_l10n_<language>.XML file, or revert to 'en'/'de'. -->
+  <l10n filenamePrefix="translations/modDesc_l10n" /> <!-- Load the corresponding modDesc_l10n_<language>.XML file, or revert to 'en'/'de'. -->
 
   <inputBinding>
     <actionBinding action="QuickCamVehiclePeekLR">
