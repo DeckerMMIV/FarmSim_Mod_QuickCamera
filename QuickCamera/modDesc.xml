@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="64">
+<modDesc descVersion="74">
   <author>Decker_MMIV</author>
   <authorContact>forum.farming-simulator.com</authorContact>
 
@@ -20,7 +20,7 @@
     <en>Quick Camera</en>
   </title>
 
-  <version>1.1.0.0</version>
+  <version>1.3.0.0</version>
 
   <description>
     <en><![CDATA[NOTE: PLEASE REMEMBER TO ADJUST YOUR INPUT KEYS.
@@ -34,7 +34,7 @@ With this Quick Camera mod for FS22, you can use keys to make the vehicle camera
 Also when player is 'on foot', it is possible to:
 - Flip 180° (almost like having eyes in the back)
 - Snap 45° left/right
-- Run even faster (player speed) using mouse-wheel up/down when in run-mode. In multiplayer this is only available for players with the 'Farm Manager' role.
+- Run even faster (player speed) using mouse-wheel up/down when in run-mode
 
 IMPORTANT INSTRUCTIONS:
 
@@ -55,6 +55,10 @@ Changelog 1.1.0.0:
 - Modified back/forth rotation of inside/in-cabin camera to work more like head-turning
 - Some translations updated
 
+Changelog 1.3.0.0:
+- Made 'Quick Feet' available to all players in multiplayer
+- 'Quick Feet' work-around due to LumberJack mod also modifying player's running speed
+
 ]]></en>
     <de><![CDATA[HINWEIS: BITTE DENKEN SIE DARAN, IHRE EINGABETASTEN ANZUPASSEN.
 
@@ -67,7 +71,7 @@ Mit diesem Quick Camera-Mod für FS22 kannst Du die Fahrzeugkamera mit der Tasta
 Auch wenn der Spieler „zu Fuß“ unterwegs ist, ist es möglich:
 - 180° umdrehen (fast wie mit Augen im Rücken)
 - 45° links/rechts einrasten
-- Noch schneller laufen (Spielergeschwindigkeit) mit dem Mausrad nach oben/unten im Laufmodus. Im Multiplayermodus ist dies nur für Spieler mit der Rolle „Farmmanager“ verfügbar.
+- Noch schneller laufen (Spielergeschwindigkeit) mit dem Mausrad nach oben/unten im Laufmodus
 
 WICHTIGE HINWEISE:
 
@@ -88,6 +92,10 @@ Changelog 1.1.0.0:
 - Modified back/forth rotation of inside/in-cabin camera to work more like head-turning
 - Some translations updated
 
+Changelog 1.3.0.0:
+- Made 'Quick Feet' available to all players in multiplayer
+- 'Quick Feet' work-around due to LumberJack mod also modifying player's running speed
+
 ]]></de>
     <fr><![CDATA[REMARQUE: N'OUBLIEZ PAS D'AJUSTER VOS TOUCHES D'ENTRÉE.
 
@@ -100,7 +108,7 @@ Avec ce mod Quick Camera pour FS22, vous pouvez utiliser des clés pour faire de
 De plus, lorsque le joueur est « à pied », il est possible de:
 - Flip 180° (presque comme avoir les yeux dans le dos)
 - Snap 45° gauche/droite
-- Courez encore plus vite (vitesse du joueur) en utilisant la molette de la souris vers le haut/bas en mode exécution. En multijoueur, cela n'est disponible que pour les joueurs avec le rôle « Gestionnaire de ferme ».
+- Courez encore plus vite (vitesse du joueur) en utilisant la molette de la souris vers le haut/bas en mode exécution
 
 INSTRUCTIONS IMPORTANTES:
 
@@ -121,10 +129,14 @@ Changelog 1.1.0.0:
 - Modified back/forth rotation of inside/in-cabin camera to work more like head-turning
 - Some translations updated
 
+Changelog 1.3.0.0:
+- Made 'Quick Feet' available to all players in multiplayer
+- 'Quick Feet' work-around due to LumberJack mod also modifying player's running speed
+
 ]]></fr>
   </description>
 
-  <iconFilename>modIcon.dds</iconFilename>
+  <iconFilename>icon_QuickCamera.dds</iconFilename>
   <multiplayer supported="true"/>
 
   <extraSourceFiles>
