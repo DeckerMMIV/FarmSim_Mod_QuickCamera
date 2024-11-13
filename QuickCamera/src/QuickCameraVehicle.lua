@@ -118,9 +118,9 @@ Enterable.QC_onInputSnapLeftRight = function(self, inputActionName, inputValue, 
       if nil ~= spec.modQc and STATE_LEFTRIGHT == spec.modQc.State then
         if (not spec.modQc.Continue) and g_time <= spec.modQc.PressedTime + QuickCamera.quickTapThresholdMS then
           local angleDegSnap = spec.modQc.AngleDegSnap
-          local dirY = MathUtil.sign(spec.modQc.InputValue) * MathUtil.degToRad(angleDegSnap)
+          local dirY = math.sign(spec.modQc.InputValue) * math.rad(angleDegSnap)
           local rotY = actCam.rotY - dirY
-          rotY = MathUtil.degToRad(angleDegSnap * math.floor((math.deg(rotY) + (angleDegSnap/2))/angleDegSnap)); -- snap
+          rotY = math.rad(angleDegSnap * math.floor((math.deg(rotY) + (angleDegSnap/2))/angleDegSnap)); -- snap
           actCam.modQc = {
             camTime = 100,
             camSource = { actCam.rotX, actCam.rotY },
@@ -150,7 +150,7 @@ Enterable.QC_onInputPeekLeftRight = function(self, inputActionName, inputValue, 
   local actCam = (nil~=spec and spec.activeCamera) or nil
   if nil ~= actCam and true == actCam.isRotatable then
     if nil == actCam.modQc then
-      local dirY = MathUtil.sign(inputValue) * MathUtil.degToRad(callbackState)
+      local dirY = math.sign(inputValue) * math.rad(callbackState)
       local rotY = actCam.rotY - dirY
       actCam.modQc = {
         camTime = 100,
@@ -169,7 +169,7 @@ Enterable.QC_onInputPeekLeftRight = function(self, inputActionName, inputValue, 
         }
       elseif actCam.modQc.peekValue ~= inputValue then
         local origPeekFrom = actCam.modQc.peekFrom
-        local dirY = MathUtil.sign(inputValue) * MathUtil.degToRad(callbackState)
+        local dirY = math.sign(inputValue) * math.rad(callbackState)
         local rotY = origPeekFrom[2] - dirY
         actCam.modQc = {
           camTime = 100,

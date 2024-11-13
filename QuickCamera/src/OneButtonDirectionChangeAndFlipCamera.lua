@@ -13,8 +13,8 @@ function QuickCamOneButtonChangeDirectionAndFlipCamera(self, actionName, inputVa
 end
 
 Motorized.onRegisterActionEvents = Utils.appendedFunction(Motorized.onRegisterActionEvents, function(self, isActiveForInput, isActiveForInputIgnoreSelection)
-	if self.isClient and isActiveForInputIgnoreSelection then
-		local spec = self.spec_motorized
+    if self.isClient and isActiveForInputIgnoreSelection then
+        local spec = self.spec_motorized
         if self:getDirectionChangeMode() == VehicleMotor.DIRECTION_CHANGE_MODE_MANUAL then
             local _, actionEventId = self:addActionEvent(spec.actionEvents, InputAction.QuickCamDirectionChangeFlipCamera, self, QuickCamOneButtonChangeDirectionAndFlipCamera, false, true, false, true, nil, nil, true)
             g_inputBinding:setActionEventTextVisibility(actionEventId, false)

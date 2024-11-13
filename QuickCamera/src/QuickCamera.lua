@@ -15,21 +15,21 @@ QuickCamera.quickZoomFactorUnit = 15
 QuickCamera.playerRunSpeedFactorMax = 15
 
 -- For debugging
---function log(...)
---[[
+function log(...)
+--[-[
   local txt = ""
   for idx = 1,select("#", ...) do
     txt = txt .. tostring(select(idx, ...))
   end
   print(string.format("[QuickCamera] %7ums ", g_time) .. txt)
 --]]
---end
-  
+end
+
 --
 local modDirectory = g_currentModDirectory
 
 source(modDirectory .. "src/QuickCameraVehicle.lua")
-source(modDirectory .. "src/QuickCameraPlayer.lua")
+--source(modDirectory .. "src/QuickCameraPlayer.lua")
 
 
 -- Fix/work-around for #37 - Delay the injection of VehicleCamera.update, so FS22_CabView can "get there first", and then afterwards QuickCamera can prepend its code to VehicleCamera.update.
@@ -48,7 +48,7 @@ addModEventListener(QuickCamera)
 function QuickCamera:consoleCommandKeyTapThresholdMS(newMilliseconds)
   newMilliseconds = tonumber(newMilliseconds)
   if nil ~= newMilliseconds then
-    QuickCamera.quickTapThresholdMS = MathUtil.clamp(newMilliseconds, 150, 499)
+    QuickCamera.quickTapThresholdMS = math.clamp(newMilliseconds, 150, 499)
   end
   print(("[QuickCamera] Key-tap threshold milliseconds (150..499): %.f"):format(QuickCamera.quickTapThresholdMS))
 end
