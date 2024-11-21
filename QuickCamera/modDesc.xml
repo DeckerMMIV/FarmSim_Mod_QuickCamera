@@ -5,7 +5,17 @@
 
 <!--
     NOTE: DO NOT/NEVER edit this ModDesc.XML!
-          For contributing translations, only modify the corresponding ModDesc_l10n_*.XML file.
+
+    Community translations and other languages for this mod, will not be included in future versions, due to the verification process for ModHub.
+
+    However there is still possibility to make your own local translation, by placing a l10n.xml (localization.xml) file in
+    the folder [..]/modSettings/FS25_QuickCamera/   (you need to create the folder 'FS25_QuickCamera', as it won't be created automatically)
+
+    Take a copy of this mod's l10n_en.xml file, and place into the folder [..]/modSettings/FS25_QuickCamera/
+
+    Rename the l10n_en.xml file, to use your choice of language code (de,fr,hu,ru,ch,...), or just use generic filename of  l10n.xml  (or localization.xml)
+
+    Now you can edit your own local copy for a localization file for this mod, and when it is error-free, it will be loaded by a script in this mod when a game-session is started.
 -->
   <contributors>
     (FS25)
@@ -22,7 +32,7 @@
     <en>Quick Camera</en>
   </title>
 
-  <version>1.0.0.0</version>
+  <version>0.24.11.19</version>
 
   <description>
     <en><![CDATA[NOTE: PLEASE REMEMBER TO ADJUST YOUR INPUT KEYS.
@@ -33,16 +43,11 @@ With this Quick Camera mod for FS25, you can use keys to make the vehicle camera
 - Snap 45°/90° left/right
 - Zoom in/out quickly
 
-Also when player is 'on foot', it is possible to:
-- Flip 180° (almost like having eyes in the back)
-- Snap 45° left/right
-- Run even faster (player speed) using mouse-wheel up/down when in run-mode
-
 IMPORTANT INSTRUCTIONS:
 
 For best usage of this Quick Camera mod, you must delete, remove or unbind any existing keys of the following basegame's control actions, to avoid overlapping keys for similar actions:
-- Look left (player and vehicle)
-- Look right (player and vehicle)
+- Look left
+- Look right
 - Camera zoom in
 - Camera zoom out
 - Change Direction (only if using same key for Quick Camera's "Change direction &amp; Flip camera")
@@ -50,90 +55,47 @@ Then also rebind the control action keys for Quick Camera, in case they seem wro
 
 If you observe problems with this Quick Camera mod's actions, then please verify that you have followed the instruction above.
 
-
-Changelog 1.1.0.0:
-- Fixed mod-conflict with 'Realistic Cab View'
-- Added control action for doing both Change Direction and Flip Camera
-- Modified back/forth rotation of inside/in-cabin camera to work more like head-turning
-- Some translations updated
-
-Changelog 1.3.0.0:
-- Made 'Quick Feet' available to all players in multiplayer
-- 'Quick Feet' work-around due to LumberJack mod also modifying player's running speed
-
 ]]></en>
-    <de><![CDATA[HINWEIS: BITTE DENKEN SIE DARAN, IHRE EINGABETASTEN ANZUPASSEN.
+    <de><![CDATA[HINWEIS: DENKEN SIE BITTE DARAN, IHRE EINGABETASTEN ANZUPASSEN.
 
-Mit diesem Quick Camera-Mod für FS25 kannst Du die Fahrzeugkamera mit der Tastatur steuern:
-- Blick nach links/rechts
-- Um 180° drehen - um schnell nach hinten/vorne zu schauen (inkl. separater Option zur Verwendung mit 'Richtung ändern')
-- 45°/90° links/rechts einrasten
-- Schnell vergrößern/verkleinern
+Mit diesem Quick Camera-Mod für FS25 können Sie Tasten verwenden, um die Fahrzeugkamera wie folgt zu steuern:
+- Nach links/rechts blicken
+- Um 180° drehen, um schnell nach hinten/vorne zu blicken (inkl. separater Option zur Verwendung mit 'Richtung ändern')
+- Um 45°/90° nach links/rechts drehen
+- Schnell hinein-/herauszoomen
 
-Auch wenn der Spieler „zu Fuß“ unterwegs ist, ist es möglich:
-- 180° umdrehen (fast wie mit Augen im Rücken)
-- 45° links/rechts einrasten
-- Noch schneller laufen (Spielergeschwindigkeit) mit dem Mausrad nach oben/unten im Laufmodus
+WICHTIGE ANWEISUNGEN:
 
-WICHTIGE HINWEISE:
+Um diesen Quick Camera-Mod optimal nutzen zu können, müssen Sie alle vorhandenen Tasten der folgenden Steuerungsaktionen des Basisspiels löschen, entfernen oder freigeben, um überlappende Tasten für ähnliche Aktionen zu vermeiden:
+- Nach links schauen
+- Nach rechts schauen
+- Kamera hineinzoomen
+- Kamera herauszoomen
+- Richtung ändern (nur wenn dieselbe Taste für 'Richtung ändern und Kamera drehen' von Quick Camera verwendet wird)
+Dann binden Sie auch die Steuerungsaktionstasten für Quick Camera neu, falls sie für Ihren Spielstil falsch erscheinen.
 
-Um die Quick Camera-Mod optimal nutzen zu können, musst du alle vorhandenen Tasten der folgenden Steuerungsaktionen des Basisspiels löschen, entfernen oder ihre Bindung aufheben, um Überschneidungen von Tasten für ähnliche Aktionen zu vermeiden:
-- Nach links schauen (Spieler und Fahrzeug)
-- Nach rechts schauen (Spieler und Fahrzeug)
-- Kamera zoomen
-- Kamera verkleinern
-- Richtung ändern (nur bei Verwendung derselben Taste für „Richtung ändern &amp; Kamera drehen“ von Quick Camera) 
-Stell dann auch die Aktionstasten für Quick Camera neu ein, falls sie Dir für deinen Spielstil falsch erscheinen.
-
-Wenn Du Probleme mit den Aktionen dieses Quick Camera-Mods bemerken solltest, überprüfe ob du die obigen Anweisungen befolgt hast.
-
-
-Changelog 1.1.0.0:
-- Fixed mod-conflict with 'Realistic Cab View'
-- Added control action for doing both Change Direction and Flip Camera
-- Modified back/forth rotation of inside/in-cabin camera to work more like head-turning
-- Some translations updated
-
-Changelog 1.3.0.0:
-- Made 'Quick Feet' available to all players in multiplayer
-- 'Quick Feet' work-around due to LumberJack mod also modifying player's running speed
+Wenn Sie Probleme mit den Aktionen dieses Quick Camera-Mods feststellen, überprüfen Sie bitte, ob Sie die obigen Anweisungen befolgt haben.
 
 ]]></de>
-    <fr><![CDATA[REMARQUE: N'OUBLIEZ PAS D'AJUSTER VOS TOUCHES D'ENTRÉE.
+    <fr><![CDATA[REMARQUE: N'OUBLIEZ PAS DE RÉGLER VOS TOUCHES D'ENTRÉE.
 
-Avec ce mod Quick Camera pour FS25, vous pouvez utiliser des clés pour faire de la caméra du véhicule:
-- Coup d'œil gauche/droite
-- Retournez à 180° pour regarder rapidement en arrière/en avant (y compris l'option séparée à utiliser avec 'Changer de direction') 
-- Snap 45°/90° gauche/droite
-- Zoom avant/arrière rapidement
-
-De plus, lorsque le joueur est « à pied », il est possible de:
-- Flip 180° (presque comme avoir les yeux dans le dos)
-- Snap 45° gauche/droite
-- Courez encore plus vite (vitesse du joueur) en utilisant la molette de la souris vers le haut/bas en mode exécution
+Avec ce mod Quick Camera pour FS25, vous pouvez utiliser des touches pour configurer la caméra du véhicule:
+- Regarder à gauche/droite
+- Faire pivoter de 180° pour regarder rapidement derrière/devant (avec option séparée à utiliser avec 'Changer de direction')
+- Faire un clic à 45°/90° à gauche/droite
+- Effectuer un zoom avant/arrière rapidement
 
 INSTRUCTIONS IMPORTANTES:
 
-Pour une utilisation optimale de ce mod Quick Camera, vous devez supprimer, supprimer ou dissocier toutes les clés existantes des actions de contrôle du jeu de base suivant, afin d'éviter le chevauchement des clés pour des actions similaires:
-- Regardez à gauche (joueur et véhicule)
-- Regardez à droite (joueur et véhicule)
-- Zoom de la caméra
+Pour une utilisation optimale de ce mod Quick Camera, vous devez supprimer, retirer ou dissocier toutes les touches existantes des actions de contrôle du jeu de base suivant, afin d'éviter le chevauchement des touches pour des actions similaires:
+- Regarder à gauche
+- Regarder à droite
+- Zoom avant de la caméra
 - Zoom arrière de la caméra
-- Changer de direction (uniquement si vous utilisez la même touche pour "Changer de direction et retourner la caméra" de Quick Camera) 
-Ensuite, relisez également les touches d'action de contrôle pour Quick Camera, au cas où elles sembleraient mal adaptées à votre style de jeu.
+- Changer de direction (uniquement si vous utilisez la même touche pour 'Changer de direction et retourner la caméra' de Quick Camera)
+Ensuite, réassociez également les touches d'action de contrôle pour Quick Camera, au cas où elles ne conviendraient pas à votre style de jeu.
 
-Si vous observez des problèmes avec les actions de ce mod Quick Camera, veuillez vérifier que vous avez suivi les instructions ci-dessus.
-
-
-Changelog 1.1.0.0:
-- Fixed mod-conflict with 'Realistic Cab View'
-- Added control action for doing both Change Direction and Flip Camera
-- Modified back/forth rotation of inside/in-cabin camera to work more like head-turning
-- Some translations updated
-
-Changelog 1.3.0.0:
-- Made 'Quick Feet' available to all players in multiplayer
-- 'Quick Feet' work-around due to LumberJack mod also modifying player's running speed
+Si vous constatez des problèmes avec les actions de ce mod Quick Camera, veuillez vérifier que vous avez suivi les instructions ci-dessus.
 
 ]]></fr>
   </description>
@@ -142,6 +104,7 @@ Changelog 1.3.0.0:
   <multiplayer supported="true"/>
 
   <extraSourceFiles>
+    <sourceFile filename="src/loadCustomLocalizationClientside.lua" />
     <sourceFile filename="src/QuickCamera.lua" />
     <sourceFile filename="src/OneButtonDirectionChangeAndFlipCamera.lua" />
   </extraSourceFiles>
@@ -150,8 +113,8 @@ Changelog 1.3.0.0:
 
   <inputBinding>
     <actionBinding action="QuickCamVehiclePeekLR">
-      <binding device="KB_MOUSE_DEFAULT" input="KEY_left KEY_up"  axisComponent="-" neutralInput="0" index="1" />
       <binding device="KB_MOUSE_DEFAULT" input="KEY_right KEY_up" axisComponent="+" neutralInput="0" index="1" />
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_left KEY_up"  axisComponent="-" neutralInput="0" index="1" />
     </actionBinding>
     <actionBinding action="QuickCamVehicleForeBack">
       <binding device="KB_MOUSE_DEFAULT" input="KEY_end" index="1" />
@@ -160,12 +123,12 @@ Changelog 1.3.0.0:
       <binding device="KB_MOUSE_DEFAULT" input="" index="1" />
     </actionBinding>
     <actionBinding action="QuickCamVehicleSnapLR">
-      <binding device="KB_MOUSE_DEFAULT" input="KEY_left"  axisComponent="-" neutralInput="0" index="1" />
       <binding device="KB_MOUSE_DEFAULT" input="KEY_right" axisComponent="+" neutralInput="0" index="1" />
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_left"  axisComponent="-" neutralInput="0" index="1" />
     </actionBinding>
     <actionBinding action="QuickCamVehicleSnap2LR">
-      <binding device="KB_MOUSE_DEFAULT" input="KEY_lctrl KEY_left"  axisComponent="-" neutralInput="0" index="1" />
       <binding device="KB_MOUSE_DEFAULT" input="KEY_lctrl KEY_right" axisComponent="+" neutralInput="0" index="1" />
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_lctrl KEY_left"  axisComponent="-" neutralInput="0" index="1" />
     </actionBinding>
     <actionBinding action="QuickCamVehicleZoomIn">
       <binding device="KB_MOUSE_DEFAULT" input="KEY_pageup" index="1" />
@@ -173,14 +136,15 @@ Changelog 1.3.0.0:
     <actionBinding action="QuickCamVehicleZoomOut">
       <binding device="KB_MOUSE_DEFAULT" input="KEY_pagedown" index="1" />
     </actionBinding>
-
+<!--
     <actionBinding action="QuickCamOnFootForeBack">
       <binding device="KB_MOUSE_DEFAULT" input="KEY_end" index="1" />
     </actionBinding>
     <actionBinding action="QuickCamOnFootLeftRight">
-      <binding device="KB_MOUSE_DEFAULT" input="KEY_left"  axisComponent="-" neutralInput="0" index="1" />
       <binding device="KB_MOUSE_DEFAULT" input="KEY_right" axisComponent="+" neutralInput="0" index="1" />
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_left"  axisComponent="-" neutralInput="0" index="1" />
     </actionBinding>
+-->
   </inputBinding>
 
   <actions>
@@ -191,9 +155,10 @@ Changelog 1.3.0.0:
     <action name="QuickCamVehicleSnap2LR"  category="VEHICLE" axisType="FULL" />
     <action name="QuickCamVehicleZoomIn"   category="VEHICLE" />
     <action name="QuickCamVehicleZoomOut"  category="VEHICLE" />
-
+<!--
     <action name="QuickCamOnFootForeBack"  category="ONFOOT" />
     <action name="QuickCamOnFootLeftRight" category="ONFOOT"  axisType="FULL" />
+-->
   </actions>
 
 </modDesc>

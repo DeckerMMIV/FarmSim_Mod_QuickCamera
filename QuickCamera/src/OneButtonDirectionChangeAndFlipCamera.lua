@@ -1,9 +1,9 @@
 --
--- QuickCamera for FS22
+-- QuickCamera for FS25
 --
 -- @author  Decker_MMIV (DCK)
 -- @contact forum.farming-simulator.com
--- @date    2022-01-xx
+-- @date    2024-11-xx
 --
 
 function QuickCamOneButtonChangeDirectionAndFlipCamera(self, actionName, inputValue, callbackState, isAnalog)

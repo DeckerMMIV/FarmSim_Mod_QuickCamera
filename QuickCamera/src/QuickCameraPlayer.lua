@@ -1,13 +1,14 @@
 --
--- QuickFeet for FS22
+-- QuickFeet for FS25
 --
 -- @author  Decker_MMIV (DCK)
 -- @contact forum.farming-simulator.com
--- @date    2021-11-xx
+-- @date    2024-11-xx
 --
 
 ----
 
+--[[
 Player.QC_onInputLookForeBack = function(self, inputActionName, inputValue, callbackState, isAnalog, isMouse)
   --log("Player.QC_onInputLookForeBack: ",inputActionName," ",inputValue," ",callbackState," ",isAnalog," ",isMouse)
   self.inputInformation.yawCamera = (math.pi) / g_gameSettings:getValue(GameSettings.SETTING.CAMERA_SENSITIVITY)
@@ -33,16 +34,25 @@ Player.QC_onInputLookLeftRight = function(self, inputActionName, inputValue, cal
 end
 
 Player.load = Utils.appendedFunction(Player.load, function(self, xmlFilename, playerStyle, creatorConnection, isOwner)
+  --log("self: ",self)
+  --debugTable(self)
+  log("self.inputComponent: ",self.inputComponent)
+  debugTable(self.inputComponent)
+  --log("self.inputInformation: ",self.inputInformation)
+  --debugTable(self.inputInformation)
+  --log("self.inputInformation.registrationList: ",self.inputInformation.registrationList)
   if nil ~= InputAction.QuickCamOnFootForeBack then
-    self.inputInformation.registrationList[InputAction.QuickCamOnFootForeBack] = { eventId="", callback=self.QC_onInputLookForeBack, triggerUp=false, triggerDown=true, triggerAlways=false, activeType=Player.INPUT_ACTIVE_TYPE.IS_MOVEMENT, callbackState=nil, text="", textVisibility=false }
+    --self.inputInformation.registrationList[InputAction.QuickCamOnFootForeBack] = { eventId="", callback=self.QC_onInputLookForeBack, triggerUp=false, triggerDown=true, triggerAlways=false, activeType=Player.INPUT_ACTIVE_TYPE.IS_MOVEMENT, callbackState=nil, text="", textVisibility=false }
   end
   if nil ~= InputAction.QuickCamOnFootLeftRight then
-    self.inputInformation.registrationList[InputAction.QuickCamOnFootLeftRight] = { eventId="", callback=self.QC_onInputLookLeftRight, triggerUp=false, triggerDown=false, triggerAlways=true, activeType=Player.INPUT_ACTIVE_TYPE.IS_MOVEMENT, callbackState=nil, text="", textVisibility=false }
+    --self.inputInformation.registrationList[InputAction.QuickCamOnFootLeftRight] = { eventId="", callback=self.QC_onInputLookLeftRight, triggerUp=false, triggerDown=false, triggerAlways=true, activeType=Player.INPUT_ACTIVE_TYPE.IS_MOVEMENT, callbackState=nil, text="", textVisibility=false }
   end
 end)
+--]]
 
 ----
 
+--[[
 Player.load = Utils.appendedFunction(Player.load, function(self, xmlFilename, playerStyle, creatorConnection, isOwner)
   if  nil ~= self.playerStateMachine
   and nil ~= self.playerStateMachine.fsmTable
@@ -118,3 +128,4 @@ Player.update = Utils.appendedFunction(Player.update, function(self, dt)
     end
   end
 end)
+--]]

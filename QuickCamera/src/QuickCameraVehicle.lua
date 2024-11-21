@@ -1,9 +1,9 @@
 --
--- QuickCamera for FS22
+-- QuickCamera for FS25
 --
 -- @author  Decker_MMIV (DCK)
 -- @contact forum.farming-simulator.com
--- @date    2021-11-xx
+-- @date    2024-11-xx
 --
 
 ----
@@ -22,9 +22,9 @@ function delayedInjection_VehicleCamera_Update()
       else
         modQc.accTime = 0
       end
-      local newCamRot = Utils.getMovedLimitedValues(modQc.camSource, modQc.camSource, modQc.camTarget, 2, modQc.camTime, modQc.accTime, true);
-      self.rotX = newCamRot[1];
-      self.rotY = newCamRot[2];
+      local newCamRot = Utils.getMovedLimitedValues(modQc.camSource, modQc.camSource, modQc.camTarget, 2, modQc.camTime, modQc.accTime, true)
+      self.rotX = newCamRot[1]
+      self.rotY = newCamRot[2]
       if nil == modQc.peekFrom and modQc.accTime > modQc.camTime then
         self.modQc = nil
       end
@@ -38,8 +38,8 @@ local math_pi_half    = math.pi * 0.5
 local math_pi_double  = math.pi * 2
 
 local function normalizeRotation(rot)
-  while (rot < 0)              do rot = rot + math_pi_double; end
-  while (rot > math_pi_double) do rot = rot - math_pi_double; end
+  while (rot < 0)              do rot = rot + math_pi_double end
+  while (rot > math_pi_double) do rot = rot - math_pi_double end
   return rot
 end
 
@@ -120,7 +120,7 @@ Enterable.QC_onInputSnapLeftRight = function(self, inputActionName, inputValue, 
           local angleDegSnap = spec.modQc.AngleDegSnap
           local dirY = math.sign(spec.modQc.InputValue) * math.rad(angleDegSnap)
           local rotY = actCam.rotY - dirY
-          rotY = math.rad(angleDegSnap * math.floor((math.deg(rotY) + (angleDegSnap/2))/angleDegSnap)); -- snap
+          rotY = math.rad(angleDegSnap * math.floor((math.deg(rotY) + (angleDegSnap/2))/angleDegSnap)) -- snap
           actCam.modQc = {
             camTime = 100,
             camSource = { actCam.rotX, actCam.rotY },
