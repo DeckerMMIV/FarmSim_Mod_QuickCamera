@@ -14,26 +14,21 @@ QuickCamera.quickTapThresholdMS = 150 -- Milliseconds. Below = quick-tap. Above 
 QuickCamera.quickZoomFactorUnit = 15
 QuickCamera.playerRunSpeedFactorMax = 15
 
+--[[
 -- For debugging
 function log(...)
---[-[
   local txt = ""
   for idx = 1,select("#", ...) do
     txt = txt .. tostring(select(idx, ...))
   end
   print(string.format("[QuickCamera] %7ums ", g_time) .. txt)
+end
 --]]
-end
-
-function debugTable(table)
-  DebugUtil.printTableRecursively(table, "_", 0, 1)
-end
 
 --
 local modDirectory = g_currentModDirectory
 
 source(modDirectory .. "src/QuickCameraVehicle.lua")
---source(modDirectory .. "src/QuickCameraPlayer.lua")
 
 
 -- Delay the injection of VehicleCamera.update, so other mods can "get there first", whereafter QuickCamera can prepend its code to VehicleCamera.update.

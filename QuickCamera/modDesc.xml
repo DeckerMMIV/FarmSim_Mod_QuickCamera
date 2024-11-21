@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <modDesc descVersion="92">
   <author>Decker_MMIV</author>
-  <authorContact>forum.farming-simulator.com</authorContact>
+  <title>
+    <en>Quick Camera</en>
+  </title>
+  <version>1.0.0.0</version>
 
 <!--
     NOTE: DO NOT/NEVER edit this ModDesc.XML!
 
-    Community translations and other languages for this mod, will not be included in future versions, due to the verification process for ModHub.
+    Community translations and other languages for this mod will not be included in future versions, due to the verification process for ModHub.
 
     However there is still possibility to make your own local translation, by placing a l10n.xml (localization.xml) file in
     the folder [..]/modSettings/FS25_QuickCamera/   (you need to create the folder 'FS25_QuickCamera', as it won't be created automatically)
@@ -17,22 +20,6 @@
 
     Now you can edit your own local copy for a localization file for this mod, and when it is error-free, it will be loaded by a script in this mod when a game-session is started.
 -->
-  <contributors>
-    (FS25)
-      ...
-    (FS22)
-      xno, Gonimy_Vetrom
-    (FS19)
-      Gonimy_Vetrom, Ziuta, Anonymous
-    (FS17)
-      DLH007, _dj_, Gonimy-Vetrom, jules.stmp537, Ziuta, Xno, PromGames, Anonymous
-  </contributors>
-
-  <title>
-    <en>Quick Camera</en>
-  </title>
-
-  <version>0.24.11.19</version>
 
   <description>
     <en><![CDATA[NOTE: PLEASE REMEMBER TO ADJUST YOUR INPUT KEYS.
@@ -77,27 +64,6 @@ Dann binden Sie auch die Steuerungsaktionstasten für Quick Camera neu, falls si
 Wenn Sie Probleme mit den Aktionen dieses Quick Camera-Mods feststellen, überprüfen Sie bitte, ob Sie die obigen Anweisungen befolgt haben.
 
 ]]></de>
-    <fr><![CDATA[REMARQUE: N'OUBLIEZ PAS DE RÉGLER VOS TOUCHES D'ENTRÉE.
-
-Avec ce mod Quick Camera pour FS25, vous pouvez utiliser des touches pour configurer la caméra du véhicule:
-- Regarder à gauche/droite
-- Faire pivoter de 180° pour regarder rapidement derrière/devant (avec option séparée à utiliser avec 'Changer de direction')
-- Faire un clic à 45°/90° à gauche/droite
-- Effectuer un zoom avant/arrière rapidement
-
-INSTRUCTIONS IMPORTANTES:
-
-Pour une utilisation optimale de ce mod Quick Camera, vous devez supprimer, retirer ou dissocier toutes les touches existantes des actions de contrôle du jeu de base suivant, afin d'éviter le chevauchement des touches pour des actions similaires:
-- Regarder à gauche
-- Regarder à droite
-- Zoom avant de la caméra
-- Zoom arrière de la caméra
-- Changer de direction (uniquement si vous utilisez la même touche pour 'Changer de direction et retourner la caméra' de Quick Camera)
-Ensuite, réassociez également les touches d'action de contrôle pour Quick Camera, au cas où elles ne conviendraient pas à votre style de jeu.
-
-Si vous constatez des problèmes avec les actions de ce mod Quick Camera, veuillez vérifier que vous avez suivi les instructions ci-dessus.
-
-]]></fr>
   </description>
 
   <iconFilename>icon_QuickCamera.dds</iconFilename>
@@ -109,7 +75,7 @@ Si vous constatez des problèmes avec les actions de ce mod Quick Camera, veuill
     <sourceFile filename="src/OneButtonDirectionChangeAndFlipCamera.lua" />
   </extraSourceFiles>
 
-  <l10n filenamePrefix="translations/modDesc_l10n" /> <!-- Load the corresponding modDesc_l10n_<language>.XML file, or revert to 'en'/'de'. -->
+  <l10n filenamePrefix="translations/l10n" /> <!-- Load the corresponding l10n_<language>.XML file, or revert to 'en'/'de'. -->
 
   <inputBinding>
     <actionBinding action="QuickCamVehiclePeekLR">
@@ -136,15 +102,6 @@ Si vous constatez des problèmes avec les actions de ce mod Quick Camera, veuill
     <actionBinding action="QuickCamVehicleZoomOut">
       <binding device="KB_MOUSE_DEFAULT" input="KEY_pagedown" index="1" />
     </actionBinding>
-<!--
-    <actionBinding action="QuickCamOnFootForeBack">
-      <binding device="KB_MOUSE_DEFAULT" input="KEY_end" index="1" />
-    </actionBinding>
-    <actionBinding action="QuickCamOnFootLeftRight">
-      <binding device="KB_MOUSE_DEFAULT" input="KEY_right" axisComponent="+" neutralInput="0" index="1" />
-      <binding device="KB_MOUSE_DEFAULT" input="KEY_left"  axisComponent="-" neutralInput="0" index="1" />
-    </actionBinding>
--->
   </inputBinding>
 
   <actions>
@@ -155,10 +112,6 @@ Si vous constatez des problèmes avec les actions de ce mod Quick Camera, veuill
     <action name="QuickCamVehicleSnap2LR"  category="VEHICLE" axisType="FULL" />
     <action name="QuickCamVehicleZoomIn"   category="VEHICLE" />
     <action name="QuickCamVehicleZoomOut"  category="VEHICLE" />
-<!--
-    <action name="QuickCamOnFootForeBack"  category="ONFOOT" />
-    <action name="QuickCamOnFootLeftRight" category="ONFOOT"  axisType="FULL" />
--->
   </actions>
 
 </modDesc>
