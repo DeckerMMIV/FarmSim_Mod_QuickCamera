@@ -3,11 +3,21 @@
 Mod for Farming Simulator
 
 To read more about this mod, find it on;
+- https://www.farming-simulator.com/mods.php?title=fs2025&org_id=53574
 - https://www.farming-simulator.com/mods.php?title=fs2022&org_id=53574
 - https://www.farming-simulator.com/mods.php?title=fs2019&org_id=53574
 - https://www.farming-simulator.com/mods.php?title=fs2017&org_id=53574
 
+## FS25 - Change-log
+
+1.0.0.0
+- Upgraded to FS25. Unfortunately, though will look into it later, had to disable the keys & quick-feet functionality for player's avatar due to changes in FS25's base-scripts.
+
+
 ## FS22 - Change-log
+
+1.3.0.0 & 1.1.0.0
+- Never published versions, containing some minor changes.
 
 1.0.5.0
 - Made in-cabin look-back/forward act as "turning your head", so return rotation is reversed.
