@@ -3,20 +3,49 @@
 --
 -- @author  Decker_MMIV (DCK)
 -- @contact forum.farming-simulator.com
--- @date    2024-11-xx
+-- @date    2024-11-xx, 2025-02-xx, 2025-09-xx
 --
 
-function QuickCamOneButtonChangeDirectionAndFlipCamera(self, actionName, inputValue, callbackState, isAnalog)
+function Motorized.QC_onInputChangeDirectionAndFlipCamera(self, actionName, inputValue, callbackState, isAnalog)
+    qcLog("Motorized.QC_onInputChangeDirectionAndFlipCamera: inputValue:",inputValue)
     local spec = self.spec_motorized
-    spec.modQC_FlipCameraToDirection = true
+    spec.modQC = {
+        flipCamera = true,
+    }
     Motorized.actionEventDirectionChange(self, InputAction.DIRECTION_CHANGE, inputValue, callbackState, isAnalog)
+end
+
+function Motorized.QC_onInputChangeDirectionThenDelayFlipCamera(self, actionName, inputValue, callbackState, isAnalog)
+    local spec = self.spec_motorized
+    if nil == spec.modQC and 0 ~= inputValue then
+        spec.modQC = {
+            timeout = g_time + math.min(500, QuickCamera.quickTapThresholdMS),
+        }
+        qcLog("Motorized.QC_onInputChangeDirectionThenDelayFlipCamera: inputValue:",inputValue," spec.modQC.timeout:",spec.modQC.timeout)
+        Motorized.actionEventDirectionChange(self, InputAction.DIRECTION_CHANGE, inputValue, callbackState, isAnalog)
+    elseif nil ~= spec.modQC and g_time > spec.modQC.timeout then
+        qcLog("Motorized.QC_onInputChangeDirectionThenDelayFlipCamera: spec.modQC.direction:",spec.modQC.direction)
+        spec.modQC.timeout = math.huge
+        if nil ~= spec.modQC.direction then
+            Enterable.QC_onInputLookForeBack(self, nil, 0, spec.modQC.direction, nil, nil)
+        end
+    elseif 0 == inputValue then
+        qcLog("Motorized.QC_onInputChangeDirectionThenDelayFlipCamera: inputValue:",inputValue)
+        spec.modQC = nil
+    end
 end
 
 Motorized.onRegisterActionEvents = Utils.appendedFunction(Motorized.onRegisterActionEvents, function(self, isActiveForInput, isActiveForInputIgnoreSelection)
     if self.isClient and isActiveForInputIgnoreSelection then
         local spec = self.spec_motorized
         if self:getDirectionChangeMode() == VehicleMotor.DIRECTION_CHANGE_MODE_MANUAL then
-            local _, actionEventId = self:addActionEvent(spec.actionEvents, InputAction.QuickCamDirectionChangeFlipCamera, self, QuickCamOneButtonChangeDirectionAndFlipCamera, false, true, false, true, nil, nil, true)
+            qcLog("(post)Motorized.onRegisterActionEvents: self=",self)
+            local _, actionEventId
+
+            _, actionEventId = self:addActionEvent(spec.actionEvents, InputAction.QuickCamDirectionChangeFlipCamera,      self, Motorized.QC_onInputChangeDirectionAndFlipCamera,      false, true, false, true, nil, nil, true)
+            g_inputBinding:setActionEventTextVisibility(actionEventId, false)
+
+            _, actionEventId = self:addActionEvent(spec.actionEvents, InputAction.QuickCamDirectionChangeDelayFlipCamera, self, Motorized.QC_onInputChangeDirectionThenDelayFlipCamera, true, true,  true, true, nil, nil, true)
             g_inputBinding:setActionEventTextVisibility(actionEventId, false)
         end
     end
@@ -25,18 +54,18 @@ end)
 Motorized.onGearDirectionChanged = Utils.appendedFunction(Motorized.onGearDirectionChanged, function(self, direction)
     if self.isClient then
         local spec = self.spec_motorized
-        if spec.modQC_FlipCameraToDirection then
-            local reverserDirection = 1
-
-            local activeCamera = self:getActiveCamera()
-            if nil ~= activeCamera and activeCamera.isInside then
-                if nil ~= self.getReverserDirection then
-                    reverserDirection = self:getReverserDirection()
-                end
+        if nil ~= spec.modQC then
+            if nil ~= self.getReverserDirection then
+                spec.modQC.direction = direction * self:getReverserDirection()
+            else
+                spec.modQC.direction = direction
             end
 
-            Enterable.QC_onInputLookForeBack(self, nil, 0, direction * reverserDirection, nil, nil)
+            if spec.modQC.flipCamera then
+                qcLog("Motorized.onGearDirectionChanged: spec.modQC.flipCamera:",spec.modQC.flipCamera)
+                Enterable.QC_onInputLookForeBack(self, nil, 0, spec.modQC.direction, nil, nil)
+                spec.modQC = nil
+            end
         end
-        spec.modQC_FlipCameraToDirection = false
     end
 end)

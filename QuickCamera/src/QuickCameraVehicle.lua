@@ -13,27 +13,6 @@ local STATE_ZOOMINOUT = 5
 
 ----
 
-function delayedInjection_VehicleCamera_Update()
-  VehicleCamera.update = Utils.prependedFunction(VehicleCamera.update, function(self, dt)
-    local modQc = self.modQc
-    if nil ~= modQc then
-      if nil ~= modQc.accTime then
-        modQc.accTime = modQc.accTime + dt
-      else
-        modQc.accTime = 0
-      end
-      local newCamRot = Utils.getMovedLimitedValues(modQc.camSource, modQc.camSource, modQc.camTarget, 2, modQc.camTime, modQc.accTime, true)
-      self.rotX = newCamRot[1]
-      self.rotY = newCamRot[2]
-      if nil == modQc.peekFrom and modQc.accTime > modQc.camTime then
-        self.modQc = nil
-      end
-    end
-  end)
-end
-
-----
-
 local math_pi_half    = math.pi * 0.5
 local math_pi_double  = math.pi * 2
 
@@ -46,9 +25,11 @@ end
 ----
 
 Enterable.QC_onInputLookForeBack = function(self, inputActionName, inputValue, callbackState, isAnalog, isMouse)
-  --log("QC_onInputLookForeBack ", inputActionName," ", inputValue," ", callbackState," ", isAnalog," ", isMouse)
   local spec = self.spec_enterable
   local actCam = (nil~=spec and spec.activeCamera) or nil
+
+  qcLog("QC_onInputLookForeBack", " self=",self, " hasActCam=",nil ~= actCam, " isRotatable=",((not actCam and "n/a") or actCam.isRotatable), " ; ", inputActionName," ", inputValue," ", callbackState," ", isAnalog," ", isMouse)
+
   if nil ~= actCam and true == actCam.isRotatable then
     if 0 == inputValue then
       if nil ~= spec.modQc and STATE_FOREBACK == spec.modQc.State then
@@ -110,9 +91,11 @@ Enterable.QC_onInputLookForeBack = function(self, inputActionName, inputValue, c
 end
 
 Enterable.QC_onInputSnapLeftRight = function(self, inputActionName, inputValue, callbackState, isAnalog, isMouse)
-  --log("QC_onInputSnapLeftRight ", inputActionName," ", inputValue," ", callbackState," ", isAnalog," ", isMouse)
   local spec = self.spec_enterable
   local actCam = (nil~=spec and spec.activeCamera) or nil
+
+  qcLog("QC_onInputSnapLeftRight", " self=",self, " hasActCam=",nil ~= actCam, " isRotatable=",((not actCam and "n/a") or actCam.isRotatable), " ; ", inputActionName," ", inputValue," ", callbackState," ", isAnalog," ", isMouse)
+
   if nil ~= actCam and true == actCam.isRotatable then
     if 0 == inputValue then
       if nil ~= spec.modQc and STATE_LEFTRIGHT == spec.modQc.State then
@@ -145,39 +128,40 @@ Enterable.QC_onInputSnapLeftRight = function(self, inputActionName, inputValue, 
 end
 
 Enterable.QC_onInputPeekLeftRight = function(self, inputActionName, inputValue, callbackState, isAnalog, isMouse)
-  --log("QC_onInputPeekLeftRight ", inputActionName," ", inputValue," ", callbackState," ", isAnalog," ", isMouse)
   local spec = self.spec_enterable
   local actCam = (nil~=spec and spec.activeCamera) or nil
+
+  qcLog("QC_onInputPeekLeftRight", " self=",self, " hasActCam=",nil ~= actCam, " isRotatable=",((not actCam and "n/a") or actCam.isRotatable), " ; ", inputActionName," ", inputValue," ", callbackState," ", isAnalog," ", isMouse)
+
   if nil ~= actCam and true == actCam.isRotatable then
-    if nil == actCam.modQc then
+    if nil == actCam.modQc or nil == actCam.modQc.peekFrom then
       local dirY = math.sign(inputValue) * math.rad(callbackState)
       local rotY = actCam.rotY - dirY
-      actCam.modQc = {
-        camTime = 100,
-        peekFrom  = { actCam.rotX, actCam.rotY },
-        peekValue = inputValue,
-        camSource = { actCam.rotX, actCam.rotY },
-        camTarget = { actCam.rotX, rotY },
-      }
+      actCam.modQc = Utils.getNoNil(actCam.modQc, {})
+      actCam.modQc.camTime    = 100
+      actCam.modQc.peekFrom   = { actCam.rotX, actCam.rotY }
+      actCam.modQc.peekValue  = inputValue
+      actCam.modQc.camSource  = { actCam.rotX, actCam.rotY }
+      actCam.modQc.camTarget  = { actCam.rotX, rotY }
     elseif nil ~= actCam.modQc.peekFrom then
       if 0 == inputValue then
         local origPeekFrom = actCam.modQc.peekFrom
-        actCam.modQc = {
-          camTime = 100,
-          camSource = { actCam.rotX, actCam.rotY },
-          camTarget = origPeekFrom,
-        }
+        actCam.modQc.camTime    = 100
+        actCam.modQc.accTime    = 0
+        actCam.modQc.peekFrom   = nil
+        actCam.modQc.peekValue  = nil
+        actCam.modQc.camSource  = { actCam.rotX, actCam.rotY }
+        actCam.modQc.camTarget  = origPeekFrom
       elseif actCam.modQc.peekValue ~= inputValue then
         local origPeekFrom = actCam.modQc.peekFrom
         local dirY = math.sign(inputValue) * math.rad(callbackState)
         local rotY = origPeekFrom[2] - dirY
-        actCam.modQc = {
-          camTime = 100,
-          peekFrom  = origPeekFrom,
-          peekValue = inputValue,
-          camSource = { actCam.rotX, actCam.rotY },
-          camTarget = { actCam.rotX, rotY },
-        }
+        actCam.modQc.camTime    = 100
+        actCam.modQc.accTime    = 0
+        actCam.modQc.peekFrom   = origPeekFrom
+        actCam.modQc.peekValue  = inputValue
+        actCam.modQc.camSource  = { actCam.rotX, actCam.rotY }
+        actCam.modQc.camTarget  = { actCam.rotX, rotY }
       end
     end
   end
@@ -186,6 +170,9 @@ end
 Enterable.QC_onInputQuickZoom = function(self, inputActionName, inputValue, callbackState, isAnalog, isMouse)
   local spec = self.spec_enterable
   local actCam = (nil~=spec and spec.activeCamera) or nil
+
+  qcLog("QC_onInputQuickZoom", " self=",self, " hasActCam=",nil ~= actCam, " allowTranslation=",((not actCam and "n/a") or actCam.allowTranslation), " ; ", inputActionName," ", inputValue," ", callbackState," ", isAnalog," ", isMouse)
+
   if nil ~= actCam and true == actCam.allowTranslation then
     if 0 == inputValue then
       if nil ~= spec.modQc and STATE_ZOOMINOUT == spec.modQc.State then
@@ -208,18 +195,138 @@ Enterable.QC_onInputQuickZoom = function(self, inputActionName, inputValue, call
   end
 end
 
-Enterable.onRegisterActionEvents = Utils.overwrittenFunction(Enterable.onRegisterActionEvents, function(self, superFunc, ...)
-  --log("Enterable.onRegisterActionEvents ", ...)
-  superFunc(self, ...)
+----
 
-  if self.isClient and self:getIsEntered() and self:getIsActiveForInput(true,true) then
-    local spec = self.spec_enterable
-    local _, actionEventId
-    _, actionEventId = self:addActionEvent(spec.actionEvents, InputAction.QuickCamVehicleForeBack, self, Enterable.QC_onInputLookForeBack,  true, true, true, true, nil);  g_inputBinding:setActionEventTextVisibility(actionEventId, false)
-    _, actionEventId = self:addActionEvent(spec.actionEvents, InputAction.QuickCamVehicleSnapLR,   self, Enterable.QC_onInputSnapLeftRight, true, true, true, true,  45);  g_inputBinding:setActionEventTextVisibility(actionEventId, false)
-    _, actionEventId = self:addActionEvent(spec.actionEvents, InputAction.QuickCamVehicleSnap2LR,  self, Enterable.QC_onInputSnapLeftRight, true, true, true, true,  90);  g_inputBinding:setActionEventTextVisibility(actionEventId, false)
-    _, actionEventId = self:addActionEvent(spec.actionEvents, InputAction.QuickCamVehiclePeekLR,   self, Enterable.QC_onInputPeekLeftRight, true, true, true, true,  60);  g_inputBinding:setActionEventTextVisibility(actionEventId, false)
-    _, actionEventId = self:addActionEvent(spec.actionEvents, InputAction.QuickCamVehicleZoomIn,   self, Enterable.QC_onInputQuickZoom,     true, true, true, true,  -1);  g_inputBinding:setActionEventTextVisibility(actionEventId, false)
-    _, actionEventId = self:addActionEvent(spec.actionEvents, InputAction.QuickCamVehicleZoomOut,  self, Enterable.QC_onInputQuickZoom,     true, true, true, true,   1);  g_inputBinding:setActionEventTextVisibility(actionEventId, false)
+function QC_VehicleCamera_LookLeftRightWithSnap(self, superFunc, inputActionName, inputValue, callbackState, isAnalog, isMouse)
+  --qcLog("QC_VehicleCamera_LookLeftRightWithSnap", " self=",self, " isRotatable=",self.isRotatable, " ; ", inputActionName," ", inputValue," ", callbackState," ", isAnalog," ", isMouse)
+
+  if true == self.isRotatable and not (isAnalog or isMouse) then
+    if 0 == inputValue then
+      if nil ~= self.modQc and STATE_LEFTRIGHT == self.modQc.State then
+        qcLog("QC_VehicleCamera_LookLeftRightWithSnap", " self=",self, " isRotatable=",self.isRotatable, " ; ", inputActionName," ", inputValue," ", callbackState," ", isAnalog," ", isMouse)
+        if (not self.modQc.Continue) and g_time <= self.modQc.PressedTime + QuickCamera.quickTapThresholdMS then
+          local angleDegSnap = self.modQc.AngleDegSnap or 45
+          local dirY = math.sign(self.modQc.InputValue) * math.rad(angleDegSnap)
+          local rotY = self.rotY - dirY
+          rotY = math.rad(angleDegSnap * math.floor((math.deg(rotY) + (angleDegSnap/2))/angleDegSnap)) -- snap
+          self.modQc.camTime = 100
+          self.modQc.accTime = 0
+          self.modQc.camSource = { self.rotX, self.rotY }
+          self.modQc.camTarget = { self.rotX, rotY }
+        end
+        self.modQc.State        = nil
+        self.modQc.Continue     = nil
+        self.modQc.PressedTime  = nil
+        self.modQc.InputValue   = nil
+        self.modQc.AngleDegSnap = nil
+      end
+    elseif nil == self.modQc or STATE_LEFTRIGHT ~= self.modQc.State then
+      qcLog("QC_VehicleCamera_LookLeftRightWithSnap", " self=",self, " isRotatable=",self.isRotatable, " ; ", inputActionName," ", inputValue," ", callbackState," ", isAnalog," ", isMouse)
+      self.modQc = Utils.getNoNil(self.modQc, {})
+      self.modQc.State        = STATE_LEFTRIGHT
+      self.modQc.PressedTime  = g_time
+      self.modQc.InputValue   = inputValue
+      self.modQc.AngleDegSnap = callbackState
+    elseif STATE_LEFTRIGHT == self.modQc.State
+    and (self.modQc.Continue or g_time > self.modQc.PressedTime + QuickCamera.quickTapThresholdMS) then
+      qcLog("QC_VehicleCamera_LookLeftRightWithSnap", " self=",self, " isRotatable=",self.isRotatable, " ; ", inputActionName," ", inputValue," ", callbackState," ", isAnalog," ", isMouse)
+      self.modQc.Continue = true
+      superFunc(self, inputActionName, inputValue, callbackState, isAnalog, isMouse)
+    end
+  else
+    superFunc(self, inputActionName, inputValue, callbackState, isAnalog, isMouse)
   end
-end)
+end
+
+function delayedInjection_VehicleCamera_Update()
+  qcLog("delayedInjection_VehicleCamera_Update")
+
+  VehicleCamera.update = Utils.prependedFunction(VehicleCamera.update, function(self, dt)
+    local modQc = self.modQc
+    if nil ~= modQc and nil ~= modQc.camTime then
+      if nil ~= modQc.accTime then
+        if dt < 16 then
+          qcLog("(pre)VehicleCamera.update - deltaTime is less than 16ms? dt="..tostring(dt))
+        end
+        modQc.accTime = modQc.accTime + dt
+      else
+        modQc.accTime = 0
+      end
+      local newCamRot = Utils.getMovedLimitedValues(modQc.camSource, modQc.camSource, modQc.camTarget, 2, modQc.camTime, modQc.accTime, true)
+      self.rotX = newCamRot[1]
+      self.rotY = newCamRot[2]
+      if nil == modQc.peekFrom and modQc.accTime > modQc.camTime then
+        modQc.camTime   = nil
+        modQc.accTime   = nil
+        modQc.camSource = nil
+        modQc.camTarget = nil
+      end
+    end
+  end)
+
+  VehicleCamera.actionEventLookLeftRight = Utils.overwrittenFunction(VehicleCamera.actionEventLookLeftRight, QC_VehicleCamera_LookLeftRightWithSnap)
+
+  VehicleCamera.onActivate = Utils.appendedFunction(VehicleCamera.onActivate, function(self)
+    qcLog("(post)VehicleCamera.onActivate", " self=",self, " isClient=",self.isClient," self.isRotatable=",self.isRotatable)
+
+    local function addActionEvent(inputAction, callback, callbackState)
+      local state, actionEventId = g_inputBinding:registerActionEvent(inputAction, self, callback, false, false, true, true, callbackState)
+      g_inputBinding:setActionEventTextVisibility(actionEventId, false)
+      if (not state) then
+        qcLog("Failed addActionEvent for: ",inputAction)
+      end
+    end
+
+    if self.isRotatable then
+      g_inputBinding:beginActionEventsModification(Vehicle.INPUT_CONTEXT_NAME)
+      addActionEvent(InputAction.QuickCamVehicleSnapLR,       VehicleCamera.actionEventLookLeftRight,  45)
+      addActionEvent(InputAction.QuickCamVehicleSnap2LR,      VehicleCamera.actionEventLookLeftRight,  90)
+      g_inputBinding:endActionEventsModification()
+    end
+  end)
+
+  Enterable.onRegisterActionEvents = Utils.overwrittenFunction(Enterable.onRegisterActionEvents, function(self, superFunc, isActiveForInput, isActiveForInputIgnoreSelection, ...)
+    superFunc(self, isActiveForInput, isActiveForInputIgnoreSelection, ...)
+
+    qcLog("(post)Enterable.onRegisterActionEvents", " self=",self, " isClient=",self.isClient, " getIsEntered=",self:getIsEntered(), " getIsActiveForInput=",self:getIsActiveForInput(true,true), " ; ", isActiveForInput, isActiveForInputIgnoreSelection, ...)
+    if self.isClient and self:getIsEntered() and self:getIsActiveForInput(true,true) then
+      local spec = self.spec_enterable
+
+      local function addActionEvent(inputAction, callback, callbackState)
+        local state, actionEventId = self:addActionEvent(spec.actionEvents, inputAction, self, callback, false, false, true, true, callbackState, nil, nil, true)
+        g_inputBinding:setActionEventTextVisibility(actionEventId, false)
+        if (not state) then
+          qcLog("Failed addActionEvent for: ",inputAction)
+        end
+      end
+
+      addActionEvent(InputAction.QuickCamVehicleForeBack,     Enterable.QC_onInputLookForeBack,  nil)
+      addActionEvent(InputAction.QuickCamVehiclePeekLR,       Enterable.QC_onInputPeekLeftRight,  60)
+      addActionEvent(InputAction.QuickCamVehiclePeekBehindLR, Enterable.QC_onInputPeekLeftRight, 120)
+      addActionEvent(InputAction.QuickCamVehicleZoomIn,       Enterable.QC_onInputQuickZoom,      -1)
+      addActionEvent(InputAction.QuickCamVehicleZoomOut,      Enterable.QC_onInputQuickZoom,       1)
+    end
+  end)
+
+  EnterablePassenger.onRegisterActionEvents = Utils.overwrittenFunction(EnterablePassenger.onRegisterActionEvents, function(self, superFunc, isActiveForInput, isActiveForInputIgnoreSelection, ...)
+    superFunc(self, isActiveForInput, isActiveForInputIgnoreSelection, ...)
+
+    local spec = self.spec_enterablePassenger
+    qcLog("(post)EnterablePassenger.onRegisterActionEvents", " self=",self, " spec=",spec, " getIsEntered=",self:getIsEntered(), " getIsActiveForInput=",self:getIsActiveForInput(true,true), " ; ", isActiveForInput, isActiveForInputIgnoreSelection, ...)
+    if nil ~= spec and spec.available and spec.passengerEntered then
+      local function addActionEvent(inputAction, callback, callbackState)
+        local state, actionEventId = self:addActionEvent(spec.actionEvents, inputAction, self, callback, false, false, true, true, callbackState, nil, nil, true)
+        g_inputBinding:setActionEventTextVisibility(actionEventId, false)
+        if (not state) then
+          qcLog("Failed addActionEvent for: ",inputAction)
+        end
+      end
+
+      addActionEvent(InputAction.QuickCamVehicleForeBack,     Enterable.QC_onInputLookForeBack,  nil)
+      addActionEvent(InputAction.QuickCamVehiclePeekLR,       Enterable.QC_onInputPeekLeftRight,  60)
+      addActionEvent(InputAction.QuickCamVehiclePeekBehindLR, Enterable.QC_onInputPeekLeftRight, 120)
+      addActionEvent(InputAction.QuickCamVehicleZoomIn,       Enterable.QC_onInputQuickZoom,      -1)
+      addActionEvent(InputAction.QuickCamVehicleZoomOut,      Enterable.QC_onInputQuickZoom,       1)
+    end
+  end)
+end

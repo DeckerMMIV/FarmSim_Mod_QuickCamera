@@ -10,6 +10,14 @@ To read more about this mod, find it on;
 
 ## FS25 - Change-log
 
+2.0.0.0
+- (#43) Changed "quick-tap vs. long hold" threshold to 300 milliseconds (prior it was 150 milliseconds.)
+- (#43) Added 'peek behind left/right (120°)' for vehicle.
+- (#42) Added 'change direction, then delay flip camera' action, that change direction but will have a 'long hold' before camera is rotated towards the new driving direction.
+- Added "Quick Feet" actions 'snap 45° left/right' and 'flip camera 180°'.
+- Added that avatar's run speed can be increased using mouse-wheel.
+- Added that passengers in vehicles also use the same actions to affect camera.
+
 1.0.0.0
 - Upgraded to FS25. Unfortunately, though will look into it later, had to disable the keys & quick-feet functionality for player's avatar due to changes in FS25's base-scripts.
 

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="92">
-  <author>Decker_MMIV</author>
+<modDesc descVersion="101">
   <title>
     <en>Quick Camera</en>
   </title>
-  <version>1.0.0.0</version>
+  <version>2.0.0.0</version>
+  <author>Decker_MMIV</author>
 
 <!--
     NOTE: DO NOT/NEVER edit this ModDesc.XML!
@@ -25,43 +25,71 @@
     <en><![CDATA[NOTE: PLEASE REMEMBER TO ADJUST YOUR INPUT KEYS.
 
 With this Quick Camera mod for FS25, you can use keys to make the vehicle camera:
-- Peek left/right
+- Peek left/right at 60° or 120°
 - Flip 180° to quickly look behind/forward (incl. separate option to use with 'Change Direction')
-- Snap 45°/90° left/right
-- Zoom in/out quickly
+- Snap left/right in steps of 45° or 90° (hold for normal left/right rotation)
+- Zoom in/out quickly (hold for normal zoom in/out)
+These actions should also work for passengers.
+
+Additionally "Quick Feet" keys have been reintroduced, for when your in-game avatar is on foot:
+- Rotate looking direction left/right in steps of 45° (hold for normal left/right rotation)
+- Flip looking direction to quickly rotate 180°
+- Increase running speed using 'Run'-key and mouse-wheel (will reset to normal when 'Run'-key is released)
 
 IMPORTANT INSTRUCTIONS:
 
 For best usage of this Quick Camera mod, you must delete, remove or unbind any existing keys of the following basegame's control actions, to avoid overlapping keys for similar actions:
-- Look left
-- Look right
-- Camera zoom in
-- Camera zoom out
-- Change Direction (only if using same key for Quick Camera's "Change direction &amp; Flip camera")
+- Look left (vehicle only)
+- Look right (vehicle only)
+- Camera zoom in (vehicle only)
+- Camera zoom out (vehicle only)
+- Change Direction (only if using same key for Quick Camera's "Change direction & (then delay) Flip camera")
 Then also rebind the control action keys for Quick Camera, in case they seem wrong for your style of play.
 
 If you observe problems with this Quick Camera mod's actions, then please verify that you have followed the instruction above.
 
+Changelog 2.0.0.0
+- Changed "quick-tap vs. long hold" threshold to 300 milliseconds (prior it was 150 milliseconds.)
+- Added 'peek behind left/right (120°)' for vehicle.
+- Added 'change direction, then delay flip camera' action, that change direction but will have a 'long hold' before camera is rotated towards the new driving direction.
+- Added "Quick Feet" actions 'snap 45° left/right' and 'flip camera 180°'.
+- Added that avatar's run speed can be increased using mouse-wheel.
+- Added that passengers in vehicles also use the same actions to affect camera.
+
 ]]></en>
-    <de><![CDATA[HINWEIS: DENKEN SIE BITTE DARAN, IHRE EINGABETASTEN ANZUPASSEN.
+    <de><![CDATA[HINWEIS: BITTE DENKEN SIE DARAN, IHRE EINGABETASTEN ANZUPASSEN.
 
-Mit diesem Quick Camera-Mod für FS25 können Sie Tasten verwenden, um die Fahrzeugkamera wie folgt zu steuern:
-- Nach links/rechts blicken
-- Um 180° drehen, um schnell nach hinten/vorne zu blicken (inkl. separater Option zur Verwendung mit 'Richtung ändern')
-- Um 45°/90° nach links/rechts drehen
-- Schnell hinein-/herauszoomen
+Mit diesem Quick Camera Mod für LS25 können Sie mithilfe von Tasten die Fahrzeugkamera steuern:
+- Blick nach links/rechts um 60° oder 120°
+- Um 180° drehen, um schnell nach hinten/vorne zu schauen (inkl. separater Option zur Verwendung mit "Richtung ändern")
+- In Schritten von 45° oder 90° nach links/rechts schwenken (für normale Drehung nach links/rechts gedrückt halten)
+- Schnell hinein-/herauszoomen (für normales Hinein-/Herauszoomen gedrückt halten)
+Diese Aktionen sollten auch für Passagiere funktionieren.
 
-WICHTIGE ANWEISUNGEN:
+Zusätzlich wurden die "Quick Feet"-Tasten wieder eingeführt, die verwendet werden können, wenn sich Ihr Avatar im Spiel zu Fuß bewegt:
+- Blickrichtung in Schritten von 45° nach links/rechts drehen (für normale Drehung nach links/rechts gedrückt halten)
+- Blickrichtung um 180° drehen
+- Laufgeschwindigkeit mit der "Laufen"-Taste und dem Mausrad erhöhen (wird auf Normal zurückgesetzt, wenn die "Laufen"-Taste losgelassen wird)
 
-Um diesen Quick Camera-Mod optimal nutzen zu können, müssen Sie alle vorhandenen Tasten der folgenden Steuerungsaktionen des Basisspiels löschen, entfernen oder freigeben, um überlappende Tasten für ähnliche Aktionen zu vermeiden:
-- Nach links schauen
-- Nach rechts schauen
-- Kamera hineinzoomen
-- Kamera herauszoomen
-- Richtung ändern (nur wenn dieselbe Taste für 'Richtung ändern und Kamera drehen' von Quick Camera verwendet wird)
-Dann binden Sie auch die Steuerungsaktionstasten für Quick Camera neu, falls sie für Ihren Spielstil falsch erscheinen.
+WICHTIGE HINWEISE:
 
-Wenn Sie Probleme mit den Aktionen dieses Quick Camera-Mods feststellen, überprüfen Sie bitte, ob Sie die obigen Anweisungen befolgt haben.
+Um diesen Quick-Camera-Mod optimal nutzen zu können, müssen Sie alle vorhandenen Tasten der folgenden Steuerungsaktionen des Basisspiels löschen, entfernen oder die Zuordnung aufheben, um Überschneidungen bei ähnlichen Aktionen zu vermeiden:
+- Nach links schauen (nur im Fahrzeug)
+- Nach rechts schauen (nur im Fahrzeug)
+- Kamera heranzoomen (nur im Fahrzeug)
+- Kamera herauszoomen (nur im Fahrzeug)
+- Richtung ändern (nur wenn dieselbe Taste für "Richtung ändern & (dann Verzögerung) Kamera drehen" der Schnellkamera verwendet wird)
+Binden Sie dann auch die Steuerungstasten für die Schnellkamera neu, falls sie für Ihren Spielstil ungeeignet erscheinen.
+
+Wenn Sie Probleme mit den Aktionen dieses Schnellkamera-Mods feststellen, überprüfen Sie bitte, ob Sie die obigen Anweisungen befolgt haben.
+
+Changelog 2.0.0.0
+- Changed "quick-tap vs. long hold" threshold to 300 milliseconds (prior it was 150 milliseconds.)
+- Added 'peek behind left/right (120°)' for vehicle.
+- Added 'change direction, then delay flip camera' action, that change direction but will have a 'long hold' before camera is rotated towards the new driving direction.
+- Added "Quick Feet" actions 'snap 45° left/right' and 'flip camera 180°'.
+- Added that avatar's run speed can be increased using mouse-wheel.
+- Added that passengers in vehicles also use the same actions to affect camera.
 
 ]]></de>
   </description>
@@ -72,29 +100,28 @@ Wenn Sie Probleme mit den Aktionen dieses Quick Camera-Mods feststellen, überpr
   <extraSourceFiles>
     <sourceFile filename="src/loadCustomLocalizationClientside.lua" />
     <sourceFile filename="src/QuickCamera.lua" />
-    <sourceFile filename="src/OneButtonDirectionChangeAndFlipCamera.lua" />
   </extraSourceFiles>
 
   <l10n filenamePrefix="translations/l10n" /> <!-- Load the corresponding l10n_<language>.XML file, or revert to 'en'/'de'. -->
 
   <inputBinding>
     <actionBinding action="QuickCamVehiclePeekLR">
-      <binding device="KB_MOUSE_DEFAULT" input="KEY_right KEY_up" axisComponent="+" neutralInput="0" index="1" />
-      <binding device="KB_MOUSE_DEFAULT" input="KEY_left KEY_up"  axisComponent="-" neutralInput="0" index="1" />
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_KP_9" axisComponent="+" neutralInput="0" index="2" />
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_KP_7" axisComponent="-" neutralInput="0" index="2" />
+    </actionBinding>
+    <actionBinding action="QuickCamVehiclePeekBehindLR">
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_KP_0 KEY_KP_9" axisComponent="+" neutralInput="0" index="2" />
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_KP_0 KEY_KP_7" axisComponent="-" neutralInput="0" index="2" />
     </actionBinding>
     <actionBinding action="QuickCamVehicleForeBack">
-      <binding device="KB_MOUSE_DEFAULT" input="KEY_end" index="1" />
-    </actionBinding>
-    <actionBinding action="QuickCamDirectionChangeFlipCamera">
-      <binding device="KB_MOUSE_DEFAULT" input="" index="1" />
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_end"  index="1" />
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_KP_8" index="2"/>
     </actionBinding>
     <actionBinding action="QuickCamVehicleSnapLR">
       <binding device="KB_MOUSE_DEFAULT" input="KEY_right" axisComponent="+" neutralInput="0" index="1" />
       <binding device="KB_MOUSE_DEFAULT" input="KEY_left"  axisComponent="-" neutralInput="0" index="1" />
     </actionBinding>
     <actionBinding action="QuickCamVehicleSnap2LR">
-      <binding device="KB_MOUSE_DEFAULT" input="KEY_lctrl KEY_right" axisComponent="+" neutralInput="0" index="1" />
-      <binding device="KB_MOUSE_DEFAULT" input="KEY_lctrl KEY_left"  axisComponent="-" neutralInput="0" index="1" />
     </actionBinding>
     <actionBinding action="QuickCamVehicleZoomIn">
       <binding device="KB_MOUSE_DEFAULT" input="KEY_pageup" index="1" />
@@ -102,16 +129,38 @@ Wenn Sie Probleme mit den Aktionen dieses Quick Camera-Mods feststellen, überpr
     <actionBinding action="QuickCamVehicleZoomOut">
       <binding device="KB_MOUSE_DEFAULT" input="KEY_pagedown" index="1" />
     </actionBinding>
+    <actionBinding action="QuickCamDirectionChangeFlipCamera">
+      <binding device="KB_MOUSE_DEFAULT" input="" index="1" />
+    </actionBinding>
+    <actionBinding action="QuickCamDirectionChangeDelayFlipCamera">
+      <binding device="KB_MOUSE_DEFAULT" input="" index="1" />
+    </actionBinding>
+
+    <actionBinding action="QuickCamOnFootForeBack">
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_end"  index="1" />
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_KP_8" index="2"/>
+    </actionBinding>
+    <actionBinding action="QuickCamOnFootLeftRight">
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_right" axisComponent="+" neutralInput="0" index="1" />
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_left"  axisComponent="-" neutralInput="0" index="1" />
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_KP_9"  axisComponent="+" neutralInput="0" index="2" />
+      <binding device="KB_MOUSE_DEFAULT" input="KEY_KP_7"  axisComponent="-" neutralInput="0" index="2" />
+    </actionBinding>
   </inputBinding>
 
   <actions>
-    <action name="QuickCamVehiclePeekLR"   category="VEHICLE" axisType="FULL" />
-    <action name="QuickCamVehicleForeBack" category="VEHICLE" />
-    <action name="QuickCamDirectionChangeFlipCamera"  category="VEHICLE" />
-    <action name="QuickCamVehicleSnapLR"   category="VEHICLE" axisType="FULL" />
-    <action name="QuickCamVehicleSnap2LR"  category="VEHICLE" axisType="FULL" />
-    <action name="QuickCamVehicleZoomIn"   category="VEHICLE" />
-    <action name="QuickCamVehicleZoomOut"  category="VEHICLE" />
+    <action name="QuickCamVehiclePeekLR"                    category="VEHICLE" axisType="FULL" />
+    <action name="QuickCamVehiclePeekBehindLR"              category="VEHICLE" axisType="FULL" />
+    <action name="QuickCamVehicleForeBack"                  category="VEHICLE" />
+    <action name="QuickCamVehicleSnapLR"                    category="VEHICLE" axisType="FULL" />
+    <action name="QuickCamVehicleSnap2LR"                   category="VEHICLE" axisType="FULL" />
+    <action name="QuickCamVehicleZoomIn"                    category="VEHICLE" />
+    <action name="QuickCamVehicleZoomOut"                   category="VEHICLE" />
+    <action name="QuickCamDirectionChangeFlipCamera"        category="VEHICLE" />
+    <action name="QuickCamDirectionChangeDelayFlipCamera"   category="VEHICLE" />
+
+    <action name="QuickCamOnFootForeBack"  category="ONFOOT" />
+    <action name="QuickCamOnFootLeftRight" category="ONFOOT" axisType="FULL" />
   </actions>
 
 </modDesc>

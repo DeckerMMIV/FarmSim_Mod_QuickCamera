@@ -10,25 +10,29 @@ if not g_dedicatedServerInfo then
 
 QuickCamera = {}
 
-QuickCamera.quickTapThresholdMS = 150 -- Milliseconds. Below = quick-tap. Above = long-hold
+QuickCamera.quickTapThresholdMS = 300 -- Milliseconds. Below = quick-tap. Above = long-hold
 QuickCamera.quickZoomFactorUnit = 15
-QuickCamera.playerRunSpeedFactorMax = 15
+QuickCamera.playerRunSpeedFactorMax = 23
 
---[[
 -- For debugging
-function log(...)
-  local txt = ""
-  for idx = 1,select("#", ...) do
-    txt = txt .. tostring(select(idx, ...))
+local qcLogging_enabled = false
+
+function qcLog(...)
+  if qcLogging_enabled then
+    local txt = ""
+    for idx = 1,select("#", ...) do
+      txt = txt .. tostring(select(idx, ...))
+    end
+    print(string.format("[QuickCamera] %7ums ", g_time) .. txt)
   end
-  print(string.format("[QuickCamera] %7ums ", g_time) .. txt)
 end
---]]
 
 --
 local modDirectory = g_currentModDirectory
 
 source(modDirectory .. "src/QuickCameraVehicle.lua")
+source(modDirectory .. "src/QuickCameraPlayer.lua")
+source(modDirectory .. "src/OneButtonDirectionChangeAndFlipCamera.lua")
 
 
 -- Delay the injection of VehicleCamera.update, so other mods can "get there first", whereafter QuickCamera can prepend its code to VehicleCamera.update.
@@ -41,19 +45,43 @@ function QuickCamera:update(dt)
     removeModEventListener(QuickCamera)
   end
 end
+
 addModEventListener(QuickCamera)
 
 --
 function QuickCamera:consoleCommandKeyTapThresholdMS(newMilliseconds)
   newMilliseconds = tonumber(newMilliseconds)
   if nil ~= newMilliseconds then
-    QuickCamera.quickTapThresholdMS = math.clamp(newMilliseconds, 150, 499)
+    QuickCamera.quickTapThresholdMS = math.clamp(newMilliseconds, 100, 499)
   end
-  print(("[QuickCamera] Key-tap threshold milliseconds (150..499): %.f"):format(QuickCamera.quickTapThresholdMS))
+  print(("[QuickCamera] Key-tap threshold milliseconds (100..499): %.f"):format(QuickCamera.quickTapThresholdMS))
+end
+
+function QuickCamera:consoleCommandDebug(arg)
+  if nil ~= arg then
+    arg = string.lower(arg)
+    if arg == "false" or arg == "0" then
+      qcLogging_enabled = false
+      print("[QuickCamera] Debug logging disabled.")
+      return
+    end
+    if arg == "true" or arg == "1" then
+      qcLogging_enabled = true
+      print("[QuickCamera] Debug logging enabled.")
+      return
+    end
+    print("[QuickCamera] Debug unknown argument.")
+    return
+  else
+    qcLogging_enabled = true
+    print("[QuickCamera] Debug logging enabled. - Use console-command 'modQuickCameraDebug false' to revert this setting.")
+  end
 end
 
 addConsoleCommand("modQuickCameraKeyTapThresholdMS", "", "consoleCommandKeyTapThresholdMS", QuickCamera)
+addConsoleCommand("modQuickCameraDebug",             "", "consoleCommandDebug",             QuickCamera)
 
---print(("Script loaded: QuickCamera.lua - from %s (v%s)"):format(g_currentModName, g_modManager:getModByName(g_currentModName).version));
+--
+qcLog("Script loaded: QuickCamera.lua - from ",g_currentModName," (v",g_modManager:getModByName(g_currentModName).version,")")
 
 end -- not g_dedicatedServerInfo
