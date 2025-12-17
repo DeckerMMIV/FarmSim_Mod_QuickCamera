@@ -13,13 +13,13 @@ PlayerInputComponent.QC_onInputLookForeBack = function(self, inputActionName, in
   self.cameraRotationY = self.cameraRotationY + math.pi
 end
 
-PlayerInputComponent.onInputLookLeftRight = Utils.overwrittenFunction(PlayerInputComponent.onInputLookLeftRight, function(self, superFunc, inputActionName, inputValue, callbackState, isAnalog, isMouse)
-  --qcLog("(pre)PlayerInputComponent.onInputLookLeftRight: ",inputActionName," ",inputValue," ",callbackState," ",isAnalog," ",isMouse)
+PlayerInputComponent.QC_onInputLookLeftRight = function(self, inputActionName, inputValue, callbackState, isAnalog, isMouse)
+  --qcLog("(0)PlayerInputComponent.QC_onInputLookLeftRight: ",inputActionName," ",inputValue," ",callbackState," ",isAnalog," ",isMouse)
   if isAnalog or isMouse then
-    superFunc(self, inputActionName, inputValue, callbackState, isAnalog, isMouse)
+    self:onInputLookLeftRight(inputActionName, inputValue, callbackState, isAnalog, isMouse)
   elseif 0 == inputValue then
     if self.modQc then
-      qcLog("(pre)PlayerInputComponent.onInputLookLeftRight: ",inputActionName," ",inputValue," ",callbackState," ",isAnalog," ",isMouse)
+      qcLog("(1)PlayerInputComponent.QC_onInputLookLeftRight: ",inputActionName," ",inputValue," ",callbackState," ",isAnalog," ",isMouse)
       if g_time <= self.modQc.PressedTime + QuickCamera.quickTapThresholdMS
       and (not self.locked)
       then
@@ -28,23 +28,22 @@ PlayerInputComponent.onInputLookLeftRight = Utils.overwrittenFunction(PlayerInpu
       self.modQc = nil
     end
   elseif nil == self.modQc then
-    qcLog("(pre)PlayerInputComponent.onInputLookLeftRight: ",inputActionName," ",inputValue," ",callbackState," ",isAnalog," ",isMouse)
+    qcLog("(2)PlayerInputComponent.QC_onInputLookLeftRight: ",inputActionName," ",inputValue," ",callbackState," ",isAnalog," ",isMouse)
     self.modQc = {
       PressedTime = g_time,
       InputValue = inputValue
     }
   elseif g_time > self.modQc.PressedTime + QuickCamera.quickTapThresholdMS then
-    qcLog("(pre)PlayerInputComponent.onInputLookLeftRight: ",inputActionName," ",inputValue," ",callbackState," ",isAnalog," ",isMouse)
-    superFunc(self, inputActionName, inputValue, callbackState, isAnalog, isMouse)
+    qcLog("(3)PlayerInputComponent.QC_onInputLookLeftRight: ",inputActionName," ",inputValue," ",callbackState," ",isAnalog," ",isMouse)
+    self:onInputLookLeftRight(inputActionName, inputValue, callbackState, isAnalog, isMouse)
   end
-end)
+end
 
 local hasRegisteredAdditionalActionEvents = false
 
 PlayerInputComponent.listenForBindingChanges = Utils.appendedFunction(PlayerInputComponent.listenForBindingChanges, function(self, ...)
-  qcLog("(post)PlayerInputComponent.listenForBindingChanges: self=",self)
-
   if not hasRegisteredAdditionalActionEvents then
+    qcLog("(post)PlayerInputComponent.listenForBindingChanges: self=",self)
     -- Attempt to force a call to `PlayerInputComponent.registerActionEvents`
     g_messageCenter:publish(MessageType.INPUT_BINDINGS_CHANGED, {})
   end
@@ -54,9 +53,23 @@ PlayerInputComponent.registerActionEvents = Utils.appendedFunction(PlayerInputCo
   qcLog("(post)PlayerInputComponent.registerActionEvents: self=",self)
 
   g_inputBinding:beginActionEventsModification(PlayerInputComponent.INPUT_CONTEXT_NAME)
-  local _, eventId = g_inputBinding:registerActionEvent(InputAction.QuickCamOnFootForeBack, self, PlayerInputComponent.QC_onInputLookForeBack, true, false, false, true, nil, true)
+
+  local success, eventId, collidingActionEvent
+
+  success, eventId, collidingActionEvent = g_inputBinding:registerActionEvent(InputAction.QuickCamOnFootForeBack,  self, PlayerInputComponent.QC_onInputLookForeBack,  true, false, false, true, "flip", true)
+  if not success then
+    qcLog("(1)PlayerInputComponent.registerActionEvents: failed registerActionEvent InputAction.QuickCamOnFootForeBack. Colliding:",collidingActionEvent)
+  end
   g_inputBinding:setActionEventTextVisibility(eventId, false)
+
+  success, eventId, collidingActionEvent = g_inputBinding:registerActionEvent(InputAction.QuickCamOnFootLeftRight, self, PlayerInputComponent.QC_onInputLookLeftRight, false, false, true, true, "snap", true)
+  if not success then
+    qcLog("(2)PlayerInputComponent.registerActionEvents: failed registerActionEvent InputAction.QuickCamOnFootLeftRight. Colliding:",collidingActionEvent)
+  end
+  g_inputBinding:setActionEventTextVisibility(eventId, false)
+
   g_inputBinding:endActionEventsModification()
+
   hasRegisteredAdditionalActionEvents = true
 end)
 

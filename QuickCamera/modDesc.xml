@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="101">
+<modDesc descVersion="104">
   <title>
     <en>Quick Camera</en>
   </title>
-  <version>2.0.0.0</version>
+  <version>2.1.0.0</version>
   <author>Decker_MMIV</author>
 
 <!--
@@ -38,6 +38,8 @@ Additionally "Quick Feet" keys have been reintroduced, for when your in-game ava
 
 IMPORTANT INSTRUCTIONS:
 
+When changing keys for Quick Camera's actions and they seem to not work when in vehicle, try leave and re-enter the vehicle as that should refresh the keys-/input-bindings for the vehicle.
+
 For best usage of this Quick Camera mod, you must delete, remove or unbind any existing keys of the following basegame's control actions, to avoid overlapping keys for similar actions:
 - Look left (vehicle only)
 - Look right (vehicle only)
@@ -56,6 +58,10 @@ Changelog 2.0.0.0
 - Added that avatar's run speed can be increased using mouse-wheel.
 - Added that passengers in vehicles also use the same actions to affect camera.
 
+Changelog 2.1.0.0
+- Bug fix for "Quick Feet" snap left/right actions, to not affect game's default 'Player look' left/right actions.
+- Multiplayer fix for "Change Direction & (then delay) Flip camera".
+
 ]]></en>
     <de><![CDATA[HINWEIS: BITTE DENKEN SIE DARAN, IHRE EINGABETASTEN ANZUPASSEN.
 
@@ -72,6 +78,8 @@ Zusätzlich wurden die "Quick Feet"-Tasten wieder eingeführt, die verwendet wer
 - Laufgeschwindigkeit mit der "Laufen"-Taste und dem Mausrad erhöhen (wird auf Normal zurückgesetzt, wenn die "Laufen"-Taste losgelassen wird)
 
 WICHTIGE HINWEISE:
+
+Wenn Sie die Tasten für die Aktionen der Schnellkamera ändern und diese im Fahrzeug nicht zu funktionieren scheinen, versuchen Sie, das Fahrzeug zu verlassen und wieder einzusteigen, da dadurch die Tasten-/Eingabebindungen für das Fahrzeug aktualisiert werden sollten.
 
 Um diesen Quick-Camera-Mod optimal nutzen zu können, müssen Sie alle vorhandenen Tasten der folgenden Steuerungsaktionen des Basisspiels löschen, entfernen oder die Zuordnung aufheben, um Überschneidungen bei ähnlichen Aktionen zu vermeiden:
 - Nach links schauen (nur im Fahrzeug)
@@ -90,6 +98,10 @@ Changelog 2.0.0.0
 - Added "Quick Feet" actions 'snap 45° left/right' and 'flip camera 180°'.
 - Added that avatar's run speed can be increased using mouse-wheel.
 - Added that passengers in vehicles also use the same actions to affect camera.
+
+Changelog 2.1.0.0
+- Bug fix for "Quick Feet" snap left/right actions, to not affect game's default 'Player look' left/right actions.
+- Multiplayer fix for "Change Direction & (then delay) Flip camera".
 
 ]]></de>
   </description>
@@ -141,8 +153,6 @@ Changelog 2.0.0.0
       <binding device="KB_MOUSE_DEFAULT" input="KEY_KP_8" index="2"/>
     </actionBinding>
     <actionBinding action="QuickCamOnFootLeftRight">
-      <binding device="KB_MOUSE_DEFAULT" input="KEY_right" axisComponent="+" neutralInput="0" index="1" />
-      <binding device="KB_MOUSE_DEFAULT" input="KEY_left"  axisComponent="-" neutralInput="0" index="1" />
       <binding device="KB_MOUSE_DEFAULT" input="KEY_KP_9"  axisComponent="+" neutralInput="0" index="2" />
       <binding device="KB_MOUSE_DEFAULT" input="KEY_KP_7"  axisComponent="-" neutralInput="0" index="2" />
     </actionBinding>

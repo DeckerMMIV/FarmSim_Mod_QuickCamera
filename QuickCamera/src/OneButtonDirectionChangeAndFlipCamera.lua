@@ -23,7 +23,12 @@ function Motorized.QC_onInputChangeDirectionThenDelayFlipCamera(self, actionName
         }
         qcLog("Motorized.QC_onInputChangeDirectionThenDelayFlipCamera: inputValue:",inputValue," spec.modQC.timeout:",spec.modQC.timeout)
         Motorized.actionEventDirectionChange(self, InputAction.DIRECTION_CHANGE, inputValue, callbackState, isAnalog)
-    elseif nil ~= spec.modQC and g_time > spec.modQC.timeout then
+    elseif nil ~= spec.modQC
+    and g_time > spec.modQC.timeout
+    and (   self.isServer
+        or  (not self.isServer and spec.modQC.haveReadGearDataFromStream)
+        )
+    then
         qcLog("Motorized.QC_onInputChangeDirectionThenDelayFlipCamera: spec.modQC.direction:",spec.modQC.direction)
         spec.modQC.timeout = math.huge
         if nil ~= spec.modQC.direction then
@@ -52,7 +57,7 @@ Motorized.onRegisterActionEvents = Utils.appendedFunction(Motorized.onRegisterAc
 end)
 
 Motorized.onGearDirectionChanged = Utils.appendedFunction(Motorized.onGearDirectionChanged, function(self, direction)
-    if self.isClient then
+    if self.isServer then
         local spec = self.spec_motorized
         if nil ~= spec.modQC then
             if nil ~= self.getReverserDirection then
@@ -64,6 +69,27 @@ Motorized.onGearDirectionChanged = Utils.appendedFunction(Motorized.onGearDirect
             if spec.modQC.flipCamera then
                 qcLog("Motorized.onGearDirectionChanged: spec.modQC.flipCamera:",spec.modQC.flipCamera)
                 Enterable.QC_onInputLookForeBack(self, nil, 0, spec.modQC.direction, nil, nil)
+                spec.modQC = nil
+            end
+        end
+    end
+end)
+
+VehicleMotor.readGearDataFromStream = Utils.appendedFunction(VehicleMotor.readGearDataFromStream, function(self, streamId)
+    local vehicle = self.vehicle
+    if nil ~= vehicle and vehicle.isClient then
+        local spec = vehicle.spec_motorized
+        if nil ~= spec and nil ~= spec.modQC then
+            spec.modQC.haveReadGearDataFromStream = true
+            if nil ~= vehicle.getReverserDirection then
+                spec.modQC.direction = self.currentDirection * vehicle:getReverserDirection()
+            else
+                spec.modQC.direction = self.currentDirection
+            end
+
+            if spec.modQC.flipCamera then
+                qcLog("VehicleMotor.readGearDataFromStream: spec.modQC.flipCamera:",spec.modQC.flipCamera)
+                Enterable.QC_onInputLookForeBack(vehicle, nil, 0, spec.modQC.direction, nil, nil)
                 spec.modQC = nil
             end
         end

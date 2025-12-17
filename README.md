@@ -10,6 +10,10 @@ To read more about this mod, find it on;
 
 ## FS25 - Change-log
 
+2.1.0.0
+- (#45) Bug fix for "Quick Feet" snap left/right actions, to not affect game's default 'Player look' left/right actions.
+- Multiplayer fix for "Change Direction & (then delay) Flip camera".
+
 2.0.0.0
 - (#43) Changed "quick-tap vs. long hold" threshold to 300 milliseconds (prior it was 150 milliseconds.)
 - (#43) Added 'peek behind left/right (120°)' for vehicle.
